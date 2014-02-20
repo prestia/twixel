@@ -1,6 +1,6 @@
 # twixel for HaxeFlixel
 
-An openfl extension that adds the ability to use Tweet Sheets from within iOS application. Includes a sample HaxeFlixel project.
+An openfl extension that adds the ability to use Tweet Sheets from within iOS applications. Includes a sample HaxeFlixel project.
 
 ##Instructions
 

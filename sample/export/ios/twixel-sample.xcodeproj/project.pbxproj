@@ -38,7 +38,7 @@
 		
 		1EF0A83A121ADB8E003F2F59 /* Main.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1EF0A839121ADB8E003F2F59 /* Main.mm */; };
 		1EF0A83B121ADB8E003F2F59 /* haxe in Sources */ = {isa = PBXBuildFile; fileRef = 1E2E17A5141E8B5D0048F3C7 /* haxe */; };
-				11C000000000001800000000 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11C000000000001800000001 /* Twitter.framework */; };
+				11C000000000001800000000 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11C000000000001800000001 /* Social.framework */; };
 
 
 /* End PBXBuildFile section */
@@ -86,7 +86,7 @@
 		
         1EF0A839121ADB8E003F2F59 /* Main.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Main.mm; path = "twixel-sample/Classes/Main.mm"; sourceTree = SOURCE_ROOT; };
 		1E2E17A5141E8B5D0048F3C7 /* haxe */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "twixel-sample/haxe/build"; sourceTree = SOURCE_ROOT; };
-				11C000000000001800000001 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
+				11C000000000001800000001 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 
 
 		8D1107310486CEB800E47090 /* twixel-sample-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "twixel-sample/twixel-sample-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
@@ -109,7 +109,7 @@
 				1EEEBAFC121BE2980048A9DF /* AudioToolbox.framework in Frameworks */,
 				1EEEBAFE121BE2980048A9DF /* AVFoundation.framework in Frameworks */,
 				1EEEBB00121BE2B30048A9DF /* Foundation.framework in Frameworks */,
-								11C000000000001800000000 /* Twitter.framework in Frameworks */,
+								11C000000000001800000000 /* Social.framework in Frameworks */,
 
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -145,7 +145,7 @@
 				1EEEBAFF121BE2B30048A9DF /* Foundation.framework */,
 				1EEEBAFB121BE2980048A9DF /* AudioToolbox.framework */,
 				1EEEBAFD121BE2980048A9DF /* AVFoundation.framework */,
-								11C000000000001800000001 /* Twitter.framework */,
+								11C000000000001800000001 /* Social.framework */,
 
 			);
 			name = Frameworks;

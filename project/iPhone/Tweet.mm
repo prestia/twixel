@@ -1,17 +1,15 @@
 #import <Foundation/Foundation.h>
 #import <Twitter/Twitter.h>
-
+ 
 namespace twixel {
     bool Tweet(const char* message){
         NSString* str = [[NSString alloc] initWithUTF8String:message];
-        TWTweetComposeViewController* tweetView = [[TWTweetComposeViewController alloc] init];
-        [tweetView setInitialText:str];
-        TWTweetComposeViewControllerCompletionHandler completionHandler =
-            ^(TWTweetComposeViewControllerResult result) {
-            [[[[UIApplication sharedApplication] keyWindow] rootViewController] dismissModalViewControllerAnimated:YES];
-        };
-        [tweetView setCompletionHandler:completionHandler];
-        [[[[UIApplication sharedApplication] keyWindow] rootViewController]  presentModalViewController:tweetView animated:YES];
+ 
+        //if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]) {
+            SLComposeViewController *tweetSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+            [tweetSheet setInitialText:str];
+            [[[[UIApplication sharedApplication] keyWindow] rootViewController] presentViewController:tweetSheet animated:YES completion:nil];
+        //}
         return true;
     }
 }

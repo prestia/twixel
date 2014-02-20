@@ -3,7 +3,7 @@
 	
 	<ndll name="twixel" />
 
-	<dependency name="Twitter.framework" if="ios"/>
+	<dependency name="Social.framework" if="ios"/>
 	
 	<!-- Use the following for an Android Java extension, not needed otherwise -->
 	

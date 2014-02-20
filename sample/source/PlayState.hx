@@ -20,7 +20,7 @@ class PlayState extends FlxState
 	 */
 	override public function create():Void
 	{
-		_btnTweet = new FlxButton( 20, FlxG.height - 100, "TWEET!", onTweet );
+		_btnTweet = new FlxButton( FlxG.width / 2 - 40, FlxG.height / 2- 24, "TWEET!", onTweet );
 		add(_btnTweet);
 
 		super.create();

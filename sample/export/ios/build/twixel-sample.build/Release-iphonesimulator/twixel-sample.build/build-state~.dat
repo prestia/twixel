@@ -1,0 +1,592 @@
+Ttwixel-sample
+v6
+r1
+cCheck dependencies
+cProcessInfoPlistFile /Users/prestia/Code/twixel/sample/export/ios/build/Release-iphonesimulator/twixel-sample.app/Info.plist /Users/prestia/Code/twixel/sample/export/ios/twixel-sample/twixel-sample-Info.plist
+cCpResource twixel-sample/assets build/Release-iphonesimulator/twixel-sample.app/assets
+cCpResource twixel-sample/Icon.png build/Release-iphonesimulator/twixel-sample.app/Icon.png
+cCpResource twixel-sample/Icon@2x.png build/Release-iphonesimulator/twixel-sample.app/Icon@2x.png
+cCpResource twixel-sample/Icon-72.png build/Release-iphonesimulator/twixel-sample.app/Icon-72.png
+cCpResource twixel-sample/Icon-72@2x.png build/Release-iphonesimulator/twixel-sample.app/Icon-72@2x.png
+cCpResource twixel-sample/Icon-60.png build/Release-iphonesimulator/twixel-sample.app/Icon-60.png
+cCpResource twixel-sample/Icon-60@2x.png build/Release-iphonesimulator/twixel-sample.app/Icon-60@2x.png
+cCpResource twixel-sample/Icon-76.png build/Release-iphonesimulator/twixel-sample.app/Icon-76.png
+cCpResource twixel-sample/Icon-76@2x.png build/Release-iphonesimulator/twixel-sample.app/Icon-76@2x.png
+cCpResource twixel-sample/Default.png build/Release-iphonesimulator/twixel-sample.app/Default.png
+cCpResource twixel-sample/Default@2x.png build/Release-iphonesimulator/twixel-sample.app/Default@2x.png
+cCpResource twixel-sample/Default-Portrait.png build/Release-iphonesimulator/twixel-sample.app/Default-Portrait.png
+cCpResource twixel-sample/Default-Portrait@2x.png build/Release-iphonesimulator/twixel-sample.app/Default-Portrait@2x.png
+cCpResource twixel-sample/Default-Landscape.png build/Release-iphonesimulator/twixel-sample.app/Default-Landscape.png
+cCpResource twixel-sample/Default-Landscape@2x.png build/Release-iphonesimulator/twixel-sample.app/Default-Landscape@2x.png
+cCpResource twixel-sample/Default-568h@2x.png build/Release-iphonesimulator/twixel-sample.app/Default-568h@2x.png
+cProcessPCH++ /var/folders/g3/hxx315xn6p3_hptzpr2vsbz00000gn/C/com.apple.DeveloperTools/5.0.2-5A3005/Xcode/SharedPrecompiledHeaders/twixel-sample-Prefix-ahthwpvhmsutcphkjbeyjkzvazfw/twixel-sample-Prefix.pch.pch twixel-sample/twixel-sample-Prefix.pch normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/twixel-sample.build/Release-iphonesimulator/twixel-sample.build/Objects-normal/i386/Main.o /Users/prestia/Code/twixel/sample/export/ios/twixel-sample/Classes/Main.mm normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
+cLd /Users/prestia/Code/twixel/sample/export/ios/build/Release-iphonesimulator/twixel-sample.app/twixel-sample normal i386
+cGenerateDSYMFile /Users/prestia/Code/twixel/sample/export/ios/build/Release-iphonesimulator/twixel-sample.app.dSYM /Users/prestia/Code/twixel/sample/export/ios/build/Release-iphonesimulator/twixel-sample.app/twixel-sample
+cTouch /Users/prestia/Code/twixel/sample/export/ios/build/Release-iphonesimulator/twixel-sample.app
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk
+c00000000528BF80B0000000000000176
+t1384904715
+s374
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/SDKSettings.plist
+c00000000523A3F5000000000000003B5
+t1379549008
+s949
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/CoreServices/SystemVersion.plist
+c000000005267160000000000000001A0
+t1382487552
+s416
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/AVFoundation.framework/AVFoundation
+c0000000052671602000000000047C980
+t1382487554
+s4704640
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/AudioToolbox.framework/AudioToolbox
+c000000005267160300000000009040F0
+t1382487555
+s9453808
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/CoreAudio.framework/CoreAudio
+c000000005267160200000000000FA140
+t1382487554
+s1024320
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
+c00000000526716030000000000445870
+t1382487555
+s4479088
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/Foundation.framework/Foundation
+c0000000052671605000000000088C680
+t1382487557
+s8963712
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/OpenAL.framework/OpenAL
+c0000000052671605000000000007C070
+t1382487557
+s508016
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/OpenGLES.framework/OpenGLES
+c00000000526716050000000000037620
+t1382487557
+s226848
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/QuartzCore.framework/QuartzCore
+c000000005267160600000000004848F0
+t1382487558
+s4737264
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/Twitter.framework/Twitter
+c0000000052671606000000000000C370
+t1382487558
+s50032
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
+c000000005267160B0000000001DB9910
+t1382487563
+s31168784
+
+N/Users/prestia/Code/twixel/sample/export/ios/build/Release-iphonesimulator/twixel-sample.app
+t1392870692
+s714
+
+N/Users/prestia/Code/twixel/sample/export/ios/build/Release-iphonesimulator/twixel-sample.app.dSYM
+t2
+s0
+
+N/Users/prestia/Code/twixel/sample/export/ios/build/Release-iphonesimulator/twixel-sample.app/Default-568h@2x.png
+t1392870691
+s2194
+
+N/Users/prestia/Code/twixel/sample/export/ios/build/Release-iphonesimulator/twixel-sample.app/Default-Landscape.png
+t1392870691
+s2367
+
+N/Users/prestia/Code/twixel/sample/export/ios/build/Release-iphonesimulator/twixel-sample.app/Default-Landscape@2x.png
+t1392870691
+s9263
+
+N/Users/prestia/Code/twixel/sample/export/ios/build/Release-iphonesimulator/twixel-sample.app/Default-Portrait.png
+t1392870691
+s2367
+
+N/Users/prestia/Code/twixel/sample/export/ios/build/Release-iphonesimulator/twixel-sample.app/Default-Portrait@2x.png
+t1392870691
+s9263
+
+N/Users/prestia/Code/twixel/sample/export/ios/build/Release-iphonesimulator/twixel-sample.app/Default.png
+t1392870691
+s526
+
+N/Users/prestia/Code/twixel/sample/export/ios/build/Release-iphonesimulator/twixel-sample.app/Default@2x.png
+t1392870691
+s1866
+
+N/Users/prestia/Code/twixel/sample/export/ios/build/Release-iphonesimulator/twixel-sample.app/Icon-60.png
+t1392870691
+s1368
+
+N/Users/prestia/Code/twixel/sample/export/ios/build/Release-iphonesimulator/twixel-sample.app/Icon-60@2x.png
+t1392870691
+s2415
+
+N/Users/prestia/Code/twixel/sample/export/ios/build/Release-iphonesimulator/twixel-sample.app/Icon-72.png
+t1392870691
+s1545
+
+N/Users/prestia/Code/twixel/sample/export/ios/build/Release-iphonesimulator/twixel-sample.app/Icon-72@2x.png
+t1392870691
+s2843
+
+N/Users/prestia/Code/twixel/sample/export/ios/build/Release-iphonesimulator/twixel-sample.app/Icon-76.png
+t1392870691
+s1592
+
+N/Users/prestia/Code/twixel/sample/export/ios/build/Release-iphonesimulator/twixel-sample.app/Icon-76@2x.png
+t1392870691
+s2887
+
+N/Users/prestia/Code/twixel/sample/export/ios/build/Release-iphonesimulator/twixel-sample.app/Icon.png
+t1392870691
+s1217
+
+N/Users/prestia/Code/twixel/sample/export/ios/build/Release-iphonesimulator/twixel-sample.app/Icon@2x.png
+t1392870691
+s2250
+
+N/Users/prestia/Code/twixel/sample/export/ios/build/Release-iphonesimulator/twixel-sample.app/Info.plist
+t1392870691
+s1582
+
+N/Users/prestia/Code/twixel/sample/export/ios/build/Release-iphonesimulator/twixel-sample.app/PkgInfo
+t1392870691
+s8
+
+N/Users/prestia/Code/twixel/sample/export/ios/build/Release-iphonesimulator/twixel-sample.app/assets
+t1392870691
+s238
+
+N/Users/prestia/Code/twixel/sample/export/ios/build/Release-iphonesimulator/twixel-sample.app/twixel-sample
+t1392870692
+s8016976
+
+N/Users/prestia/Code/twixel/sample/export/ios/build/twixel-sample.build/Release-iphonesimulator/twixel-sample.build/Objects-normal/i386/Main.o
+t1392870691
+s3152
+
+N/Users/prestia/Code/twixel/sample/export/ios/build/twixel-sample.build/Release-iphonesimulator/twixel-sample.build/Objects-normal/i386/twixel-sample.LinkFileList
+c0000000053058523000000000000008E
+t1392870691
+s142
+
+N/Users/prestia/Code/twixel/sample/export/ios/twixel-sample/Classes/Main.mm
+c000000005305852300000000000005B4
+t1392870691
+s1460
+
+N/Users/prestia/Code/twixel/sample/export/ios/twixel-sample/Default-568h@2x.png
+c00000000530584540000000000000892
+t1392870484
+s2194
+
+N/Users/prestia/Code/twixel/sample/export/ios/twixel-sample/Default-Landscape.png
+c0000000053058454000000000000093F
+t1392870484
+s2367
+
+N/Users/prestia/Code/twixel/sample/export/ios/twixel-sample/Default-Landscape@2x.png
+c0000000053058454000000000000242F
+t1392870484
+s9263
+
+N/Users/prestia/Code/twixel/sample/export/ios/twixel-sample/Default-Portrait.png
+c0000000053058454000000000000093F
+t1392870484
+s2367
+
+N/Users/prestia/Code/twixel/sample/export/ios/twixel-sample/Default-Portrait@2x.png
+c0000000053058454000000000000242F
+t1392870484
+s9263
+
+N/Users/prestia/Code/twixel/sample/export/ios/twixel-sample/Default.png
+c0000000053058453000000000000020E
+t1392870483
+s526
+
+N/Users/prestia/Code/twixel/sample/export/ios/twixel-sample/Default@2x.png
+c0000000053058454000000000000074A
+t1392870484
+s1866
+
+N/Users/prestia/Code/twixel/sample/export/ios/twixel-sample/Icon-60.png
+c00000000530584530000000000000558
+t1392870483
+s1368
+
+N/Users/prestia/Code/twixel/sample/export/ios/twixel-sample/Icon-60@2x.png
+c0000000053058453000000000000096F
+t1392870483
+s2415
+
+N/Users/prestia/Code/twixel/sample/export/ios/twixel-sample/Icon-72.png
+c00000000530584530000000000000609
+t1392870483
+s1545
+
+N/Users/prestia/Code/twixel/sample/export/ios/twixel-sample/Icon-72@2x.png
+c00000000530584530000000000000B1B
+t1392870483
+s2843
+
+N/Users/prestia/Code/twixel/sample/export/ios/twixel-sample/Icon-76.png
+c00000000530584530000000000000638
+t1392870483
+s1592
+
+N/Users/prestia/Code/twixel/sample/export/ios/twixel-sample/Icon-76@2x.png
+c00000000530584530000000000000B47
+t1392870483
+s2887
+
+N/Users/prestia/Code/twixel/sample/export/ios/twixel-sample/Icon.png
+c000000005305845300000000000004C1
+t1392870483
+s1217
+
+N/Users/prestia/Code/twixel/sample/export/ios/twixel-sample/Icon@2x.png
+c000000005305845300000000000008CA
+t1392870483
+s2250
+
+N/Users/prestia/Code/twixel/sample/export/ios/twixel-sample/assets
+c000000005305845400000000000000EE
+t1392870484
+s238
+
+N/Users/prestia/Code/twixel/sample/export/ios/twixel-sample/twixel-sample-Info.plist
+c00000000530584540000000000000A7B
+t1392870484
+s2683
+
+N/Users/prestia/Code/twixel/sample/export/ios/twixel-sample/twixel-sample-Prefix.pch
+c00000000530584540000000000000149
+t1392870484
+s329
+
+N/var/folders/g3/hxx315xn6p3_hptzpr2vsbz00000gn/C/com.apple.DeveloperTools/5.0.2-5A3005/Xcode/SharedPrecompiledHeaders/twixel-sample-Prefix-ahthwpvhmsutcphkjbeyjkzvazfw/twixel-sample-Prefix.pch.pch
+t1392870691
+s207024
+
+CCheck dependencies
+r0
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies18"Check dependenciesf70584a3bcb5b841^28f284a3bcb5b841^---0#1#1#--18"Check dependencies36"1508F4CA-74BD-408B-BD44-9E0360BC3FA4-
+
+CCompileC build/twixel-sample.build/Release-iphonesimulator/twixel-sample.build/Objects-normal/i386/Main.o /Users/prestia/Code/twixel/sample/export/ios/twixel-sample/Classes/Main.mm normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
+s414563491.599539
+e414563491.670605
+r1
+xCompileC
+xbuild/twixel-sample.build/Release-iphonesimulator/twixel-sample.build/Objects-normal/i386/Main.o
+x/Users/prestia/Code/twixel/sample/export/ios/twixel-sample/Classes/Main.mm
+xnormal
+xi386
+xc++
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/prestia/Code/twixel/sample/export/ios/twixel-sample/Classes/Main.mm
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection82"Compile /Users/prestia/Code/twixel/sample/export/ios/twixel-sample/Classes/Main.mm211"[1mCompileC[0m build/twixel-sample.build/Release-iphonesimulator/twixel-sample.build/Objects-normal/i386/Main.o [1mtwixel-sample/Classes/Main.mm[0m normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler889d99a3bcb5b841^b4acaba3bcb5b841^---0#0#1#-19%DVTDocumentLocation2@81"file:///Users/prestia/Code/twixel/sample/export/ios/twixel-sample/Classes/Main.mm0000000000000000^3714"[1mCompileC[0m build/twixel-sample.build/Release-iphonesimulator/twixel-sample.build/Objects-normal/i386/Main.o [1mtwixel-sample/Classes/Main.mm[0m normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/prestia/Code/twixel/sample/export/ios    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Users/prestia/.rvm/gems/ruby-2.0.0-p247/bin:/Users/prestia/.rvm/gems/ruby-2.0.0-p247@global/bin:/Users/prestia/.rvm/rubies/ruby-2.0.0-p247/bin:/Users/prestia/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch i386 -fmessage-length=203 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -fcolor-diagnostics -std=gnu++11 -Wno-trigraphs -fpascal-strings -Os -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-empty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -g -fvisibility=hidden -fvisibility-inlines-hidden -Wno-sign-conversion -mios-simulator-version-min=5 -iquote /Users/prestia/Code/twixel/sample/export/ios/build/twixel-sample.build/Release-iphonesimulator/twixel-sample.build/twixel-sample-generated-files.hmap -I/Users/prestia/Code/twixel/sample/export/ios/build/twixel-sample.build/Release-iphonesimulator/twixel-sample.build/twixel-sample-own-target-headers.hmap -I/Users/prestia/Code/twixel/sample/export/ios/build/twixel-sample.build/Release-iphonesimulator/twixel-sample.build/twixel-sample-all-target-headers.hmap -iquote /Users/prestia/Code/twixel/sample/export/ios/build/twixel-sample.build/Release-iphonesimulator/twixel-sample.build/twixel-sample-project-headers.hmap -I/Users/prestia/Code/twixel/sample/export/ios/build/Release-iphonesimulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/prestia/Code/twixel/sample/export/ios/build/twixel-sample.build/Release-iphonesimulator/twixel-sample.build/DerivedSources/i386 -I/Users/prestia/Code/twixel/sample/export/ios/build/twixel-sample.build/Release-iphonesimulator/twixel-sample.build/DerivedSources -F/Users/prestia/Code/twixel/sample/export/ios/build/Release-iphonesimulator -DNS_BLOCK_ASSERTIONS=1 -include /var/folders/g3/hxx315xn6p3_hptzpr2vsbz00000gn/C/com.apple.DeveloperTools/5.0.2-5A3005/Xcode/SharedPrecompiledHeaders/twixel-sample-Prefix-ahthwpvhmsutcphkjbeyjkzvazfw/twixel-sample-Prefix.pch -MMD -MT dependencies -MF /Users/prestia/Code/twixel/sample/export/ios/build/twixel-sample.build/Release-iphonesimulator/twixel-sample.build/Objects-normal/i386/Main.d --serialize-diagnostics /Users/prestia/Code/twixel/sample/export/ios/build/twixel-sample.build/Release-iphonesimulator/twixel-sample.build/Objects-normal/i386/Main.dia -c /Users/prestia/Code/twixel/sample/export/ios/twixel-sample/Classes/Main.mm -o /Users/prestia/Code/twixel/sample/export/ios/build/twixel-sample.build/Release-iphonesimulator/twixel-sample.build/Objects-normal/i386/Main.o36"C4752318-4259-4A00-A58B-2DDC0F33E19E-
+b0549192C-1B57-4D50-8E78-BB5924165259
+
+CCpResource twixel-sample/Default-568h@2x.png build/Release-iphonesimulator/twixel-sample.app/Default-568h@2x.png
+s414563491.543821
+e414563491.546904
+r1
+xCpResource
+xtwixel-sample/Default-568h@2x.png
+xbuild/Release-iphonesimulator/twixel-sample.app/Default-568h@2x.png
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection72"Copy build/Release-iphonesimulator/twixel-sample.app/Default-568h@2x.png120"[1mCpResource[0m twixel-sample/Default-568h@2x.png build/Release-iphonesimulator/twixel-sample.app/Default-568h@2x.pnga9848ba3bcb5b841^e0d78ca3bcb5b841^---0#0#1#-19%DVTDocumentLocation2@119"file:///Users/prestia/Code/twixel/sample/export/ios/build/Release-iphonesimulator/twixel-sample.app/Default-568h@2x.png0034a8e0dcffdf42^961"[1mCpResource[0m twixel-sample/Default-568h@2x.png build/Release-iphonesimulator/twixel-sample.app/Default-568h@2x.png    cd /Users/prestia/Code/twixel/sample/export/ios    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Users/prestia/.rvm/gems/ruby-2.0.0-p247/bin:/Users/prestia/.rvm/gems/ruby-2.0.0-p247@global/bin:/Users/prestia/.rvm/rubies/ruby-2.0.0-p247/bin:/Users/prestia/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -strip-debug-symbols -strip-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/strip -resolve-src-symlinks /Users/prestia/Code/twixel/sample/export/ios/twixel-sample/Default-568h@2x.png /Users/prestia/Code/twixel/sample/export/ios/build/Release-iphonesimulator/twixel-sample.app36"C587CDE7-9CC3-4FE6-BA59-B143529671D9-
+b0549192C-1B57-4D50-8E78-BB5924165259
+
+CCpResource twixel-sample/Default-Landscape.png build/Release-iphonesimulator/twixel-sample.app/Default-Landscape.png
+s414563491.542357
+e414563491.546630
+r1
+xCpResource
+xtwixel-sample/Default-Landscape.png
+xbuild/Release-iphonesimulator/twixel-sample.app/Default-Landscape.png
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection74"Copy build/Release-iphonesimulator/twixel-sample.app/Default-Landscape.png124"[1mCpResource[0m twixel-sample/Default-Landscape.png build/Release-iphonesimulator/twixel-sample.app/Default-Landscape.png5af48aa3bcb5b841^cd5c8ca3bcb5b841^---0#0#1#-19%DVTDocumentLocation2@121"file:///Users/prestia/Code/twixel/sample/export/ios/build/Release-iphonesimulator/twixel-sample.app/Default-Landscape.png0034a8e0dcffdf42^967"[1mCpResource[0m twixel-sample/Default-Landscape.png build/Release-iphonesimulator/twixel-sample.app/Default-Landscape.png    cd /Users/prestia/Code/twixel/sample/export/ios    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Users/prestia/.rvm/gems/ruby-2.0.0-p247/bin:/Users/prestia/.rvm/gems/ruby-2.0.0-p247@global/bin:/Users/prestia/.rvm/rubies/ruby-2.0.0-p247/bin:/Users/prestia/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -strip-debug-symbols -strip-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/strip -resolve-src-symlinks /Users/prestia/Code/twixel/sample/export/ios/twixel-sample/Default-Landscape.png /Users/prestia/Code/twixel/sample/export/ios/build/Release-iphonesimulator/twixel-sample.app36"AB94FE7F-23F7-4143-A7B7-6B3FBF8F99A4-
+b0549192C-1B57-4D50-8E78-BB5924165259
+
+CCpResource twixel-sample/Default-Landscape@2x.png build/Release-iphonesimulator/twixel-sample.app/Default-Landscape@2x.png
+s414563491.543272
+e414563491.545200
+r1
+xCpResource
+xtwixel-sample/Default-Landscape@2x.png
+xbuild/Release-iphonesimulator/twixel-sample.app/Default-Landscape@2x.png
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection77"Copy build/Release-iphonesimulator/twixel-sample.app/Default-Landscape@2x.png130"[1mCpResource[0m twixel-sample/Default-Landscape@2x.png build/Release-iphonesimulator/twixel-sample.app/Default-Landscape@2x.pngcb2f8ba3bcb5b841^43558ca3bcb5b841^---0#0#1#-19%DVTDocumentLocation2@124"file:///Users/prestia/Code/twixel/sample/export/ios/build/Release-iphonesimulator/twixel-sample.app/Default-Landscape@2x.png0034a8e0dcffdf42^976"[1mCpResource[0m twixel-sample/Default-Landscape@2x.png build/Release-iphonesimulator/twixel-sample.app/Default-Landscape@2x.png    cd /Users/prestia/Code/twixel/sample/export/ios    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Users/prestia/.rvm/gems/ruby-2.0.0-p247/bin:/Users/prestia/.rvm/gems/ruby-2.0.0-p247@global/bin:/Users/prestia/.rvm/rubies/ruby-2.0.0-p247/bin:/Users/prestia/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -strip-debug-symbols -strip-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/strip -resolve-src-symlinks /Users/prestia/Code/twixel/sample/export/ios/twixel-sample/Default-Landscape@2x.png /Users/prestia/Code/twixel/sample/export/ios/build/Release-iphonesimulator/twixel-sample.app36"11022B35-2866-4848-95A8-4A44281100E8-
+b0549192C-1B57-4D50-8E78-BB5924165259
+
+CCpResource twixel-sample/Default-Portrait.png build/Release-iphonesimulator/twixel-sample.app/Default-Portrait.png
+s414563491.539590
+e414563491.542034
+r1
+xCpResource
+xtwixel-sample/Default-Portrait.png
+xbuild/Release-iphonesimulator/twixel-sample.app/Default-Portrait.png
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection73"Copy build/Release-iphonesimulator/twixel-sample.app/Default-Portrait.png122"[1mCpResource[0m twixel-sample/Default-Portrait.png build/Release-iphonesimulator/twixel-sample.app/Default-Portrait.png643c8aa3bcb5b841^cac38aa3bcb5b841^---0#0#1#-19%DVTDocumentLocation2@120"file:///Users/prestia/Code/twixel/sample/export/ios/build/Release-iphonesimulator/twixel-sample.app/Default-Portrait.png0034a8e0dcffdf42^964"[1mCpResource[0m twixel-sample/Default-Portrait.png build/Release-iphonesimulator/twixel-sample.app/Default-Portrait.png    cd /Users/prestia/Code/twixel/sample/export/ios    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Users/prestia/.rvm/gems/ruby-2.0.0-p247/bin:/Users/prestia/.rvm/gems/ruby-2.0.0-p247@global/bin:/Users/prestia/.rvm/rubies/ruby-2.0.0-p247/bin:/Users/prestia/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -strip-debug-symbols -strip-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/strip -resolve-src-symlinks /Users/prestia/Code/twixel/sample/export/ios/twixel-sample/Default-Portrait.png /Users/prestia/Code/twixel/sample/export/ios/build/Release-iphonesimulator/twixel-sample.app36"B23178E7-B33D-4A36-928F-4B7ED94E7D40-
+b0549192C-1B57-4D50-8E78-BB5924165259
+
+CCpResource twixel-sample/Default-Portrait@2x.png build/Release-iphonesimulator/twixel-sample.app/Default-Portrait@2x.png
+s414563491.540099
+e414563491.542718
+r1
+xCpResource
+xtwixel-sample/Default-Portrait@2x.png
+xbuild/Release-iphonesimulator/twixel-sample.app/Default-Portrait@2x.png
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection76"Copy build/Release-iphonesimulator/twixel-sample.app/Default-Portrait@2x.png128"[1mCpResource[0m twixel-sample/Default-Portrait@2x.png build/Release-iphonesimulator/twixel-sample.app/Default-Portrait@2x.pngd0808aa3bcb5b841^9b048ba3bcb5b841^---0#0#1#-19%DVTDocumentLocation2@123"file:///Users/prestia/Code/twixel/sample/export/ios/build/Release-iphonesimulator/twixel-sample.app/Default-Portrait@2x.png0034a8e0dcffdf42^973"[1mCpResource[0m twixel-sample/Default-Portrait@2x.png build/Release-iphonesimulator/twixel-sample.app/Default-Portrait@2x.png    cd /Users/prestia/Code/twixel/sample/export/ios    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Users/prestia/.rvm/gems/ruby-2.0.0-p247/bin:/Users/prestia/.rvm/gems/ruby-2.0.0-p247@global/bin:/Users/prestia/.rvm/rubies/ruby-2.0.0-p247/bin:/Users/prestia/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -strip-debug-symbols -strip-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/strip -resolve-src-symlinks /Users/prestia/Code/twixel/sample/export/ios/twixel-sample/Default-Portrait@2x.png /Users/prestia/Code/twixel/sample/export/ios/build/Release-iphonesimulator/twixel-sample.app36"8D4B5968-A2D0-4F1D-9830-F7ABD25E8A0A-
+b0549192C-1B57-4D50-8E78-BB5924165259
+
+CCpResource twixel-sample/Default.png build/Release-iphonesimulator/twixel-sample.app/Default.png
+s414563491.538456
+e414563491.542100
+r1
+xCpResource
+xtwixel-sample/Default.png
+xbuild/Release-iphonesimulator/twixel-sample.app/Default.png
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection64"Copy build/Release-iphonesimulator/twixel-sample.app/Default.png104"[1mCpResource[0m twixel-sample/Default.png build/Release-iphonesimulator/twixel-sample.app/Default.pnge44d8aa3bcb5b841^33f98aa3bcb5b841^---0#0#1#-19%DVTDocumentLocation2@111"file:///Users/prestia/Code/twixel/sample/export/ios/build/Release-iphonesimulator/twixel-sample.app/Default.png0034a8e0dcffdf42^937"[1mCpResource[0m twixel-sample/Default.png build/Release-iphonesimulator/twixel-sample.app/Default.png    cd /Users/prestia/Code/twixel/sample/export/ios    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Users/prestia/.rvm/gems/ruby-2.0.0-p247/bin:/Users/prestia/.rvm/gems/ruby-2.0.0-p247@global/bin:/Users/prestia/.rvm/rubies/ruby-2.0.0-p247/bin:/Users/prestia/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -strip-debug-symbols -strip-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/strip -resolve-src-symlinks /Users/prestia/Code/twixel/sample/export/ios/twixel-sample/Default.png /Users/prestia/Code/twixel/sample/export/ios/build/Release-iphonesimulator/twixel-sample.app36"4EB9653A-FA18-441F-8C76-2545285F3EC0-
+b0549192C-1B57-4D50-8E78-BB5924165259
+
+CCpResource twixel-sample/Default@2x.png build/Release-iphonesimulator/twixel-sample.app/Default@2x.png
+s414563491.538836
+e414563491.542369
+r1
+xCpResource
+xtwixel-sample/Default@2x.png
+xbuild/Release-iphonesimulator/twixel-sample.app/Default@2x.png
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection67"Copy build/Release-iphonesimulator/twixel-sample.app/Default@2x.png110"[1mCpResource[0m twixel-sample/Default@2x.png build/Release-iphonesimulator/twixel-sample.app/Default@2x.pnge0148aa3bcb5b841^c0078ba3bcb5b841^---0#0#1#-19%DVTDocumentLocation2@114"file:///Users/prestia/Code/twixel/sample/export/ios/build/Release-iphonesimulator/twixel-sample.app/Default@2x.png0034a8e0dcffdf42^946"[1mCpResource[0m twixel-sample/Default@2x.png build/Release-iphonesimulator/twixel-sample.app/Default@2x.png    cd /Users/prestia/Code/twixel/sample/export/ios    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Users/prestia/.rvm/gems/ruby-2.0.0-p247/bin:/Users/prestia/.rvm/gems/ruby-2.0.0-p247@global/bin:/Users/prestia/.rvm/rubies/ruby-2.0.0-p247/bin:/Users/prestia/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -strip-debug-symbols -strip-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/strip -resolve-src-symlinks /Users/prestia/Code/twixel/sample/export/ios/twixel-sample/Default@2x.png /Users/prestia/Code/twixel/sample/export/ios/build/Release-iphonesimulator/twixel-sample.app36"32A18887-15A9-42E3-BFA8-37C5A122B44E-
+b0549192C-1B57-4D50-8E78-BB5924165259
+
+CCpResource twixel-sample/Icon-60.png build/Release-iphonesimulator/twixel-sample.app/Icon-60.png
+s414563491.534528
+e414563491.537593
+r1
+xCpResource
+xtwixel-sample/Icon-60.png
+xbuild/Release-iphonesimulator/twixel-sample.app/Icon-60.png
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection64"Copy build/Release-iphonesimulator/twixel-sample.app/Icon-60.png104"[1mCpResource[0m twixel-sample/Icon-60.png build/Release-iphonesimulator/twixel-sample.app/Icon-60.pngf91389a3bcb5b841^ddea89a3bcb5b841^---0#0#1#-19%DVTDocumentLocation2@111"file:///Users/prestia/Code/twixel/sample/export/ios/build/Release-iphonesimulator/twixel-sample.app/Icon-60.png0034a8e0dcffdf42^937"[1mCpResource[0m twixel-sample/Icon-60.png build/Release-iphonesimulator/twixel-sample.app/Icon-60.png    cd /Users/prestia/Code/twixel/sample/export/ios    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Users/prestia/.rvm/gems/ruby-2.0.0-p247/bin:/Users/prestia/.rvm/gems/ruby-2.0.0-p247@global/bin:/Users/prestia/.rvm/rubies/ruby-2.0.0-p247/bin:/Users/prestia/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -strip-debug-symbols -strip-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/strip -resolve-src-symlinks /Users/prestia/Code/twixel/sample/export/ios/twixel-sample/Icon-60.png /Users/prestia/Code/twixel/sample/export/ios/build/Release-iphonesimulator/twixel-sample.app36"CD037B18-54EF-4AC3-B655-49C77B2B4AC3-
+b0549192C-1B57-4D50-8E78-BB5924165259
+
+CCpResource twixel-sample/Icon-60@2x.png build/Release-iphonesimulator/twixel-sample.app/Icon-60@2x.png
+s414563491.534893
+e414563491.537062
+r1
+xCpResource
+xtwixel-sample/Icon-60@2x.png
+xbuild/Release-iphonesimulator/twixel-sample.app/Icon-60@2x.png
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection67"Copy build/Release-iphonesimulator/twixel-sample.app/Icon-60@2x.png110"[1mCpResource[0m twixel-sample/Icon-60@2x.png build/Release-iphonesimulator/twixel-sample.app/Icon-60@2x.pnga51389a3bcb5b841^f9dc89a3bcb5b841^---0#0#1#-19%DVTDocumentLocation2@114"file:///Users/prestia/Code/twixel/sample/export/ios/build/Release-iphonesimulator/twixel-sample.app/Icon-60@2x.png0034a8e0dcffdf42^946"[1mCpResource[0m twixel-sample/Icon-60@2x.png build/Release-iphonesimulator/twixel-sample.app/Icon-60@2x.png    cd /Users/prestia/Code/twixel/sample/export/ios    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Users/prestia/.rvm/gems/ruby-2.0.0-p247/bin:/Users/prestia/.rvm/gems/ruby-2.0.0-p247@global/bin:/Users/prestia/.rvm/rubies/ruby-2.0.0-p247/bin:/Users/prestia/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -strip-debug-symbols -strip-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/strip -resolve-src-symlinks /Users/prestia/Code/twixel/sample/export/ios/twixel-sample/Icon-60@2x.png /Users/prestia/Code/twixel/sample/export/ios/build/Release-iphonesimulator/twixel-sample.app36"0269793D-D5C6-4BE3-B7A3-848B14DE3905-
+b0549192C-1B57-4D50-8E78-BB5924165259
+
+CCpResource twixel-sample/Icon-72.png build/Release-iphonesimulator/twixel-sample.app/Icon-72.png
+s414563491.529601
+e414563491.533367
+r1
+xCpResource
+xtwixel-sample/Icon-72.png
+xbuild/Release-iphonesimulator/twixel-sample.app/Icon-72.png
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection64"Copy build/Release-iphonesimulator/twixel-sample.app/Icon-72.png104"[1mCpResource[0m twixel-sample/Icon-72.png build/Release-iphonesimulator/twixel-sample.app/Icon-72.png2eac87a3bcb5b841^70b388a3bcb5b841^---0#0#1#-19%DVTDocumentLocation2@111"file:///Users/prestia/Code/twixel/sample/export/ios/build/Release-iphonesimulator/twixel-sample.app/Icon-72.png0034a8e0dcffdf42^937"[1mCpResource[0m twixel-sample/Icon-72.png build/Release-iphonesimulator/twixel-sample.app/Icon-72.png    cd /Users/prestia/Code/twixel/sample/export/ios    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Users/prestia/.rvm/gems/ruby-2.0.0-p247/bin:/Users/prestia/.rvm/gems/ruby-2.0.0-p247@global/bin:/Users/prestia/.rvm/rubies/ruby-2.0.0-p247/bin:/Users/prestia/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -strip-debug-symbols -strip-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/strip -resolve-src-symlinks /Users/prestia/Code/twixel/sample/export/ios/twixel-sample/Icon-72.png /Users/prestia/Code/twixel/sample/export/ios/build/Release-iphonesimulator/twixel-sample.app36"5C3CBF42-8DC6-4A69-B57D-1B3A317F4FC2-
+b0549192C-1B57-4D50-8E78-BB5924165259
+
+CCpResource twixel-sample/Icon-72@2x.png build/Release-iphonesimulator/twixel-sample.app/Icon-72@2x.png
+s414563491.533586
+e414563491.537585
+r1
+xCpResource
+xtwixel-sample/Icon-72@2x.png
+xbuild/Release-iphonesimulator/twixel-sample.app/Icon-72@2x.png
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection67"Copy build/Release-iphonesimulator/twixel-sample.app/Icon-72@2x.png110"[1mCpResource[0m twixel-sample/Icon-72@2x.png build/Release-iphonesimulator/twixel-sample.app/Icon-72@2x.png9eee88a3bcb5b841^cc7e89a3bcb5b841^---0#0#1#-19%DVTDocumentLocation2@114"file:///Users/prestia/Code/twixel/sample/export/ios/build/Release-iphonesimulator/twixel-sample.app/Icon-72@2x.png0034a8e0dcffdf42^946"[1mCpResource[0m twixel-sample/Icon-72@2x.png build/Release-iphonesimulator/twixel-sample.app/Icon-72@2x.png    cd /Users/prestia/Code/twixel/sample/export/ios    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Users/prestia/.rvm/gems/ruby-2.0.0-p247/bin:/Users/prestia/.rvm/gems/ruby-2.0.0-p247@global/bin:/Users/prestia/.rvm/rubies/ruby-2.0.0-p247/bin:/Users/prestia/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -strip-debug-symbols -strip-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/strip -resolve-src-symlinks /Users/prestia/Code/twixel/sample/export/ios/twixel-sample/Icon-72@2x.png /Users/prestia/Code/twixel/sample/export/ios/build/Release-iphonesimulator/twixel-sample.app36"8DD37679-C9BD-43B2-810B-B43512F6B75F-
+b0549192C-1B57-4D50-8E78-BB5924165259
+
+CCpResource twixel-sample/Icon-76.png build/Release-iphonesimulator/twixel-sample.app/Icon-76.png
+s414563491.535884
+e414563491.538306
+r1
+xCpResource
+xtwixel-sample/Icon-76.png
+xbuild/Release-iphonesimulator/twixel-sample.app/Icon-76.png
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection64"Copy build/Release-iphonesimulator/twixel-sample.app/Icon-76.png104"[1mCpResource[0m twixel-sample/Icon-76.png build/Release-iphonesimulator/twixel-sample.app/Icon-76.png344889a3bcb5b841^2d078aa3bcb5b841^---0#0#1#-19%DVTDocumentLocation2@111"file:///Users/prestia/Code/twixel/sample/export/ios/build/Release-iphonesimulator/twixel-sample.app/Icon-76.png0034a8e0dcffdf42^937"[1mCpResource[0m twixel-sample/Icon-76.png build/Release-iphonesimulator/twixel-sample.app/Icon-76.png    cd /Users/prestia/Code/twixel/sample/export/ios    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Users/prestia/.rvm/gems/ruby-2.0.0-p247/bin:/Users/prestia/.rvm/gems/ruby-2.0.0-p247@global/bin:/Users/prestia/.rvm/rubies/ruby-2.0.0-p247/bin:/Users/prestia/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -strip-debug-symbols -strip-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/strip -resolve-src-symlinks /Users/prestia/Code/twixel/sample/export/ios/twixel-sample/Icon-76.png /Users/prestia/Code/twixel/sample/export/ios/build/Release-iphonesimulator/twixel-sample.app36"E36CB266-8286-40E2-8C70-F7AD098ABF1D-
+b0549192C-1B57-4D50-8E78-BB5924165259
+
+CCpResource twixel-sample/Icon-76@2x.png build/Release-iphonesimulator/twixel-sample.app/Icon-76@2x.png
+s414563491.538110
+e414563491.539921
+r1
+xCpResource
+xtwixel-sample/Icon-76@2x.png
+xbuild/Release-iphonesimulator/twixel-sample.app/Icon-76@2x.png
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection67"Copy build/Release-iphonesimulator/twixel-sample.app/Icon-76@2x.png110"[1mCpResource[0m twixel-sample/Icon-76@2x.png build/Release-iphonesimulator/twixel-sample.app/Icon-76@2x.pngc1e589a3bcb5b841^50398aa3bcb5b841^---0#0#1#-19%DVTDocumentLocation2@114"file:///Users/prestia/Code/twixel/sample/export/ios/build/Release-iphonesimulator/twixel-sample.app/Icon-76@2x.png0034a8e0dcffdf42^946"[1mCpResource[0m twixel-sample/Icon-76@2x.png build/Release-iphonesimulator/twixel-sample.app/Icon-76@2x.png    cd /Users/prestia/Code/twixel/sample/export/ios    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Users/prestia/.rvm/gems/ruby-2.0.0-p247/bin:/Users/prestia/.rvm/gems/ruby-2.0.0-p247@global/bin:/Users/prestia/.rvm/rubies/ruby-2.0.0-p247/bin:/Users/prestia/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -strip-debug-symbols -strip-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/strip -resolve-src-symlinks /Users/prestia/Code/twixel/sample/export/ios/twixel-sample/Icon-76@2x.png /Users/prestia/Code/twixel/sample/export/ios/build/Release-iphonesimulator/twixel-sample.app36"FA8C38D9-0836-488D-B0AB-98B2FDA5DC87-
+b0549192C-1B57-4D50-8E78-BB5924165259
+
+CCpResource twixel-sample/Icon.png build/Release-iphonesimulator/twixel-sample.app/Icon.png
+s414563491.528422
+e414563491.533707
+r1
+xCpResource
+xtwixel-sample/Icon.png
+xbuild/Release-iphonesimulator/twixel-sample.app/Icon.png
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection61"Copy build/Release-iphonesimulator/twixel-sample.app/Icon.png98"[1mCpResource[0m twixel-sample/Icon.png build/Release-iphonesimulator/twixel-sample.app/Icon.pnge78987a3bcb5b841^5ebb88a3bcb5b841^---0#0#1#-19%DVTDocumentLocation2@108"file:///Users/prestia/Code/twixel/sample/export/ios/build/Release-iphonesimulator/twixel-sample.app/Icon.png0034a8e0dcffdf42^928"[1mCpResource[0m twixel-sample/Icon.png build/Release-iphonesimulator/twixel-sample.app/Icon.png    cd /Users/prestia/Code/twixel/sample/export/ios    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Users/prestia/.rvm/gems/ruby-2.0.0-p247/bin:/Users/prestia/.rvm/gems/ruby-2.0.0-p247@global/bin:/Users/prestia/.rvm/rubies/ruby-2.0.0-p247/bin:/Users/prestia/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -strip-debug-symbols -strip-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/strip -resolve-src-symlinks /Users/prestia/Code/twixel/sample/export/ios/twixel-sample/Icon.png /Users/prestia/Code/twixel/sample/export/ios/build/Release-iphonesimulator/twixel-sample.app36"0DD1DDE8-762F-47B9-9843-B4F31D1A041F-
+b0549192C-1B57-4D50-8E78-BB5924165259
+
+CCpResource twixel-sample/Icon@2x.png build/Release-iphonesimulator/twixel-sample.app/Icon@2x.png
+s414563491.528644
+e414563491.533486
+r1
+xCpResource
+xtwixel-sample/Icon@2x.png
+xbuild/Release-iphonesimulator/twixel-sample.app/Icon@2x.png
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection64"Copy build/Release-iphonesimulator/twixel-sample.app/Icon@2x.png104"[1mCpResource[0m twixel-sample/Icon@2x.png build/Release-iphonesimulator/twixel-sample.app/Icon@2x.pngac7487a3bcb5b841^5ab888a3bcb5b841^---0#0#1#-19%DVTDocumentLocation2@111"file:///Users/prestia/Code/twixel/sample/export/ios/build/Release-iphonesimulator/twixel-sample.app/Icon@2x.png0034a8e0dcffdf42^937"[1mCpResource[0m twixel-sample/Icon@2x.png build/Release-iphonesimulator/twixel-sample.app/Icon@2x.png    cd /Users/prestia/Code/twixel/sample/export/ios    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Users/prestia/.rvm/gems/ruby-2.0.0-p247/bin:/Users/prestia/.rvm/gems/ruby-2.0.0-p247@global/bin:/Users/prestia/.rvm/rubies/ruby-2.0.0-p247/bin:/Users/prestia/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -strip-debug-symbols -strip-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/strip -resolve-src-symlinks /Users/prestia/Code/twixel/sample/export/ios/twixel-sample/Icon@2x.png /Users/prestia/Code/twixel/sample/export/ios/build/Release-iphonesimulator/twixel-sample.app36"4DFB1A5B-F8AA-4426-8FB3-6339C9C1C483-
+b0549192C-1B57-4D50-8E78-BB5924165259
+
+CCpResource twixel-sample/assets build/Release-iphonesimulator/twixel-sample.app/assets
+s414563491.528180
+e414563491.534228
+r1
+xCpResource
+xtwixel-sample/assets
+xbuild/Release-iphonesimulator/twixel-sample.app/assets
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection59"Copy build/Release-iphonesimulator/twixel-sample.app/assets94"[1mCpResource[0m twixel-sample/assets build/Release-iphonesimulator/twixel-sample.app/assets518587a3bcb5b841^09c388a3bcb5b841^---0#0#1#-19%DVTDocumentLocation2@106"file:///Users/prestia/Code/twixel/sample/export/ios/build/Release-iphonesimulator/twixel-sample.app/assets0034a8e0dcffdf42^922"[1mCpResource[0m twixel-sample/assets build/Release-iphonesimulator/twixel-sample.app/assets    cd /Users/prestia/Code/twixel/sample/export/ios    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Users/prestia/.rvm/gems/ruby-2.0.0-p247/bin:/Users/prestia/.rvm/gems/ruby-2.0.0-p247@global/bin:/Users/prestia/.rvm/rubies/ruby-2.0.0-p247/bin:/Users/prestia/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -strip-debug-symbols -strip-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/strip -resolve-src-symlinks /Users/prestia/Code/twixel/sample/export/ios/twixel-sample/assets /Users/prestia/Code/twixel/sample/export/ios/build/Release-iphonesimulator/twixel-sample.app36"D509BB7A-1ECF-4807-B50B-FDDFA04BE0FE-
+b0549192C-1B57-4D50-8E78-BB5924165259
+
+CGenerateDSYMFile /Users/prestia/Code/twixel/sample/export/ios/build/Release-iphonesimulator/twixel-sample.app.dSYM /Users/prestia/Code/twixel/sample/export/ios/build/Release-iphonesimulator/twixel-sample.app/twixel-sample
+s414563492.525067
+e414563492.658377
+r1
+xGenerateDSYMFile
+x/Users/prestia/Code/twixel/sample/export/ios/build/Release-iphonesimulator/twixel-sample.app.dSYM
+x/Users/prestia/Code/twixel/sample/export/ios/build/Release-iphonesimulator/twixel-sample.app/twixel-sample
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection106"Generate /Users/prestia/Code/twixel/sample/export/ios/build/Release-iphonesimulator/twixel-sample.app.dSYM147"[1mGenerateDSYMFile[0m [1mbuild/Release-iphonesimulator/twixel-sample.app.dSYM[0m build/Release-iphonesimulator/twixel-sample.app/twixel-sample1b8386a4bcb5b841^2193a8a4bcb5b841^---0#0#1#-19%DVTDocumentLocation2@104"file:///Users/prestia/Code/twixel/sample/export/ios/build/Release-iphonesimulator/twixel-sample.app.dSYM0034a8e0dcffdf42^886"[1mGenerateDSYMFile[0m [1mbuild/Release-iphonesimulator/twixel-sample.app.dSYM[0m build/Release-iphonesimulator/twixel-sample.app/twixel-sample    cd /Users/prestia/Code/twixel/sample/export/ios    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Users/prestia/.rvm/gems/ruby-2.0.0-p247/bin:/Users/prestia/.rvm/gems/ruby-2.0.0-p247@global/bin:/Users/prestia/.rvm/rubies/ruby-2.0.0-p247/bin:/Users/prestia/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/dsymutil /Users/prestia/Code/twixel/sample/export/ios/build/Release-iphonesimulator/twixel-sample.app/twixel-sample -o /Users/prestia/Code/twixel/sample/export/ios/build/Release-iphonesimulator/twixel-sample.app.dSYM36"DB80EA2C-C835-4953-9D9E-0CFCD2565594-
+b0549192C-1B57-4D50-8E78-BB5924165259
+
+CLd /Users/prestia/Code/twixel/sample/export/ios/build/Release-iphonesimulator/twixel-sample.app/twixel-sample normal i386
+s414563491.677834
+e414563492.523962
+r1
+xLd
+x/Users/prestia/Code/twixel/sample/export/ios/build/Release-iphonesimulator/twixel-sample.app/twixel-sample
+xnormal
+xi386
+d/Users/prestia/Code/twixel/sample/export/ios/build/twixel-sample.build/Release-iphonesimulator/twixel-sample.build/Objects-normal/i386/twixel-sample.LinkFileList
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/crt1.o
+d/Users/prestia/Code/twixel/sample/export/ios/build/twixel-sample.build/Release-iphonesimulator/twixel-sample.build/Objects-normal/i386/Main.o
+d/Users/prestia/Code/twixel/sample/export/ios/twixel-sample/lib/i386/libstd.a
+d/Users/prestia/Code/twixel/sample/export/ios/twixel-sample/lib/i386/libregexp.a
+d/Users/prestia/Code/twixel/sample/export/ios/twixel-sample/lib/i386/libzlib.a
+d/Users/prestia/Code/twixel/sample/export/ios/twixel-sample/lib/i386/libcurl_ssl.a
+d/Users/prestia/Code/twixel/sample/export/ios/twixel-sample/lib/i386/libpng.a
+d/Users/prestia/Code/twixel/sample/export/ios/twixel-sample/lib/i386/libjpeg.a
+d/Users/prestia/Code/twixel/sample/export/ios/twixel-sample/lib/i386/libfreetype.a
+d/Users/prestia/Code/twixel/sample/export/ios/twixel-sample/lib/i386/libogg.a
+d/Users/prestia/Code/twixel/sample/export/ios/twixel-sample/lib/i386/libvorbis.a
+d/Users/prestia/Code/twixel/sample/export/ios/twixel-sample/lib/i386/liblime.a
+d/Users/prestia/Code/twixel/sample/export/ios/twixel-sample/lib/i386/libtwixel.a
+d/Users/prestia/Code/twixel/sample/export/ios/twixel-sample/lib/i386/libApplicationMain.a
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/OpenAL.framework/OpenAL
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/OpenGLES.framework/OpenGLES
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/QuartzCore.framework/QuartzCore
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/CoreAudio.framework/CoreAudio
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/AudioToolbox.framework/AudioToolbox
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/AVFoundation.framework/AVFoundation
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/Foundation.framework/Foundation
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/Twitter.framework/Twitter
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/libc++.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/libSystem.dylib
+d/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/5.0/lib/darwin/libclang_rt.ios.a
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libsystem_override.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libcache_sim.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libcommonCrypto_sim.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libcompiler_rt_sim.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libcopyfile_sim.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libdispatch.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libdyld_sim.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libmacho_sim.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libnotify_sim.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libremovefile_sim.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libsystem_sim_blocks.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libsystem_sim_c.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libsystem_sim_dnssd.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libsystem_sim_info.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libsystem_sim_m.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libsystem_network.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libunwind_sim.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libxpc.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libsystem_sim_configuration.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libsystem_sim_asl.dylib
+d/usr/lib/libSystem.B.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/libobjc.A.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/libc++abi.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/AVFoundation.framework/libAVFAudio.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/host/libdyld.dylib
+d/usr/lib/system/libcache.dylib
+d/usr/lib/system/libcommonCrypto.dylib
+d/usr/lib/system/libcompiler_rt.dylib
+d/usr/lib/system/libcopyfile.dylib
+d/usr/lib/system/libcorecrypto.dylib
+d/usr/lib/system/libkeymgr.dylib
+d/usr/lib/system/liblaunch.dylib
+d/usr/lib/system/libmacho.dylib
+d/usr/lib/system/libquarantine.dylib
+d/usr/lib/system/libremovefile.dylib
+d/usr/lib/system/libsystem_asl.dylib
+d/usr/lib/system/libsystem_blocks.dylib
+d/usr/lib/system/libsystem_c.dylib
+d/usr/lib/system/libsystem_configuration.dylib
+d/usr/lib/system/libsystem_dnssd.dylib
+d/usr/lib/system/libsystem_info.dylib
+d/usr/lib/system/libsystem_kernel.dylib
+d/usr/lib/system/libsystem_m.dylib
+d/usr/lib/system/libsystem_malloc.dylib
+d/usr/lib/system/libsystem_notify.dylib
+d/usr/lib/system/libsystem_platform.dylib
+d/usr/lib/system/libsystem_pthread.dylib
+d/usr/lib/system/libsystem_sandbox.dylib
+d/usr/lib/system/libunc.dylib
+d/usr/lib/system/libunwind.dylib
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection111"Link /Users/prestia/Code/twixel/sample/export/ios/build/Release-iphonesimulator/twixel-sample.app/twixel-sample84"[1mLd[0m build/Release-iphonesimulator/twixel-sample.app/twixel-sample normal i386c39fada3bcb5b841^7d2386a4bcb5b841^---0#0#1#--2009"[1mLd[0m build/Release-iphonesimulator/twixel-sample.app/twixel-sample normal i386    cd /Users/prestia/Code/twixel/sample/export/ios    setenv IPHONEOS_DEPLOYMENT_TARGET 5    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Users/prestia/.rvm/gems/ruby-2.0.0-p247/bin:/Users/prestia/.rvm/gems/ruby-2.0.0-p247@global/bin:/Users/prestia/.rvm/rubies/ruby-2.0.0-p247/bin:/Users/prestia/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ -arch i386 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk -L/Users/prestia/Code/twixel/sample/export/ios/build/Release-iphonesimulator -L/Users/prestia/Code/twixel/sample/export/ios/twixel-sample/lib/i386 -F/Users/prestia/Code/twixel/sample/export/ios/build/Release-iphonesimulator -filelist /Users/prestia/Code/twixel/sample/export/ios/build/twixel-sample.build/Release-iphonesimulator/twixel-sample.build/Objects-normal/i386/twixel-sample.LinkFileList -Xlinker -objc_abi_version -Xlinker 2 -lstd -lregexp -lzlib -lcurl_ssl -lpng -ljpeg -lfreetype -logg -lvorbis -llime -lstd -lregexp -lzlib -lcurl_ssl -lpng -ljpeg -lfreetype -logg -lvorbis -llime -ltwixel -lApplicationMain -stdlib=libc++ -Xlinker -no_implicit_dylibs -mios-simulator-version-min=5 -framework UIKit -framework OpenAL -framework OpenGLES -framework QuartzCore -framework CoreAudio -framework CoreGraphics -framework AudioToolbox -framework AVFoundation -framework Foundation -framework Twitter -Xlinker -dependency_info -Xlinker /Users/prestia/Code/twixel/sample/export/ios/build/twixel-sample.build/Release-iphonesimulator/twixel-sample.build/Objects-normal/i386/twixel-sample_dependency_info.dat -o /Users/prestia/Code/twixel/sample/export/ios/build/Release-iphonesimulator/twixel-sample.app/twixel-sample36"4BC4BDA3-561C-43CD-BEBD-D9D4BE1E522C-
+b0549192C-1B57-4D50-8E78-BB5924165259
+
+CProcessInfoPlistFile /Users/prestia/Code/twixel/sample/export/ios/build/Release-iphonesimulator/twixel-sample.app/Info.plist /Users/prestia/Code/twixel/sample/export/ios/twixel-sample/twixel-sample-Info.plist
+s414563491.522955
+e414563491.527596
+r1
+xProcessInfoPlistFile
+x/Users/prestia/Code/twixel/sample/export/ios/build/Release-iphonesimulator/twixel-sample.app/Info.plist
+x/Users/prestia/Code/twixel/sample/export/ios/twixel-sample/twixel-sample-Info.plist
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection91"Process /Users/prestia/Code/twixel/sample/export/ios/twixel-sample/twixel-sample-Info.plist134"[1mProcessInfoPlistFile[0m build/Release-iphonesimulator/twixel-sample.app/Info.plist [1mtwixel-sample/twixel-sample-Info.plist[0m744086a3bcb5b841^301187a3bcb5b841^---0#0#1#-19%DVTDocumentLocation2@90"file:///Users/prestia/Code/twixel/sample/export/ios/twixel-sample/twixel-sample-Info.plist0000000000000000^960"[1mProcessInfoPlistFile[0m build/Release-iphonesimulator/twixel-sample.app/Info.plist [1mtwixel-sample/twixel-sample-Info.plist[0m    cd /Users/prestia/Code/twixel/sample/export/ios    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Users/prestia/.rvm/gems/ruby-2.0.0-p247/bin:/Users/prestia/.rvm/gems/ruby-2.0.0-p247@global/bin:/Users/prestia/.rvm/rubies/ruby-2.0.0-p247/bin:/Users/prestia/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"    builtin-infoPlistUtility /Users/prestia/Code/twixel/sample/export/ios/twixel-sample/twixel-sample-Info.plist -genpkginfo /Users/prestia/Code/twixel/sample/export/ios/build/Release-iphonesimulator/twixel-sample.app/PkgInfo -expandbuildsettings -format binary -platform iphonesimulator -o /Users/prestia/Code/twixel/sample/export/ios/build/Release-iphonesimulator/twixel-sample.app/Info.plist36"F9B57167-4971-4F2E-B232-E70590E5C45F-
+b0549192C-1B57-4D50-8E78-BB5924165259
+
+CProcessPCH++ /var/folders/g3/hxx315xn6p3_hptzpr2vsbz00000gn/C/com.apple.DeveloperTools/5.0.2-5A3005/Xcode/SharedPrecompiledHeaders/twixel-sample-Prefix-ahthwpvhmsutcphkjbeyjkzvazfw/twixel-sample-Prefix.pch.pch twixel-sample/twixel-sample-Prefix.pch normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
+s414563491.550823
+e414563491.598251
+r1
+xProcessPCH++
+x/var/folders/g3/hxx315xn6p3_hptzpr2vsbz00000gn/C/com.apple.DeveloperTools/5.0.2-5A3005/Xcode/SharedPrecompiledHeaders/twixel-sample-Prefix-ahthwpvhmsutcphkjbeyjkzvazfw/twixel-sample-Prefix.pch.pch
+xtwixel-sample/twixel-sample-Prefix.pch
+xnormal
+xi386
+xc++
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/prestia/Code/twixel/sample/export/ios/twixel-sample/twixel-sample-Prefix.pch
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection49"Precompile twixel-sample/twixel-sample-Prefix.pch316"[1mProcessPCH++[0m /var/folders/g3/hxx315xn6p3_hptzpr2vsbz00000gn/C/com.apple.DeveloperTools/5.0.2-5A3005/Xcode/SharedPrecompiledHeaders/twixel-sample-Prefix-ahthwpvhmsutcphkjbeyjkzvazfw/twixel-sample-Prefix.pch.pch twixel-sample/twixel-sample-Prefix.pch normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler6a348da3bcb5b841^c72e99a3bcb5b841^---0#0#1#-19%DVTDocumentLocation2@90"file:///Users/prestia/Code/twixel/sample/export/ios/twixel-sample/twixel-sample-Prefix.pch0000000000000000^3794"[1mProcessPCH++[0m /var/folders/g3/hxx315xn6p3_hptzpr2vsbz00000gn/C/com.apple.DeveloperTools/5.0.2-5A3005/Xcode/SharedPrecompiledHeaders/twixel-sample-Prefix-ahthwpvhmsutcphkjbeyjkzvazfw/twixel-sample-Prefix.pch.pch twixel-sample/twixel-sample-Prefix.pch normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/prestia/Code/twixel/sample/export/ios    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Users/prestia/.rvm/gems/ruby-2.0.0-p247/bin:/Users/prestia/.rvm/gems/ruby-2.0.0-p247@global/bin:/Users/prestia/.rvm/rubies/ruby-2.0.0-p247/bin:/Users/prestia/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++-header -arch i386 -fmessage-length=203 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -fcolor-diagnostics -std=gnu++11 -Wno-trigraphs -fpascal-strings -Os -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-empty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -g -fvisibility=hidden -fvisibility-inlines-hidden -Wno-sign-conversion -mios-simulator-version-min=5 -iquote /Users/prestia/Code/twixel/sample/export/ios/build/twixel-sample.build/Release-iphonesimulator/twixel-sample.build/twixel-sample-generated-files.hmap -I/Users/prestia/Code/twixel/sample/export/ios/build/twixel-sample.build/Release-iphonesimulator/twixel-sample.build/twixel-sample-own-target-headers.hmap -I/Users/prestia/Code/twixel/sample/export/ios/build/twixel-sample.build/Release-iphonesimulator/twixel-sample.build/twixel-sample-all-target-headers.hmap -iquote /Users/prestia/Code/twixel/sample/export/ios/build/twixel-sample.build/Release-iphonesimulator/twixel-sample.build/twixel-sample-project-headers.hmap -I/Users/prestia/Code/twixel/sample/export/ios/build/Release-iphonesimulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/prestia/Code/twixel/sample/export/ios/build/twixel-sample.build/Release-iphonesimulator/twixel-sample.build/DerivedSources/i386 -I/Users/prestia/Code/twixel/sample/export/ios/build/twixel-sample.build/Release-iphonesimulator/twixel-sample.build/DerivedSources -F/Users/prestia/Code/twixel/sample/export/ios/build/Release-iphonesimulator -DNS_BLOCK_ASSERTIONS=1 --serialize-diagnostics /var/folders/g3/hxx315xn6p3_hptzpr2vsbz00000gn/C/com.apple.DeveloperTools/5.0.2-5A3005/Xcode/SharedPrecompiledHeaders/twixel-sample-Prefix-ahthwpvhmsutcphkjbeyjkzvazfw/twixel-sample-Prefix.pch.dia -MMD -MT dependencies -MF /var/folders/g3/hxx315xn6p3_hptzpr2vsbz00000gn/C/com.apple.DeveloperTools/5.0.2-5A3005/Xcode/SharedPrecompiledHeaders/twixel-sample-Prefix-ahthwpvhmsutcphkjbeyjkzvazfw/twixel-sample-Prefix.pch.d -c /Users/prestia/Code/twixel/sample/export/ios/twixel-sample/twixel-sample-Prefix.pch -o /var/folders/g3/hxx315xn6p3_hptzpr2vsbz00000gn/C/com.apple.DeveloperTools/5.0.2-5A3005/Xcode/SharedPrecompiledHeaders/twixel-sample-Prefix-ahthwpvhmsutcphkjbeyjkzvazfw/twixel-sample-Prefix.pch.pch36"7CDE6499-43FE-42C2-988E-799E58126EAA-
+b0549192C-1B57-4D50-8E78-BB5924165259
+
+CTouch /Users/prestia/Code/twixel/sample/export/ios/build/Release-iphonesimulator/twixel-sample.app
+r0
+

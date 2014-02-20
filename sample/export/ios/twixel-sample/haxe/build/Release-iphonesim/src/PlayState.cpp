@@ -101,7 +101,7 @@ Void PlayState_obj::create( ){
 		HX_STACK_PUSH("PlayState::create","PlayState.hx",22);
 		HX_STACK_THIS(this);
 		HX_STACK_LINE(23)
-		this->_btnTweet = ::flixel::ui::FlxButton_obj::__new((int)20,(::flixel::FlxG_obj::height - (int)100),HX_CSTRING("TWEET!"),this->onTweet_dyn());
+		this->_btnTweet = ::flixel::ui::FlxButton_obj::__new(((Float(::flixel::FlxG_obj::width) / Float((int)2)) - (int)40),((Float(::flixel::FlxG_obj::height) / Float((int)2)) - (int)24),HX_CSTRING("TWEET!"),this->onTweet_dyn());
 		HX_STACK_LINE(24)
 		this->add(this->_btnTweet);
 		HX_STACK_LINE(26)

@@ -18,7 +18,7 @@ git clone git@github.com:prestia/twixel.git DESTINATION-FOLDER
 ##Usage
 
 ```haxe
-Twixel.tweet( <message>, <url>);
+Twixel.tweet( "message", "url");
 ```
 Example:
 ```haxe

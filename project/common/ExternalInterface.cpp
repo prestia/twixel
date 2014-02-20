@@ -13,13 +13,14 @@
 
 using namespace twixel;
 
-static value twixel_tweet(value message){
+static value twixel_tweet(value message, value url){
     const char* cStr = val_get_string(message);
-    if (twixel::Tweet(cStr))
+    const char* cStr2 = val_get_string(url);
+    if (twixel::Tweet(cStr,cStr2))
         return val_true;
     return val_false;
 }
-DEFINE_PRIM(twixel_tweet, 1);
+DEFINE_PRIM(twixel_tweet, 2);
 
 extern "C" void twixel_main () {
 	

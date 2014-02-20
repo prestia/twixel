@@ -2,12 +2,14 @@
 #import <Twitter/Twitter.h>
  
 namespace twixel {
-    bool Tweet(const char* message){
-        NSString* str = [[NSString alloc] initWithUTF8String:message];
+    bool Tweet(const char* message, const char* url){
+        NSString* textString = [[NSString alloc] initWithUTF8String:message];
+        NSString* urlString = [[NSString alloc] initWithUTF8String:message];
  
         //if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]) {
             SLComposeViewController *tweetSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
-            [tweetSheet setInitialText:str];
+            [tweetSheet setInitialText:textString];
+            [tweetSheet addURL:[NSURL URLWithString:urlString]];
             [[[[UIApplication sharedApplication] keyWindow] rootViewController] presentViewController:tweetSheet animated:YES completion:nil];
         //}
         return true;

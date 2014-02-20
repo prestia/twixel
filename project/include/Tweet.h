@@ -3,7 +3,7 @@
 
 namespace twixel {
 	
-	bool Tweet(const char* msg);
+	bool Tweet(const char* msg, const char* url);
 	
 }
 

@@ -46,6 +46,6 @@ class PlayState extends FlxState
 	// Send a Tweet!
 	private function onTweet():Void
 	{
-		Twixel.tweet("Hello, world!");
+		Twixel.tweet("Hello, world!", "http://anthonyprestia.com");
 	}
 }

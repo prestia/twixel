@@ -3,9 +3,6 @@
 #ifndef INCLUDED_IMap
 #include <IMap.h>
 #endif
-#ifndef INCLUDED_flixel_interfaces_IFlxDestroyable
-#include <flixel/interfaces/IFlxDestroyable.h>
-#endif
 #ifndef INCLUDED_flixel_system_layer_frames_FlxFrame
 #include <flixel/system/layer/frames/FlxFrame.h>
 #endif
@@ -22,13 +19,13 @@ namespace frames{
 
 Void FlxSpriteFrames_obj::__construct(::String name)
 {
-HX_STACK_PUSH("FlxSpriteFrames::new","flixel/system/layer/frames/FlxSpriteFrames.hx",12);
+HX_STACK_PUSH("FlxSpriteFrames::new","flixel/system/layer/frames/FlxSpriteFrames.hx",10);
 {
-	HX_STACK_LINE(13)
+	HX_STACK_LINE(11)
 	this->name = name;
-	HX_STACK_LINE(14)
+	HX_STACK_LINE(12)
 	this->frames = Array_obj< ::Dynamic >::__new();
-	HX_STACK_LINE(15)
+	HX_STACK_LINE(13)
 	this->framesHash = ::haxe::ds::StringMap_obj::__new();
 }
 ;
@@ -48,20 +45,15 @@ Dynamic FlxSpriteFrames_obj::__Create(hx::DynamicArray inArgs)
 	result->__construct(inArgs[0]);
 	return result;}
 
-hx::Object *FlxSpriteFrames_obj::__ToInterface(const hx::type_info &inType) {
-	if (inType==typeid( ::flixel::interfaces::IFlxDestroyable_obj)) return operator ::flixel::interfaces::IFlxDestroyable_obj *();
-	return super::__ToInterface(inType);
-}
-
 Void FlxSpriteFrames_obj::destroy( ){
 {
-		HX_STACK_PUSH("FlxSpriteFrames::destroy","flixel/system/layer/frames/FlxSpriteFrames.hx",25);
+		HX_STACK_PUSH("FlxSpriteFrames::destroy","flixel/system/layer/frames/FlxSpriteFrames.hx",23);
 		HX_STACK_THIS(this);
-		HX_STACK_LINE(26)
+		HX_STACK_LINE(24)
 		this->frames = null();
-		HX_STACK_LINE(27)
+		HX_STACK_LINE(25)
 		this->framesHash = null();
-		HX_STACK_LINE(28)
+		HX_STACK_LINE(26)
 		this->name = null();
 	}
 return null();
@@ -72,12 +64,12 @@ HX_DEFINE_DYNAMIC_FUNC0(FlxSpriteFrames_obj,destroy,(void))
 
 Void FlxSpriteFrames_obj::addFrame( ::flixel::system::layer::frames::FlxFrame frame){
 {
-		HX_STACK_PUSH("FlxSpriteFrames::addFrame","flixel/system/layer/frames/FlxSpriteFrames.hx",19);
+		HX_STACK_PUSH("FlxSpriteFrames::addFrame","flixel/system/layer/frames/FlxSpriteFrames.hx",17);
 		HX_STACK_THIS(this);
 		HX_STACK_ARG(frame,"frame");
-		HX_STACK_LINE(20)
+		HX_STACK_LINE(18)
 		this->frames->push(frame);
-		HX_STACK_LINE(21)
+		HX_STACK_LINE(19)
 		this->framesHash->set(frame->name,frame);
 	}
 return null();

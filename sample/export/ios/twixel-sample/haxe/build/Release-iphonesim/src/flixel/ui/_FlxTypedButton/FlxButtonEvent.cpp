@@ -21,11 +21,11 @@ namespace _FlxTypedButton{
 
 Void FlxButtonEvent_obj::__construct(Dynamic Callback,::flixel::system::FlxSound sound)
 {
-HX_STACK_PUSH("FlxButtonEvent::new","flixel/ui/FlxTypedButton.hx",357);
+HX_STACK_PUSH("FlxButtonEvent::new","flixel/ui/FlxTypedButton.hx",351);
 {
-	HX_STACK_LINE(358)
+	HX_STACK_LINE(352)
 	this->callback = Callback;
-	HX_STACK_LINE(361)
+	HX_STACK_LINE(355)
 	this->sound = sound;
 }
 ;
@@ -52,16 +52,16 @@ hx::Object *FlxButtonEvent_obj::__ToInterface(const hx::type_info &inType) {
 
 Void FlxButtonEvent_obj::fire( ){
 {
-		HX_STACK_PUSH("FlxButtonEvent::fire","flixel/ui/FlxTypedButton.hx",381);
+		HX_STACK_PUSH("FlxButtonEvent::fire","flixel/ui/FlxTypedButton.hx",375);
 		HX_STACK_THIS(this);
-		HX_STACK_LINE(382)
+		HX_STACK_LINE(376)
 		if (((this->callback_dyn() != null()))){
-			HX_STACK_LINE(383)
+			HX_STACK_LINE(377)
 			this->callback();
 		}
-		HX_STACK_LINE(388)
+		HX_STACK_LINE(382)
 		if (((this->sound != null()))){
-			HX_STACK_LINE(389)
+			HX_STACK_LINE(383)
 			this->sound->play(true);
 		}
 	}
@@ -73,11 +73,11 @@ HX_DEFINE_DYNAMIC_FUNC0(FlxButtonEvent_obj,fire,(void))
 
 Void FlxButtonEvent_obj::destroy( ){
 {
-		HX_STACK_PUSH("FlxButtonEvent::destroy","flixel/ui/FlxTypedButton.hx",369);
+		HX_STACK_PUSH("FlxButtonEvent::destroy","flixel/ui/FlxTypedButton.hx",363);
 		HX_STACK_THIS(this);
-		HX_STACK_LINE(370)
+		HX_STACK_LINE(364)
 		this->callback = null();
-		HX_STACK_LINE(373)
+		HX_STACK_LINE(367)
 		this->sound = ::flixel::FlxG_obj::safeDestroy(this->sound);
 	}
 return null();

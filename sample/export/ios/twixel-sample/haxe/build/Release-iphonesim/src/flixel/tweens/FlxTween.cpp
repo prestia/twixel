@@ -1,8 +1,5 @@
 #include <hxcpp.h>
 
-#ifndef INCLUDED_Reflect
-#include <Reflect.h>
-#endif
 #ifndef INCLUDED_flixel_FlxBasic
 #include <flixel/FlxBasic.h>
 #endif
@@ -69,8 +66,8 @@
 #ifndef INCLUDED_flixel_util_FlxPoint
 #include <flixel/util/FlxPoint.h>
 #endif
-#ifndef INCLUDED_hxMath
-#include <hxMath.h>
+#ifndef INCLUDED_flixel_util_FlxTimer
+#include <flixel/util/FlxTimer.h>
 #endif
 namespace flixel{
 namespace tweens{
@@ -80,29 +77,21 @@ Void FlxTween_obj::__construct(Float duration,hx::Null< int >  __o_type,Dynamic 
 HX_STACK_PUSH("FlxTween::new","flixel/tweens/FlxTween.hx",27);
 int type = __o_type.Default(0);
 {
-	HX_STACK_LINE(527)
-	this->_delayToUse = (int)0;
-	HX_STACK_LINE(525)
-	this->_secondsSinceStart = (int)0;
-	HX_STACK_LINE(523)
-	this->loopDelay = (int)0;
-	HX_STACK_LINE(518)
-	this->startDelay = (int)0;
-	HX_STACK_LINE(513)
+	HX_STACK_LINE(489)
 	this->executions = (int)0;
-	HX_STACK_LINE(501)
+	HX_STACK_LINE(478)
 	this->userData = null();
-	HX_STACK_LINE(539)
+	HX_STACK_LINE(504)
 	this->duration = duration;
-	HX_STACK_LINE(540)
+	HX_STACK_LINE(505)
 	this->set_type(type);
-	HX_STACK_LINE(541)
+	HX_STACK_LINE(506)
 	this->complete = complete;
-	HX_STACK_LINE(542)
+	HX_STACK_LINE(507)
 	this->ease = ease;
 	struct _Function_1_1{
 		inline static Dynamic Block( ){
-			HX_STACK_PUSH("*::closure","flixel/tweens/FlxTween.hx",544);
+			HX_STACK_PUSH("*::closure","flixel/tweens/FlxTween.hx",509);
 			{
 				hx::Anon __result = hx::Anon_obj::Create();
 				return __result;
@@ -110,7 +99,7 @@ int type = __o_type.Default(0);
 			return null();
 		}
 	};
-	HX_STACK_LINE(544)
+	HX_STACK_LINE(509)
 	this->userData = _Function_1_1::Block();
 }
 ;
@@ -136,24 +125,24 @@ hx::Object *FlxTween_obj::__ToInterface(const hx::type_info &inType) {
 }
 
 int FlxTween_obj::set_type( int value){
-	HX_STACK_PUSH("FlxTween::set_type","flixel/tweens/FlxTween.hx",688);
+	HX_STACK_PUSH("FlxTween::set_type","flixel/tweens/FlxTween.hx",618);
 	HX_STACK_THIS(this);
 	HX_STACK_ARG(value,"value");
-	HX_STACK_LINE(689)
+	HX_STACK_LINE(619)
 	if (((value == (int)0))){
-		HX_STACK_LINE(690)
+		HX_STACK_LINE(620)
 		value = (int)8;
 	}
 	else{
-		HX_STACK_LINE(693)
+		HX_STACK_LINE(623)
 		if (((value == (int)16))){
-			HX_STACK_LINE(694)
+			HX_STACK_LINE(624)
 			value = (int)17;
 		}
 	}
-	HX_STACK_LINE(698)
-	this->backward = (((int(value) & int((int)16))) > (int)0);
-	HX_STACK_LINE(700)
+	HX_STACK_LINE(628)
+	this->_backward = (((int(value) & int((int)16))) > (int)0);
+	HX_STACK_LINE(630)
 	return this->type = value;
 }
 
@@ -161,156 +150,97 @@ int FlxTween_obj::set_type( int value){
 HX_DEFINE_DYNAMIC_FUNC1(FlxTween_obj,set_type,return )
 
 Float FlxTween_obj::set_percent( Float value){
-	HX_STACK_PUSH("FlxTween::set_percent","flixel/tweens/FlxTween.hx",683);
+	HX_STACK_PUSH("FlxTween::set_percent","flixel/tweens/FlxTween.hx",613);
 	HX_STACK_THIS(this);
 	HX_STACK_ARG(value,"value");
-	HX_STACK_LINE(683)
-	return this->_secondsSinceStart = ((this->duration * value) + this->_delayToUse);
+	HX_STACK_LINE(613)
+	return this->_secondsSinceStart = (this->duration * value);
 }
 
 
 HX_DEFINE_DYNAMIC_FUNC1(FlxTween_obj,set_percent,return )
 
 Float FlxTween_obj::get_percent( ){
-	HX_STACK_PUSH("FlxTween::get_percent","flixel/tweens/FlxTween.hx",678);
+	HX_STACK_PUSH("FlxTween::get_percent","flixel/tweens/FlxTween.hx",608);
 	HX_STACK_THIS(this);
-	HX_STACK_LINE(678)
-	return (Float(::Math_obj::max((this->_secondsSinceStart - this->_delayToUse),(int)0)) / Float(this->duration));
+	HX_STACK_LINE(608)
+	return (Float(this->_secondsSinceStart) / Float(this->duration));
 }
 
 
 HX_DEFINE_DYNAMIC_FUNC0(FlxTween_obj,get_percent,return )
 
-Dynamic FlxTween_obj::set_loopDelay( Dynamic value){
-	HX_STACK_PUSH("FlxTween::set_loopDelay","flixel/tweens/FlxTween.hx",667);
-	HX_STACK_THIS(this);
-	HX_STACK_ARG(value,"value");
-	HX_STACK_LINE(668)
-	Float dly = (  (((value != null()))) ? Float(::Math_obj::abs(value)) : Float((int)0) );		HX_STACK_VAR(dly,"dly");
-	HX_STACK_LINE(669)
-	if (((this->executions > (int)0))){
-		HX_STACK_LINE(671)
-		this->_secondsSinceStart = ((this->duration * ((Float(::Math_obj::max((this->_secondsSinceStart - this->_delayToUse),(int)0)) / Float(this->duration)))) + ::Math_obj::max((dly - this->loopDelay),(int)0));
-		HX_STACK_LINE(672)
-		this->_delayToUse = dly;
-	}
-	HX_STACK_LINE(674)
-	return this->loopDelay = dly;
-}
-
-
-HX_DEFINE_DYNAMIC_FUNC1(FlxTween_obj,set_loopDelay,return )
-
-Dynamic FlxTween_obj::set_startDelay( Dynamic value){
-	HX_STACK_PUSH("FlxTween::set_startDelay","flixel/tweens/FlxTween.hx",656);
-	HX_STACK_THIS(this);
-	HX_STACK_ARG(value,"value");
-	HX_STACK_LINE(657)
-	Float dly = (  (((value != null()))) ? Float(::Math_obj::abs(value)) : Float((int)0) );		HX_STACK_VAR(dly,"dly");
-	HX_STACK_LINE(658)
-	if (((this->executions == (int)0))){
-		HX_STACK_LINE(660)
-		this->_secondsSinceStart = ((this->duration * ((Float(::Math_obj::max((this->_secondsSinceStart - this->_delayToUse),(int)0)) / Float(this->duration)))) + ::Math_obj::max((dly - this->startDelay),(int)0));
-		HX_STACK_LINE(661)
-		this->_delayToUse = dly;
-	}
-	HX_STACK_LINE(663)
-	return this->startDelay = dly;
-}
-
-
-HX_DEFINE_DYNAMIC_FUNC1(FlxTween_obj,set_startDelay,return )
-
-Void FlxTween_obj::setDelays( Dynamic __o_startDelay,Dynamic __o_loopDelay){
-Dynamic startDelay = __o_startDelay.Default(0);
-Dynamic loopDelay = __o_loopDelay.Default(0);
-	HX_STACK_PUSH("FlxTween::setDelays","flixel/tweens/FlxTween.hx",650);
-	HX_STACK_THIS(this);
-	HX_STACK_ARG(startDelay,"startDelay");
-	HX_STACK_ARG(loopDelay,"loopDelay");
-{
-		HX_STACK_LINE(651)
-		this->set_startDelay(startDelay);
-		HX_STACK_LINE(652)
-		this->set_loopDelay(loopDelay);
-	}
-return null();
-}
-
-
-HX_DEFINE_DYNAMIC_FUNC2(FlxTween_obj,setDelays,(void))
-
 Void FlxTween_obj::finish( ){
 {
-		HX_STACK_PUSH("FlxTween::finish","flixel/tweens/FlxTween.hx",600);
+		HX_STACK_PUSH("FlxTween::finish","flixel/tweens/FlxTween.hx",564);
 		HX_STACK_THIS(this);
-		HX_STACK_LINE(601)
+		HX_STACK_LINE(565)
 		(this->executions)++;
-		HX_STACK_LINE(603)
+		HX_STACK_LINE(567)
 		if (((this->complete_dyn() != null()))){
-			HX_STACK_LINE(604)
+			HX_STACK_LINE(568)
 			this->complete(hx::ObjectPtr<OBJ_>(this));
 		}
-		HX_STACK_LINE(608)
+		HX_STACK_LINE(572)
 		{
-			HX_STACK_LINE(608)
+			HX_STACK_LINE(572)
 			int _g = (int(this->type) & int((int)-17));		HX_STACK_VAR(_g,"_g");
-			HX_STACK_LINE(608)
+			HX_STACK_LINE(572)
 			switch( (int)(_g)){
 				case (int)1: {
-					HX_STACK_LINE(611)
-					this->_secondsSinceStart = (this->duration + this->startDelay);
-					HX_STACK_LINE(612)
+					HX_STACK_LINE(575)
+					this->_secondsSinceStart = this->duration;
+					HX_STACK_LINE(576)
 					this->active = false;
 				}
 				;break;
 				case (int)2: {
-					HX_STACK_LINE(615)
-					this->_secondsSinceStart = (hx::Mod(((this->_secondsSinceStart - this->_delayToUse)),this->duration) + this->_delayToUse);
-					HX_STACK_LINE(616)
-					this->scale = (Float(::Math_obj::max((this->_secondsSinceStart - this->_delayToUse),(int)0)) / Float(this->duration));
-					HX_STACK_LINE(617)
+					HX_STACK_LINE(579)
+					hx::ModEq(this->_secondsSinceStart,this->duration);
+					HX_STACK_LINE(580)
+					this->scale = (Float(this->_secondsSinceStart) / Float(this->duration));
+					HX_STACK_LINE(581)
 					if (((bool((bool((this->ease_dyn() != null())) && bool((this->scale > (int)0)))) && bool((this->scale < (int)1))))){
-						HX_STACK_LINE(617)
+						HX_STACK_LINE(581)
 						this->scale = this->ease(this->scale);
 					}
-					HX_STACK_LINE(620)
+					HX_STACK_LINE(584)
 					this->start();
 				}
 				;break;
 				case (int)4: {
-					HX_STACK_LINE(623)
-					this->_secondsSinceStart = (hx::Mod(((this->_secondsSinceStart - this->_delayToUse)),this->duration) + this->_delayToUse);
-					HX_STACK_LINE(624)
-					this->scale = (Float(::Math_obj::max((this->_secondsSinceStart - this->_delayToUse),(int)0)) / Float(this->duration));
-					HX_STACK_LINE(625)
+					HX_STACK_LINE(587)
+					hx::ModEq(this->_secondsSinceStart,this->duration);
+					HX_STACK_LINE(588)
+					this->scale = (Float(this->_secondsSinceStart) / Float(this->duration));
+					HX_STACK_LINE(589)
 					if (((bool((bool((this->ease_dyn() != null())) && bool((this->scale > (int)0)))) && bool((this->scale < (int)1))))){
-						HX_STACK_LINE(625)
+						HX_STACK_LINE(589)
 						this->scale = this->ease(this->scale);
 					}
-					HX_STACK_LINE(628)
-					this->backward = !(this->backward);
-					HX_STACK_LINE(629)
-					if ((this->backward)){
-						HX_STACK_LINE(629)
+					HX_STACK_LINE(592)
+					this->_backward = !(this->_backward);
+					HX_STACK_LINE(593)
+					if ((this->_backward)){
+						HX_STACK_LINE(593)
 						this->scale = ((int)1 - this->scale);
 					}
-					HX_STACK_LINE(632)
+					HX_STACK_LINE(596)
 					this->start();
 				}
 				;break;
 				case (int)8: {
-					HX_STACK_LINE(635)
-					this->_secondsSinceStart = (this->duration + this->startDelay);
-					HX_STACK_LINE(636)
+					HX_STACK_LINE(599)
+					this->_secondsSinceStart = this->duration;
+					HX_STACK_LINE(600)
 					this->active = false;
-					HX_STACK_LINE(637)
+					HX_STACK_LINE(601)
 					::flixel::tweens::FlxTween_obj::manager->remove(hx::ObjectPtr<OBJ_>(this),true);
 				}
 				;break;
 			}
 		}
-		HX_STACK_LINE(640)
+		HX_STACK_LINE(604)
 		this->finished = false;
 	}
 return null();
@@ -321,11 +251,11 @@ HX_DEFINE_DYNAMIC_FUNC0(FlxTween_obj,finish,(void))
 
 Void FlxTween_obj::cancel( ){
 {
-		HX_STACK_PUSH("FlxTween::cancel","flixel/tweens/FlxTween.hx",594);
+		HX_STACK_PUSH("FlxTween::cancel","flixel/tweens/FlxTween.hx",558);
 		HX_STACK_THIS(this);
-		HX_STACK_LINE(595)
+		HX_STACK_LINE(559)
 		this->active = false;
-		HX_STACK_LINE(596)
+		HX_STACK_LINE(560)
 		::flixel::tweens::FlxTween_obj::manager->remove(hx::ObjectPtr<OBJ_>(this),null());
 	}
 return null();
@@ -335,22 +265,20 @@ return null();
 HX_DEFINE_DYNAMIC_FUNC0(FlxTween_obj,cancel,(void))
 
 ::flixel::tweens::FlxTween FlxTween_obj::start( ){
-	HX_STACK_PUSH("FlxTween::start","flixel/tweens/FlxTween.hx",578);
+	HX_STACK_PUSH("FlxTween::start","flixel/tweens/FlxTween.hx",543);
 	HX_STACK_THIS(this);
-	HX_STACK_LINE(579)
+	HX_STACK_LINE(544)
 	this->_secondsSinceStart = (int)0;
-	HX_STACK_LINE(580)
-	this->_delayToUse = (  (((this->executions > (int)0))) ? Float(this->loopDelay) : Float(this->startDelay) );
-	HX_STACK_LINE(581)
+	HX_STACK_LINE(545)
 	if (((this->duration == (int)0))){
-		HX_STACK_LINE(583)
+		HX_STACK_LINE(547)
 		this->active = false;
-		HX_STACK_LINE(584)
+		HX_STACK_LINE(548)
 		return hx::ObjectPtr<OBJ_>(this);
 	}
-	HX_STACK_LINE(586)
+	HX_STACK_LINE(550)
 	this->active = true;
-	HX_STACK_LINE(587)
+	HX_STACK_LINE(551)
 	return hx::ObjectPtr<OBJ_>(this);
 }
 
@@ -359,29 +287,27 @@ HX_DEFINE_DYNAMIC_FUNC0(FlxTween_obj,start,return )
 
 Void FlxTween_obj::update( ){
 {
-		HX_STACK_PUSH("FlxTween::update","flixel/tweens/FlxTween.hx",555);
+		HX_STACK_PUSH("FlxTween::update","flixel/tweens/FlxTween.hx",520);
 		HX_STACK_THIS(this);
-		HX_STACK_LINE(556)
+		HX_STACK_LINE(521)
 		hx::AddEq(this->_secondsSinceStart,::flixel::FlxG_obj::elapsed);
-		HX_STACK_LINE(557)
-		Float delay = (  (((this->executions > (int)0))) ? Float(this->loopDelay) : Float(this->startDelay) );		HX_STACK_VAR(delay,"delay");
-		HX_STACK_LINE(558)
-		this->scale = (Float(::Math_obj::max((this->_secondsSinceStart - delay),(int)0)) / Float(this->duration));
-		HX_STACK_LINE(559)
+		HX_STACK_LINE(522)
+		this->scale = (Float(this->_secondsSinceStart) / Float(this->duration));
+		HX_STACK_LINE(524)
 		if (((this->ease_dyn() != null()))){
-			HX_STACK_LINE(560)
+			HX_STACK_LINE(525)
 			this->scale = this->ease(this->scale);
 		}
-		HX_STACK_LINE(563)
-		if ((this->backward)){
-			HX_STACK_LINE(564)
+		HX_STACK_LINE(528)
+		if ((this->_backward)){
+			HX_STACK_LINE(529)
 			this->scale = ((int)1 - this->scale);
 		}
-		HX_STACK_LINE(567)
-		if (((this->_secondsSinceStart >= (this->duration + delay)))){
-			HX_STACK_LINE(569)
-			this->scale = (  ((this->backward)) ? Float((int)0) : Float((int)1) );
-			HX_STACK_LINE(570)
+		HX_STACK_LINE(532)
+		if (((this->_secondsSinceStart >= this->duration))){
+			HX_STACK_LINE(534)
+			this->scale = (  ((this->_backward)) ? Float((int)0) : Float((int)1) );
+			HX_STACK_LINE(535)
 			this->finished = true;
 		}
 	}
@@ -393,13 +319,13 @@ HX_DEFINE_DYNAMIC_FUNC0(FlxTween_obj,update,(void))
 
 Void FlxTween_obj::destroy( ){
 {
-		HX_STACK_PUSH("FlxTween::destroy","flixel/tweens/FlxTween.hx",548);
+		HX_STACK_PUSH("FlxTween::destroy","flixel/tweens/FlxTween.hx",513);
 		HX_STACK_THIS(this);
-		HX_STACK_LINE(549)
+		HX_STACK_LINE(514)
 		this->complete = null();
-		HX_STACK_LINE(550)
+		HX_STACK_LINE(515)
 		this->ease = null();
-		HX_STACK_LINE(551)
+		HX_STACK_LINE(516)
 		this->userData = null();
 	}
 return null();
@@ -420,58 +346,18 @@ int FlxTween_obj::BACKWARD;
 
 ::flixel::plugin::TweenManager FlxTween_obj::manager;
 
-::flixel::tweens::FlxTween FlxTween_obj::tween( Dynamic Object,Dynamic Values,Float Duration,Dynamic Options){
-	HX_STACK_PUSH("FlxTween::tween","flixel/tweens/FlxTween.hx",73);
-	HX_STACK_ARG(Object,"Object");
-	HX_STACK_ARG(Values,"Values");
-	HX_STACK_ARG(Duration,"Duration");
-	HX_STACK_ARG(Options,"Options");
-	HX_STACK_LINE(74)
-	if (((Options == null()))){
-		struct _Function_2_1{
-			inline static Dynamic Block( ){
-				HX_STACK_PUSH("*::closure","flixel/tweens/FlxTween.hx",76);
-				{
-					hx::Anon __result = hx::Anon_obj::Create();
-					__result->Add(HX_CSTRING("type") , (int)8,false);
-					return __result;
-				}
-				return null();
-			}
-		};
-		HX_STACK_LINE(75)
-		Options = _Function_2_1::Block();
-	}
-	HX_STACK_LINE(79)
-	Array< ::String > fields = ::Reflect_obj::fields(Values);		HX_STACK_VAR(fields,"fields");
-	HX_STACK_LINE(80)
-	if (((fields->length == (int)1))){
-		HX_STACK_LINE(81)
-		return ::flixel::tweens::FlxTween_obj::singleVar(Object,fields->__get((int)0),::Reflect_obj::field(Values,fields->__get((int)0)),Duration,Options);
-	}
-	else{
-		HX_STACK_LINE(85)
-		return ::flixel::tweens::FlxTween_obj::multiVar(Object,Values,Duration,Options);
-	}
-	HX_STACK_LINE(80)
-	return null();
-}
-
-
-STATIC_HX_DEFINE_DYNAMIC_FUNC4(FlxTween_obj,tween,return )
-
 ::flixel::tweens::misc::VarTween FlxTween_obj::singleVar( Dynamic Object,::String Property,Float To,Float Duration,Dynamic Options){
-	HX_STACK_PUSH("FlxTween::singleVar","flixel/tweens/FlxTween.hx",107);
+	HX_STACK_PUSH("FlxTween::singleVar","flixel/tweens/FlxTween.hx",71);
 	HX_STACK_ARG(Object,"Object");
 	HX_STACK_ARG(Property,"Property");
 	HX_STACK_ARG(To,"To");
 	HX_STACK_ARG(Duration,"Duration");
 	HX_STACK_ARG(Options,"Options");
-	HX_STACK_LINE(108)
+	HX_STACK_LINE(72)
 	if (((Options == null()))){
 		struct _Function_2_1{
 			inline static Dynamic Block( ){
-				HX_STACK_PUSH("*::closure","flixel/tweens/FlxTween.hx",110);
+				HX_STACK_PUSH("*::closure","flixel/tweens/FlxTween.hx",74);
 				{
 					hx::Anon __result = hx::Anon_obj::Create();
 					__result->Add(HX_CSTRING("type") , (int)8,false);
@@ -480,35 +366,33 @@ STATIC_HX_DEFINE_DYNAMIC_FUNC4(FlxTween_obj,tween,return )
 				return null();
 			}
 		};
-		HX_STACK_LINE(109)
+		HX_STACK_LINE(73)
 		Options = _Function_2_1::Block();
 	}
-	HX_STACK_LINE(113)
+	HX_STACK_LINE(77)
 	::flixel::tweens::misc::VarTween tween = ::flixel::tweens::misc::VarTween_obj::__new(Options->__Field(HX_CSTRING("complete"),true),Options->__Field(HX_CSTRING("type"),true));		HX_STACK_VAR(tween,"tween");
-	HX_STACK_LINE(114)
-	tween->setDelays(Options->__Field(HX_CSTRING("startDelay"),true),Options->__Field(HX_CSTRING("loopDelay"),true));
-	HX_STACK_LINE(115)
+	HX_STACK_LINE(78)
 	tween->tween(Object,Property,To,Duration,Options->__Field(HX_CSTRING("ease"),true));
-	HX_STACK_LINE(116)
-	::flixel::tweens::FlxTween_obj::manager->add(tween,null());
-	HX_STACK_LINE(117)
+	HX_STACK_LINE(79)
+	::flixel::tweens::FlxTween_obj::addTween(tween,Options->__Field(HX_CSTRING("delay"),true));
+	HX_STACK_LINE(81)
 	return tween;
 }
 
 
 STATIC_HX_DEFINE_DYNAMIC_FUNC5(FlxTween_obj,singleVar,return )
 
-::flixel::tweens::FlxTween FlxTween_obj::multiVar( Dynamic Object,Dynamic Values,Float Duration,Dynamic Options){
-	HX_STACK_PUSH("FlxTween::multiVar","flixel/tweens/FlxTween.hx",136);
+::flixel::tweens::misc::MultiVarTween FlxTween_obj::multiVar( Dynamic Object,Dynamic Values,Float Duration,Dynamic Options){
+	HX_STACK_PUSH("FlxTween::multiVar","flixel/tweens/FlxTween.hx",99);
 	HX_STACK_ARG(Object,"Object");
 	HX_STACK_ARG(Values,"Values");
 	HX_STACK_ARG(Duration,"Duration");
 	HX_STACK_ARG(Options,"Options");
-	HX_STACK_LINE(137)
+	HX_STACK_LINE(100)
 	if (((Options == null()))){
 		struct _Function_2_1{
 			inline static Dynamic Block( ){
-				HX_STACK_PUSH("*::closure","flixel/tweens/FlxTween.hx",139);
+				HX_STACK_PUSH("*::closure","flixel/tweens/FlxTween.hx",102);
 				{
 					hx::Anon __result = hx::Anon_obj::Create();
 					__result->Add(HX_CSTRING("type") , (int)8,false);
@@ -517,18 +401,16 @@ STATIC_HX_DEFINE_DYNAMIC_FUNC5(FlxTween_obj,singleVar,return )
 				return null();
 			}
 		};
-		HX_STACK_LINE(138)
+		HX_STACK_LINE(101)
 		Options = _Function_2_1::Block();
 	}
-	HX_STACK_LINE(142)
+	HX_STACK_LINE(105)
 	::flixel::tweens::misc::MultiVarTween tween = ::flixel::tweens::misc::MultiVarTween_obj::__new(Options->__Field(HX_CSTRING("complete"),true),Options->__Field(HX_CSTRING("type"),true));		HX_STACK_VAR(tween,"tween");
-	HX_STACK_LINE(143)
-	tween->setDelays(Options->__Field(HX_CSTRING("startDelay"),true),Options->__Field(HX_CSTRING("loopDelay"),true));
-	HX_STACK_LINE(144)
+	HX_STACK_LINE(106)
 	tween->tween(Object,Values,Duration,Options->__Field(HX_CSTRING("ease"),true));
-	HX_STACK_LINE(145)
-	::flixel::tweens::FlxTween_obj::manager->add(tween,null());
-	HX_STACK_LINE(146)
+	HX_STACK_LINE(107)
+	::flixel::tweens::FlxTween_obj::addTween(tween,Options->__Field(HX_CSTRING("delay"),true));
+	HX_STACK_LINE(109)
 	return tween;
 }
 
@@ -536,16 +418,16 @@ STATIC_HX_DEFINE_DYNAMIC_FUNC5(FlxTween_obj,singleVar,return )
 STATIC_HX_DEFINE_DYNAMIC_FUNC4(FlxTween_obj,multiVar,return )
 
 ::flixel::tweens::misc::NumTween FlxTween_obj::num( Float FromValue,Float ToValue,Float Duration,Dynamic Options){
-	HX_STACK_PUSH("FlxTween::num","flixel/tweens/FlxTween.hx",165);
+	HX_STACK_PUSH("FlxTween::num","flixel/tweens/FlxTween.hx",127);
 	HX_STACK_ARG(FromValue,"FromValue");
 	HX_STACK_ARG(ToValue,"ToValue");
 	HX_STACK_ARG(Duration,"Duration");
 	HX_STACK_ARG(Options,"Options");
-	HX_STACK_LINE(166)
+	HX_STACK_LINE(128)
 	if (((Options == null()))){
 		struct _Function_2_1{
 			inline static Dynamic Block( ){
-				HX_STACK_PUSH("*::closure","flixel/tweens/FlxTween.hx",168);
+				HX_STACK_PUSH("*::closure","flixel/tweens/FlxTween.hx",130);
 				{
 					hx::Anon __result = hx::Anon_obj::Create();
 					__result->Add(HX_CSTRING("type") , (int)8,false);
@@ -554,18 +436,16 @@ STATIC_HX_DEFINE_DYNAMIC_FUNC4(FlxTween_obj,multiVar,return )
 				return null();
 			}
 		};
-		HX_STACK_LINE(167)
+		HX_STACK_LINE(129)
 		Options = _Function_2_1::Block();
 	}
-	HX_STACK_LINE(171)
+	HX_STACK_LINE(133)
 	::flixel::tweens::misc::NumTween tween = ::flixel::tweens::misc::NumTween_obj::__new(Options->__Field(HX_CSTRING("complete"),true),Options->__Field(HX_CSTRING("type"),true));		HX_STACK_VAR(tween,"tween");
-	HX_STACK_LINE(172)
-	tween->setDelays(Options->__Field(HX_CSTRING("startDelay"),true),Options->__Field(HX_CSTRING("loopDelay"),true));
-	HX_STACK_LINE(173)
+	HX_STACK_LINE(134)
 	tween->tween(FromValue,ToValue,Duration,Options->__Field(HX_CSTRING("ease"),true));
-	HX_STACK_LINE(174)
-	::flixel::tweens::FlxTween_obj::manager->add(tween,null());
-	HX_STACK_LINE(175)
+	HX_STACK_LINE(135)
+	::flixel::tweens::FlxTween_obj::addTween(tween,Options->__Field(HX_CSTRING("delay"),true));
+	HX_STACK_LINE(137)
 	return tween;
 }
 
@@ -573,17 +453,17 @@ STATIC_HX_DEFINE_DYNAMIC_FUNC4(FlxTween_obj,multiVar,return )
 STATIC_HX_DEFINE_DYNAMIC_FUNC4(FlxTween_obj,num,return )
 
 ::flixel::tweens::misc::AngleTween FlxTween_obj::angle( ::flixel::FlxSprite Sprite,Float FromAngle,Float ToAngle,Float Duration,Dynamic Options){
-	HX_STACK_PUSH("FlxTween::angle","flixel/tweens/FlxTween.hx",195);
+	HX_STACK_PUSH("FlxTween::angle","flixel/tweens/FlxTween.hx",156);
 	HX_STACK_ARG(Sprite,"Sprite");
 	HX_STACK_ARG(FromAngle,"FromAngle");
 	HX_STACK_ARG(ToAngle,"ToAngle");
 	HX_STACK_ARG(Duration,"Duration");
 	HX_STACK_ARG(Options,"Options");
-	HX_STACK_LINE(196)
+	HX_STACK_LINE(157)
 	if (((Options == null()))){
 		struct _Function_2_1{
 			inline static Dynamic Block( ){
-				HX_STACK_PUSH("*::closure","flixel/tweens/FlxTween.hx",198);
+				HX_STACK_PUSH("*::closure","flixel/tweens/FlxTween.hx",159);
 				{
 					hx::Anon __result = hx::Anon_obj::Create();
 					__result->Add(HX_CSTRING("type") , (int)8,false);
@@ -592,18 +472,16 @@ STATIC_HX_DEFINE_DYNAMIC_FUNC4(FlxTween_obj,num,return )
 				return null();
 			}
 		};
-		HX_STACK_LINE(197)
+		HX_STACK_LINE(158)
 		Options = _Function_2_1::Block();
 	}
-	HX_STACK_LINE(201)
+	HX_STACK_LINE(162)
 	::flixel::tweens::misc::AngleTween tween = ::flixel::tweens::misc::AngleTween_obj::__new(Options->__Field(HX_CSTRING("complete"),true),Options->__Field(HX_CSTRING("type"),true));		HX_STACK_VAR(tween,"tween");
-	HX_STACK_LINE(202)
-	tween->setDelays(Options->__Field(HX_CSTRING("startDelay"),true),Options->__Field(HX_CSTRING("loopDelay"),true));
-	HX_STACK_LINE(203)
+	HX_STACK_LINE(163)
 	tween->tween(FromAngle,ToAngle,Duration,Options->__Field(HX_CSTRING("ease"),true),Sprite);
-	HX_STACK_LINE(204)
-	::flixel::tweens::FlxTween_obj::manager->add(tween,null());
-	HX_STACK_LINE(205)
+	HX_STACK_LINE(164)
+	::flixel::tweens::FlxTween_obj::addTween(tween,Options->__Field(HX_CSTRING("delay"),true));
+	HX_STACK_LINE(166)
 	return tween;
 }
 
@@ -613,7 +491,7 @@ STATIC_HX_DEFINE_DYNAMIC_FUNC5(FlxTween_obj,angle,return )
 ::flixel::tweens::misc::ColorTween FlxTween_obj::color( ::flixel::FlxSprite Sprite,Float Duration,int FromColor,int ToColor,hx::Null< Float >  __o_FromAlpha,hx::Null< Float >  __o_ToAlpha,Dynamic Options){
 Float FromAlpha = __o_FromAlpha.Default(1);
 Float ToAlpha = __o_ToAlpha.Default(1);
-	HX_STACK_PUSH("FlxTween::color","flixel/tweens/FlxTween.hx",227);
+	HX_STACK_PUSH("FlxTween::color","flixel/tweens/FlxTween.hx",187);
 	HX_STACK_ARG(Sprite,"Sprite");
 	HX_STACK_ARG(Duration,"Duration");
 	HX_STACK_ARG(FromColor,"FromColor");
@@ -622,11 +500,11 @@ Float ToAlpha = __o_ToAlpha.Default(1);
 	HX_STACK_ARG(ToAlpha,"ToAlpha");
 	HX_STACK_ARG(Options,"Options");
 {
-		HX_STACK_LINE(228)
+		HX_STACK_LINE(188)
 		if (((Options == null()))){
 			struct _Function_2_1{
 				inline static Dynamic Block( ){
-					HX_STACK_PUSH("*::closure","flixel/tweens/FlxTween.hx",230);
+					HX_STACK_PUSH("*::closure","flixel/tweens/FlxTween.hx",190);
 					{
 						hx::Anon __result = hx::Anon_obj::Create();
 						__result->Add(HX_CSTRING("type") , (int)8,false);
@@ -635,18 +513,16 @@ Float ToAlpha = __o_ToAlpha.Default(1);
 					return null();
 				}
 			};
-			HX_STACK_LINE(229)
+			HX_STACK_LINE(189)
 			Options = _Function_2_1::Block();
 		}
-		HX_STACK_LINE(233)
+		HX_STACK_LINE(193)
 		::flixel::tweens::misc::ColorTween tween = ::flixel::tweens::misc::ColorTween_obj::__new(Options->__Field(HX_CSTRING("complete"),true),Options->__Field(HX_CSTRING("type"),true));		HX_STACK_VAR(tween,"tween");
-		HX_STACK_LINE(234)
-		tween->setDelays(Options->__Field(HX_CSTRING("startDelay"),true),Options->__Field(HX_CSTRING("loopDelay"),true));
-		HX_STACK_LINE(235)
+		HX_STACK_LINE(194)
 		tween->tween(Duration,FromColor,ToColor,FromAlpha,ToAlpha,Options->__Field(HX_CSTRING("ease"),true),Sprite);
-		HX_STACK_LINE(236)
-		::flixel::tweens::FlxTween_obj::manager->add(tween,null());
-		HX_STACK_LINE(237)
+		HX_STACK_LINE(195)
+		::flixel::tweens::FlxTween_obj::addTween(tween,Options->__Field(HX_CSTRING("delay"),true));
+		HX_STACK_LINE(197)
 		return tween;
 	}
 }
@@ -655,15 +531,15 @@ Float ToAlpha = __o_ToAlpha.Default(1);
 STATIC_HX_DEFINE_DYNAMIC_FUNC7(FlxTween_obj,color,return )
 
 ::flixel::tweens::sound::Fader FlxTween_obj::fader( Float Volume,Float Duration,Dynamic Options){
-	HX_STACK_PUSH("FlxTween::fader","flixel/tweens/FlxTween.hx",256);
+	HX_STACK_PUSH("FlxTween::fader","flixel/tweens/FlxTween.hx",215);
 	HX_STACK_ARG(Volume,"Volume");
 	HX_STACK_ARG(Duration,"Duration");
 	HX_STACK_ARG(Options,"Options");
-	HX_STACK_LINE(257)
+	HX_STACK_LINE(216)
 	if (((Options == null()))){
 		struct _Function_2_1{
 			inline static Dynamic Block( ){
-				HX_STACK_PUSH("*::closure","flixel/tweens/FlxTween.hx",259);
+				HX_STACK_PUSH("*::closure","flixel/tweens/FlxTween.hx",218);
 				{
 					hx::Anon __result = hx::Anon_obj::Create();
 					__result->Add(HX_CSTRING("type") , (int)8,false);
@@ -672,18 +548,16 @@ STATIC_HX_DEFINE_DYNAMIC_FUNC7(FlxTween_obj,color,return )
 				return null();
 			}
 		};
-		HX_STACK_LINE(258)
+		HX_STACK_LINE(217)
 		Options = _Function_2_1::Block();
 	}
-	HX_STACK_LINE(262)
+	HX_STACK_LINE(221)
 	::flixel::tweens::sound::Fader tween = ::flixel::tweens::sound::Fader_obj::__new(Options->__Field(HX_CSTRING("complete"),true),Options->__Field(HX_CSTRING("type"),true));		HX_STACK_VAR(tween,"tween");
-	HX_STACK_LINE(263)
-	tween->setDelays(Options->__Field(HX_CSTRING("startDelay"),true),Options->__Field(HX_CSTRING("loopDelay"),true));
-	HX_STACK_LINE(264)
+	HX_STACK_LINE(222)
 	tween->fadeTo(Volume,Duration,Options->__Field(HX_CSTRING("ease"),true));
-	HX_STACK_LINE(265)
-	::flixel::tweens::FlxTween_obj::manager->add(tween,null());
-	HX_STACK_LINE(266)
+	HX_STACK_LINE(223)
+	::flixel::tweens::FlxTween_obj::addTween(tween,Options->__Field(HX_CSTRING("delay"),true));
+	HX_STACK_LINE(225)
 	return tween;
 }
 
@@ -692,7 +566,7 @@ STATIC_HX_DEFINE_DYNAMIC_FUNC3(FlxTween_obj,fader,return )
 
 ::flixel::tweens::motion::LinearMotion FlxTween_obj::linearMotion( ::flixel::FlxObject Object,Float FromX,Float FromY,Float ToX,Float ToY,Float DurationOrSpeed,hx::Null< bool >  __o_UseDuration,Dynamic Options){
 bool UseDuration = __o_UseDuration.Default(true);
-	HX_STACK_PUSH("FlxTween::linearMotion","flixel/tweens/FlxTween.hx",290);
+	HX_STACK_PUSH("FlxTween::linearMotion","flixel/tweens/FlxTween.hx",248);
 	HX_STACK_ARG(Object,"Object");
 	HX_STACK_ARG(FromX,"FromX");
 	HX_STACK_ARG(FromY,"FromY");
@@ -702,11 +576,11 @@ bool UseDuration = __o_UseDuration.Default(true);
 	HX_STACK_ARG(UseDuration,"UseDuration");
 	HX_STACK_ARG(Options,"Options");
 {
-		HX_STACK_LINE(291)
+		HX_STACK_LINE(249)
 		if (((Options == null()))){
 			struct _Function_2_1{
 				inline static Dynamic Block( ){
-					HX_STACK_PUSH("*::closure","flixel/tweens/FlxTween.hx",293);
+					HX_STACK_PUSH("*::closure","flixel/tweens/FlxTween.hx",251);
 					{
 						hx::Anon __result = hx::Anon_obj::Create();
 						__result->Add(HX_CSTRING("type") , (int)8,false);
@@ -715,20 +589,18 @@ bool UseDuration = __o_UseDuration.Default(true);
 					return null();
 				}
 			};
-			HX_STACK_LINE(292)
+			HX_STACK_LINE(250)
 			Options = _Function_2_1::Block();
 		}
-		HX_STACK_LINE(296)
+		HX_STACK_LINE(254)
 		::flixel::tweens::motion::LinearMotion tween = ::flixel::tweens::motion::LinearMotion_obj::__new(Options->__Field(HX_CSTRING("complete"),true),Options->__Field(HX_CSTRING("type"),true));		HX_STACK_VAR(tween,"tween");
-		HX_STACK_LINE(297)
+		HX_STACK_LINE(255)
 		tween->setObject(Object);
-		HX_STACK_LINE(298)
-		tween->setDelays(Options->__Field(HX_CSTRING("startDelay"),true),Options->__Field(HX_CSTRING("loopDelay"),true));
-		HX_STACK_LINE(299)
+		HX_STACK_LINE(256)
 		tween->setMotion(FromX,FromY,ToX,ToY,DurationOrSpeed,UseDuration,Options->__Field(HX_CSTRING("ease"),true));
-		HX_STACK_LINE(300)
-		::flixel::tweens::FlxTween_obj::manager->add(tween,null());
-		HX_STACK_LINE(301)
+		HX_STACK_LINE(257)
+		::flixel::tweens::FlxTween_obj::addTween(tween,Options->__Field(HX_CSTRING("delay"),true));
+		HX_STACK_LINE(259)
 		return tween;
 	}
 }
@@ -738,7 +610,7 @@ STATIC_HX_DEFINE_DYNAMIC_FUNC8(FlxTween_obj,linearMotion,return )
 
 ::flixel::tweens::motion::QuadMotion FlxTween_obj::quadMotion( ::flixel::FlxObject Object,Float FromX,Float FromY,Float ControlX,Float ControlY,Float ToX,Float ToY,Float DurationOrSpeed,hx::Null< bool >  __o_UseDuration,Dynamic Options){
 bool UseDuration = __o_UseDuration.Default(true);
-	HX_STACK_PUSH("FlxTween::quadMotion","flixel/tweens/FlxTween.hx",326);
+	HX_STACK_PUSH("FlxTween::quadMotion","flixel/tweens/FlxTween.hx",283);
 	HX_STACK_ARG(Object,"Object");
 	HX_STACK_ARG(FromX,"FromX");
 	HX_STACK_ARG(FromY,"FromY");
@@ -750,11 +622,11 @@ bool UseDuration = __o_UseDuration.Default(true);
 	HX_STACK_ARG(UseDuration,"UseDuration");
 	HX_STACK_ARG(Options,"Options");
 {
-		HX_STACK_LINE(327)
+		HX_STACK_LINE(284)
 		if (((Options == null()))){
 			struct _Function_2_1{
 				inline static Dynamic Block( ){
-					HX_STACK_PUSH("*::closure","flixel/tweens/FlxTween.hx",329);
+					HX_STACK_PUSH("*::closure","flixel/tweens/FlxTween.hx",286);
 					{
 						hx::Anon __result = hx::Anon_obj::Create();
 						__result->Add(HX_CSTRING("type") , (int)8,false);
@@ -763,20 +635,18 @@ bool UseDuration = __o_UseDuration.Default(true);
 					return null();
 				}
 			};
-			HX_STACK_LINE(328)
+			HX_STACK_LINE(285)
 			Options = _Function_2_1::Block();
 		}
-		HX_STACK_LINE(332)
+		HX_STACK_LINE(289)
 		::flixel::tweens::motion::QuadMotion tween = ::flixel::tweens::motion::QuadMotion_obj::__new(Options->__Field(HX_CSTRING("complete"),true),Options->__Field(HX_CSTRING("type"),true));		HX_STACK_VAR(tween,"tween");
-		HX_STACK_LINE(333)
+		HX_STACK_LINE(290)
 		tween->setObject(Object);
-		HX_STACK_LINE(334)
-		tween->setDelays(Options->__Field(HX_CSTRING("startDelay"),true),Options->__Field(HX_CSTRING("loopDelay"),true));
-		HX_STACK_LINE(335)
+		HX_STACK_LINE(291)
 		tween->setMotion(FromX,FromY,ControlX,ControlY,ToX,ToY,DurationOrSpeed,UseDuration,Options->__Field(HX_CSTRING("ease"),true));
-		HX_STACK_LINE(336)
-		::flixel::tweens::FlxTween_obj::manager->add(tween,null());
-		HX_STACK_LINE(337)
+		HX_STACK_LINE(292)
+		::flixel::tweens::FlxTween_obj::addTween(tween,Options->__Field(HX_CSTRING("delay"),true));
+		HX_STACK_LINE(294)
 		return tween;
 	}
 }
@@ -785,7 +655,7 @@ bool UseDuration = __o_UseDuration.Default(true);
 STATIC_HX_DEFINE_DYNAMIC_FUNC10(FlxTween_obj,quadMotion,return )
 
 ::flixel::tweens::motion::CubicMotion FlxTween_obj::cubicMotion( ::flixel::FlxObject Object,Float FromX,Float FromY,Float aX,Float aY,Float bX,Float bY,Float ToX,Float ToY,Float Duration,Dynamic Options){
-	HX_STACK_PUSH("FlxTween::cubicMotion","flixel/tweens/FlxTween.hx",363);
+	HX_STACK_PUSH("FlxTween::cubicMotion","flixel/tweens/FlxTween.hx",319);
 	HX_STACK_ARG(Object,"Object");
 	HX_STACK_ARG(FromX,"FromX");
 	HX_STACK_ARG(FromY,"FromY");
@@ -797,11 +667,11 @@ STATIC_HX_DEFINE_DYNAMIC_FUNC10(FlxTween_obj,quadMotion,return )
 	HX_STACK_ARG(ToY,"ToY");
 	HX_STACK_ARG(Duration,"Duration");
 	HX_STACK_ARG(Options,"Options");
-	HX_STACK_LINE(364)
+	HX_STACK_LINE(320)
 	if (((Options == null()))){
 		struct _Function_2_1{
 			inline static Dynamic Block( ){
-				HX_STACK_PUSH("*::closure","flixel/tweens/FlxTween.hx",366);
+				HX_STACK_PUSH("*::closure","flixel/tweens/FlxTween.hx",322);
 				{
 					hx::Anon __result = hx::Anon_obj::Create();
 					__result->Add(HX_CSTRING("type") , (int)8,false);
@@ -810,20 +680,18 @@ STATIC_HX_DEFINE_DYNAMIC_FUNC10(FlxTween_obj,quadMotion,return )
 				return null();
 			}
 		};
-		HX_STACK_LINE(365)
+		HX_STACK_LINE(321)
 		Options = _Function_2_1::Block();
 	}
-	HX_STACK_LINE(369)
+	HX_STACK_LINE(325)
 	::flixel::tweens::motion::CubicMotion tween = ::flixel::tweens::motion::CubicMotion_obj::__new(Options->__Field(HX_CSTRING("complete"),true),Options->__Field(HX_CSTRING("type"),true));		HX_STACK_VAR(tween,"tween");
-	HX_STACK_LINE(370)
+	HX_STACK_LINE(326)
 	tween->setObject(Object);
-	HX_STACK_LINE(371)
-	tween->setDelays(Options->__Field(HX_CSTRING("startDelay"),true),Options->__Field(HX_CSTRING("loopDelay"),true));
-	HX_STACK_LINE(372)
+	HX_STACK_LINE(327)
 	tween->setMotion(FromX,FromY,aX,aY,bX,bY,ToX,ToY,Duration,Options->__Field(HX_CSTRING("ease"),true));
-	HX_STACK_LINE(373)
-	::flixel::tweens::FlxTween_obj::manager->add(tween,null());
-	HX_STACK_LINE(374)
+	HX_STACK_LINE(328)
+	::flixel::tweens::FlxTween_obj::addTween(tween,Options->__Field(HX_CSTRING("delay"),true));
+	HX_STACK_LINE(330)
 	return tween;
 }
 
@@ -832,7 +700,7 @@ STATIC_HX_DEFINE_DYNAMIC_FUNC11(FlxTween_obj,cubicMotion,return )
 
 ::flixel::tweens::motion::CircularMotion FlxTween_obj::circularMotion( ::flixel::FlxObject Object,Float CenterX,Float CenterY,Float Radius,Float Angle,bool Clockwise,Float DurationOrSpeed,hx::Null< bool >  __o_UseDuration,Dynamic Options){
 bool UseDuration = __o_UseDuration.Default(true);
-	HX_STACK_PUSH("FlxTween::circularMotion","flixel/tweens/FlxTween.hx",399);
+	HX_STACK_PUSH("FlxTween::circularMotion","flixel/tweens/FlxTween.hx",354);
 	HX_STACK_ARG(Object,"Object");
 	HX_STACK_ARG(CenterX,"CenterX");
 	HX_STACK_ARG(CenterY,"CenterY");
@@ -843,11 +711,11 @@ bool UseDuration = __o_UseDuration.Default(true);
 	HX_STACK_ARG(UseDuration,"UseDuration");
 	HX_STACK_ARG(Options,"Options");
 {
-		HX_STACK_LINE(400)
+		HX_STACK_LINE(355)
 		if (((Options == null()))){
 			struct _Function_2_1{
 				inline static Dynamic Block( ){
-					HX_STACK_PUSH("*::closure","flixel/tweens/FlxTween.hx",402);
+					HX_STACK_PUSH("*::closure","flixel/tweens/FlxTween.hx",357);
 					{
 						hx::Anon __result = hx::Anon_obj::Create();
 						__result->Add(HX_CSTRING("type") , (int)8,false);
@@ -856,20 +724,18 @@ bool UseDuration = __o_UseDuration.Default(true);
 					return null();
 				}
 			};
-			HX_STACK_LINE(401)
+			HX_STACK_LINE(356)
 			Options = _Function_2_1::Block();
 		}
-		HX_STACK_LINE(405)
+		HX_STACK_LINE(360)
 		::flixel::tweens::motion::CircularMotion tween = ::flixel::tweens::motion::CircularMotion_obj::__new(Options->__Field(HX_CSTRING("complete"),true),Options->__Field(HX_CSTRING("type"),true));		HX_STACK_VAR(tween,"tween");
-		HX_STACK_LINE(406)
+		HX_STACK_LINE(361)
 		tween->setObject(Object);
-		HX_STACK_LINE(407)
-		tween->setDelays(Options->__Field(HX_CSTRING("startDelay"),true),Options->__Field(HX_CSTRING("loopDelay"),true));
-		HX_STACK_LINE(408)
+		HX_STACK_LINE(362)
 		tween->setMotion(CenterX,CenterY,Radius,Angle,Clockwise,DurationOrSpeed,UseDuration,Options->__Field(HX_CSTRING("ease"),true));
-		HX_STACK_LINE(409)
-		::flixel::tweens::FlxTween_obj::manager->add(tween,null());
-		HX_STACK_LINE(410)
+		HX_STACK_LINE(363)
+		::flixel::tweens::FlxTween_obj::addTween(tween,Options->__Field(HX_CSTRING("delay"),true));
+		HX_STACK_LINE(365)
 		return tween;
 	}
 }
@@ -879,18 +745,18 @@ STATIC_HX_DEFINE_DYNAMIC_FUNC9(FlxTween_obj,circularMotion,return )
 
 ::flixel::tweens::motion::LinearPath FlxTween_obj::linearPath( ::flixel::FlxObject Object,Array< ::Dynamic > Points,Float DurationOrSpeed,hx::Null< bool >  __o_UseDuration,Dynamic Options){
 bool UseDuration = __o_UseDuration.Default(true);
-	HX_STACK_PUSH("FlxTween::linearPath","flixel/tweens/FlxTween.hx",430);
+	HX_STACK_PUSH("FlxTween::linearPath","flixel/tweens/FlxTween.hx",384);
 	HX_STACK_ARG(Object,"Object");
 	HX_STACK_ARG(Points,"Points");
 	HX_STACK_ARG(DurationOrSpeed,"DurationOrSpeed");
 	HX_STACK_ARG(UseDuration,"UseDuration");
 	HX_STACK_ARG(Options,"Options");
 {
-		HX_STACK_LINE(431)
+		HX_STACK_LINE(385)
 		if (((Options == null()))){
 			struct _Function_2_1{
 				inline static Dynamic Block( ){
-					HX_STACK_PUSH("*::closure","flixel/tweens/FlxTween.hx",433);
+					HX_STACK_PUSH("*::closure","flixel/tweens/FlxTween.hx",387);
 					{
 						hx::Anon __result = hx::Anon_obj::Create();
 						__result->Add(HX_CSTRING("type") , (int)8,false);
@@ -899,34 +765,32 @@ bool UseDuration = __o_UseDuration.Default(true);
 					return null();
 				}
 			};
-			HX_STACK_LINE(432)
+			HX_STACK_LINE(386)
 			Options = _Function_2_1::Block();
 		}
-		HX_STACK_LINE(436)
+		HX_STACK_LINE(390)
 		::flixel::tweens::motion::LinearPath tween = ::flixel::tweens::motion::LinearPath_obj::__new(Options->__Field(HX_CSTRING("complete"),true),Options->__Field(HX_CSTRING("type"),true));		HX_STACK_VAR(tween,"tween");
-		HX_STACK_LINE(438)
+		HX_STACK_LINE(392)
 		if (((Points != null()))){
-			HX_STACK_LINE(440)
+			HX_STACK_LINE(394)
 			int _g = (int)0;		HX_STACK_VAR(_g,"_g");
-			HX_STACK_LINE(440)
+			HX_STACK_LINE(394)
 			while(((_g < Points->length))){
-				HX_STACK_LINE(440)
+				HX_STACK_LINE(394)
 				::flixel::util::FlxPoint point = Points->__get(_g).StaticCast< ::flixel::util::FlxPoint >();		HX_STACK_VAR(point,"point");
-				HX_STACK_LINE(440)
+				HX_STACK_LINE(394)
 				++(_g);
-				HX_STACK_LINE(442)
+				HX_STACK_LINE(396)
 				tween->addPoint(point->x,point->y);
 			}
 		}
-		HX_STACK_LINE(446)
+		HX_STACK_LINE(400)
 		tween->setObject(Object);
-		HX_STACK_LINE(447)
-		tween->setDelays(Options->__Field(HX_CSTRING("startDelay"),true),Options->__Field(HX_CSTRING("loopDelay"),true));
-		HX_STACK_LINE(448)
+		HX_STACK_LINE(401)
 		tween->setMotion(DurationOrSpeed,UseDuration,Options->__Field(HX_CSTRING("ease"),true));
-		HX_STACK_LINE(449)
-		::flixel::tweens::FlxTween_obj::manager->add(tween,null());
-		HX_STACK_LINE(450)
+		HX_STACK_LINE(402)
+		::flixel::tweens::FlxTween_obj::addTween(tween,Options->__Field(HX_CSTRING("delay"),true));
+		HX_STACK_LINE(404)
 		return tween;
 	}
 }
@@ -936,18 +800,18 @@ STATIC_HX_DEFINE_DYNAMIC_FUNC5(FlxTween_obj,linearPath,return )
 
 ::flixel::tweens::motion::QuadPath FlxTween_obj::quadPath( ::flixel::FlxObject Object,Array< ::Dynamic > Points,Float DurationOrSpeed,hx::Null< bool >  __o_UseDuration,Dynamic Options){
 bool UseDuration = __o_UseDuration.Default(true);
-	HX_STACK_PUSH("FlxTween::quadPath","flixel/tweens/FlxTween.hx",470);
+	HX_STACK_PUSH("FlxTween::quadPath","flixel/tweens/FlxTween.hx",423);
 	HX_STACK_ARG(Object,"Object");
 	HX_STACK_ARG(Points,"Points");
 	HX_STACK_ARG(DurationOrSpeed,"DurationOrSpeed");
 	HX_STACK_ARG(UseDuration,"UseDuration");
 	HX_STACK_ARG(Options,"Options");
 {
-		HX_STACK_LINE(471)
+		HX_STACK_LINE(424)
 		if (((Options == null()))){
 			struct _Function_2_1{
 				inline static Dynamic Block( ){
-					HX_STACK_PUSH("*::closure","flixel/tweens/FlxTween.hx",473);
+					HX_STACK_PUSH("*::closure","flixel/tweens/FlxTween.hx",426);
 					{
 						hx::Anon __result = hx::Anon_obj::Create();
 						__result->Add(HX_CSTRING("type") , (int)8,false);
@@ -956,40 +820,74 @@ bool UseDuration = __o_UseDuration.Default(true);
 					return null();
 				}
 			};
-			HX_STACK_LINE(472)
+			HX_STACK_LINE(425)
 			Options = _Function_2_1::Block();
 		}
-		HX_STACK_LINE(476)
+		HX_STACK_LINE(429)
 		::flixel::tweens::motion::QuadPath tween = ::flixel::tweens::motion::QuadPath_obj::__new(Options->__Field(HX_CSTRING("complete"),true),Options->__Field(HX_CSTRING("type"),true));		HX_STACK_VAR(tween,"tween");
-		HX_STACK_LINE(478)
+		HX_STACK_LINE(431)
 		if (((Points != null()))){
-			HX_STACK_LINE(480)
+			HX_STACK_LINE(433)
 			int _g = (int)0;		HX_STACK_VAR(_g,"_g");
-			HX_STACK_LINE(480)
+			HX_STACK_LINE(433)
 			while(((_g < Points->length))){
-				HX_STACK_LINE(480)
+				HX_STACK_LINE(433)
 				::flixel::util::FlxPoint point = Points->__get(_g).StaticCast< ::flixel::util::FlxPoint >();		HX_STACK_VAR(point,"point");
-				HX_STACK_LINE(480)
+				HX_STACK_LINE(433)
 				++(_g);
-				HX_STACK_LINE(482)
+				HX_STACK_LINE(435)
 				tween->addPoint(point->x,point->y);
 			}
 		}
-		HX_STACK_LINE(486)
+		HX_STACK_LINE(439)
 		tween->setObject(Object);
-		HX_STACK_LINE(487)
-		tween->setDelays(Options->__Field(HX_CSTRING("startDelay"),true),Options->__Field(HX_CSTRING("loopDelay"),true));
-		HX_STACK_LINE(488)
+		HX_STACK_LINE(440)
 		tween->setMotion(DurationOrSpeed,UseDuration,Options->__Field(HX_CSTRING("ease"),true));
-		HX_STACK_LINE(489)
-		::flixel::tweens::FlxTween_obj::manager->add(tween,null());
-		HX_STACK_LINE(490)
+		HX_STACK_LINE(441)
+		::flixel::tweens::FlxTween_obj::addTween(tween,Options->__Field(HX_CSTRING("delay"),true));
+		HX_STACK_LINE(443)
 		return tween;
 	}
 }
 
 
 STATIC_HX_DEFINE_DYNAMIC_FUNC5(FlxTween_obj,quadPath,return )
+
+Void FlxTween_obj::addTween( ::flixel::tweens::FlxTween Tween,Dynamic Delay){
+{
+		HX_STACK_PUSH("FlxTween::addTween","flixel/tweens/FlxTween.hx",450);
+		HX_STACK_ARG(Tween,"Tween");
+		HX_STACK_ARG(Delay,"Delay");
+		HX_STACK_LINE(450)
+		if (((bool((Delay != null())) || bool((Delay > (int)0))))){
+			HX_STACK_LINE(453)
+			::flixel::util::FlxTimer t = ::flixel::util::FlxTimer_obj::start(Delay,::flixel::tweens::FlxTween_obj::timerCallback_dyn(),null());		HX_STACK_VAR(t,"t");
+			HX_STACK_LINE(454)
+			t->userData = Tween;
+		}
+		else{
+			HX_STACK_LINE(457)
+			::flixel::tweens::FlxTween_obj::manager->add(Tween,null());
+		}
+	}
+return null();
+}
+
+
+STATIC_HX_DEFINE_DYNAMIC_FUNC2(FlxTween_obj,addTween,(void))
+
+Void FlxTween_obj::timerCallback( ::flixel::util::FlxTimer Timer){
+{
+		HX_STACK_PUSH("FlxTween::timerCallback","flixel/tweens/FlxTween.hx",466);
+		HX_STACK_ARG(Timer,"Timer");
+		HX_STACK_LINE(466)
+		::flixel::tweens::FlxTween_obj::addTween(hx::TCast< flixel::tweens::FlxTween >::cast(Timer->userData),null());
+	}
+return null();
+}
+
+
+STATIC_HX_DEFINE_DYNAMIC_FUNC1(FlxTween_obj,timerCallback,(void))
 
 
 FlxTween_obj::FlxTween_obj()
@@ -999,12 +897,9 @@ FlxTween_obj::FlxTween_obj()
 void FlxTween_obj::__Mark(HX_MARK_PARAMS)
 {
 	HX_MARK_BEGIN_CLASS(FlxTween);
-	HX_MARK_MEMBER_NAME(_delayToUse,"_delayToUse");
+	HX_MARK_MEMBER_NAME(_backward,"_backward");
 	HX_MARK_MEMBER_NAME(_secondsSinceStart,"_secondsSinceStart");
-	HX_MARK_MEMBER_NAME(loopDelay,"loopDelay");
-	HX_MARK_MEMBER_NAME(startDelay,"startDelay");
 	HX_MARK_MEMBER_NAME(executions,"executions");
-	HX_MARK_MEMBER_NAME(backward,"backward");
 	HX_MARK_MEMBER_NAME(scale,"scale");
 	HX_MARK_MEMBER_NAME(finished,"finished");
 	HX_MARK_MEMBER_NAME(type,"type");
@@ -1018,12 +913,9 @@ void FlxTween_obj::__Mark(HX_MARK_PARAMS)
 
 void FlxTween_obj::__Visit(HX_VISIT_PARAMS)
 {
-	HX_VISIT_MEMBER_NAME(_delayToUse,"_delayToUse");
+	HX_VISIT_MEMBER_NAME(_backward,"_backward");
 	HX_VISIT_MEMBER_NAME(_secondsSinceStart,"_secondsSinceStart");
-	HX_VISIT_MEMBER_NAME(loopDelay,"loopDelay");
-	HX_VISIT_MEMBER_NAME(startDelay,"startDelay");
 	HX_VISIT_MEMBER_NAME(executions,"executions");
-	HX_VISIT_MEMBER_NAME(backward,"backward");
 	HX_VISIT_MEMBER_NAME(scale,"scale");
 	HX_VISIT_MEMBER_NAME(finished,"finished");
 	HX_VISIT_MEMBER_NAME(type,"type");
@@ -1045,7 +937,6 @@ Dynamic FlxTween_obj::__Field(const ::String &inName,bool inCallProp)
 		if (HX_FIELD_EQ(inName,"ease") ) { return ease; }
 		break;
 	case 5:
-		if (HX_FIELD_EQ(inName,"tween") ) { return tween_dyn(); }
 		if (HX_FIELD_EQ(inName,"angle") ) { return angle_dyn(); }
 		if (HX_FIELD_EQ(inName,"color") ) { return color_dyn(); }
 		if (HX_FIELD_EQ(inName,"fader") ) { return fader_dyn(); }
@@ -1066,8 +957,8 @@ Dynamic FlxTween_obj::__Field(const ::String &inName,bool inCallProp)
 	case 8:
 		if (HX_FIELD_EQ(inName,"multiVar") ) { return multiVar_dyn(); }
 		if (HX_FIELD_EQ(inName,"quadPath") ) { return quadPath_dyn(); }
+		if (HX_FIELD_EQ(inName,"addTween") ) { return addTween_dyn(); }
 		if (HX_FIELD_EQ(inName,"set_type") ) { return set_type_dyn(); }
-		if (HX_FIELD_EQ(inName,"backward") ) { return backward; }
 		if (HX_FIELD_EQ(inName,"finished") ) { return finished; }
 		if (HX_FIELD_EQ(inName,"userData") ) { return userData; }
 		if (HX_FIELD_EQ(inName,"duration") ) { return duration; }
@@ -1075,30 +966,26 @@ Dynamic FlxTween_obj::__Field(const ::String &inName,bool inCallProp)
 		break;
 	case 9:
 		if (HX_FIELD_EQ(inName,"singleVar") ) { return singleVar_dyn(); }
-		if (HX_FIELD_EQ(inName,"setDelays") ) { return setDelays_dyn(); }
-		if (HX_FIELD_EQ(inName,"loopDelay") ) { return loopDelay; }
+		if (HX_FIELD_EQ(inName,"_backward") ) { return _backward; }
 		break;
 	case 10:
 		if (HX_FIELD_EQ(inName,"quadMotion") ) { return quadMotion_dyn(); }
 		if (HX_FIELD_EQ(inName,"linearPath") ) { return linearPath_dyn(); }
-		if (HX_FIELD_EQ(inName,"startDelay") ) { return startDelay; }
 		if (HX_FIELD_EQ(inName,"executions") ) { return executions; }
 		break;
 	case 11:
 		if (HX_FIELD_EQ(inName,"cubicMotion") ) { return cubicMotion_dyn(); }
 		if (HX_FIELD_EQ(inName,"set_percent") ) { return set_percent_dyn(); }
 		if (HX_FIELD_EQ(inName,"get_percent") ) { return get_percent_dyn(); }
-		if (HX_FIELD_EQ(inName,"_delayToUse") ) { return _delayToUse; }
 		break;
 	case 12:
 		if (HX_FIELD_EQ(inName,"linearMotion") ) { return linearMotion_dyn(); }
 		break;
 	case 13:
-		if (HX_FIELD_EQ(inName,"set_loopDelay") ) { return set_loopDelay_dyn(); }
+		if (HX_FIELD_EQ(inName,"timerCallback") ) { return timerCallback_dyn(); }
 		break;
 	case 14:
 		if (HX_FIELD_EQ(inName,"circularMotion") ) { return circularMotion_dyn(); }
-		if (HX_FIELD_EQ(inName,"set_startDelay") ) { return set_startDelay_dyn(); }
 		break;
 	case 18:
 		if (HX_FIELD_EQ(inName,"_secondsSinceStart") ) { return _secondsSinceStart; }
@@ -1124,21 +1011,16 @@ Dynamic FlxTween_obj::__SetField(const ::String &inName,const Dynamic &inValue,b
 		if (HX_FIELD_EQ(inName,"percent") ) { return set_percent(inValue); }
 		break;
 	case 8:
-		if (HX_FIELD_EQ(inName,"backward") ) { backward=inValue.Cast< bool >(); return inValue; }
 		if (HX_FIELD_EQ(inName,"finished") ) { finished=inValue.Cast< bool >(); return inValue; }
 		if (HX_FIELD_EQ(inName,"userData") ) { userData=inValue.Cast< Dynamic >(); return inValue; }
 		if (HX_FIELD_EQ(inName,"duration") ) { duration=inValue.Cast< Float >(); return inValue; }
 		if (HX_FIELD_EQ(inName,"complete") ) { complete=inValue.Cast< Dynamic >(); return inValue; }
 		break;
 	case 9:
-		if (HX_FIELD_EQ(inName,"loopDelay") ) { if (inCallProp) return set_loopDelay(inValue);loopDelay=inValue.Cast< Dynamic >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"_backward") ) { _backward=inValue.Cast< bool >(); return inValue; }
 		break;
 	case 10:
-		if (HX_FIELD_EQ(inName,"startDelay") ) { if (inCallProp) return set_startDelay(inValue);startDelay=inValue.Cast< Dynamic >(); return inValue; }
 		if (HX_FIELD_EQ(inName,"executions") ) { executions=inValue.Cast< int >(); return inValue; }
-		break;
-	case 11:
-		if (HX_FIELD_EQ(inName,"_delayToUse") ) { _delayToUse=inValue.Cast< Float >(); return inValue; }
 		break;
 	case 18:
 		if (HX_FIELD_EQ(inName,"_secondsSinceStart") ) { _secondsSinceStart=inValue.Cast< Float >(); return inValue; }
@@ -1148,12 +1030,9 @@ Dynamic FlxTween_obj::__SetField(const ::String &inName,const Dynamic &inValue,b
 
 void FlxTween_obj::__GetFields(Array< ::String> &outFields)
 {
-	outFields->push(HX_CSTRING("_delayToUse"));
+	outFields->push(HX_CSTRING("_backward"));
 	outFields->push(HX_CSTRING("_secondsSinceStart"));
-	outFields->push(HX_CSTRING("loopDelay"));
-	outFields->push(HX_CSTRING("startDelay"));
 	outFields->push(HX_CSTRING("executions"));
-	outFields->push(HX_CSTRING("backward"));
 	outFields->push(HX_CSTRING("scale"));
 	outFields->push(HX_CSTRING("finished"));
 	outFields->push(HX_CSTRING("percent"));
@@ -1171,7 +1050,6 @@ static ::String sStaticFields[] = {
 	HX_CSTRING("ONESHOT"),
 	HX_CSTRING("BACKWARD"),
 	HX_CSTRING("manager"),
-	HX_CSTRING("tween"),
 	HX_CSTRING("singleVar"),
 	HX_CSTRING("multiVar"),
 	HX_CSTRING("num"),
@@ -1184,26 +1062,22 @@ static ::String sStaticFields[] = {
 	HX_CSTRING("circularMotion"),
 	HX_CSTRING("linearPath"),
 	HX_CSTRING("quadPath"),
+	HX_CSTRING("addTween"),
+	HX_CSTRING("timerCallback"),
 	String(null()) };
 
 static ::String sMemberFields[] = {
 	HX_CSTRING("set_type"),
 	HX_CSTRING("set_percent"),
 	HX_CSTRING("get_percent"),
-	HX_CSTRING("set_loopDelay"),
-	HX_CSTRING("set_startDelay"),
-	HX_CSTRING("setDelays"),
 	HX_CSTRING("finish"),
 	HX_CSTRING("cancel"),
 	HX_CSTRING("start"),
 	HX_CSTRING("update"),
 	HX_CSTRING("destroy"),
-	HX_CSTRING("_delayToUse"),
+	HX_CSTRING("_backward"),
 	HX_CSTRING("_secondsSinceStart"),
-	HX_CSTRING("loopDelay"),
-	HX_CSTRING("startDelay"),
 	HX_CSTRING("executions"),
-	HX_CSTRING("backward"),
 	HX_CSTRING("scale"),
 	HX_CSTRING("finished"),
 	HX_CSTRING("type"),

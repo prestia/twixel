@@ -30,6 +30,7 @@
 #include <haxe/ds/IntMap.h>
 #include <haxe/Unserializer.h>
 #include <haxe/Timer.h>
+#include <lime/utils/Libs.h>
 #include <haxe/Serializer.h>
 #include <haxe/Json.h>
 #include <haxe/CallStack.h>
@@ -38,7 +39,6 @@
 #include <flixel/util/loaders/TexturePackerData.h>
 #include <flixel/util/loaders/TextureAtlasFrame.h>
 #include <flixel/util/loaders/CachedGraphics.h>
-#include <flixel/util/FlxVelocity.h>
 #include <flixel/util/FlxStringUtil.h>
 #include <flixel/util/FlxSpriteUtil.h>
 #include <flixel/util/FlxSort.h>
@@ -340,6 +340,7 @@ hx::RegisterResources( hx::GetResources() );
 ::haxe::ds::IntMap_obj::__register();
 ::haxe::Unserializer_obj::__register();
 ::haxe::Timer_obj::__register();
+::lime::utils::Libs_obj::__register();
 ::haxe::Serializer_obj::__register();
 ::haxe::Json_obj::__register();
 ::haxe::CallStack_obj::__register();
@@ -348,7 +349,6 @@ hx::RegisterResources( hx::GetResources() );
 ::flixel::util::loaders::TexturePackerData_obj::__register();
 ::flixel::util::loaders::TextureAtlasFrame_obj::__register();
 ::flixel::util::loaders::CachedGraphics_obj::__register();
-::flixel::util::FlxVelocity_obj::__register();
 ::flixel::util::FlxStringUtil_obj::__register();
 ::flixel::util::FlxSpriteUtil_obj::__register();
 ::flixel::util::FlxSort_obj::__register();
@@ -886,7 +886,6 @@ hx::RegisterResources( hx::GetResources() );
 ::flixel::util::FlxSort_obj::__boot();
 ::flixel::util::FlxSpriteUtil_obj::__boot();
 ::flixel::util::FlxStringUtil_obj::__boot();
-::flixel::util::FlxVelocity_obj::__boot();
 ::flixel::util::loaders::CachedGraphics_obj::__boot();
 ::flixel::util::loaders::TextureAtlasFrame_obj::__boot();
 ::flixel::util::loaders::TexturePackerData_obj::__boot();
@@ -895,6 +894,7 @@ hx::RegisterResources( hx::GetResources() );
 ::haxe::CallStack_obj::__boot();
 ::haxe::Json_obj::__boot();
 ::haxe::Serializer_obj::__boot();
+::lime::utils::Libs_obj::__boot();
 ::haxe::Timer_obj::__boot();
 ::haxe::Unserializer_obj::__boot();
 ::haxe::ds::IntMap_obj::__boot();

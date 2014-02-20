@@ -1,5 +1,8 @@
 #include <hxcpp.h>
 
+#ifndef INCLUDED_Std
+#include <Std.h>
+#endif
 #ifndef INCLUDED_flash_display_DisplayObject
 #include <flash/display/DisplayObject.h>
 #endif
@@ -33,14 +36,17 @@
 #ifndef INCLUDED_flixel_interfaces_IFlxDestroyable
 #include <flixel/interfaces/IFlxDestroyable.h>
 #endif
+#ifndef INCLUDED_flixel_system_frontEnds_DebuggerFrontEnd
+#include <flixel/system/frontEnds/DebuggerFrontEnd.h>
+#endif
 #ifndef INCLUDED_flixel_util_FlxAngle
 #include <flixel/util/FlxAngle.h>
 #endif
+#ifndef INCLUDED_flixel_util_FlxMath
+#include <flixel/util/FlxMath.h>
+#endif
 #ifndef INCLUDED_flixel_util_FlxPoint
 #include <flixel/util/FlxPoint.h>
-#endif
-#ifndef INCLUDED_flixel_util_FlxStringUtil
-#include <flixel/util/FlxStringUtil.h>
 #endif
 #ifndef INCLUDED_hxMath
 #include <hxMath.h>
@@ -50,15 +56,15 @@ namespace input{
 
 Void FlxSwipe_obj::__construct(int ID,::flixel::util::FlxPoint StartPosition,::flixel::util::FlxPoint EndPosition,Float StartTimeInTicks)
 {
-HX_STACK_PUSH("FlxSwipe::new","flixel/input/FlxSwipe.hx",33);
+HX_STACK_PUSH("FlxSwipe::new","flixel/input/FlxSwipe.hx",32);
 {
-	HX_STACK_LINE(34)
+	HX_STACK_LINE(33)
 	this->ID = ID;
-	HX_STACK_LINE(35)
+	HX_STACK_LINE(34)
 	this->startPosition = StartPosition;
-	HX_STACK_LINE(36)
+	HX_STACK_LINE(35)
 	this->endPosition = EndPosition;
-	HX_STACK_LINE(37)
+	HX_STACK_LINE(36)
 	this->_startTimeInTicks = StartTimeInTicks;
 }
 ;
@@ -170,143 +176,73 @@ Float FlxSwipe_obj::get_distance( ){
 HX_DEFINE_DYNAMIC_FUNC0(FlxSwipe_obj,get_distance,return )
 
 ::String FlxSwipe_obj::toString( ){
-	HX_STACK_PUSH("FlxSwipe::toString","flixel/input/FlxSwipe.hx",41);
+	HX_STACK_PUSH("FlxSwipe::toString","flixel/input/FlxSwipe.hx",40);
 	HX_STACK_THIS(this);
+	HX_STACK_LINE(41)
+	int p = ::flixel::FlxG_obj::debugger->precision;		HX_STACK_VAR(p,"p");
 	struct _Function_1_1{
-		inline static Dynamic Block( ::flixel::input::FlxSwipe_obj *__this){
-			HX_STACK_PUSH("*::closure","flixel/input/FlxSwipe.hx",42);
+		inline static Float Block( ::flixel::input::FlxSwipe_obj *__this){
+			HX_STACK_PUSH("*::closure","flixel/input/FlxSwipe.hx",45);
 			{
-				hx::Anon __result = hx::Anon_obj::Create();
-				__result->Add(HX_CSTRING("label") , HX_CSTRING("ID"),false);
-				__result->Add(HX_CSTRING("value") , __this->ID,false);
-				return __result;
+				HX_STACK_LINE(45)
+				Float dx = (__this->startPosition->x - __this->endPosition->x);		HX_STACK_VAR(dx,"dx");
+				Float dy = (__this->startPosition->y - __this->endPosition->y);		HX_STACK_VAR(dy,"dy");
+				HX_STACK_LINE(45)
+				return ::Math_obj::sqrt(((dx * dx) + (dy * dy)));
 			}
 			return null();
 		}
 	};
 	struct _Function_1_2{
-		inline static Dynamic Block( ::flixel::input::FlxSwipe_obj *__this){
-			HX_STACK_PUSH("*::closure","flixel/input/FlxSwipe.hx",43);
-			{
-				hx::Anon __result = hx::Anon_obj::Create();
-				__result->Add(HX_CSTRING("label") , HX_CSTRING("start"),false);
-				__result->Add(HX_CSTRING("value") , __this->startPosition,false);
-				return __result;
-			}
-			return null();
-		}
-	};
-	struct _Function_1_3{
-		inline static Dynamic Block( ::flixel::input::FlxSwipe_obj *__this){
-			HX_STACK_PUSH("*::closure","flixel/input/FlxSwipe.hx",44);
-			{
-				hx::Anon __result = hx::Anon_obj::Create();
-				__result->Add(HX_CSTRING("label") , HX_CSTRING("end"),false);
-				__result->Add(HX_CSTRING("value") , __this->endPosition,false);
-				return __result;
-			}
-			return null();
-		}
-	};
-	struct _Function_1_4{
-		inline static Dynamic Block( ::flixel::input::FlxSwipe_obj *__this){
-			HX_STACK_PUSH("*::closure","flixel/input/FlxSwipe.hx",45);
-			{
-				hx::Anon __result = hx::Anon_obj::Create();
-				__result->Add(HX_CSTRING("label") , HX_CSTRING("distance"),false);
-				struct _Function_2_1{
-					inline static Float Block( ::flixel::input::FlxSwipe_obj *__this){
-						HX_STACK_PUSH("*::closure","flixel/input/FlxSwipe.hx",45);
-						{
-							HX_STACK_LINE(45)
-							Float dx = (__this->startPosition->x - __this->endPosition->x);		HX_STACK_VAR(dx,"dx");
-							Float dy = (__this->startPosition->y - __this->endPosition->y);		HX_STACK_VAR(dy,"dy");
-							HX_STACK_LINE(45)
-							return ::Math_obj::sqrt(((dx * dx) + (dy * dy)));
-						}
-						return null();
-					}
-				};
-				__result->Add(HX_CSTRING("value") , _Function_2_1::Block(__this),false);
-				return __result;
-			}
-			return null();
-		}
-	};
-	struct _Function_1_5{
-		inline static Dynamic Block( ::flixel::input::FlxSwipe_obj *__this){
+		inline static Float Block( ::flixel::input::FlxSwipe_obj *__this){
 			HX_STACK_PUSH("*::closure","flixel/input/FlxSwipe.hx",46);
 			{
-				hx::Anon __result = hx::Anon_obj::Create();
-				__result->Add(HX_CSTRING("label") , HX_CSTRING("angle"),false);
-				struct _Function_2_1{
-					inline static Float Block( ::flixel::input::FlxSwipe_obj *__this){
-						HX_STACK_PUSH("*::closure","flixel/input/FlxSwipe.hx",46);
-						{
-							HX_STACK_LINE(46)
-							::flixel::util::FlxPoint Point1 = __this->startPosition;		HX_STACK_VAR(Point1,"Point1");
-							::flixel::util::FlxPoint Point2 = __this->endPosition;		HX_STACK_VAR(Point2,"Point2");
-							HX_STACK_LINE(46)
-							Float x = (Point2->x - Point1->x);		HX_STACK_VAR(x,"x");
-							HX_STACK_LINE(46)
-							Float y = (Point2->y - Point1->y);		HX_STACK_VAR(y,"y");
-							HX_STACK_LINE(46)
-							Float angle = (int)0;		HX_STACK_VAR(angle,"angle");
-							HX_STACK_LINE(46)
-							if (((bool((x != (int)0)) || bool((y != (int)0))))){
-								HX_STACK_LINE(46)
-								Float c1 = (::Math_obj::PI * 0.25);		HX_STACK_VAR(c1,"c1");
-								HX_STACK_LINE(46)
-								Float c2 = ((int)3 * c1);		HX_STACK_VAR(c2,"c2");
-								HX_STACK_LINE(46)
-								Float ay = (  (((y < (int)0))) ? Float(-(y)) : Float(y) );		HX_STACK_VAR(ay,"ay");
-								HX_STACK_LINE(46)
-								if (((x >= (int)0))){
-									HX_STACK_LINE(46)
-									angle = (c1 - (c1 * ((Float(((x - ay))) / Float(((x + ay)))))));
-								}
-								else{
-									HX_STACK_LINE(46)
-									angle = (c2 - (c1 * ((Float(((x + ay))) / Float(((ay - x)))))));
-								}
-								HX_STACK_LINE(46)
-								angle = (((  (((y < (int)0))) ? Float(-(angle)) : Float(angle) )) * ::flixel::util::FlxAngle_obj::TO_DEG);
-								HX_STACK_LINE(46)
-								if (((angle > (int)90))){
-									HX_STACK_LINE(46)
-									angle = (angle - (int)270);
-								}
-								else{
-									HX_STACK_LINE(46)
-									hx::AddEq(angle,(int)90);
-								}
-							}
-							HX_STACK_LINE(46)
-							return angle;
-						}
-						return null();
+				HX_STACK_LINE(46)
+				::flixel::util::FlxPoint Point1 = __this->startPosition;		HX_STACK_VAR(Point1,"Point1");
+				::flixel::util::FlxPoint Point2 = __this->endPosition;		HX_STACK_VAR(Point2,"Point2");
+				HX_STACK_LINE(46)
+				Float x = (Point2->x - Point1->x);		HX_STACK_VAR(x,"x");
+				HX_STACK_LINE(46)
+				Float y = (Point2->y - Point1->y);		HX_STACK_VAR(y,"y");
+				HX_STACK_LINE(46)
+				Float angle = (int)0;		HX_STACK_VAR(angle,"angle");
+				HX_STACK_LINE(46)
+				if (((bool((x != (int)0)) || bool((y != (int)0))))){
+					HX_STACK_LINE(46)
+					Float c1 = (::Math_obj::PI * 0.25);		HX_STACK_VAR(c1,"c1");
+					HX_STACK_LINE(46)
+					Float c2 = ((int)3 * c1);		HX_STACK_VAR(c2,"c2");
+					HX_STACK_LINE(46)
+					Float ay = (  (((y < (int)0))) ? Float(-(y)) : Float(y) );		HX_STACK_VAR(ay,"ay");
+					HX_STACK_LINE(46)
+					if (((x >= (int)0))){
+						HX_STACK_LINE(46)
+						angle = (c1 - (c1 * ((Float(((x - ay))) / Float(((x + ay)))))));
 					}
-				};
-				__result->Add(HX_CSTRING("value") , _Function_2_1::Block(__this),false);
-				return __result;
+					else{
+						HX_STACK_LINE(46)
+						angle = (c2 - (c1 * ((Float(((x + ay))) / Float(((ay - x)))))));
+					}
+					HX_STACK_LINE(46)
+					angle = (((  (((y < (int)0))) ? Float(-(angle)) : Float(angle) )) * ::flixel::util::FlxAngle_obj::TO_DEG);
+					HX_STACK_LINE(46)
+					if (((angle > (int)90))){
+						HX_STACK_LINE(46)
+						angle = (angle - (int)270);
+					}
+					else{
+						HX_STACK_LINE(46)
+						hx::AddEq(angle,(int)90);
+					}
+				}
+				HX_STACK_LINE(46)
+				return angle;
 			}
 			return null();
 		}
 	};
-	struct _Function_1_6{
-		inline static Dynamic Block( ::flixel::input::FlxSwipe_obj *__this){
-			HX_STACK_PUSH("*::closure","flixel/input/FlxSwipe.hx",47);
-			{
-				hx::Anon __result = hx::Anon_obj::Create();
-				__result->Add(HX_CSTRING("label") , HX_CSTRING("duration"),false);
-				__result->Add(HX_CSTRING("value") , (Float(((::flixel::FlxG_obj::game->ticks - __this->_startTimeInTicks))) / Float((int)1000)),false);
-				return __result;
-			}
-			return null();
-		}
-	};
-	HX_STACK_LINE(41)
-	return ::flixel::util::FlxStringUtil_obj::getDebugString(Dynamic( Array_obj<Dynamic>::__new().Add(_Function_1_1::Block(this)).Add(_Function_1_2::Block(this)).Add(_Function_1_3::Block(this)).Add(_Function_1_4::Block(this)).Add(_Function_1_5::Block(this)).Add(_Function_1_6::Block(this))));
+	HX_STACK_LINE(42)
+	return ((((((((((((HX_CSTRING("(ID: ") + this->ID) + HX_CSTRING(" | start: ")) + ::Std_obj::string(this->startPosition)) + HX_CSTRING(" | end: ")) + ::Std_obj::string(this->endPosition)) + HX_CSTRING(" | distance: ")) + ::flixel::util::FlxMath_obj::roundDecimal(_Function_1_1::Block(this),p)) + HX_CSTRING(" | angle: ")) + ::flixel::util::FlxMath_obj::roundDecimal(_Function_1_2::Block(this),p)) + HX_CSTRING(" | duration: ")) + ::flixel::util::FlxMath_obj::roundDecimal((Float(((::flixel::FlxG_obj::game->ticks - this->_startTimeInTicks))) / Float((int)1000)),p)) + HX_CSTRING("s )"));
 }
 
 

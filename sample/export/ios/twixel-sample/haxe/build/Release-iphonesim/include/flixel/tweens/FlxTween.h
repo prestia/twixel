@@ -15,6 +15,7 @@ HX_DECLARE_CLASS2(flixel,plugin,TweenManager)
 HX_DECLARE_CLASS2(flixel,tweens,FlxTween)
 HX_DECLARE_CLASS3(flixel,tweens,misc,AngleTween)
 HX_DECLARE_CLASS3(flixel,tweens,misc,ColorTween)
+HX_DECLARE_CLASS3(flixel,tweens,misc,MultiVarTween)
 HX_DECLARE_CLASS3(flixel,tweens,misc,NumTween)
 HX_DECLARE_CLASS3(flixel,tweens,misc,VarTween)
 HX_DECLARE_CLASS3(flixel,tweens,motion,CircularMotion)
@@ -26,6 +27,7 @@ HX_DECLARE_CLASS3(flixel,tweens,motion,QuadMotion)
 HX_DECLARE_CLASS3(flixel,tweens,motion,QuadPath)
 HX_DECLARE_CLASS3(flixel,tweens,sound,Fader)
 HX_DECLARE_CLASS2(flixel,util,FlxPoint)
+HX_DECLARE_CLASS2(flixel,util,FlxTimer)
 namespace flixel{
 namespace tweens{
 
@@ -62,15 +64,6 @@ class HXCPP_CLASS_ATTRIBUTES  FlxTween_obj : public hx::Object{
 		virtual Float get_percent( );
 		Dynamic get_percent_dyn();
 
-		virtual Dynamic set_loopDelay( Dynamic value);
-		Dynamic set_loopDelay_dyn();
-
-		virtual Dynamic set_startDelay( Dynamic value);
-		Dynamic set_startDelay_dyn();
-
-		virtual Void setDelays( Dynamic startDelay,Dynamic loopDelay);
-		Dynamic setDelays_dyn();
-
 		virtual Void finish( );
 		Dynamic finish_dyn();
 
@@ -86,12 +79,9 @@ class HXCPP_CLASS_ATTRIBUTES  FlxTween_obj : public hx::Object{
 		virtual Void destroy( );
 		Dynamic destroy_dyn();
 
-		Float _delayToUse;
+		bool _backward;
 		Float _secondsSinceStart;
-		Dynamic loopDelay;
-		Dynamic startDelay;
 		int executions;
-		bool backward;
 		Float scale;
 		bool finished;
 		int type;
@@ -108,13 +98,10 @@ class HXCPP_CLASS_ATTRIBUTES  FlxTween_obj : public hx::Object{
 		static int ONESHOT;
 		static int BACKWARD;
 		static ::flixel::plugin::TweenManager manager;
-		static ::flixel::tweens::FlxTween tween( Dynamic Object,Dynamic Values,Float Duration,Dynamic Options);
-		static Dynamic tween_dyn();
-
 		static ::flixel::tweens::misc::VarTween singleVar( Dynamic Object,::String Property,Float To,Float Duration,Dynamic Options);
 		static Dynamic singleVar_dyn();
 
-		static ::flixel::tweens::FlxTween multiVar( Dynamic Object,Dynamic Values,Float Duration,Dynamic Options);
+		static ::flixel::tweens::misc::MultiVarTween multiVar( Dynamic Object,Dynamic Values,Float Duration,Dynamic Options);
 		static Dynamic multiVar_dyn();
 
 		static ::flixel::tweens::misc::NumTween num( Float FromValue,Float ToValue,Float Duration,Dynamic Options);
@@ -146,6 +133,12 @@ class HXCPP_CLASS_ATTRIBUTES  FlxTween_obj : public hx::Object{
 
 		static ::flixel::tweens::motion::QuadPath quadPath( ::flixel::FlxObject Object,Array< ::Dynamic > Points,Float DurationOrSpeed,hx::Null< bool >  UseDuration,Dynamic Options);
 		static Dynamic quadPath_dyn();
+
+		static Void addTween( ::flixel::tweens::FlxTween Tween,Dynamic Delay);
+		static Dynamic addTween_dyn();
+
+		static Void timerCallback( ::flixel::util::FlxTimer Timer);
+		static Dynamic timerCallback_dyn();
 
 };
 

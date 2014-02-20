@@ -32,34 +32,34 @@ namespace ui{
 
 Void FlxButton_obj::__construct(hx::Null< Float >  __o_X,hx::Null< Float >  __o_Y,::String Label,Dynamic OnClick)
 {
-HX_STACK_PUSH("FlxButton::new","flixel/ui/FlxButton.hx",34);
+HX_STACK_PUSH("FlxButton::new","flixel/ui/FlxButton.hx",35);
 Float X = __o_X.Default(0);
 Float Y = __o_Y.Default(0);
 {
-	HX_STACK_LINE(35)
+	HX_STACK_LINE(36)
 	super::__construct(X,Y,Label,OnClick);
-	HX_STACK_LINE(37)
+	HX_STACK_LINE(38)
 	if (((Label != null()))){
-		HX_STACK_LINE(39)
+		HX_STACK_LINE(40)
 		{
-			HX_STACK_LINE(39)
+			HX_STACK_LINE(40)
 			int _g = (int)0;		HX_STACK_VAR(_g,"_g");
 			Array< ::Dynamic > _g1 = this->labelOffsets;		HX_STACK_VAR(_g1,"_g1");
-			HX_STACK_LINE(39)
+			HX_STACK_LINE(40)
 			while(((_g < _g1->length))){
-				HX_STACK_LINE(39)
+				HX_STACK_LINE(40)
 				::flixel::util::FlxPoint point = _g1->__get(_g).StaticCast< ::flixel::util::FlxPoint >();		HX_STACK_VAR(point,"point");
-				HX_STACK_LINE(39)
+				HX_STACK_LINE(40)
 				++(_g);
-				HX_STACK_LINE(41)
+				HX_STACK_LINE(42)
 				point->set((point->x - (int)1),(point->y + (int)3));
 			}
 		}
-		HX_STACK_LINE(43)
-		this->label = ::flixel::text::FlxText_obj::__new((X + this->labelOffsets->__get((int)0).StaticCast< ::flixel::util::FlxPoint >()->x),(Y + this->labelOffsets->__get((int)0).StaticCast< ::flixel::util::FlxPoint >()->y),(int)80,Label,null(),null());
 		HX_STACK_LINE(44)
-		this->label->__Field(HX_CSTRING("setFormat"),true)(null(),(int)8,(int)3355443,HX_CSTRING("center"),null(),null(),null());
+		this->label = ::flixel::text::FlxText_obj::__new((X + this->labelOffsets->__get((int)0).StaticCast< ::flixel::util::FlxPoint >()->x),(Y + this->labelOffsets->__get((int)0).StaticCast< ::flixel::util::FlxPoint >()->y),(int)80,Label,null(),null());
 		HX_STACK_LINE(45)
+		this->label->__Field(HX_CSTRING("setFormat"),true)(null(),(int)8,(int)3355443,HX_CSTRING("center"),null(),null(),null());
+		HX_STACK_LINE(46)
 		this->label->__Field(HX_CSTRING("set_alpha"),true)(this->labelAlphas->__get(this->status));
 	}
 }
@@ -82,15 +82,15 @@ Dynamic FlxButton_obj::__Create(hx::DynamicArray inArgs)
 
 Void FlxButton_obj::resetHelpers( ){
 {
-		HX_STACK_PUSH("FlxButton::resetHelpers","flixel/ui/FlxButton.hx",53);
+		HX_STACK_PUSH("FlxButton::resetHelpers","flixel/ui/FlxButton.hx",54);
 		HX_STACK_THIS(this);
-		HX_STACK_LINE(54)
+		HX_STACK_LINE(55)
 		this->super::resetHelpers();
-		HX_STACK_LINE(56)
+		HX_STACK_LINE(57)
 		if (((this->label != null()))){
-			HX_STACK_LINE(58)
-			this->label->__Field(HX_CSTRING("set_width"),true)(this->label->__FieldRef(HX_CSTRING("frameWidth")) = ::Std_obj::_int(this->get_width()));
 			HX_STACK_LINE(59)
+			this->label->__Field(HX_CSTRING("set_width"),true)(this->label->__FieldRef(HX_CSTRING("frameWidth")) = ::Std_obj::_int(this->get_width()));
+			HX_STACK_LINE(60)
 			this->label->__Field(HX_CSTRING("set_size"),true)(this->label->__Field(HX_CSTRING("get_size"),true)());
 		}
 	}

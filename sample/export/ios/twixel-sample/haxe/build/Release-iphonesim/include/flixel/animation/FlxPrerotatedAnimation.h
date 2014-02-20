@@ -9,7 +9,6 @@
 HX_DECLARE_CLASS2(flixel,animation,FlxAnimationController)
 HX_DECLARE_CLASS2(flixel,animation,FlxBaseAnimation)
 HX_DECLARE_CLASS2(flixel,animation,FlxPrerotatedAnimation)
-HX_DECLARE_CLASS2(flixel,interfaces,IFlxDestroyable)
 namespace flixel{
 namespace animation{
 

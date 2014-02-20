@@ -12,9 +12,6 @@
 #ifndef INCLUDED_flixel_animation_FlxPrerotatedAnimation
 #include <flixel/animation/FlxPrerotatedAnimation.h>
 #endif
-#ifndef INCLUDED_flixel_interfaces_IFlxDestroyable
-#include <flixel/interfaces/IFlxDestroyable.h>
-#endif
 #ifndef INCLUDED_hxMath
 #include <hxMath.h>
 #endif

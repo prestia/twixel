@@ -63,15 +63,15 @@ namespace mouse{
 
 Void FlxMouseButton_obj::__construct(int ID)
 {
-HX_STACK_PUSH("FlxMouseButton::new","flixel/input/mouse/FlxMouseButton.hx",10);
+HX_STACK_PUSH("FlxMouseButton::new","flixel/input/mouse/FlxMouseButton.hx",9);
 {
-	HX_STACK_LINE(26)
-	this->last = (int)0;
 	HX_STACK_LINE(25)
+	this->last = (int)0;
+	HX_STACK_LINE(24)
 	this->current = (int)0;
-	HX_STACK_LINE(35)
+	HX_STACK_LINE(34)
 	this->_ID = ID;
-	HX_STACK_LINE(36)
+	HX_STACK_LINE(35)
 	this->_justPressedPosition = ::flixel::util::FlxPoint_obj::__new(null(),null());
 }
 ;
@@ -97,9 +97,9 @@ hx::Object *FlxMouseButton_obj::__ToInterface(const hx::type_info &inType) {
 }
 
 bool FlxMouseButton_obj::justReleased( ){
-	HX_STACK_PUSH("FlxMouseButton::justReleased","flixel/input/mouse/FlxMouseButton.hx",178);
+	HX_STACK_PUSH("FlxMouseButton::justReleased","flixel/input/mouse/FlxMouseButton.hx",177);
 	HX_STACK_THIS(this);
-	HX_STACK_LINE(178)
+	HX_STACK_LINE(177)
 	return (bool((this->current == (int)-1)) || bool((this->current == (int)-2)));
 }
 
@@ -107,9 +107,9 @@ bool FlxMouseButton_obj::justReleased( ){
 HX_DEFINE_DYNAMIC_FUNC0(FlxMouseButton_obj,justReleased,return )
 
 bool FlxMouseButton_obj::justPressed( ){
-	HX_STACK_PUSH("FlxMouseButton::justPressed","flixel/input/mouse/FlxMouseButton.hx",172);
+	HX_STACK_PUSH("FlxMouseButton::justPressed","flixel/input/mouse/FlxMouseButton.hx",171);
 	HX_STACK_THIS(this);
-	HX_STACK_LINE(172)
+	HX_STACK_LINE(171)
 	return (bool((this->current == (int)2)) || bool((this->current == (int)-2)));
 }
 
@@ -117,9 +117,9 @@ bool FlxMouseButton_obj::justPressed( ){
 HX_DEFINE_DYNAMIC_FUNC0(FlxMouseButton_obj,justPressed,return )
 
 bool FlxMouseButton_obj::pressed( ){
-	HX_STACK_PUSH("FlxMouseButton::pressed","flixel/input/mouse/FlxMouseButton.hx",166);
+	HX_STACK_PUSH("FlxMouseButton::pressed","flixel/input/mouse/FlxMouseButton.hx",165);
 	HX_STACK_THIS(this);
-	HX_STACK_LINE(166)
+	HX_STACK_LINE(165)
 	return (this->current > (int)0);
 }
 
@@ -128,11 +128,11 @@ HX_DEFINE_DYNAMIC_FUNC0(FlxMouseButton_obj,pressed,return )
 
 Void FlxMouseButton_obj::reset( ){
 {
-		HX_STACK_PUSH("FlxMouseButton::reset","flixel/input/mouse/FlxMouseButton.hx",157);
+		HX_STACK_PUSH("FlxMouseButton::reset","flixel/input/mouse/FlxMouseButton.hx",156);
 		HX_STACK_THIS(this);
-		HX_STACK_LINE(158)
+		HX_STACK_LINE(157)
 		this->current = (int)0;
-		HX_STACK_LINE(159)
+		HX_STACK_LINE(158)
 		this->last = (int)0;
 	}
 return null();
@@ -143,22 +143,22 @@ HX_DEFINE_DYNAMIC_FUNC0(FlxMouseButton_obj,reset,(void))
 
 Void FlxMouseButton_obj::onUp( ::flash::events::MouseEvent FlashEvent){
 {
-		HX_STACK_PUSH("FlxMouseButton::onUp","flixel/input/mouse/FlxMouseButton.hx",130);
+		HX_STACK_PUSH("FlxMouseButton::onUp","flixel/input/mouse/FlxMouseButton.hx",129);
 		HX_STACK_THIS(this);
 		HX_STACK_ARG(FlashEvent,"FlashEvent");
-		HX_STACK_LINE(130)
+		HX_STACK_LINE(129)
 		if (((this->current == (int)2))){
-			HX_STACK_LINE(140)
+			HX_STACK_LINE(139)
 			this->current = (int)-2;
 		}
 		else{
-			HX_STACK_LINE(143)
+			HX_STACK_LINE(142)
 			if (((this->current > (int)0))){
-				HX_STACK_LINE(144)
+				HX_STACK_LINE(143)
 				this->current = (int)-1;
 			}
 			else{
-				HX_STACK_LINE(148)
+				HX_STACK_LINE(147)
 				this->current = (int)0;
 			}
 		}
@@ -171,16 +171,16 @@ HX_DEFINE_DYNAMIC_FUNC1(FlxMouseButton_obj,onUp,(void))
 
 Void FlxMouseButton_obj::onDown( ::flash::events::MouseEvent FlashEvent){
 {
-		HX_STACK_PUSH("FlxMouseButton::onDown","flixel/input/mouse/FlxMouseButton.hx",76);
+		HX_STACK_PUSH("FlxMouseButton::onDown","flixel/input/mouse/FlxMouseButton.hx",75);
 		HX_STACK_THIS(this);
 		HX_STACK_ARG(FlashEvent,"FlashEvent");
-		HX_STACK_LINE(76)
+		HX_STACK_LINE(75)
 		if (((this->current > (int)0))){
-			HX_STACK_LINE(116)
+			HX_STACK_LINE(115)
 			this->current = (int)1;
 		}
 		else{
-			HX_STACK_LINE(120)
+			HX_STACK_LINE(119)
 			this->current = (int)2;
 		}
 	}
@@ -192,9 +192,9 @@ HX_DEFINE_DYNAMIC_FUNC1(FlxMouseButton_obj,onDown,(void))
 
 Void FlxMouseButton_obj::destroy( ){
 {
-		HX_STACK_PUSH("FlxMouseButton::destroy","flixel/input/mouse/FlxMouseButton.hx",71);
+		HX_STACK_PUSH("FlxMouseButton::destroy","flixel/input/mouse/FlxMouseButton.hx",70);
 		HX_STACK_THIS(this);
-		HX_STACK_LINE(71)
+		HX_STACK_LINE(70)
 		this->_justPressedPosition = null();
 	}
 return null();
@@ -205,40 +205,40 @@ HX_DEFINE_DYNAMIC_FUNC0(FlxMouseButton_obj,destroy,(void))
 
 Void FlxMouseButton_obj::update( ){
 {
-		HX_STACK_PUSH("FlxMouseButton::update","flixel/input/mouse/FlxMouseButton.hx",43);
+		HX_STACK_PUSH("FlxMouseButton::update","flixel/input/mouse/FlxMouseButton.hx",42);
 		HX_STACK_THIS(this);
-		HX_STACK_LINE(44)
+		HX_STACK_LINE(43)
 		if (((bool((this->last == (int)-1)) && bool((this->current == (int)-1))))){
-			HX_STACK_LINE(45)
+			HX_STACK_LINE(44)
 			this->current = (int)0;
 		}
 		else{
-			HX_STACK_LINE(48)
+			HX_STACK_LINE(47)
 			if (((bool((this->last == (int)2)) && bool((this->current == (int)2))))){
-				HX_STACK_LINE(49)
+				HX_STACK_LINE(48)
 				this->current = (int)1;
 			}
 			else{
-				HX_STACK_LINE(52)
+				HX_STACK_LINE(51)
 				if (((bool((this->last == (int)-2)) && bool((this->current == (int)-2))))){
-					HX_STACK_LINE(53)
+					HX_STACK_LINE(52)
 					this->current = (int)0;
 				}
 			}
 		}
-		HX_STACK_LINE(57)
+		HX_STACK_LINE(56)
 		this->last = this->current;
-		HX_STACK_LINE(59)
+		HX_STACK_LINE(58)
 		if (((bool((this->current == (int)2)) || bool((this->current == (int)-2))))){
-			HX_STACK_LINE(61)
+			HX_STACK_LINE(60)
 			this->_justPressedPosition->set(::flixel::FlxG_obj::mouse->screenX,::flixel::FlxG_obj::mouse->screenY);
-			HX_STACK_LINE(62)
+			HX_STACK_LINE(61)
 			this->_justPressedTimeInTicks = ::flixel::FlxG_obj::game->ticks;
 		}
 		else{
-			HX_STACK_LINE(64)
+			HX_STACK_LINE(63)
 			if (((bool((this->current == (int)-1)) || bool((this->current == (int)-2))))){
-				HX_STACK_LINE(65)
+				HX_STACK_LINE(64)
 				::flixel::FlxG_obj::swipes->push(::flixel::input::FlxSwipe_obj::__new(this->_ID,this->_justPressedPosition,::flixel::FlxG_obj::mouse->getScreenPosition(null(),null()),this->_justPressedTimeInTicks));
 			}
 		}

@@ -1,5 +1,8 @@
 #include <hxcpp.h>
 
+#ifndef INCLUDED_Std
+#include <Std.h>
+#endif
 #ifndef INCLUDED_flixel_FlxBasic
 #include <flixel/FlxBasic.h>
 #endif
@@ -11,9 +14,6 @@
 #endif
 #ifndef INCLUDED_flixel_system_FlxCollisionType
 #include <flixel/system/FlxCollisionType.h>
-#endif
-#ifndef INCLUDED_flixel_util_FlxStringUtil
-#include <flixel/util/FlxStringUtil.h>
 #endif
 namespace flixel{
 
@@ -59,56 +59,8 @@ hx::Object *FlxBasic_obj::__ToInterface(const hx::type_info &inType) {
 ::String FlxBasic_obj::toString( ){
 	HX_STACK_PUSH("FlxBasic::toString","flixel/FlxBasic.hx",176);
 	HX_STACK_THIS(this);
-	struct _Function_1_1{
-		inline static Dynamic Block( ::flixel::FlxBasic_obj *__this){
-			HX_STACK_PUSH("*::closure","flixel/FlxBasic.hx",177);
-			{
-				hx::Anon __result = hx::Anon_obj::Create();
-				__result->Add(HX_CSTRING("label") , HX_CSTRING("active"),false);
-				__result->Add(HX_CSTRING("value") , __this->active,false);
-				return __result;
-			}
-			return null();
-		}
-	};
-	struct _Function_1_2{
-		inline static Dynamic Block( ::flixel::FlxBasic_obj *__this){
-			HX_STACK_PUSH("*::closure","flixel/FlxBasic.hx",178);
-			{
-				hx::Anon __result = hx::Anon_obj::Create();
-				__result->Add(HX_CSTRING("label") , HX_CSTRING("visible"),false);
-				__result->Add(HX_CSTRING("value") , __this->visible,false);
-				return __result;
-			}
-			return null();
-		}
-	};
-	struct _Function_1_3{
-		inline static Dynamic Block( ::flixel::FlxBasic_obj *__this){
-			HX_STACK_PUSH("*::closure","flixel/FlxBasic.hx",179);
-			{
-				hx::Anon __result = hx::Anon_obj::Create();
-				__result->Add(HX_CSTRING("label") , HX_CSTRING("alive"),false);
-				__result->Add(HX_CSTRING("value") , __this->alive,false);
-				return __result;
-			}
-			return null();
-		}
-	};
-	struct _Function_1_4{
-		inline static Dynamic Block( ::flixel::FlxBasic_obj *__this){
-			HX_STACK_PUSH("*::closure","flixel/FlxBasic.hx",180);
-			{
-				hx::Anon __result = hx::Anon_obj::Create();
-				__result->Add(HX_CSTRING("label") , HX_CSTRING("exists"),false);
-				__result->Add(HX_CSTRING("value") , __this->exists,false);
-				return __result;
-			}
-			return null();
-		}
-	};
 	HX_STACK_LINE(176)
-	return ::flixel::util::FlxStringUtil_obj::getDebugString(Dynamic( Array_obj<Dynamic>::__new().Add(_Function_1_1::Block(this)).Add(_Function_1_2::Block(this)).Add(_Function_1_3::Block(this)).Add(_Function_1_4::Block(this))));
+	return ((((((((HX_CSTRING("(active: ") + ::Std_obj::string(this->active)) + HX_CSTRING(" | visible: ")) + ::Std_obj::string(this->visible)) + HX_CSTRING(" | alive: ")) + ::Std_obj::string(this->alive)) + HX_CSTRING(" | exists: ")) + ::Std_obj::string(this->exists)) + HX_CSTRING(")"));
 }
 
 

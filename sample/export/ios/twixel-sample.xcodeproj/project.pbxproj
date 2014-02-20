@@ -401,16 +401,6 @@
 					 "-logg",
 					 "-lvorbis",
 					 "-llime",
-					 "-lstd",
-					 "-lregexp",
-					 "-lzlib",
-					 "-lcurl_ssl",
-					 "-lpng",
-					 "-ljpeg",
-					 "-lfreetype",
-					 "-logg",
-					 "-lvorbis",
-					 "-llime",
 					 "-ltwixel",
 					
 					
@@ -442,16 +432,6 @@
 					"\"$(SRCROOT)/twixel-sample/lib/i386\"",
 				);
 				OTHER_LDFLAGS = (
-					 "-lstd",
-					 "-lregexp",
-					 "-lzlib",
-					 "-lcurl_ssl",
-					 "-lpng",
-					 "-ljpeg",
-					 "-lfreetype",
-					 "-logg",
-					 "-lvorbis",
-					 "-llime",
 					 "-lstd",
 					 "-lregexp",
 					 "-lzlib",

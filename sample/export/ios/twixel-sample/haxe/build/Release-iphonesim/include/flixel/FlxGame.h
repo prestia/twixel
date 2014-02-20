@@ -30,10 +30,10 @@ class HXCPP_CLASS_ATTRIBUTES  FlxGame_obj : public ::flash::display::Sprite_obj{
 		typedef ::flash::display::Sprite_obj super;
 		typedef FlxGame_obj OBJ_;
 		FlxGame_obj();
-		Void __construct(hx::Null< int >  __o_GameSizeX,hx::Null< int >  __o_GameSizeY,::Class InitialState,hx::Null< Float >  __o_Zoom,hx::Null< int >  __o_UpdateFramerate,hx::Null< int >  __o_DrawFramerate,hx::Null< bool >  __o_SkipSplash,hx::Null< bool >  __o_StartFullscreen);
+		Void __construct(int GameSizeX,int GameSizeY,::Class InitialState,hx::Null< Float >  __o_Zoom,hx::Null< int >  __o_UpdateFramerate,hx::Null< int >  __o_DrawFramerate,hx::Null< bool >  __o_SkipSplash,hx::Null< bool >  __o_StartFullscreen);
 
 	public:
-		static hx::ObjectPtr< FlxGame_obj > __new(hx::Null< int >  __o_GameSizeX,hx::Null< int >  __o_GameSizeY,::Class InitialState,hx::Null< Float >  __o_Zoom,hx::Null< int >  __o_UpdateFramerate,hx::Null< int >  __o_DrawFramerate,hx::Null< bool >  __o_SkipSplash,hx::Null< bool >  __o_StartFullscreen);
+		static hx::ObjectPtr< FlxGame_obj > __new(int GameSizeX,int GameSizeY,::Class InitialState,hx::Null< Float >  __o_Zoom,hx::Null< int >  __o_UpdateFramerate,hx::Null< int >  __o_DrawFramerate,hx::Null< bool >  __o_SkipSplash,hx::Null< bool >  __o_StartFullscreen);
 		static Dynamic __CreateEmpty();
 		static Dynamic __Create(hx::DynamicArray inArgs);
 		~FlxGame_obj();
@@ -81,27 +81,28 @@ class HXCPP_CLASS_ATTRIBUTES  FlxGame_obj : public ::flash::display::Sprite_obj{
 		virtual Void create( ::flash::events::Event FlashEvent);
 		Dynamic create_dyn();
 
-		bool _resetGame;
-		::flixel::FlxState _requestedState;
 		bool _skipSplash;
 		::Class _customFocusLostScreen;
 		::Class _customSoundTray;
-		::flash::display::Sprite _inputContainer;
 		::flixel::system::ui::FlxFocusLostScreen _focusLostScreen;
 		bool _onFocusFiredOnce;
 		bool _lostFocus;
-		int _maxAccumulation;
-		Float _stepSeconds;
-		int _stepMS;
-		int _elapsedMS;
 		int _accumulator;
 		int _total;
-		::flixel::FlxState _state;
-		::Class _initialState;
+		::Class _iState;
 		bool _gameJustStarted;
-		int ticks;
 		::flixel::system::ui::FlxSoundTray soundTray;
+		bool resetState;
+		::flixel::FlxState requestedState;
+		int maxAccumulation;
 		int focusLostFramerate;
+		int drawFramerate;
+		Float stepSeconds;
+		int stepMS;
+		int elapsedMS;
+		::flash::display::Sprite inputContainer;
+		::flixel::FlxState state;
+		int ticks;
 };
 
 } // end namespace flixel

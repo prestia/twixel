@@ -286,18 +286,7 @@ HX_DEFINE_DYNAMIC_FUNC1(PluginFrontEnd_obj,get,return )
 								HX_STACK_PUSH("*::closure","flixel/system/frontEnds/PluginFrontEnd.hx",31);
 								{
 									HX_STACK_LINE(31)
-									::Class cl;		HX_STACK_VAR(cl,"cl");
-									HX_STACK_LINE(31)
-									if ((::Std_obj::is(Plugin,hx::ClassOf< ::Class >()))){
-										HX_STACK_LINE(31)
-										cl = Plugin;
-									}
-									else{
-										HX_STACK_LINE(31)
-										cl = ::Type_obj::getClass(Plugin);
-									}
-									HX_STACK_LINE(31)
-									::String s = ::Type_obj::getClassName(cl);		HX_STACK_VAR(s,"s");
+									::String s = ::Type_obj::getClassName(::Type_obj::getClass(Plugin));		HX_STACK_VAR(s,"s");
 									HX_STACK_LINE(31)
 									if (((s != null()))){
 										HX_STACK_LINE(31)
@@ -319,18 +308,7 @@ HX_DEFINE_DYNAMIC_FUNC1(PluginFrontEnd_obj,get,return )
 								HX_STACK_PUSH("*::closure","flixel/system/frontEnds/PluginFrontEnd.hx",31);
 								{
 									HX_STACK_LINE(31)
-									::Class cl;		HX_STACK_VAR(cl,"cl");
-									HX_STACK_LINE(31)
-									if ((::Std_obj::is(plugin,hx::ClassOf< ::Class >()))){
-										HX_STACK_LINE(31)
-										cl = plugin;
-									}
-									else{
-										HX_STACK_LINE(31)
-										cl = ::Type_obj::getClass(plugin);
-									}
-									HX_STACK_LINE(31)
-									::String s = ::Type_obj::getClassName(cl);		HX_STACK_VAR(s,"s");
+									::String s = ::Type_obj::getClassName(::Type_obj::getClass(plugin));		HX_STACK_VAR(s,"s");
 									HX_STACK_LINE(31)
 									if (((s != null()))){
 										HX_STACK_LINE(31)
@@ -395,18 +373,7 @@ HX_DEFINE_DYNAMIC_FUNC1(PluginFrontEnd_obj,add_flixel_plugin_TimerManager,return
 								HX_STACK_PUSH("*::closure","flixel/system/frontEnds/PluginFrontEnd.hx",31);
 								{
 									HX_STACK_LINE(31)
-									::Class cl;		HX_STACK_VAR(cl,"cl");
-									HX_STACK_LINE(31)
-									if ((::Std_obj::is(Plugin,hx::ClassOf< ::Class >()))){
-										HX_STACK_LINE(31)
-										cl = Plugin;
-									}
-									else{
-										HX_STACK_LINE(31)
-										cl = ::Type_obj::getClass(Plugin);
-									}
-									HX_STACK_LINE(31)
-									::String s = ::Type_obj::getClassName(cl);		HX_STACK_VAR(s,"s");
+									::String s = ::Type_obj::getClassName(::Type_obj::getClass(Plugin));		HX_STACK_VAR(s,"s");
 									HX_STACK_LINE(31)
 									if (((s != null()))){
 										HX_STACK_LINE(31)
@@ -428,18 +395,7 @@ HX_DEFINE_DYNAMIC_FUNC1(PluginFrontEnd_obj,add_flixel_plugin_TimerManager,return
 								HX_STACK_PUSH("*::closure","flixel/system/frontEnds/PluginFrontEnd.hx",31);
 								{
 									HX_STACK_LINE(31)
-									::Class cl;		HX_STACK_VAR(cl,"cl");
-									HX_STACK_LINE(31)
-									if ((::Std_obj::is(plugin,hx::ClassOf< ::Class >()))){
-										HX_STACK_LINE(31)
-										cl = plugin;
-									}
-									else{
-										HX_STACK_LINE(31)
-										cl = ::Type_obj::getClass(plugin);
-									}
-									HX_STACK_LINE(31)
-									::String s = ::Type_obj::getClassName(cl);		HX_STACK_VAR(s,"s");
+									::String s = ::Type_obj::getClassName(::Type_obj::getClass(plugin));		HX_STACK_VAR(s,"s");
 									HX_STACK_LINE(31)
 									if (((s != null()))){
 										HX_STACK_LINE(31)
@@ -504,18 +460,7 @@ HX_DEFINE_DYNAMIC_FUNC1(PluginFrontEnd_obj,add_flixel_plugin_TweenManager,return
 								HX_STACK_PUSH("*::closure","flixel/system/frontEnds/PluginFrontEnd.hx",31);
 								{
 									HX_STACK_LINE(31)
-									::Class cl;		HX_STACK_VAR(cl,"cl");
-									HX_STACK_LINE(31)
-									if ((::Std_obj::is(Plugin,hx::ClassOf< ::Class >()))){
-										HX_STACK_LINE(31)
-										cl = Plugin;
-									}
-									else{
-										HX_STACK_LINE(31)
-										cl = ::Type_obj::getClass(Plugin);
-									}
-									HX_STACK_LINE(31)
-									::String s = ::Type_obj::getClassName(cl);		HX_STACK_VAR(s,"s");
+									::String s = ::Type_obj::getClassName(::Type_obj::getClass(Plugin));		HX_STACK_VAR(s,"s");
 									HX_STACK_LINE(31)
 									if (((s != null()))){
 										HX_STACK_LINE(31)
@@ -537,18 +482,7 @@ HX_DEFINE_DYNAMIC_FUNC1(PluginFrontEnd_obj,add_flixel_plugin_TweenManager,return
 								HX_STACK_PUSH("*::closure","flixel/system/frontEnds/PluginFrontEnd.hx",31);
 								{
 									HX_STACK_LINE(31)
-									::Class cl;		HX_STACK_VAR(cl,"cl");
-									HX_STACK_LINE(31)
-									if ((::Std_obj::is(plugin,hx::ClassOf< ::Class >()))){
-										HX_STACK_LINE(31)
-										cl = plugin;
-									}
-									else{
-										HX_STACK_LINE(31)
-										cl = ::Type_obj::getClass(plugin);
-									}
-									HX_STACK_LINE(31)
-									::String s = ::Type_obj::getClassName(cl);		HX_STACK_VAR(s,"s");
+									::String s = ::Type_obj::getClassName(::Type_obj::getClass(plugin));		HX_STACK_VAR(s,"s");
 									HX_STACK_LINE(31)
 									if (((s != null()))){
 										HX_STACK_LINE(31)

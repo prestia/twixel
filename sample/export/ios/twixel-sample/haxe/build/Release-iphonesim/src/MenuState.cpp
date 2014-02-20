@@ -113,7 +113,7 @@ Void MenuState_obj::update( ){
 		HX_STACK_LINE(49)
 		if ((_Function_1_1::Block())){
 			HX_STACK_LINE(50)
-			::flixel::FlxG_obj::game->_requestedState = ::PlayState_obj::__new(null());
+			::flixel::FlxG_obj::game->requestedState = ::PlayState_obj::__new(null());
 		}
 		HX_STACK_LINE(54)
 		this->super::update();

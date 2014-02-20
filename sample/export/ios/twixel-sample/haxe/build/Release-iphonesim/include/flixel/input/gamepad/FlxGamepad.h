@@ -94,14 +94,14 @@ class HXCPP_CLASS_ATTRIBUTES  FlxGamepad_obj : public hx::Object{
 		virtual ::flixel::input::gamepad::FlxGamepadButton getButton( int ButtonID);
 		Dynamic getButton_dyn();
 
-		Array< Float > axis;
+		Float deadZone;
 		bool dpadRight;
 		bool dpadLeft;
 		bool dpadDown;
 		bool dpadUp;
 		::flixel::util::FlxPoint ball;
 		::flixel::util::FlxPoint hat;
-		Float deadZone;
+		Array< Float > axis;
 		::haxe::ds::IntMap buttons;
 		int id;
 		static int JUST_RELEASED;

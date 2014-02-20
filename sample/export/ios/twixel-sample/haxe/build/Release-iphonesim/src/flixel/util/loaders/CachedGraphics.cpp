@@ -192,7 +192,7 @@ Void CachedGraphics_obj::destroy( ){
 		HX_STACK_LINE(145)
 		this->data = ::flixel::FlxG_obj::safeDestroy(this->data);
 		HX_STACK_LINE(146)
-		this->_tilesheet = ::flixel::FlxG_obj::safeDestroy(this->_tilesheet);
+		this->tilesheet = ::flixel::FlxG_obj::safeDestroy(this->get_tilesheet());
 		HX_STACK_LINE(147)
 		this->key = null();
 		HX_STACK_LINE(148)

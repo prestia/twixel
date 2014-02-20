@@ -31,13 +31,13 @@ Void FlxTimer_obj::__construct()
 {
 HX_STACK_PUSH("FlxTimer::new","flixel/util/FlxTimer.hx",12);
 {
-	HX_STACK_LINE(53)
+	HX_STACK_LINE(55)
 	this->_loopsCounter = (int)0;
-	HX_STACK_LINE(49)
+	HX_STACK_LINE(51)
 	this->_timeCounter = (int)0;
-	HX_STACK_LINE(45)
-	this->complete = null();
-	HX_STACK_LINE(40)
+	HX_STACK_LINE(47)
+	this->_callback = null();
+	HX_STACK_LINE(41)
 	this->usePooling = true;
 	HX_STACK_LINE(36)
 	this->userData = null();
@@ -68,18 +68,18 @@ Dynamic FlxTimer_obj::__Create(hx::DynamicArray inArgs)
 	return result;}
 
 Float FlxTimer_obj::get_progress( ){
-	HX_STACK_PUSH("FlxTimer::get_progress","flixel/util/FlxTimer.hx",221);
+	HX_STACK_PUSH("FlxTimer::get_progress","flixel/util/FlxTimer.hx",223);
 	HX_STACK_THIS(this);
-	HX_STACK_LINE(221)
+	HX_STACK_LINE(223)
 	if (((this->time > (int)0))){
-		HX_STACK_LINE(223)
+		HX_STACK_LINE(225)
 		return (Float(this->_timeCounter) / Float(this->time));
 	}
 	else{
-		HX_STACK_LINE(227)
+		HX_STACK_LINE(229)
 		return (int)0;
 	}
-	HX_STACK_LINE(221)
+	HX_STACK_LINE(223)
 	return 0.;
 }
 
@@ -87,9 +87,9 @@ Float FlxTimer_obj::get_progress( ){
 HX_DEFINE_DYNAMIC_FUNC0(FlxTimer_obj,get_progress,return )
 
 int FlxTimer_obj::get_elapsedLoops( ){
-	HX_STACK_PUSH("FlxTimer::get_elapsedLoops","flixel/util/FlxTimer.hx",211);
+	HX_STACK_PUSH("FlxTimer::get_elapsedLoops","flixel/util/FlxTimer.hx",213);
 	HX_STACK_THIS(this);
-	HX_STACK_LINE(211)
+	HX_STACK_LINE(213)
 	return this->_loopsCounter;
 }
 
@@ -97,9 +97,9 @@ int FlxTimer_obj::get_elapsedLoops( ){
 HX_DEFINE_DYNAMIC_FUNC0(FlxTimer_obj,get_elapsedLoops,return )
 
 int FlxTimer_obj::get_loopsLeft( ){
-	HX_STACK_PUSH("FlxTimer::get_loopsLeft","flixel/util/FlxTimer.hx",201);
+	HX_STACK_PUSH("FlxTimer::get_loopsLeft","flixel/util/FlxTimer.hx",203);
 	HX_STACK_THIS(this);
-	HX_STACK_LINE(201)
+	HX_STACK_LINE(203)
 	return (this->loops - this->_loopsCounter);
 }
 
@@ -107,9 +107,9 @@ int FlxTimer_obj::get_loopsLeft( ){
 HX_DEFINE_DYNAMIC_FUNC0(FlxTimer_obj,get_loopsLeft,return )
 
 Float FlxTimer_obj::get_elapsedTime( ){
-	HX_STACK_PUSH("FlxTimer::get_elapsedTime","flixel/util/FlxTimer.hx",191);
+	HX_STACK_PUSH("FlxTimer::get_elapsedTime","flixel/util/FlxTimer.hx",193);
 	HX_STACK_THIS(this);
-	HX_STACK_LINE(191)
+	HX_STACK_LINE(193)
 	return this->_timeCounter;
 }
 
@@ -117,9 +117,9 @@ Float FlxTimer_obj::get_elapsedTime( ){
 HX_DEFINE_DYNAMIC_FUNC0(FlxTimer_obj,get_elapsedTime,return )
 
 Float FlxTimer_obj::get_timeLeft( ){
-	HX_STACK_PUSH("FlxTimer::get_timeLeft","flixel/util/FlxTimer.hx",181);
+	HX_STACK_PUSH("FlxTimer::get_timeLeft","flixel/util/FlxTimer.hx",183);
 	HX_STACK_THIS(this);
-	HX_STACK_LINE(181)
+	HX_STACK_LINE(183)
 	return (this->time - this->_timeCounter);
 }
 
@@ -128,24 +128,24 @@ HX_DEFINE_DYNAMIC_FUNC0(FlxTimer_obj,get_timeLeft,return )
 
 Void FlxTimer_obj::update( ){
 {
-		HX_STACK_PUSH("FlxTimer::update","flixel/util/FlxTimer.hx",155);
+		HX_STACK_PUSH("FlxTimer::update","flixel/util/FlxTimer.hx",157);
 		HX_STACK_THIS(this);
-		HX_STACK_LINE(156)
-		hx::AddEq(this->_timeCounter,::flixel::FlxG_obj::elapsed);
 		HX_STACK_LINE(158)
+		hx::AddEq(this->_timeCounter,::flixel::FlxG_obj::elapsed);
+		HX_STACK_LINE(160)
 		while(((bool((bool((this->_timeCounter >= this->time)) && bool(!(this->paused)))) && bool(!(this->finished))))){
-			HX_STACK_LINE(160)
+			HX_STACK_LINE(162)
 			hx::SubEq(this->_timeCounter,this->time);
-			HX_STACK_LINE(161)
-			(this->_loopsCounter)++;
 			HX_STACK_LINE(163)
-			if (((this->complete_dyn() != null()))){
-				HX_STACK_LINE(164)
-				this->complete(hx::ObjectPtr<OBJ_>(this));
+			(this->_loopsCounter)++;
+			HX_STACK_LINE(165)
+			if (((this->_callback_dyn() != null()))){
+				HX_STACK_LINE(166)
+				this->_callback(hx::ObjectPtr<OBJ_>(this));
 			}
-			HX_STACK_LINE(168)
+			HX_STACK_LINE(170)
 			if (((bool((this->loops > (int)0)) && bool((this->_loopsCounter >= this->loops))))){
-				HX_STACK_LINE(169)
+				HX_STACK_LINE(171)
 				this->abort();
 			}
 		}
@@ -158,13 +158,13 @@ HX_DEFINE_DYNAMIC_FUNC0(FlxTimer_obj,update,(void))
 
 Void FlxTimer_obj::abort( ){
 {
-		HX_STACK_PUSH("FlxTimer::abort","flixel/util/FlxTimer.hx",140);
+		HX_STACK_PUSH("FlxTimer::abort","flixel/util/FlxTimer.hx",142);
 		HX_STACK_THIS(this);
-		HX_STACK_LINE(141)
+		HX_STACK_LINE(143)
 		this->finished = true;
-		HX_STACK_LINE(142)
+		HX_STACK_LINE(144)
 		if (((::flixel::util::FlxTimer_obj::manager != null()))){
-			HX_STACK_LINE(143)
+			HX_STACK_LINE(145)
 			::flixel::util::FlxTimer_obj::manager->remove(hx::ObjectPtr<OBJ_>(this),this->usePooling);
 		}
 	}
@@ -176,18 +176,18 @@ HX_DEFINE_DYNAMIC_FUNC0(FlxTimer_obj,abort,(void))
 
 ::flixel::util::FlxTimer FlxTimer_obj::reset( hx::Null< Float >  __o_NewTime){
 Float NewTime = __o_NewTime.Default(-1);
-	HX_STACK_PUSH("FlxTimer::reset","flixel/util/FlxTimer.hx",127);
+	HX_STACK_PUSH("FlxTimer::reset","flixel/util/FlxTimer.hx",129);
 	HX_STACK_THIS(this);
 	HX_STACK_ARG(NewTime,"NewTime");
 {
-		HX_STACK_LINE(128)
+		HX_STACK_LINE(130)
 		if (((NewTime < (int)0))){
-			HX_STACK_LINE(129)
+			HX_STACK_LINE(131)
 			NewTime = this->time;
 		}
-		HX_STACK_LINE(132)
-		this->run(NewTime,this->complete_dyn(),this->loops);
-		HX_STACK_LINE(133)
+		HX_STACK_LINE(134)
+		this->run(NewTime,this->_callback_dyn(),this->loops);
+		HX_STACK_LINE(135)
 		return hx::ObjectPtr<OBJ_>(this);
 	}
 }
@@ -198,35 +198,35 @@ HX_DEFINE_DYNAMIC_FUNC1(FlxTimer_obj,reset,return )
 Void FlxTimer_obj::run( hx::Null< Float >  __o_Time,Dynamic Callback,hx::Null< int >  __o_Loops){
 Float Time = __o_Time.Default(1);
 int Loops = __o_Loops.Default(1);
-	HX_STACK_PUSH("FlxTimer::run","flixel/util/FlxTimer.hx",101);
+	HX_STACK_PUSH("FlxTimer::run","flixel/util/FlxTimer.hx",103);
 	HX_STACK_THIS(this);
 	HX_STACK_ARG(Time,"Time");
 	HX_STACK_ARG(Callback,"Callback");
 	HX_STACK_ARG(Loops,"Loops");
 {
-		HX_STACK_LINE(102)
+		HX_STACK_LINE(104)
 		if (((::flixel::util::FlxTimer_obj::manager != null()))){
-			HX_STACK_LINE(103)
+			HX_STACK_LINE(105)
 			::flixel::util::FlxTimer_obj::manager->add(hx::ObjectPtr<OBJ_>(this));
 		}
-		HX_STACK_LINE(107)
-		this->paused = false;
-		HX_STACK_LINE(108)
-		this->finished = false;
 		HX_STACK_LINE(109)
-		this->time = ::Math_obj::abs(Time);
+		this->paused = false;
+		HX_STACK_LINE(110)
+		this->finished = false;
 		HX_STACK_LINE(111)
+		this->time = ::Math_obj::abs(Time);
+		HX_STACK_LINE(113)
 		if (((Loops < (int)0))){
-			HX_STACK_LINE(112)
+			HX_STACK_LINE(114)
 			hx::MultEq(Loops,(int)-1);
 		}
-		HX_STACK_LINE(116)
-		this->loops = Loops;
-		HX_STACK_LINE(117)
-		this->complete = Callback;
 		HX_STACK_LINE(118)
-		this->_timeCounter = (int)0;
+		this->loops = Loops;
 		HX_STACK_LINE(119)
+		this->_callback = Callback;
+		HX_STACK_LINE(120)
+		this->_timeCounter = (int)0;
+		HX_STACK_LINE(121)
 		this->_loopsCounter = (int)0;
 	}
 return null();
@@ -237,11 +237,11 @@ HX_DEFINE_DYNAMIC_FUNC3(FlxTimer_obj,run,(void))
 
 Void FlxTimer_obj::destroy( ){
 {
-		HX_STACK_PUSH("FlxTimer::destroy","flixel/util/FlxTimer.hx",65);
+		HX_STACK_PUSH("FlxTimer::destroy","flixel/util/FlxTimer.hx",67);
 		HX_STACK_THIS(this);
-		HX_STACK_LINE(66)
-		this->complete = null();
-		HX_STACK_LINE(67)
+		HX_STACK_LINE(68)
+		this->_callback = null();
+		HX_STACK_LINE(69)
 		this->userData = null();
 	}
 return null();
@@ -253,25 +253,25 @@ HX_DEFINE_DYNAMIC_FUNC0(FlxTimer_obj,destroy,(void))
 ::flixel::util::FlxPool_flixel_util_FlxTimer FlxTimer_obj::pool;
 
 ::flixel::util::FlxTimer FlxTimer_obj::recycle( ){
-	HX_STACK_PUSH("FlxTimer::recycle","flixel/util/FlxTimer.hx",74);
+	HX_STACK_PUSH("FlxTimer::recycle","flixel/util/FlxTimer.hx",76);
 	struct _Function_1_1{
 		inline static ::flixel::util::FlxTimer Block( ){
-			HX_STACK_PUSH("*::closure","flixel/util/FlxTimer.hx",75);
+			HX_STACK_PUSH("*::closure","flixel/util/FlxTimer.hx",77);
 			{
-				HX_STACK_LINE(75)
+				HX_STACK_LINE(77)
 				::flixel::util::FlxTimer obj = ::flixel::util::FlxTimer_obj::pool->_pool->pop().StaticCast< ::flixel::util::FlxTimer >();		HX_STACK_VAR(obj,"obj");
-				HX_STACK_LINE(75)
+				HX_STACK_LINE(77)
 				if (((obj == null()))){
-					HX_STACK_LINE(75)
+					HX_STACK_LINE(77)
 					obj = ::flixel::util::FlxTimer_obj::__new();
 				}
-				HX_STACK_LINE(75)
+				HX_STACK_LINE(77)
 				return obj;
 			}
 			return null();
 		}
 	};
-	HX_STACK_LINE(74)
+	HX_STACK_LINE(76)
 	return _Function_1_1::Block();
 }
 
@@ -281,16 +281,16 @@ STATIC_HX_DEFINE_DYNAMIC_FUNC0(FlxTimer_obj,recycle,return )
 ::flixel::util::FlxTimer FlxTimer_obj::start( hx::Null< Float >  __o_Time,Dynamic Callback,hx::Null< int >  __o_Loops){
 Float Time = __o_Time.Default(1);
 int Loops = __o_Loops.Default(1);
-	HX_STACK_PUSH("FlxTimer::start","flixel/util/FlxTimer.hx",86);
+	HX_STACK_PUSH("FlxTimer::start","flixel/util/FlxTimer.hx",88);
 	HX_STACK_ARG(Time,"Time");
 	HX_STACK_ARG(Callback,"Callback");
 	HX_STACK_ARG(Loops,"Loops");
 {
-		HX_STACK_LINE(87)
-		::flixel::util::FlxTimer timer = ::flixel::util::FlxTimer_obj::recycle();		HX_STACK_VAR(timer,"timer");
-		HX_STACK_LINE(88)
-		timer->run(Time,Callback,Loops);
 		HX_STACK_LINE(89)
+		::flixel::util::FlxTimer timer = ::flixel::util::FlxTimer_obj::recycle();		HX_STACK_VAR(timer,"timer");
+		HX_STACK_LINE(90)
+		timer->run(Time,Callback,Loops);
+		HX_STACK_LINE(91)
 		return timer;
 	}
 }
@@ -300,9 +300,9 @@ STATIC_HX_DEFINE_DYNAMIC_FUNC3(FlxTimer_obj,start,return )
 
 Void FlxTimer_obj::put( ::flixel::util::FlxTimer timer){
 {
-		HX_STACK_PUSH("FlxTimer::put","flixel/util/FlxTimer.hx",233);
+		HX_STACK_PUSH("FlxTimer::put","flixel/util/FlxTimer.hx",235);
 		HX_STACK_ARG(timer,"timer");
-		HX_STACK_LINE(233)
+		HX_STACK_LINE(235)
 		::flixel::util::FlxTimer_obj::pool->put(timer);
 	}
 return null();
@@ -323,7 +323,7 @@ void FlxTimer_obj::__Mark(HX_MARK_PARAMS)
 	HX_MARK_BEGIN_CLASS(FlxTimer);
 	HX_MARK_MEMBER_NAME(_loopsCounter,"_loopsCounter");
 	HX_MARK_MEMBER_NAME(_timeCounter,"_timeCounter");
-	HX_MARK_MEMBER_NAME(complete,"complete");
+	HX_MARK_MEMBER_NAME(_callback,"_callback");
 	HX_MARK_MEMBER_NAME(usePooling,"usePooling");
 	HX_MARK_MEMBER_NAME(userData,"userData");
 	HX_MARK_MEMBER_NAME(finished,"finished");
@@ -337,7 +337,7 @@ void FlxTimer_obj::__Visit(HX_VISIT_PARAMS)
 {
 	HX_VISIT_MEMBER_NAME(_loopsCounter,"_loopsCounter");
 	HX_VISIT_MEMBER_NAME(_timeCounter,"_timeCounter");
-	HX_VISIT_MEMBER_NAME(complete,"complete");
+	HX_VISIT_MEMBER_NAME(_callback,"_callback");
 	HX_VISIT_MEMBER_NAME(usePooling,"usePooling");
 	HX_VISIT_MEMBER_NAME(userData,"userData");
 	HX_VISIT_MEMBER_NAME(finished,"finished");
@@ -375,12 +375,12 @@ Dynamic FlxTimer_obj::__Field(const ::String &inName,bool inCallProp)
 	case 8:
 		if (HX_FIELD_EQ(inName,"progress") ) { return get_progress(); }
 		if (HX_FIELD_EQ(inName,"timeLeft") ) { return get_timeLeft(); }
-		if (HX_FIELD_EQ(inName,"complete") ) { return complete; }
 		if (HX_FIELD_EQ(inName,"userData") ) { return userData; }
 		if (HX_FIELD_EQ(inName,"finished") ) { return finished; }
 		break;
 	case 9:
 		if (HX_FIELD_EQ(inName,"loopsLeft") ) { return get_loopsLeft(); }
+		if (HX_FIELD_EQ(inName,"_callback") ) { return _callback; }
 		break;
 	case 10:
 		if (HX_FIELD_EQ(inName,"usePooling") ) { return usePooling; }
@@ -424,9 +424,11 @@ Dynamic FlxTimer_obj::__SetField(const ::String &inName,const Dynamic &inValue,b
 		if (HX_FIELD_EQ(inName,"manager") ) { manager=inValue.Cast< ::flixel::plugin::TimerManager >(); return inValue; }
 		break;
 	case 8:
-		if (HX_FIELD_EQ(inName,"complete") ) { complete=inValue.Cast< Dynamic >(); return inValue; }
 		if (HX_FIELD_EQ(inName,"userData") ) { userData=inValue.Cast< Dynamic >(); return inValue; }
 		if (HX_FIELD_EQ(inName,"finished") ) { finished=inValue.Cast< bool >(); return inValue; }
+		break;
+	case 9:
+		if (HX_FIELD_EQ(inName,"_callback") ) { _callback=inValue.Cast< Dynamic >(); return inValue; }
 		break;
 	case 10:
 		if (HX_FIELD_EQ(inName,"usePooling") ) { usePooling=inValue.Cast< bool >(); return inValue; }
@@ -479,7 +481,7 @@ static ::String sMemberFields[] = {
 	HX_CSTRING("destroy"),
 	HX_CSTRING("_loopsCounter"),
 	HX_CSTRING("_timeCounter"),
-	HX_CSTRING("complete"),
+	HX_CSTRING("_callback"),
 	HX_CSTRING("usePooling"),
 	HX_CSTRING("userData"),
 	HX_CSTRING("finished"),

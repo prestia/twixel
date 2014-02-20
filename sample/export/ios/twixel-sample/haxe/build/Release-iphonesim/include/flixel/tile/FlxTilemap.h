@@ -6,6 +6,8 @@
 #endif
 
 #include <flixel/FlxObject.h>
+HX_DECLARE_CLASS2(flash,display,BitmapData)
+HX_DECLARE_CLASS2(flash,display,IBitmapDrawable)
 HX_DECLARE_CLASS2(flash,geom,Point)
 HX_DECLARE_CLASS2(flash,geom,Rectangle)
 HX_DECLARE_CLASS1(flixel,FlxBasic)
@@ -50,27 +52,6 @@ class HXCPP_CLASS_ATTRIBUTES  FlxTilemap_obj : public ::flixel::FlxObject_obj{
 
 		virtual bool set_forceComplexRender( bool Value);
 
-		virtual Void autoTile( int Index);
-		Dynamic autoTile_dyn();
-
-		virtual Void updateTile( int Index);
-		Dynamic updateTile_dyn();
-
-		virtual Void walkPath( Array< int > Data,int Start,Array< ::Dynamic > Points);
-		Dynamic walkPath_dyn();
-
-		virtual Array< int > computePathDistance( int StartIndex,int EndIndex,bool WideDiagonal);
-		Dynamic computePathDistance_dyn();
-
-		virtual Void raySimplifyPath( Array< ::Dynamic > Points);
-		Dynamic raySimplifyPath_dyn();
-
-		virtual Void simplifyPath( Array< ::Dynamic > Points);
-		Dynamic simplifyPath_dyn();
-
-		virtual Void drawTilemap( ::flixel::tile::FlxTilemapBuffer Buffer,::flixel::FlxCamera Camera);
-		Dynamic drawTilemap_dyn();
-
 		virtual Void updateBuffers( );
 		Dynamic updateBuffers_dyn();
 
@@ -79,6 +60,12 @@ class HXCPP_CLASS_ATTRIBUTES  FlxTilemap_obj : public ::flixel::FlxObject_obj{
 
 		virtual Void updateFrameData( );
 		Dynamic updateFrameData_dyn();
+
+		virtual Void updateTile( int Index);
+		Dynamic updateTile_dyn();
+
+		virtual Void autoTile( int Index);
+		Dynamic autoTile_dyn();
 
 		virtual ::flixel::util::FlxPoint rayHit( ::flixel::util::FlxPoint Start,::flixel::util::FlxPoint End,hx::Null< Float >  Resolution);
 		Dynamic rayHit_dyn();
@@ -125,6 +112,18 @@ class HXCPP_CLASS_ATTRIBUTES  FlxTilemap_obj : public ::flixel::FlxObject_obj{
 
 		virtual bool overlaps( ::flixel::FlxBasic ObjectOrGroup,hx::Null< bool >  InScreenSpace,::flixel::FlxCamera Camera);
 
+		virtual Void walkPath( Array< int > Data,int Start,Array< ::Dynamic > Points);
+		Dynamic walkPath_dyn();
+
+		virtual Array< int > computePathDistance( int StartIndex,int EndIndex,bool WideDiagonal);
+		Dynamic computePathDistance_dyn();
+
+		virtual Void raySimplifyPath( Array< ::Dynamic > Points);
+		Dynamic raySimplifyPath_dyn();
+
+		virtual Void simplifyPath( Array< ::Dynamic > Points);
+		Dynamic simplifyPath_dyn();
+
 		virtual Array< ::Dynamic > findPath( ::flixel::util::FlxPoint Start,::flixel::util::FlxPoint End,hx::Null< bool >  Simplify,hx::Null< bool >  RaySimplify,hx::Null< bool >  WideDiagonal);
 		Dynamic findPath_dyn();
 
@@ -135,6 +134,9 @@ class HXCPP_CLASS_ATTRIBUTES  FlxTilemap_obj : public ::flixel::FlxObject_obj{
 		Dynamic getData_dyn();
 
 		virtual Void draw( );
+
+		virtual Void drawTilemap( ::flixel::tile::FlxTilemapBuffer Buffer,::flixel::FlxCamera Camera);
+		Dynamic drawTilemap_dyn();
 
 		virtual Void setCustomTileMappings( Array< int > mappings,Array< int > randomIndices,Array< ::Dynamic > randomChoices,Dynamic randomLambda);
 		Dynamic setCustomTileMappings_dyn();
@@ -160,17 +162,26 @@ class HXCPP_CLASS_ATTRIBUTES  FlxTilemap_obj : public ::flixel::FlxObject_obj{
 		Dynamic &_randomLambda_dyn() { return _randomLambda;}
 		Array< ::Dynamic > _randomChoices;
 		Array< int > _randomIndices;
-		Float scaleY;
-		Float scaleX;
 		Array< int > customTileRemap;
 		Float tileScaleHack;
 		int totalTiles;
 		int heightInTiles;
 		int widthInTiles;
 		int _auto;
+		Float scaleY;
+		Float scaleX;
 		static int OFF;
 		static int AUTO;
 		static int ALT;
+		static ::String arrayToCSV( Array< int > Data,int Width,hx::Null< bool >  Invert);
+		static Dynamic arrayToCSV_dyn();
+
+		static ::String bitmapToCSV( ::flash::display::BitmapData Bitmap,hx::Null< bool >  Invert,hx::Null< int >  Scale,Array< int > ColorMap);
+		static Dynamic bitmapToCSV_dyn();
+
+		static ::String imageToCSV( Dynamic ImageFile,hx::Null< bool >  Invert,hx::Null< int >  Scale);
+		static Dynamic imageToCSV_dyn();
+
 };
 
 } // end namespace flixel

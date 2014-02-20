@@ -67,6 +67,7 @@ class HXCPP_CLASS_ATTRIBUTES  FlxG_obj : public hx::Object{
 		void __Visit(HX_VISIT_PARAMS);
 		::String __ToString() const { return HX_CSTRING("FlxG"); }
 
+		static Dynamic __meta__;
 		static bool autoPause;
 		static bool fixedTimestep;
 		static Float timeScale;
@@ -74,7 +75,6 @@ class HXCPP_CLASS_ATTRIBUTES  FlxG_obj : public hx::Object{
 		static ::flixel::FlxCamera camera;
 		static ::flixel::system::FlxVersion VERSION;
 		static ::flixel::FlxGame game;
-		static int drawFramerate;
 		static Float elapsed;
 		static int width;
 		static int height;
@@ -139,6 +139,9 @@ class HXCPP_CLASS_ATTRIBUTES  FlxG_obj : public hx::Object{
 
 		static int set_updateFramerate( int Framerate);
 		static Dynamic set_updateFramerate_dyn();
+
+		static int get_drawFramerate( );
+		static Dynamic get_drawFramerate_dyn();
 
 		static int set_drawFramerate( int Framerate);
 		static Dynamic set_drawFramerate_dyn();

@@ -6,7 +6,6 @@
 #endif
 
 #include <flash/display/Sprite.h>
-#include <flixel/interfaces/IFlxDestroyable.h>
 HX_DECLARE_CLASS2(flash,display,Bitmap)
 HX_DECLARE_CLASS2(flash,display,BitmapData)
 HX_DECLARE_CLASS2(flash,display,DisplayObject)
@@ -18,7 +17,6 @@ HX_DECLARE_CLASS2(flash,events,Event)
 HX_DECLARE_CLASS2(flash,events,EventDispatcher)
 HX_DECLARE_CLASS2(flash,events,IEventDispatcher)
 HX_DECLARE_CLASS2(flash,events,MouseEvent)
-HX_DECLARE_CLASS2(flixel,interfaces,IFlxDestroyable)
 HX_DECLARE_CLASS3(flixel,system,ui,FlxSystemButton)
 namespace flixel{
 namespace system{
@@ -30,10 +28,10 @@ class HXCPP_CLASS_ATTRIBUTES  FlxSystemButton_obj : public ::flash::display::Spr
 		typedef ::flash::display::Sprite_obj super;
 		typedef FlxSystemButton_obj OBJ_;
 		FlxSystemButton_obj();
-		Void __construct(::flash::display::BitmapData Icon,Dynamic UpHandler,hx::Null< bool >  __o_ToggleMode);
+		Void __construct(::flash::display::BitmapData Icon,Dynamic DownHandler,hx::Null< bool >  __o_ToggleMode);
 
 	public:
-		static hx::ObjectPtr< FlxSystemButton_obj > __new(::flash::display::BitmapData Icon,Dynamic UpHandler,hx::Null< bool >  __o_ToggleMode);
+		static hx::ObjectPtr< FlxSystemButton_obj > __new(::flash::display::BitmapData Icon,Dynamic DownHandler,hx::Null< bool >  __o_ToggleMode);
 		static Dynamic __CreateEmpty();
 		static Dynamic __Create(hx::DynamicArray inArgs);
 		~FlxSystemButton_obj();
@@ -43,13 +41,10 @@ class HXCPP_CLASS_ATTRIBUTES  FlxSystemButton_obj : public ::flash::display::Spr
 		static void __register();
 		void __Mark(HX_MARK_PARAMS);
 		void __Visit(HX_VISIT_PARAMS);
-		inline operator ::flixel::interfaces::IFlxDestroyable_obj *()
-			{ return new ::flixel::interfaces::IFlxDestroyable_delegate_< FlxSystemButton_obj >(this); }
-		hx::Object *__ToInterface(const hx::type_info &inType);
 		::String __ToString() const { return HX_CSTRING("FlxSystemButton"); }
 
-		virtual bool set_toggled( bool Value);
-		Dynamic set_toggled_dyn();
+		virtual Void destroy( );
+		Dynamic destroy_dyn();
 
 		virtual Void onMouseOut( ::flash::events::MouseEvent E);
 		Dynamic onMouseOut_dyn();
@@ -57,25 +52,21 @@ class HXCPP_CLASS_ATTRIBUTES  FlxSystemButton_obj : public ::flash::display::Spr
 		virtual Void onMouseOver( ::flash::events::MouseEvent E);
 		Dynamic onMouseOver_dyn();
 
-		virtual Void onMouseDown( ::flash::events::MouseEvent E);
-		Dynamic onMouseDown_dyn();
-
 		virtual Void onMouseUp( ::flash::events::MouseEvent E);
 		Dynamic onMouseUp_dyn();
-
-		virtual Void destroy( );
-		Dynamic destroy_dyn();
 
 		virtual Void changeIcon( ::flash::display::BitmapData Icon);
 		Dynamic changeIcon_dyn();
 
-		bool _mouseDown;
-		::flash::display::Bitmap _icon;
+		virtual bool set_toggled( bool Value);
+		Dynamic set_toggled_dyn();
+
 		bool toggled;
 		bool toggleMode;
+		::flash::display::Bitmap icon;
 		bool enabled;
-		Dynamic upHandler;
-		Dynamic &upHandler_dyn() { return upHandler;}
+		Dynamic downHandler;
+		Dynamic &downHandler_dyn() { return downHandler;}
 };
 
 } // end namespace flixel

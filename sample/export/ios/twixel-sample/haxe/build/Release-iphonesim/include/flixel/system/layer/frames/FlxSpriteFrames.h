@@ -5,9 +5,7 @@
 #include <hxcpp.h>
 #endif
 
-#include <flixel/interfaces/IFlxDestroyable.h>
 HX_DECLARE_CLASS0(IMap)
-HX_DECLARE_CLASS2(flixel,interfaces,IFlxDestroyable)
 HX_DECLARE_CLASS4(flixel,system,layer,frames,FlxFrame)
 HX_DECLARE_CLASS4(flixel,system,layer,frames,FlxSpriteFrames)
 HX_DECLARE_CLASS2(haxe,ds,StringMap)
@@ -35,9 +33,6 @@ class HXCPP_CLASS_ATTRIBUTES  FlxSpriteFrames_obj : public hx::Object{
 		static void __register();
 		void __Mark(HX_MARK_PARAMS);
 		void __Visit(HX_VISIT_PARAMS);
-		inline operator ::flixel::interfaces::IFlxDestroyable_obj *()
-			{ return new ::flixel::interfaces::IFlxDestroyable_delegate_< FlxSpriteFrames_obj >(this); }
-		hx::Object *__ToInterface(const hx::type_info &inType);
 		::String __ToString() const { return HX_CSTRING("FlxSpriteFrames"); }
 
 		virtual Void destroy( );

@@ -9,7 +9,6 @@
 HX_DECLARE_CLASS2(flixel,animation,FlxAnimation)
 HX_DECLARE_CLASS2(flixel,animation,FlxAnimationController)
 HX_DECLARE_CLASS2(flixel,animation,FlxBaseAnimation)
-HX_DECLARE_CLASS2(flixel,interfaces,IFlxDestroyable)
 namespace flixel{
 namespace animation{
 
@@ -34,16 +33,13 @@ class HXCPP_CLASS_ATTRIBUTES  FlxAnimation_obj : public ::flixel::animation::Flx
 		void __Visit(HX_VISIT_PARAMS);
 		::String __ToString() const { return HX_CSTRING("FlxAnimation"); }
 
-		virtual int get_numFrames( );
-		Dynamic get_numFrames_dyn();
+		virtual ::flixel::animation::FlxBaseAnimation clone( ::flixel::animation::FlxAnimationController Parent);
 
 		virtual int set_curFrame( int Frame);
 		Dynamic set_curFrame_dyn();
 
 		virtual int set_frameRate( int value);
 		Dynamic set_frameRate_dyn();
-
-		virtual ::flixel::animation::FlxBaseAnimation clone( ::flixel::animation::FlxAnimationController Parent);
 
 		virtual Void update( );
 
@@ -60,11 +56,11 @@ class HXCPP_CLASS_ATTRIBUTES  FlxAnimation_obj : public ::flixel::animation::Flx
 
 		Float _frameTimer;
 		Array< int > _frames;
+		int numFrames;
 		bool looped;
 		bool paused;
 		bool finished;
 		Float delay;
-		int numFrames;
 		int curFrame;
 		int frameRate;
 };

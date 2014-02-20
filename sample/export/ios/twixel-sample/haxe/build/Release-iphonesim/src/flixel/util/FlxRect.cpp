@@ -3,8 +3,14 @@
 #ifndef INCLUDED_flash_geom_Rectangle
 #include <flash/geom/Rectangle.h>
 #endif
+#ifndef INCLUDED_flixel_FlxG
+#include <flixel/FlxG.h>
+#endif
 #ifndef INCLUDED_flixel_interfaces_IFlxDestroyable
 #include <flixel/interfaces/IFlxDestroyable.h>
+#endif
+#ifndef INCLUDED_flixel_system_frontEnds_DebuggerFrontEnd
+#include <flixel/system/frontEnds/DebuggerFrontEnd.h>
 #endif
 #ifndef INCLUDED_flixel_util_FlxMath
 #include <flixel/util/FlxMath.h>
@@ -14,9 +20,6 @@
 #endif
 #ifndef INCLUDED_flixel_util_FlxRect
 #include <flixel/util/FlxRect.h>
-#endif
-#ifndef INCLUDED_flixel_util_FlxStringUtil
-#include <flixel/util/FlxStringUtil.h>
 #endif
 #ifndef INCLUDED_hxMath
 #include <hxMath.h>
@@ -61,56 +64,10 @@ Dynamic FlxRect_obj::__Create(hx::DynamicArray inArgs)
 ::String FlxRect_obj::toString( ){
 	HX_STACK_PUSH("FlxRect::toString","flixel/util/FlxRect.hx",236);
 	HX_STACK_THIS(this);
-	struct _Function_1_1{
-		inline static Dynamic Block( ::flixel::util::FlxRect_obj *__this){
-			HX_STACK_PUSH("*::closure","flixel/util/FlxRect.hx",237);
-			{
-				hx::Anon __result = hx::Anon_obj::Create();
-				__result->Add(HX_CSTRING("label") , HX_CSTRING("x"),false);
-				__result->Add(HX_CSTRING("value") , __this->x,false);
-				return __result;
-			}
-			return null();
-		}
-	};
-	struct _Function_1_2{
-		inline static Dynamic Block( ::flixel::util::FlxRect_obj *__this){
-			HX_STACK_PUSH("*::closure","flixel/util/FlxRect.hx",238);
-			{
-				hx::Anon __result = hx::Anon_obj::Create();
-				__result->Add(HX_CSTRING("label") , HX_CSTRING("y"),false);
-				__result->Add(HX_CSTRING("value") , __this->y,false);
-				return __result;
-			}
-			return null();
-		}
-	};
-	struct _Function_1_3{
-		inline static Dynamic Block( ::flixel::util::FlxRect_obj *__this){
-			HX_STACK_PUSH("*::closure","flixel/util/FlxRect.hx",239);
-			{
-				hx::Anon __result = hx::Anon_obj::Create();
-				__result->Add(HX_CSTRING("label") , HX_CSTRING("w"),false);
-				__result->Add(HX_CSTRING("value") , __this->width,false);
-				return __result;
-			}
-			return null();
-		}
-	};
-	struct _Function_1_4{
-		inline static Dynamic Block( ::flixel::util::FlxRect_obj *__this){
-			HX_STACK_PUSH("*::closure","flixel/util/FlxRect.hx",240);
-			{
-				hx::Anon __result = hx::Anon_obj::Create();
-				__result->Add(HX_CSTRING("label") , HX_CSTRING("h"),false);
-				__result->Add(HX_CSTRING("value") , __this->height,false);
-				return __result;
-			}
-			return null();
-		}
-	};
-	HX_STACK_LINE(236)
-	return ::flixel::util::FlxStringUtil_obj::getDebugString(Dynamic( Array_obj<Dynamic>::__new().Add(_Function_1_1::Block(this)).Add(_Function_1_2::Block(this)).Add(_Function_1_3::Block(this)).Add(_Function_1_4::Block(this))));
+	HX_STACK_LINE(237)
+	int p = ::flixel::FlxG_obj::debugger->precision;		HX_STACK_VAR(p,"p");
+	HX_STACK_LINE(238)
+	return ((((((((HX_CSTRING("(x: ") + ::flixel::util::FlxMath_obj::roundDecimal(this->x,p)) + HX_CSTRING(" | y: ")) + ::flixel::util::FlxMath_obj::roundDecimal(this->y,p)) + HX_CSTRING(" | w: ")) + ::flixel::util::FlxMath_obj::roundDecimal(this->width,p)) + HX_CSTRING(" | h: ")) + ::flixel::util::FlxMath_obj::roundDecimal(this->height,p)) + HX_CSTRING(")"));
 }
 
 

@@ -61,23 +61,23 @@ Dynamic QuadPath_obj::__Create(hx::DynamicArray inArgs)
 	return result;}
 
 Float QuadPath_obj::getCurveLength( ::flixel::util::FlxPoint start,::flixel::util::FlxPoint control,::flixel::util::FlxPoint finish){
-	HX_STACK_PUSH("QuadPath::getCurveLength","flixel/tweens/motion/QuadPath.hx",209);
+	HX_STACK_PUSH("QuadPath::getCurveLength","flixel/tweens/motion/QuadPath.hx",210);
 	HX_STACK_THIS(this);
 	HX_STACK_ARG(start,"start");
 	HX_STACK_ARG(control,"control");
 	HX_STACK_ARG(finish,"finish");
-	HX_STACK_LINE(210)
+	HX_STACK_LINE(211)
 	::flixel::util::FlxPoint a = ::flixel::tweens::motion::QuadPath_obj::_Point;		HX_STACK_VAR(a,"a");
 	::flixel::util::FlxPoint b = ::flixel::tweens::motion::QuadPath_obj::_Point2;		HX_STACK_VAR(b,"b");
-	HX_STACK_LINE(212)
-	a->set_x(((start->x - ((int)2 * control->x)) + finish->x));
 	HX_STACK_LINE(213)
-	a->set_y(((start->y - ((int)2 * control->y)) + finish->y));
+	a->set_x(((start->x - ((int)2 * control->x)) + finish->x));
 	HX_STACK_LINE(214)
-	b->set_x((((int)2 * control->x) - ((int)2 * start->x)));
+	a->set_y(((start->y - ((int)2 * control->y)) + finish->y));
 	HX_STACK_LINE(215)
-	b->set_y((((int)2 * control->y) - ((int)2 * start->y)));
+	b->set_x((((int)2 * control->x) - ((int)2 * start->x)));
 	HX_STACK_LINE(216)
+	b->set_y((((int)2 * control->y) - ((int)2 * start->y)));
+	HX_STACK_LINE(217)
 	Float A = ((int)4 * (((a->x * a->x) + (a->y * a->y))));		HX_STACK_VAR(A,"A");
 	Float B = ((int)4 * (((a->x * b->x) + (a->y * b->y))));		HX_STACK_VAR(B,"B");
 	Float C = ((b->x * b->x) + (b->y * b->y));		HX_STACK_VAR(C,"C");
@@ -86,7 +86,7 @@ Float QuadPath_obj::getCurveLength( ::flixel::util::FlxPoint start,::flixel::uti
 	Float A32 = (((int)2 * A) * A2);		HX_STACK_VAR(A32,"A32");
 	Float C2 = ((int)2 * ::Math_obj::sqrt(C));		HX_STACK_VAR(C2,"C2");
 	Float BA = (Float(B) / Float(A2));		HX_STACK_VAR(BA,"BA");
-	HX_STACK_LINE(224)
+	HX_STACK_LINE(225)
 	return (Float(((((A32 * ABC) + ((A2 * B) * ((ABC - C2)))) + ((((((int)4 * C) * A) - (B * B))) * ::Math_obj::log((Float((((((int)2 * A2) + BA) + ABC))) / Float(((BA + C2))))))))) / Float((((int)4 * A32))));
 }
 
@@ -95,51 +95,51 @@ HX_DEFINE_DYNAMIC_FUNC3(QuadPath_obj,getCurveLength,return )
 
 Void QuadPath_obj::updatePath( ){
 {
-		HX_STACK_PUSH("QuadPath::updatePath","flixel/tweens/motion/QuadPath.hx",173);
+		HX_STACK_PUSH("QuadPath::updatePath","flixel/tweens/motion/QuadPath.hx",174);
 		HX_STACK_THIS(this);
-		HX_STACK_LINE(174)
+		HX_STACK_LINE(175)
 		if (((bool((hx::Mod(((this->_points->length - (int)1)),(int)2) != (int)0)) || bool((this->_points->length < (int)3))))){
-			HX_STACK_LINE(175)
+			HX_STACK_LINE(176)
 			hx::Throw (HX_CSTRING("A QuadPath must have at least 3 points to operate and number of points must be a odd."));
 		}
-		HX_STACK_LINE(178)
+		HX_STACK_LINE(179)
 		if ((!(this->_updateCurve))){
-			HX_STACK_LINE(179)
+			HX_STACK_LINE(180)
 			return null();
 		}
-		HX_STACK_LINE(182)
+		HX_STACK_LINE(183)
 		this->_updateCurve = false;
-		HX_STACK_LINE(185)
-		int i = (int)0;		HX_STACK_VAR(i,"i");
 		HX_STACK_LINE(186)
-		int j = (int)0;		HX_STACK_VAR(j,"j");
+		int i = (int)0;		HX_STACK_VAR(i,"i");
 		HX_STACK_LINE(187)
-		this->_distance = (int)0;
+		int j = (int)0;		HX_STACK_VAR(j,"j");
 		HX_STACK_LINE(188)
-		this->_numSegs = ::Std_obj::_int((Float(((this->_points->length - (int)1))) / Float((int)2)));
+		this->_distance = (int)0;
 		HX_STACK_LINE(189)
+		this->_numSegs = ::Std_obj::_int((Float(((this->_points->length - (int)1))) / Float((int)2)));
+		HX_STACK_LINE(190)
 		while(((i < this->_numSegs))){
-			HX_STACK_LINE(191)
-			j = (i * (int)2);
 			HX_STACK_LINE(192)
-			this->_curveD[i] = this->getCurveLength(this->_points->__get(j).StaticCast< ::flixel::util::FlxPoint >(),this->_points->__get((j + (int)1)).StaticCast< ::flixel::util::FlxPoint >(),this->_points->__get((j + (int)2)).StaticCast< ::flixel::util::FlxPoint >());
+			j = (i * (int)2);
 			HX_STACK_LINE(193)
+			this->_curveD[i] = this->getCurveLength(this->_points->__get(j).StaticCast< ::flixel::util::FlxPoint >(),this->_points->__get((j + (int)1)).StaticCast< ::flixel::util::FlxPoint >(),this->_points->__get((j + (int)2)).StaticCast< ::flixel::util::FlxPoint >());
+			HX_STACK_LINE(194)
 			hx::AddEq(this->_distance,this->_curveD->__get((i)++));
 		}
-		HX_STACK_LINE(197)
-		i = (int)0;
 		HX_STACK_LINE(198)
-		Float d = (int)0;		HX_STACK_VAR(d,"d");
+		i = (int)0;
 		HX_STACK_LINE(199)
+		Float d = (int)0;		HX_STACK_VAR(d,"d");
+		HX_STACK_LINE(200)
 		while(((i < this->_numSegs))){
-			HX_STACK_LINE(201)
-			hx::AddEq(d,this->_curveD->__get(i));
 			HX_STACK_LINE(202)
+			hx::AddEq(d,this->_curveD->__get(i));
+			HX_STACK_LINE(203)
 			this->_curveT[(i)++] = (Float(d) / Float(this->_distance));
 		}
-		HX_STACK_LINE(204)
-		this->_curveT[(this->_numSegs - (int)1)] = (int)1;
 		HX_STACK_LINE(205)
+		this->_curveT[(this->_numSegs - (int)1)] = (int)1;
+		HX_STACK_LINE(206)
 		this->_curveT->unshift((int)0);
 	}
 return null();
@@ -159,7 +159,7 @@ Void QuadPath_obj::update( ){
 		HX_STACK_LINE(119)
 		Float tt;		HX_STACK_VAR(tt,"tt");
 		HX_STACK_LINE(121)
-		if (((bool(!(this->backward)) && bool((this->_points != null()))))){
+		if (((bool(!(this->_backward)) && bool((this->_points != null()))))){
 			HX_STACK_LINE(123)
 			if (((this->_index < (this->_numSegs - (int)1)))){
 				HX_STACK_LINE(124)
@@ -224,7 +224,7 @@ Void QuadPath_obj::update( ){
 				this->y = ((((this->_a->y * (((int)1 - td))) * (((int)1 - td))) + (((this->_b->y * (int)2) * (((int)1 - td))) * td)) + ((this->_c->y * td) * td));
 			}
 		}
-		HX_STACK_LINE(168)
+		HX_STACK_LINE(169)
 		this->super::postUpdate();
 	}
 return null();
@@ -235,7 +235,7 @@ return null();
 	HX_STACK_PUSH("QuadPath::start","flixel/tweens/motion/QuadPath.hx",109);
 	HX_STACK_THIS(this);
 	HX_STACK_LINE(110)
-	this->_index = (  ((this->backward)) ? int((this->_numSegs - (int)1)) : int((int)0) );
+	this->_index = (  ((this->_backward)) ? int((this->_numSegs - (int)1)) : int((int)0) );
 	HX_STACK_LINE(111)
 	this->super::start();
 	HX_STACK_LINE(112)

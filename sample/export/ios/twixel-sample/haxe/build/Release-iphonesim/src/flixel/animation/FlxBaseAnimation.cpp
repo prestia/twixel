@@ -9,21 +9,18 @@
 #ifndef INCLUDED_flixel_animation_FlxBaseAnimation
 #include <flixel/animation/FlxBaseAnimation.h>
 #endif
-#ifndef INCLUDED_flixel_interfaces_IFlxDestroyable
-#include <flixel/interfaces/IFlxDestroyable.h>
-#endif
 namespace flixel{
 namespace animation{
 
 Void FlxBaseAnimation_obj::__construct(::flixel::animation::FlxAnimationController Parent,::String Name)
 {
-HX_STACK_PUSH("FlxBaseAnimation::new","flixel/animation/FlxBaseAnimation.hx",10);
+HX_STACK_PUSH("FlxBaseAnimation::new","flixel/animation/FlxBaseAnimation.hx",9);
 {
-	HX_STACK_LINE(26)
+	HX_STACK_LINE(25)
 	this->curIndex = (int)0;
-	HX_STACK_LINE(42)
+	HX_STACK_LINE(41)
 	this->parent = Parent;
-	HX_STACK_LINE(43)
+	HX_STACK_LINE(42)
 	this->name = Name;
 }
 ;
@@ -43,16 +40,11 @@ Dynamic FlxBaseAnimation_obj::__Create(hx::DynamicArray inArgs)
 	result->__construct(inArgs[0],inArgs[1]);
 	return result;}
 
-hx::Object *FlxBaseAnimation_obj::__ToInterface(const hx::type_info &inType) {
-	if (inType==typeid( ::flixel::interfaces::IFlxDestroyable_obj)) return operator ::flixel::interfaces::IFlxDestroyable_obj *();
-	return super::__ToInterface(inType);
-}
-
 ::flixel::animation::FlxBaseAnimation FlxBaseAnimation_obj::clone( ::flixel::animation::FlxAnimationController Parent){
-	HX_STACK_PUSH("FlxBaseAnimation::clone","flixel/animation/FlxBaseAnimation.hx",54);
+	HX_STACK_PUSH("FlxBaseAnimation::clone","flixel/animation/FlxBaseAnimation.hx",56);
 	HX_STACK_THIS(this);
 	HX_STACK_ARG(Parent,"Parent");
-	HX_STACK_LINE(54)
+	HX_STACK_LINE(56)
 	return null();
 }
 
@@ -72,9 +64,9 @@ HX_DEFINE_DYNAMIC_FUNC0(FlxBaseAnimation_obj,update,(void))
 
 Void FlxBaseAnimation_obj::destroy( ){
 {
-		HX_STACK_PUSH("FlxBaseAnimation::destroy","flixel/animation/FlxBaseAnimation.hx",47);
+		HX_STACK_PUSH("FlxBaseAnimation::destroy","flixel/animation/FlxBaseAnimation.hx",46);
 		HX_STACK_THIS(this);
-		HX_STACK_LINE(47)
+		HX_STACK_LINE(46)
 		this->parent = null();
 	}
 return null();
@@ -84,17 +76,17 @@ return null();
 HX_DEFINE_DYNAMIC_FUNC0(FlxBaseAnimation_obj,destroy,(void))
 
 int FlxBaseAnimation_obj::set_curIndex( int Value){
-	HX_STACK_PUSH("FlxBaseAnimation::set_curIndex","flixel/animation/FlxBaseAnimation.hx",29);
+	HX_STACK_PUSH("FlxBaseAnimation::set_curIndex","flixel/animation/FlxBaseAnimation.hx",28);
 	HX_STACK_THIS(this);
 	HX_STACK_ARG(Value,"Value");
-	HX_STACK_LINE(30)
+	HX_STACK_LINE(29)
 	this->curIndex = Value;
-	HX_STACK_LINE(32)
+	HX_STACK_LINE(31)
 	if (((bool((this->parent != null())) && bool((this->parent->_curAnim == hx::ObjectPtr<OBJ_>(this)))))){
-		HX_STACK_LINE(33)
+		HX_STACK_LINE(32)
 		this->parent->set_frameIndex(Value);
 	}
-	HX_STACK_LINE(37)
+	HX_STACK_LINE(36)
 	return Value;
 }
 

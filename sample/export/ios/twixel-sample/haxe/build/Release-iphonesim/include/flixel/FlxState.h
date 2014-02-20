@@ -35,15 +35,6 @@ class HXCPP_CLASS_ATTRIBUTES  FlxState_obj : public ::flixel::group::FlxGroup_ob
 		void __Visit(HX_VISIT_PARAMS);
 		::String __ToString() const { return HX_CSTRING("FlxState"); }
 
-		virtual int set_bgColor( int Value);
-		Dynamic set_bgColor_dyn();
-
-		virtual int get_bgColor( );
-		Dynamic get_bgColor_dyn();
-
-		virtual Void tryUpdate( );
-		Dynamic tryUpdate_dyn();
-
 		virtual Void onResize( int Width,int Height);
 		Dynamic onResize_dyn();
 
@@ -61,18 +52,31 @@ class HXCPP_CLASS_ATTRIBUTES  FlxState_obj : public ::flixel::group::FlxGroup_ob
 		virtual Void closeSubState( );
 		Dynamic closeSubState_dyn();
 
-		virtual Void openSubState( ::flixel::FlxSubState SubState);
-		Dynamic openSubState_dyn();
+		virtual Void setSubState( ::flixel::FlxSubState subState);
+		Dynamic setSubState_dyn();
+
+		virtual Void tryUpdate( );
+		Dynamic tryUpdate_dyn();
 
 		virtual Void draw( );
 
 		virtual Void create( );
 		Dynamic create_dyn();
 
-		bool _requestSubStateReset;
-		::flixel::FlxSubState _requestedSubState;
-		::flixel::FlxSubState subState;
+		virtual int set_bgColor( int Value);
+		Dynamic set_bgColor_dyn();
+
+		virtual int get_bgColor( );
+		Dynamic get_bgColor_dyn();
+
 		bool destroySubStates;
+		bool requestSubStateReset;
+		::flixel::FlxSubState requestedSubState;
+		virtual ::flixel::FlxSubState get_subState( );
+		Dynamic get_subState_dyn();
+
+		::flixel::FlxSubState subState;
+		::flixel::FlxSubState _subState;
 		bool persistentDraw;
 		bool persistentUpdate;
 };

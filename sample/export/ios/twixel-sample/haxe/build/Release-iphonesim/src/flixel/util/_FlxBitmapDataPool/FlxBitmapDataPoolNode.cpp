@@ -15,13 +15,19 @@ namespace _FlxBitmapDataPool{
 
 Void FlxBitmapDataPoolNode_obj::__construct(::flash::display::BitmapData bmd,::flixel::util::_FlxBitmapDataPool::FlxBitmapDataPoolNode prev,::flixel::util::_FlxBitmapDataPool::FlxBitmapDataPoolNode next)
 {
-HX_STACK_PUSH("FlxBitmapDataPoolNode::new","flixel/util/FlxBitmapDataPool.hx",159);
+HX_STACK_PUSH("FlxBitmapDataPoolNode::new","flixel/util/FlxBitmapDataPool.hx",153);
 {
-	HX_STACK_LINE(160)
-	this->bmd = bmd;
+	HX_STACK_LINE(157)
+	this->next = null();
+	HX_STACK_LINE(156)
+	this->prev = null();
+	HX_STACK_LINE(155)
+	this->bmd = null();
 	HX_STACK_LINE(161)
-	this->prev = prev;
+	this->bmd = bmd;
 	HX_STACK_LINE(162)
+	this->prev = prev;
+	HX_STACK_LINE(163)
 	this->next = next;
 }
 ;

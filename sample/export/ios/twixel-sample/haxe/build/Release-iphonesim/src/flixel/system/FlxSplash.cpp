@@ -99,6 +99,9 @@
 #ifndef INCLUDED_flixel_tweens_FlxTween
 #include <flixel/tweens/FlxTween.h>
 #endif
+#ifndef INCLUDED_flixel_tweens_misc_MultiVarTween
+#include <flixel/tweens/misc/MultiVarTween.h>
+#endif
 #ifndef INCLUDED_flixel_util_FlxTimer
 #include <flixel/util/FlxTimer.h>
 #endif
@@ -147,11 +150,11 @@ Void FlxSplash_obj::onComplete( ::flixel::tweens::FlxTween Tween){
 		HX_STACK_LINE(202)
 		::flixel::FlxG_obj::keys->enabled = true;
 		HX_STACK_LINE(204)
-		::flash::Lib_obj::get_current()->get_stage()->removeChild(this->_sprite);
+		::flixel::FlxG_obj::game->get_stage()->removeChild(this->_sprite);
 		HX_STACK_LINE(205)
-		::flash::Lib_obj::get_current()->get_stage()->removeChild(this->_text);
+		::flixel::FlxG_obj::game->get_stage()->removeChild(this->_text);
 		HX_STACK_LINE(206)
-		::flixel::FlxG_obj::game->_requestedState = ::Type_obj::createInstance(this->_nextState,Dynamic( Array_obj<Dynamic>::__new()));
+		::flixel::FlxG_obj::game->requestedState = ::Type_obj::createInstance(this->_nextState,Dynamic( Array_obj<Dynamic>::__new()));
 		HX_STACK_LINE(207)
 		::flixel::FlxG_obj::game->_gameJustStarted = true;
 	}
@@ -420,7 +423,7 @@ Void FlxSplash_obj::create( ){
 		HX_STACK_LINE(98)
 		this->_sprite = ::flash::display::Sprite_obj::__new();
 		HX_STACK_LINE(99)
-		::flash::Lib_obj::get_current()->get_stage()->addChild(this->_sprite);
+		::flixel::FlxG_obj::game->get_stage()->addChild(this->_sprite);
 		HX_STACK_LINE(100)
 		this->_gfx = this->_sprite->get_graphics();
 		HX_STACK_LINE(102)
@@ -438,7 +441,7 @@ Void FlxSplash_obj::create( ){
 		HX_STACK_LINE(108)
 		this->_text->set_text(HX_CSTRING("HaxeFlixel"));
 		HX_STACK_LINE(109)
-		::flash::Lib_obj::get_current()->get_stage()->addChild(this->_text);
+		::flixel::FlxG_obj::game->get_stage()->addChild(this->_text);
 		HX_STACK_LINE(111)
 		this->onResize(stageWidth,stageHeight);
 		HX_STACK_LINE(114)

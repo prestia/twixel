@@ -6,8 +6,6 @@
 #endif
 
 HX_DECLARE_CLASS0(IMap)
-HX_DECLARE_CLASS2(flash,display,BitmapData)
-HX_DECLARE_CLASS2(flash,display,IBitmapDrawable)
 HX_DECLARE_CLASS2(flixel,util,FlxStringUtil)
 HX_DECLARE_CLASS2(haxe,ds,StringMap)
 namespace flixel{
@@ -66,18 +64,6 @@ class HXCPP_CLASS_ATTRIBUTES  FlxStringUtil_obj : public hx::Object{
 
 		static Array< Float > toFloatArray( ::String Data);
 		static Dynamic toFloatArray_dyn();
-
-		static ::String arrayToCSV( Array< int > Data,int Width,hx::Null< bool >  Invert);
-		static Dynamic arrayToCSV_dyn();
-
-		static ::String bitmapToCSV( ::flash::display::BitmapData Bitmap,hx::Null< bool >  Invert,hx::Null< int >  Scale,Array< int > ColorMap);
-		static Dynamic bitmapToCSV_dyn();
-
-		static ::String imageToCSV( Dynamic ImageFile,hx::Null< bool >  Invert,hx::Null< int >  Scale);
-		static Dynamic imageToCSV_dyn();
-
-		static ::String getDebugString( Dynamic LabelValuePairs);
-		static Dynamic getDebugString_dyn();
 
 };
 

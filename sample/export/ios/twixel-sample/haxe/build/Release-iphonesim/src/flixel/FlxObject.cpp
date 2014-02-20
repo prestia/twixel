@@ -30,6 +30,9 @@
 #ifndef INCLUDED_flixel_system_frontEnds_CameraFrontEnd
 #include <flixel/system/frontEnds/CameraFrontEnd.h>
 #endif
+#ifndef INCLUDED_flixel_system_frontEnds_DebuggerFrontEnd
+#include <flixel/system/frontEnds/DebuggerFrontEnd.h>
+#endif
 #ifndef INCLUDED_flixel_system_layer_Region
 #include <flixel/system/layer/Region.h>
 #endif
@@ -39,17 +42,14 @@
 #ifndef INCLUDED_flixel_tile_FlxTilemap
 #include <flixel/tile/FlxTilemap.h>
 #endif
+#ifndef INCLUDED_flixel_util_FlxMath
+#include <flixel/util/FlxMath.h>
+#endif
 #ifndef INCLUDED_flixel_util_FlxPoint
 #include <flixel/util/FlxPoint.h>
 #endif
 #ifndef INCLUDED_flixel_util_FlxRect
 #include <flixel/util/FlxRect.h>
-#endif
-#ifndef INCLUDED_flixel_util_FlxStringUtil
-#include <flixel/util/FlxStringUtil.h>
-#endif
-#ifndef INCLUDED_flixel_util_FlxVelocity
-#include <flixel/util/FlxVelocity.h>
 #endif
 #ifndef INCLUDED_flixel_util_loaders_CachedGraphics
 #include <flixel/util/loaders/CachedGraphics.h>
@@ -61,57 +61,57 @@ namespace flixel{
 
 Void FlxObject_obj::__construct(hx::Null< Float >  __o_X,hx::Null< Float >  __o_Y,hx::Null< Float >  __o_Width,hx::Null< Float >  __o_Height)
 {
-HX_STACK_PUSH("FlxObject::new","flixel/FlxObject.hx",24);
+HX_STACK_PUSH("FlxObject::new","flixel/FlxObject.hx",22);
 Float X = __o_X.Default(0);
 Float Y = __o_Y.Default(0);
 Float Width = __o_Width.Default(0);
 Float Height = __o_Height.Default(0);
 {
-	HX_STACK_LINE(185)
+	HX_STACK_LINE(183)
 	this->collisonXDrag = true;
-	HX_STACK_LINE(175)
+	HX_STACK_LINE(173)
 	this->allowCollisions = (int)4369;
-	HX_STACK_LINE(170)
+	HX_STACK_LINE(168)
 	this->wasTouching = (int)0;
-	HX_STACK_LINE(165)
+	HX_STACK_LINE(163)
 	this->touching = (int)0;
-	HX_STACK_LINE(160)
+	HX_STACK_LINE(158)
 	this->health = (int)1;
-	HX_STACK_LINE(156)
+	HX_STACK_LINE(154)
 	this->maxAngular = (int)10000;
-	HX_STACK_LINE(152)
+	HX_STACK_LINE(150)
 	this->angularDrag = (int)0;
-	HX_STACK_LINE(148)
+	HX_STACK_LINE(146)
 	this->angularAcceleration = (int)0;
-	HX_STACK_LINE(144)
+	HX_STACK_LINE(142)
 	this->angularVelocity = (int)0;
-	HX_STACK_LINE(140)
+	HX_STACK_LINE(138)
 	this->elasticity = (int)0;
-	HX_STACK_LINE(136)
+	HX_STACK_LINE(134)
 	this->mass = (int)1;
-	HX_STACK_LINE(107)
+	HX_STACK_LINE(105)
 	this->forceComplexRender = false;
-	HX_STACK_LINE(96)
+	HX_STACK_LINE(94)
 	this->immovable = false;
-	HX_STACK_LINE(92)
+	HX_STACK_LINE(90)
 	this->moves = true;
-	HX_STACK_LINE(87)
+	HX_STACK_LINE(85)
 	this->angle = (int)0;
-	HX_STACK_LINE(74)
+	HX_STACK_LINE(72)
 	this->y = (int)0;
-	HX_STACK_LINE(70)
+	HX_STACK_LINE(68)
 	this->x = (int)0;
-	HX_STACK_LINE(208)
-	super::__construct();
-	HX_STACK_LINE(210)
-	this->set_x(X);
-	HX_STACK_LINE(211)
-	this->set_y(Y);
 	HX_STACK_LINE(212)
-	this->set_width(Width);
-	HX_STACK_LINE(213)
-	this->set_height(Height);
+	super::__construct();
+	HX_STACK_LINE(214)
+	this->set_x(X);
 	HX_STACK_LINE(215)
+	this->set_y(Y);
+	HX_STACK_LINE(216)
+	this->set_width(Width);
+	HX_STACK_LINE(217)
+	this->set_height(Height);
+	HX_STACK_LINE(219)
 	this->initVars();
 }
 ;
@@ -132,90 +132,20 @@ Dynamic FlxObject_obj::__Create(hx::DynamicArray inArgs)
 	return result;}
 
 ::String FlxObject_obj::toString( ){
-	HX_STACK_PUSH("FlxObject::toString","flixel/FlxObject.hx",1070);
+	HX_STACK_PUSH("FlxObject::toString","flixel/FlxObject.hx",1074);
 	HX_STACK_THIS(this);
-	struct _Function_1_1{
-		inline static Dynamic Block( ::flixel::FlxObject_obj *__this){
-			HX_STACK_PUSH("*::closure","flixel/FlxObject.hx",1071);
-			{
-				hx::Anon __result = hx::Anon_obj::Create();
-				__result->Add(HX_CSTRING("label") , HX_CSTRING("x"),false);
-				__result->Add(HX_CSTRING("value") , __this->x,false);
-				return __result;
-			}
-			return null();
-		}
-	};
-	struct _Function_1_2{
-		inline static Dynamic Block( ::flixel::FlxObject_obj *__this){
-			HX_STACK_PUSH("*::closure","flixel/FlxObject.hx",1072);
-			{
-				hx::Anon __result = hx::Anon_obj::Create();
-				__result->Add(HX_CSTRING("label") , HX_CSTRING("y"),false);
-				__result->Add(HX_CSTRING("value") , __this->y,false);
-				return __result;
-			}
-			return null();
-		}
-	};
-	struct _Function_1_3{
-		inline static Dynamic Block( ::flixel::FlxObject_obj *__this){
-			HX_STACK_PUSH("*::closure","flixel/FlxObject.hx",1073);
-			{
-				hx::Anon __result = hx::Anon_obj::Create();
-				__result->Add(HX_CSTRING("label") , HX_CSTRING("w"),false);
-				__result->Add(HX_CSTRING("value") , __this->get_width(),false);
-				return __result;
-			}
-			return null();
-		}
-	};
-	struct _Function_1_4{
-		inline static Dynamic Block( ::flixel::FlxObject_obj *__this){
-			HX_STACK_PUSH("*::closure","flixel/FlxObject.hx",1074);
-			{
-				hx::Anon __result = hx::Anon_obj::Create();
-				__result->Add(HX_CSTRING("label") , HX_CSTRING("h"),false);
-				__result->Add(HX_CSTRING("value") , __this->get_height(),false);
-				return __result;
-			}
-			return null();
-		}
-	};
-	struct _Function_1_5{
-		inline static Dynamic Block( ::flixel::FlxObject_obj *__this){
-			HX_STACK_PUSH("*::closure","flixel/FlxObject.hx",1075);
-			{
-				hx::Anon __result = hx::Anon_obj::Create();
-				__result->Add(HX_CSTRING("label") , HX_CSTRING("visible"),false);
-				__result->Add(HX_CSTRING("value") , __this->visible,false);
-				return __result;
-			}
-			return null();
-		}
-	};
-	struct _Function_1_6{
-		inline static Dynamic Block( ::flixel::FlxObject_obj *__this){
-			HX_STACK_PUSH("*::closure","flixel/FlxObject.hx",1076);
-			{
-				hx::Anon __result = hx::Anon_obj::Create();
-				__result->Add(HX_CSTRING("label") , HX_CSTRING("velocity"),false);
-				__result->Add(HX_CSTRING("value") , __this->velocity,false);
-				return __result;
-			}
-			return null();
-		}
-	};
-	HX_STACK_LINE(1070)
-	return ::flixel::util::FlxStringUtil_obj::getDebugString(Dynamic( Array_obj<Dynamic>::__new().Add(_Function_1_1::Block(this)).Add(_Function_1_2::Block(this)).Add(_Function_1_3::Block(this)).Add(_Function_1_4::Block(this)).Add(_Function_1_5::Block(this)).Add(_Function_1_6::Block(this))));
+	HX_STACK_LINE(1075)
+	int p = ::flixel::FlxG_obj::debugger->precision;		HX_STACK_VAR(p,"p");
+	HX_STACK_LINE(1076)
+	return ((((((((((((HX_CSTRING("(x: ") + ::flixel::util::FlxMath_obj::roundDecimal(this->x,p)) + HX_CSTRING(" | y: ")) + ::flixel::util::FlxMath_obj::roundDecimal(this->y,p)) + HX_CSTRING(" | w: ")) + ::flixel::util::FlxMath_obj::roundDecimal(this->get_width(),p)) + HX_CSTRING(" | h: ")) + ::flixel::util::FlxMath_obj::roundDecimal(this->get_height(),p)) + HX_CSTRING(" | visible: ")) + ::Std_obj::string(this->visible)) + HX_CSTRING(" | velocity: ")) + ::Std_obj::string(this->velocity)) + HX_CSTRING(")"));
 }
 
 
 bool FlxObject_obj::set_forceComplexRender( bool Value){
-	HX_STACK_PUSH("FlxObject::set_forceComplexRender","flixel/FlxObject.hx",1047);
+	HX_STACK_PUSH("FlxObject::set_forceComplexRender","flixel/FlxObject.hx",1051);
 	HX_STACK_THIS(this);
 	HX_STACK_ARG(Value,"Value");
-	HX_STACK_LINE(1047)
+	HX_STACK_LINE(1051)
 	return this->forceComplexRender = Value;
 }
 
@@ -223,10 +153,10 @@ bool FlxObject_obj::set_forceComplexRender( bool Value){
 HX_DEFINE_DYNAMIC_FUNC1(FlxObject_obj,set_forceComplexRender,return )
 
 bool FlxObject_obj::set_immovable( bool Value){
-	HX_STACK_PUSH("FlxObject::set_immovable","flixel/FlxObject.hx",1042);
+	HX_STACK_PUSH("FlxObject::set_immovable","flixel/FlxObject.hx",1046);
 	HX_STACK_THIS(this);
 	HX_STACK_ARG(Value,"Value");
-	HX_STACK_LINE(1042)
+	HX_STACK_LINE(1046)
 	return this->immovable = Value;
 }
 
@@ -234,10 +164,10 @@ bool FlxObject_obj::set_immovable( bool Value){
 HX_DEFINE_DYNAMIC_FUNC1(FlxObject_obj,set_immovable,return )
 
 bool FlxObject_obj::set_moves( bool Value){
-	HX_STACK_PUSH("FlxObject::set_moves","flixel/FlxObject.hx",1037);
+	HX_STACK_PUSH("FlxObject::set_moves","flixel/FlxObject.hx",1041);
 	HX_STACK_THIS(this);
 	HX_STACK_ARG(Value,"Value");
-	HX_STACK_LINE(1037)
+	HX_STACK_LINE(1041)
 	return this->moves = Value;
 }
 
@@ -245,10 +175,10 @@ bool FlxObject_obj::set_moves( bool Value){
 HX_DEFINE_DYNAMIC_FUNC1(FlxObject_obj,set_moves,return )
 
 Float FlxObject_obj::set_angle( Float Value){
-	HX_STACK_PUSH("FlxObject::set_angle","flixel/FlxObject.hx",1032);
+	HX_STACK_PUSH("FlxObject::set_angle","flixel/FlxObject.hx",1036);
 	HX_STACK_THIS(this);
 	HX_STACK_ARG(Value,"Value");
-	HX_STACK_LINE(1032)
+	HX_STACK_LINE(1036)
 	return this->angle = Value;
 }
 
@@ -256,19 +186,19 @@ Float FlxObject_obj::set_angle( Float Value){
 HX_DEFINE_DYNAMIC_FUNC1(FlxObject_obj,set_angle,return )
 
 bool FlxObject_obj::set_solid( bool Solid){
-	HX_STACK_PUSH("FlxObject::set_solid","flixel/FlxObject.hx",1019);
+	HX_STACK_PUSH("FlxObject::set_solid","flixel/FlxObject.hx",1023);
 	HX_STACK_THIS(this);
 	HX_STACK_ARG(Solid,"Solid");
-	HX_STACK_LINE(1020)
+	HX_STACK_LINE(1024)
 	if ((Solid)){
-		HX_STACK_LINE(1021)
+		HX_STACK_LINE(1025)
 		this->allowCollisions = (int)4369;
 	}
 	else{
-		HX_STACK_LINE(1025)
+		HX_STACK_LINE(1029)
 		this->allowCollisions = (int)0;
 	}
-	HX_STACK_LINE(1028)
+	HX_STACK_LINE(1032)
 	return Solid;
 }
 
@@ -276,9 +206,9 @@ bool FlxObject_obj::set_solid( bool Solid){
 HX_DEFINE_DYNAMIC_FUNC1(FlxObject_obj,set_solid,return )
 
 bool FlxObject_obj::get_solid( ){
-	HX_STACK_PUSH("FlxObject::get_solid","flixel/FlxObject.hx",1014);
+	HX_STACK_PUSH("FlxObject::get_solid","flixel/FlxObject.hx",1018);
 	HX_STACK_THIS(this);
-	HX_STACK_LINE(1014)
+	HX_STACK_LINE(1018)
 	return (((int(this->allowCollisions) & int((int)4369))) > (int)0);
 }
 
@@ -286,9 +216,9 @@ bool FlxObject_obj::get_solid( ){
 HX_DEFINE_DYNAMIC_FUNC0(FlxObject_obj,get_solid,return )
 
 Float FlxObject_obj::get_height( ){
-	HX_STACK_PUSH("FlxObject::get_height","flixel/FlxObject.hx",1009);
+	HX_STACK_PUSH("FlxObject::get_height","flixel/FlxObject.hx",1013);
 	HX_STACK_THIS(this);
-	HX_STACK_LINE(1009)
+	HX_STACK_LINE(1013)
 	return this->height;
 }
 
@@ -296,9 +226,9 @@ Float FlxObject_obj::get_height( ){
 HX_DEFINE_DYNAMIC_FUNC0(FlxObject_obj,get_height,return )
 
 Float FlxObject_obj::get_width( ){
-	HX_STACK_PUSH("FlxObject::get_width","flixel/FlxObject.hx",1004);
+	HX_STACK_PUSH("FlxObject::get_width","flixel/FlxObject.hx",1008);
 	HX_STACK_THIS(this);
-	HX_STACK_LINE(1004)
+	HX_STACK_LINE(1008)
 	return this->width;
 }
 
@@ -306,12 +236,12 @@ Float FlxObject_obj::get_width( ){
 HX_DEFINE_DYNAMIC_FUNC0(FlxObject_obj,get_width,return )
 
 Float FlxObject_obj::set_height( Float Height){
-	HX_STACK_PUSH("FlxObject::set_height","flixel/FlxObject.hx",986);
+	HX_STACK_PUSH("FlxObject::set_height","flixel/FlxObject.hx",990);
 	HX_STACK_THIS(this);
 	HX_STACK_ARG(Height,"Height");
-	HX_STACK_LINE(995)
+	HX_STACK_LINE(999)
 	this->height = Height;
-	HX_STACK_LINE(1000)
+	HX_STACK_LINE(1004)
 	return Height;
 }
 
@@ -319,12 +249,12 @@ Float FlxObject_obj::set_height( Float Height){
 HX_DEFINE_DYNAMIC_FUNC1(FlxObject_obj,set_height,return )
 
 Float FlxObject_obj::set_width( Float Width){
-	HX_STACK_PUSH("FlxObject::set_width","flixel/FlxObject.hx",968);
+	HX_STACK_PUSH("FlxObject::set_width","flixel/FlxObject.hx",972);
 	HX_STACK_THIS(this);
 	HX_STACK_ARG(Width,"Width");
-	HX_STACK_LINE(977)
+	HX_STACK_LINE(981)
 	this->width = Width;
-	HX_STACK_LINE(982)
+	HX_STACK_LINE(986)
 	return Width;
 }
 
@@ -332,10 +262,10 @@ Float FlxObject_obj::set_width( Float Width){
 HX_DEFINE_DYNAMIC_FUNC1(FlxObject_obj,set_width,return )
 
 Float FlxObject_obj::set_y( Float NewY){
-	HX_STACK_PUSH("FlxObject::set_y","flixel/FlxObject.hx",963);
+	HX_STACK_PUSH("FlxObject::set_y","flixel/FlxObject.hx",967);
 	HX_STACK_THIS(this);
 	HX_STACK_ARG(NewY,"NewY");
-	HX_STACK_LINE(963)
+	HX_STACK_LINE(967)
 	return this->y = NewY;
 }
 
@@ -343,10 +273,10 @@ Float FlxObject_obj::set_y( Float NewY){
 HX_DEFINE_DYNAMIC_FUNC1(FlxObject_obj,set_y,return )
 
 Float FlxObject_obj::set_x( Float NewX){
-	HX_STACK_PUSH("FlxObject::set_x","flixel/FlxObject.hx",958);
+	HX_STACK_PUSH("FlxObject::set_x","flixel/FlxObject.hx",962);
 	HX_STACK_THIS(this);
 	HX_STACK_ARG(NewX,"NewX");
-	HX_STACK_LINE(958)
+	HX_STACK_LINE(962)
 	return this->x = NewX;
 }
 
@@ -354,32 +284,32 @@ Float FlxObject_obj::set_x( Float NewX){
 HX_DEFINE_DYNAMIC_FUNC1(FlxObject_obj,set_x,return )
 
 ::flixel::util::loaders::CachedGraphics FlxObject_obj::set_cachedGraphics( ::flixel::util::loaders::CachedGraphics Value){
-	HX_STACK_PUSH("FlxObject::set_cachedGraphics","flixel/FlxObject.hx",938);
+	HX_STACK_PUSH("FlxObject::set_cachedGraphics","flixel/FlxObject.hx",942);
 	HX_STACK_THIS(this);
 	HX_STACK_ARG(Value,"Value");
-	HX_STACK_LINE(939)
+	HX_STACK_LINE(943)
 	::flixel::util::loaders::CachedGraphics oldCached = this->cachedGraphics;		HX_STACK_VAR(oldCached,"oldCached");
-	HX_STACK_LINE(941)
+	HX_STACK_LINE(945)
 	if (((bool((this->cachedGraphics != Value)) && bool((Value != null()))))){
-		HX_STACK_LINE(943)
+		HX_STACK_LINE(947)
 		::flixel::util::loaders::CachedGraphics _g = Value;		HX_STACK_VAR(_g,"_g");
 		int _g1 = _g->useCount;		HX_STACK_VAR(_g1,"_g1");
-		HX_STACK_LINE(943)
+		HX_STACK_LINE(947)
 		_g->set_useCount((_g1 + (int)1));
-		HX_STACK_LINE(943)
+		HX_STACK_LINE(947)
 		_g1;
 	}
-	HX_STACK_LINE(946)
+	HX_STACK_LINE(950)
 	if (((bool((oldCached != null())) && bool((oldCached != Value))))){
-		HX_STACK_LINE(948)
+		HX_STACK_LINE(952)
 		::flixel::util::loaders::CachedGraphics _g = oldCached;		HX_STACK_VAR(_g,"_g");
 		int _g1 = _g->useCount;		HX_STACK_VAR(_g1,"_g1");
-		HX_STACK_LINE(948)
+		HX_STACK_LINE(952)
 		_g->set_useCount((_g1 - (int)1));
-		HX_STACK_LINE(948)
+		HX_STACK_LINE(952)
 		_g1;
 	}
-	HX_STACK_LINE(951)
+	HX_STACK_LINE(955)
 	return this->cachedGraphics = Value;
 }
 
@@ -388,13 +318,13 @@ HX_DEFINE_DYNAMIC_FUNC1(FlxObject_obj,set_cachedGraphics,return )
 
 Void FlxObject_obj::setSize( Float Width,Float Height){
 {
-		HX_STACK_PUSH("FlxObject::setSize","flixel/FlxObject.hx",927);
+		HX_STACK_PUSH("FlxObject::setSize","flixel/FlxObject.hx",931);
 		HX_STACK_THIS(this);
 		HX_STACK_ARG(Width,"Width");
 		HX_STACK_ARG(Height,"Height");
-		HX_STACK_LINE(928)
+		HX_STACK_LINE(932)
 		this->set_width(Width);
-		HX_STACK_LINE(929)
+		HX_STACK_LINE(933)
 		this->set_height(Height);
 	}
 return null();
@@ -406,14 +336,14 @@ HX_DEFINE_DYNAMIC_FUNC2(FlxObject_obj,setSize,(void))
 Void FlxObject_obj::setPosition( hx::Null< Float >  __o_X,hx::Null< Float >  __o_Y){
 Float X = __o_X.Default(0);
 Float Y = __o_Y.Default(0);
-	HX_STACK_PUSH("FlxObject::setPosition","flixel/FlxObject.hx",916);
+	HX_STACK_PUSH("FlxObject::setPosition","flixel/FlxObject.hx",920);
 	HX_STACK_THIS(this);
 	HX_STACK_ARG(X,"X");
 	HX_STACK_ARG(Y,"Y");
 {
-		HX_STACK_LINE(917)
+		HX_STACK_LINE(921)
 		this->set_x(X);
-		HX_STACK_LINE(918)
+		HX_STACK_LINE(922)
 		this->set_y(Y);
 	}
 return null();
@@ -424,14 +354,14 @@ HX_DEFINE_DYNAMIC_FUNC2(FlxObject_obj,setPosition,(void))
 
 Void FlxObject_obj::hurt( Float Damage){
 {
-		HX_STACK_PUSH("FlxObject::hurt","flixel/FlxObject.hx",654);
+		HX_STACK_PUSH("FlxObject::hurt","flixel/FlxObject.hx",658);
 		HX_STACK_THIS(this);
 		HX_STACK_ARG(Damage,"Damage");
-		HX_STACK_LINE(655)
+		HX_STACK_LINE(659)
 		this->health = (this->health - Damage);
-		HX_STACK_LINE(656)
+		HX_STACK_LINE(660)
 		if (((this->health <= (int)0))){
-			HX_STACK_LINE(657)
+			HX_STACK_LINE(661)
 			this->kill();
 		}
 	}
@@ -442,10 +372,10 @@ return null();
 HX_DEFINE_DYNAMIC_FUNC1(FlxObject_obj,hurt,(void))
 
 bool FlxObject_obj::justTouched( int Direction){
-	HX_STACK_PUSH("FlxObject::justTouched","flixel/FlxObject.hx",644);
+	HX_STACK_PUSH("FlxObject::justTouched","flixel/FlxObject.hx",648);
 	HX_STACK_THIS(this);
 	HX_STACK_ARG(Direction,"Direction");
-	HX_STACK_LINE(644)
+	HX_STACK_LINE(648)
 	return (bool((((int(this->touching) & int(Direction))) > (int)0)) && bool((((int(this->wasTouching) & int(Direction))) <= (int)0)));
 }
 
@@ -453,10 +383,10 @@ bool FlxObject_obj::justTouched( int Direction){
 HX_DEFINE_DYNAMIC_FUNC1(FlxObject_obj,justTouched,return )
 
 bool FlxObject_obj::isTouching( int Direction){
-	HX_STACK_PUSH("FlxObject::isTouching","flixel/FlxObject.hx",634);
+	HX_STACK_PUSH("FlxObject::isTouching","flixel/FlxObject.hx",638);
 	HX_STACK_THIS(this);
 	HX_STACK_ARG(Direction,"Direction");
-	HX_STACK_LINE(634)
+	HX_STACK_LINE(638)
 	return (((int(this->touching) & int(Direction))) > (int)0);
 }
 
@@ -464,17 +394,17 @@ bool FlxObject_obj::isTouching( int Direction){
 HX_DEFINE_DYNAMIC_FUNC1(FlxObject_obj,isTouching,return )
 
 bool FlxObject_obj::isOnScreen( ::flixel::FlxCamera Camera){
-	HX_STACK_PUSH("FlxObject::isOnScreen","flixel/FlxObject.hx",619);
+	HX_STACK_PUSH("FlxObject::isOnScreen","flixel/FlxObject.hx",623);
 	HX_STACK_THIS(this);
 	HX_STACK_ARG(Camera,"Camera");
-	HX_STACK_LINE(620)
+	HX_STACK_LINE(624)
 	if (((Camera == null()))){
-		HX_STACK_LINE(621)
+		HX_STACK_LINE(625)
 		Camera = ::flixel::FlxG_obj::camera;
 	}
-	HX_STACK_LINE(624)
+	HX_STACK_LINE(628)
 	this->getScreenXY(this->_point,Camera);
-	HX_STACK_LINE(625)
+	HX_STACK_LINE(629)
 	return (bool((bool((bool(((this->_point->x + this->get_width()) > (int)0)) && bool((this->_point->x < Camera->width)))) && bool(((this->_point->y + this->get_height()) > (int)0)))) && bool((this->_point->y < Camera->height)));
 }
 
@@ -483,21 +413,21 @@ HX_DEFINE_DYNAMIC_FUNC1(FlxObject_obj,isOnScreen,return )
 
 Void FlxObject_obj::reset( Float X,Float Y){
 {
-		HX_STACK_PUSH("FlxObject::reset","flixel/FlxObject.hx",603);
+		HX_STACK_PUSH("FlxObject::reset","flixel/FlxObject.hx",607);
 		HX_STACK_THIS(this);
 		HX_STACK_ARG(X,"X");
 		HX_STACK_ARG(Y,"Y");
-		HX_STACK_LINE(604)
-		this->revive();
-		HX_STACK_LINE(605)
-		this->touching = (int)0;
-		HX_STACK_LINE(606)
-		this->wasTouching = (int)0;
-		HX_STACK_LINE(607)
-		this->setPosition(X,Y);
 		HX_STACK_LINE(608)
-		this->last->set(this->x,this->y);
+		this->revive();
 		HX_STACK_LINE(609)
+		this->touching = (int)0;
+		HX_STACK_LINE(610)
+		this->wasTouching = (int)0;
+		HX_STACK_LINE(611)
+		this->setPosition(X,Y);
+		HX_STACK_LINE(612)
+		this->last->set(this->x,this->y);
+		HX_STACK_LINE(613)
 		this->velocity->set(null(),null());
 	}
 return null();
@@ -507,15 +437,15 @@ return null();
 HX_DEFINE_DYNAMIC_FUNC2(FlxObject_obj,reset,(void))
 
 ::flixel::util::FlxPoint FlxObject_obj::getMidpoint( ::flixel::util::FlxPoint point){
-	HX_STACK_PUSH("FlxObject::getMidpoint","flixel/FlxObject.hx",588);
+	HX_STACK_PUSH("FlxObject::getMidpoint","flixel/FlxObject.hx",592);
 	HX_STACK_THIS(this);
 	HX_STACK_ARG(point,"point");
-	HX_STACK_LINE(589)
+	HX_STACK_LINE(593)
 	if (((point == null()))){
-		HX_STACK_LINE(590)
+		HX_STACK_LINE(594)
 		point = ::flixel::util::FlxPoint_obj::__new(null(),null());
 	}
-	HX_STACK_LINE(593)
+	HX_STACK_LINE(597)
 	return point->set((this->x + (this->get_width() * 0.5)),(this->y + (this->get_height() * 0.5)));
 }
 
@@ -523,21 +453,21 @@ HX_DEFINE_DYNAMIC_FUNC2(FlxObject_obj,reset,(void))
 HX_DEFINE_DYNAMIC_FUNC1(FlxObject_obj,getMidpoint,return )
 
 ::flixel::util::FlxPoint FlxObject_obj::getScreenXY( ::flixel::util::FlxPoint point,::flixel::FlxCamera Camera){
-	HX_STACK_PUSH("FlxObject::getScreenXY","flixel/FlxObject.hx",570);
+	HX_STACK_PUSH("FlxObject::getScreenXY","flixel/FlxObject.hx",574);
 	HX_STACK_THIS(this);
 	HX_STACK_ARG(point,"point");
 	HX_STACK_ARG(Camera,"Camera");
-	HX_STACK_LINE(571)
+	HX_STACK_LINE(575)
 	if (((point == null()))){
-		HX_STACK_LINE(572)
+		HX_STACK_LINE(576)
 		point = ::flixel::util::FlxPoint_obj::__new(null(),null());
 	}
-	HX_STACK_LINE(575)
+	HX_STACK_LINE(579)
 	if (((Camera == null()))){
-		HX_STACK_LINE(576)
+		HX_STACK_LINE(580)
 		Camera = ::flixel::FlxG_obj::camera;
 	}
-	HX_STACK_LINE(579)
+	HX_STACK_LINE(583)
 	return point->set((this->x - (Camera->scroll->x * this->scrollFactor->x)),(this->y - (Camera->scroll->y * this->scrollFactor->y)));
 }
 
@@ -545,9 +475,9 @@ HX_DEFINE_DYNAMIC_FUNC1(FlxObject_obj,getMidpoint,return )
 HX_DEFINE_DYNAMIC_FUNC2(FlxObject_obj,getScreenXY,return )
 
 bool FlxObject_obj::inWorldBounds( ){
-	HX_STACK_PUSH("FlxObject::inWorldBounds","flixel/FlxObject.hx",559);
+	HX_STACK_PUSH("FlxObject::inWorldBounds","flixel/FlxObject.hx",563);
 	HX_STACK_THIS(this);
-	HX_STACK_LINE(559)
+	HX_STACK_LINE(563)
 	return (bool((bool((bool(((this->x + this->get_width()) > ::flixel::FlxG_obj::worldBounds->x)) && bool((this->x < ::flixel::FlxG_obj::worldBounds->get_right())))) && bool(((this->y + this->get_height()) > ::flixel::FlxG_obj::worldBounds->y)))) && bool((this->y < ::flixel::FlxG_obj::worldBounds->get_bottom())));
 }
 
@@ -556,29 +486,29 @@ HX_DEFINE_DYNAMIC_FUNC0(FlxObject_obj,inWorldBounds,return )
 
 bool FlxObject_obj::overlapsPoint( ::flixel::util::FlxPoint point,hx::Null< bool >  __o_InScreenSpace,::flixel::FlxCamera Camera){
 bool InScreenSpace = __o_InScreenSpace.Default(false);
-	HX_STACK_PUSH("FlxObject::overlapsPoint","flixel/FlxObject.hx",538);
+	HX_STACK_PUSH("FlxObject::overlapsPoint","flixel/FlxObject.hx",542);
 	HX_STACK_THIS(this);
 	HX_STACK_ARG(point,"point");
 	HX_STACK_ARG(InScreenSpace,"InScreenSpace");
 	HX_STACK_ARG(Camera,"Camera");
 {
-		HX_STACK_LINE(539)
+		HX_STACK_LINE(543)
 		if ((!(InScreenSpace))){
-			HX_STACK_LINE(540)
+			HX_STACK_LINE(544)
 			return (bool((bool((bool((point->x > this->x)) && bool((point->x < (this->x + this->get_width()))))) && bool((point->y > this->y)))) && bool((point->y < (this->y + this->get_height()))));
 		}
-		HX_STACK_LINE(544)
+		HX_STACK_LINE(548)
 		if (((Camera == null()))){
-			HX_STACK_LINE(545)
+			HX_STACK_LINE(549)
 			Camera = ::flixel::FlxG_obj::camera;
 		}
-		HX_STACK_LINE(548)
+		HX_STACK_LINE(552)
 		Float X = (point->x - Camera->scroll->x);		HX_STACK_VAR(X,"X");
-		HX_STACK_LINE(549)
+		HX_STACK_LINE(553)
 		Float Y = (point->y - Camera->scroll->y);		HX_STACK_VAR(Y,"Y");
-		HX_STACK_LINE(550)
+		HX_STACK_LINE(554)
 		this->getScreenXY(this->_point,Camera);
-		HX_STACK_LINE(551)
+		HX_STACK_LINE(555)
 		return (bool((bool((bool((X > this->_point->x)) && bool((X < (this->_point->x + this->get_width()))))) && bool((Y > this->_point->y)))) && bool((Y < (this->_point->y + this->get_height()))));
 	}
 }
@@ -588,7 +518,7 @@ HX_DEFINE_DYNAMIC_FUNC3(FlxObject_obj,overlapsPoint,return )
 
 bool FlxObject_obj::overlapsAt( Float X,Float Y,::flixel::FlxBasic ObjectOrGroup,hx::Null< bool >  __o_InScreenSpace,::flixel::FlxCamera Camera){
 bool InScreenSpace = __o_InScreenSpace.Default(false);
-	HX_STACK_PUSH("FlxObject::overlapsAt","flixel/FlxObject.hx",478);
+	HX_STACK_PUSH("FlxObject::overlapsAt","flixel/FlxObject.hx",482);
 	HX_STACK_THIS(this);
 	HX_STACK_ARG(X,"X");
 	HX_STACK_ARG(Y,"Y");
@@ -596,62 +526,62 @@ bool InScreenSpace = __o_InScreenSpace.Default(false);
 	HX_STACK_ARG(InScreenSpace,"InScreenSpace");
 	HX_STACK_ARG(Camera,"Camera");
 {
-		HX_STACK_LINE(479)
+		HX_STACK_LINE(483)
 		if (((ObjectOrGroup->collisionType == ::flixel::system::FlxCollisionType_obj::SPRITEGROUP))){
-			HX_STACK_LINE(480)
+			HX_STACK_LINE(484)
 			ObjectOrGroup = ::Reflect_obj::field(ObjectOrGroup,HX_CSTRING("group"));
 		}
-		HX_STACK_LINE(484)
+		HX_STACK_LINE(488)
 		if (((ObjectOrGroup->collisionType == ::flixel::system::FlxCollisionType_obj::GROUP))){
-			HX_STACK_LINE(486)
-			bool results = false;		HX_STACK_VAR(results,"results");
-			HX_STACK_LINE(487)
-			::flixel::FlxBasic basic;		HX_STACK_VAR(basic,"basic");
-			HX_STACK_LINE(488)
-			int i = (int)0;		HX_STACK_VAR(i,"i");
-			HX_STACK_LINE(489)
-			::flixel::group::FlxTypedGroup grp = ObjectOrGroup;		HX_STACK_VAR(grp,"grp");
 			HX_STACK_LINE(490)
-			Array< ::Dynamic > members = grp->get_members();		HX_STACK_VAR(members,"members");
+			bool results = false;		HX_STACK_VAR(results,"results");
 			HX_STACK_LINE(491)
+			::flixel::FlxBasic basic;		HX_STACK_VAR(basic,"basic");
+			HX_STACK_LINE(492)
+			int i = (int)0;		HX_STACK_VAR(i,"i");
+			HX_STACK_LINE(493)
+			::flixel::group::FlxTypedGroup grp = ObjectOrGroup;		HX_STACK_VAR(grp,"grp");
+			HX_STACK_LINE(494)
+			Array< ::Dynamic > members = grp->get_members();		HX_STACK_VAR(members,"members");
+			HX_STACK_LINE(495)
 			while(((i < ::Std_obj::_int(grp->length)))){
-				HX_STACK_LINE(493)
+				HX_STACK_LINE(497)
 				basic = members->__get((i)++).StaticCast< ::flixel::FlxBasic >();
-				HX_STACK_LINE(494)
+				HX_STACK_LINE(498)
 				if (((bool((bool((basic != null())) && bool(basic->exists))) && bool(this->overlapsAt(X,Y,basic,InScreenSpace,Camera))))){
-					HX_STACK_LINE(496)
+					HX_STACK_LINE(500)
 					results = true;
-					HX_STACK_LINE(497)
+					HX_STACK_LINE(501)
 					break;
 				}
 			}
-			HX_STACK_LINE(500)
+			HX_STACK_LINE(504)
 			return results;
 		}
-		HX_STACK_LINE(503)
+		HX_STACK_LINE(507)
 		if (((ObjectOrGroup->collisionType == ::flixel::system::FlxCollisionType_obj::TILEMAP))){
-			HX_STACK_LINE(509)
+			HX_STACK_LINE(513)
 			::flixel::tile::FlxTilemap tilemap = hx::TCast< flixel::tile::FlxTilemap >::cast(ObjectOrGroup);		HX_STACK_VAR(tilemap,"tilemap");
-			HX_STACK_LINE(510)
+			HX_STACK_LINE(514)
 			return tilemap->overlapsAt((tilemap->x - ((X - this->x))),(tilemap->y - ((Y - this->y))),hx::ObjectPtr<OBJ_>(this),InScreenSpace,Camera);
 		}
-		HX_STACK_LINE(513)
+		HX_STACK_LINE(517)
 		::flixel::FlxObject object = hx::TCast< flixel::FlxObject >::cast(ObjectOrGroup);		HX_STACK_VAR(object,"object");
-		HX_STACK_LINE(514)
+		HX_STACK_LINE(518)
 		if ((!(InScreenSpace))){
-			HX_STACK_LINE(515)
+			HX_STACK_LINE(519)
 			return (bool((bool((bool(((object->x + object->get_width()) > X)) && bool((object->x < (X + this->get_width()))))) && bool(((object->y + object->get_height()) > Y)))) && bool((object->y < (Y + this->get_height()))));
 		}
-		HX_STACK_LINE(520)
+		HX_STACK_LINE(524)
 		if (((Camera == null()))){
-			HX_STACK_LINE(521)
+			HX_STACK_LINE(525)
 			Camera = ::flixel::FlxG_obj::camera;
 		}
-		HX_STACK_LINE(524)
+		HX_STACK_LINE(528)
 		::flixel::util::FlxPoint objectScreenPos = object->getScreenXY(null(),Camera);		HX_STACK_VAR(objectScreenPos,"objectScreenPos");
-		HX_STACK_LINE(525)
+		HX_STACK_LINE(529)
 		this->getScreenXY(this->_point,Camera);
-		HX_STACK_LINE(526)
+		HX_STACK_LINE(530)
 		return (bool((bool((bool(((objectScreenPos->x + object->get_width()) > this->_point->x)) && bool((objectScreenPos->x < (this->_point->x + this->get_width()))))) && bool(((objectScreenPos->y + object->get_height()) > this->_point->y)))) && bool((objectScreenPos->y < (this->_point->y + this->get_height()))));
 	}
 }
@@ -661,66 +591,66 @@ HX_DEFINE_DYNAMIC_FUNC5(FlxObject_obj,overlapsAt,return )
 
 bool FlxObject_obj::overlaps( ::flixel::FlxBasic ObjectOrGroup,hx::Null< bool >  __o_InScreenSpace,::flixel::FlxCamera Camera){
 bool InScreenSpace = __o_InScreenSpace.Default(false);
-	HX_STACK_PUSH("FlxObject::overlaps","flixel/FlxObject.hx",418);
+	HX_STACK_PUSH("FlxObject::overlaps","flixel/FlxObject.hx",422);
 	HX_STACK_THIS(this);
 	HX_STACK_ARG(ObjectOrGroup,"ObjectOrGroup");
 	HX_STACK_ARG(InScreenSpace,"InScreenSpace");
 	HX_STACK_ARG(Camera,"Camera");
 {
-		HX_STACK_LINE(419)
+		HX_STACK_LINE(423)
 		if (((ObjectOrGroup->collisionType == ::flixel::system::FlxCollisionType_obj::SPRITEGROUP))){
-			HX_STACK_LINE(420)
+			HX_STACK_LINE(424)
 			ObjectOrGroup = ::Reflect_obj::field(ObjectOrGroup,HX_CSTRING("group"));
 		}
-		HX_STACK_LINE(424)
+		HX_STACK_LINE(428)
 		if (((ObjectOrGroup->collisionType == ::flixel::system::FlxCollisionType_obj::GROUP))){
-			HX_STACK_LINE(426)
-			bool results = false;		HX_STACK_VAR(results,"results");
-			HX_STACK_LINE(427)
-			int i = (int)0;		HX_STACK_VAR(i,"i");
-			HX_STACK_LINE(428)
-			::flixel::FlxBasic basic;		HX_STACK_VAR(basic,"basic");
-			HX_STACK_LINE(429)
-			::flixel::group::FlxTypedGroup grp = ObjectOrGroup;		HX_STACK_VAR(grp,"grp");
 			HX_STACK_LINE(430)
-			Array< ::Dynamic > members = grp->get_members();		HX_STACK_VAR(members,"members");
+			bool results = false;		HX_STACK_VAR(results,"results");
 			HX_STACK_LINE(431)
+			int i = (int)0;		HX_STACK_VAR(i,"i");
+			HX_STACK_LINE(432)
+			::flixel::FlxBasic basic;		HX_STACK_VAR(basic,"basic");
+			HX_STACK_LINE(433)
+			::flixel::group::FlxTypedGroup grp = ObjectOrGroup;		HX_STACK_VAR(grp,"grp");
+			HX_STACK_LINE(434)
+			Array< ::Dynamic > members = grp->get_members();		HX_STACK_VAR(members,"members");
+			HX_STACK_LINE(435)
 			while(((i < grp->length))){
-				HX_STACK_LINE(433)
+				HX_STACK_LINE(437)
 				basic = members->__get((i)++).StaticCast< ::flixel::FlxBasic >();
-				HX_STACK_LINE(434)
+				HX_STACK_LINE(438)
 				if (((bool((bool((basic != null())) && bool(basic->exists))) && bool(this->overlaps(basic,InScreenSpace,Camera))))){
-					HX_STACK_LINE(436)
+					HX_STACK_LINE(440)
 					results = true;
-					HX_STACK_LINE(437)
+					HX_STACK_LINE(441)
 					break;
 				}
 			}
-			HX_STACK_LINE(440)
+			HX_STACK_LINE(444)
 			return results;
 		}
-		HX_STACK_LINE(443)
+		HX_STACK_LINE(447)
 		if (((ObjectOrGroup->collisionType == ::flixel::system::FlxCollisionType_obj::TILEMAP))){
-			HX_STACK_LINE(444)
+			HX_STACK_LINE(448)
 			return (hx::TCast< flixel::tile::FlxTilemap >::cast(ObjectOrGroup))->overlaps(hx::ObjectPtr<OBJ_>(this),InScreenSpace,Camera);
 		}
-		HX_STACK_LINE(450)
+		HX_STACK_LINE(454)
 		::flixel::FlxObject object = hx::TCast< flixel::FlxObject >::cast(ObjectOrGroup);		HX_STACK_VAR(object,"object");
-		HX_STACK_LINE(451)
+		HX_STACK_LINE(455)
 		if ((!(InScreenSpace))){
-			HX_STACK_LINE(452)
+			HX_STACK_LINE(456)
 			return (bool((bool((bool(((object->x + object->get_width()) > this->x)) && bool((object->x < (this->x + this->get_width()))))) && bool(((object->y + object->get_height()) > this->y)))) && bool((object->y < (this->y + this->get_height()))));
 		}
-		HX_STACK_LINE(457)
+		HX_STACK_LINE(461)
 		if (((Camera == null()))){
-			HX_STACK_LINE(458)
+			HX_STACK_LINE(462)
 			Camera = ::flixel::FlxG_obj::camera;
 		}
-		HX_STACK_LINE(461)
+		HX_STACK_LINE(465)
 		::flixel::util::FlxPoint objectScreenPos = object->getScreenXY(null(),Camera);		HX_STACK_VAR(objectScreenPos,"objectScreenPos");
-		HX_STACK_LINE(462)
+		HX_STACK_LINE(466)
 		this->getScreenXY(this->_point,Camera);
-		HX_STACK_LINE(463)
+		HX_STACK_LINE(467)
 		return (bool((bool((bool(((objectScreenPos->x + object->get_width()) > this->_point->x)) && bool((objectScreenPos->x < (this->_point->x + this->get_width()))))) && bool(((objectScreenPos->y + object->get_height()) > this->_point->y)))) && bool((objectScreenPos->y < (this->_point->y + this->get_height()))));
 	}
 }
@@ -730,26 +660,26 @@ HX_DEFINE_DYNAMIC_FUNC3(FlxObject_obj,overlaps,return )
 
 Void FlxObject_obj::draw( ){
 {
-		HX_STACK_PUSH("FlxObject::draw","flixel/FlxObject.hx",320);
+		HX_STACK_PUSH("FlxObject::draw","flixel/FlxObject.hx",324);
 		HX_STACK_THIS(this);
-		HX_STACK_LINE(321)
+		HX_STACK_LINE(325)
 		if (((this->cameras == null()))){
-			HX_STACK_LINE(322)
+			HX_STACK_LINE(326)
 			this->cameras = ::flixel::FlxG_obj::cameras->list;
 		}
-		HX_STACK_LINE(325)
+		HX_STACK_LINE(329)
 		::flixel::FlxCamera camera;		HX_STACK_VAR(camera,"camera");
-		HX_STACK_LINE(326)
+		HX_STACK_LINE(330)
 		int i = (int)0;		HX_STACK_VAR(i,"i");
-		HX_STACK_LINE(327)
+		HX_STACK_LINE(331)
 		int l = this->cameras->length;		HX_STACK_VAR(l,"l");
-		HX_STACK_LINE(328)
+		HX_STACK_LINE(332)
 		while(((i < l))){
-			HX_STACK_LINE(330)
+			HX_STACK_LINE(334)
 			camera = this->cameras->__get((i)++).StaticCast< ::flixel::FlxCamera >();
-			HX_STACK_LINE(331)
+			HX_STACK_LINE(335)
 			if (((bool((bool(!(camera->visible)) || bool(!(camera->exists)))) || bool(!(this->isOnScreen(camera)))))){
-				HX_STACK_LINE(332)
+				HX_STACK_LINE(336)
 				continue;
 			}
 		}
@@ -760,75 +690,75 @@ return null();
 
 Void FlxObject_obj::updateMotion( ){
 {
-		HX_STACK_PUSH("FlxObject::updateMotion","flixel/FlxObject.hx",292);
+		HX_STACK_PUSH("FlxObject::updateMotion","flixel/FlxObject.hx",296);
 		HX_STACK_THIS(this);
-		HX_STACK_LINE(293)
+		HX_STACK_LINE(297)
 		Float delta;		HX_STACK_VAR(delta,"delta");
-		HX_STACK_LINE(294)
-		Float velocityDelta;		HX_STACK_VAR(velocityDelta,"velocityDelta");
-		HX_STACK_LINE(296)
-		Float dt = ::flixel::FlxG_obj::elapsed;		HX_STACK_VAR(dt,"dt");
 		HX_STACK_LINE(298)
-		velocityDelta = (0.5 * ((::flixel::util::FlxVelocity_obj::computeVelocity(this->angularVelocity,this->angularAcceleration,this->angularDrag,this->maxAngular) - this->angularVelocity)));
-		HX_STACK_LINE(299)
-		hx::AddEq(this->angularVelocity,velocityDelta);
+		Float velocityDelta;		HX_STACK_VAR(velocityDelta,"velocityDelta");
 		HX_STACK_LINE(300)
-		{
-			HX_STACK_LINE(300)
-			::flixel::FlxObject _g = hx::ObjectPtr<OBJ_>(this);		HX_STACK_VAR(_g,"_g");
-			HX_STACK_LINE(300)
-			_g->set_angle((_g->angle + (this->angularVelocity * dt)));
-		}
-		HX_STACK_LINE(301)
-		hx::AddEq(this->angularVelocity,velocityDelta);
+		Float dt = ::flixel::FlxG_obj::elapsed;		HX_STACK_VAR(dt,"dt");
+		HX_STACK_LINE(302)
+		velocityDelta = (0.5 * ((::flixel::util::FlxMath_obj::computeVelocity(this->angularVelocity,this->angularAcceleration,this->angularDrag,this->maxAngular) - this->angularVelocity)));
 		HX_STACK_LINE(303)
-		velocityDelta = (0.5 * ((::flixel::util::FlxVelocity_obj::computeVelocity(this->velocity->x,this->acceleration->x,this->drag->x,this->maxVelocity->x) - this->velocity->x)));
+		hx::AddEq(this->angularVelocity,velocityDelta);
 		HX_STACK_LINE(304)
 		{
 			HX_STACK_LINE(304)
-			::flixel::util::FlxPoint _g = this->velocity;		HX_STACK_VAR(_g,"_g");
+			::flixel::FlxObject _g = hx::ObjectPtr<OBJ_>(this);		HX_STACK_VAR(_g,"_g");
 			HX_STACK_LINE(304)
-			_g->set_x((_g->x + velocityDelta));
+			_g->set_angle((_g->angle + (this->angularVelocity * dt)));
 		}
 		HX_STACK_LINE(305)
-		delta = (this->velocity->x * dt);
-		HX_STACK_LINE(306)
+		hx::AddEq(this->angularVelocity,velocityDelta);
+		HX_STACK_LINE(307)
+		velocityDelta = (0.5 * ((::flixel::util::FlxMath_obj::computeVelocity(this->velocity->x,this->acceleration->x,this->drag->x,this->maxVelocity->x) - this->velocity->x)));
+		HX_STACK_LINE(308)
 		{
-			HX_STACK_LINE(306)
+			HX_STACK_LINE(308)
 			::flixel::util::FlxPoint _g = this->velocity;		HX_STACK_VAR(_g,"_g");
-			HX_STACK_LINE(306)
+			HX_STACK_LINE(308)
 			_g->set_x((_g->x + velocityDelta));
 		}
-		HX_STACK_LINE(307)
-		{
-			HX_STACK_LINE(307)
-			::flixel::FlxObject _g = hx::ObjectPtr<OBJ_>(this);		HX_STACK_VAR(_g,"_g");
-			HX_STACK_LINE(307)
-			_g->set_x((_g->x + delta));
-		}
 		HX_STACK_LINE(309)
-		velocityDelta = (0.5 * ((::flixel::util::FlxVelocity_obj::computeVelocity(this->velocity->y,this->acceleration->y,this->drag->y,this->maxVelocity->y) - this->velocity->y)));
+		delta = (this->velocity->x * dt);
 		HX_STACK_LINE(310)
 		{
 			HX_STACK_LINE(310)
 			::flixel::util::FlxPoint _g = this->velocity;		HX_STACK_VAR(_g,"_g");
 			HX_STACK_LINE(310)
-			_g->set_y((_g->y + velocityDelta));
+			_g->set_x((_g->x + velocityDelta));
 		}
 		HX_STACK_LINE(311)
-		delta = (this->velocity->y * dt);
-		HX_STACK_LINE(312)
 		{
-			HX_STACK_LINE(312)
-			::flixel::util::FlxPoint _g = this->velocity;		HX_STACK_VAR(_g,"_g");
-			HX_STACK_LINE(312)
-			_g->set_y((_g->y + velocityDelta));
+			HX_STACK_LINE(311)
+			::flixel::FlxObject _g = hx::ObjectPtr<OBJ_>(this);		HX_STACK_VAR(_g,"_g");
+			HX_STACK_LINE(311)
+			_g->set_x((_g->x + delta));
 		}
 		HX_STACK_LINE(313)
+		velocityDelta = (0.5 * ((::flixel::util::FlxMath_obj::computeVelocity(this->velocity->y,this->acceleration->y,this->drag->y,this->maxVelocity->y) - this->velocity->y)));
+		HX_STACK_LINE(314)
 		{
-			HX_STACK_LINE(313)
+			HX_STACK_LINE(314)
+			::flixel::util::FlxPoint _g = this->velocity;		HX_STACK_VAR(_g,"_g");
+			HX_STACK_LINE(314)
+			_g->set_y((_g->y + velocityDelta));
+		}
+		HX_STACK_LINE(315)
+		delta = (this->velocity->y * dt);
+		HX_STACK_LINE(316)
+		{
+			HX_STACK_LINE(316)
+			::flixel::util::FlxPoint _g = this->velocity;		HX_STACK_VAR(_g,"_g");
+			HX_STACK_LINE(316)
+			_g->set_y((_g->y + velocityDelta));
+		}
+		HX_STACK_LINE(317)
+		{
+			HX_STACK_LINE(317)
 			::flixel::FlxObject _g = hx::ObjectPtr<OBJ_>(this);		HX_STACK_VAR(_g,"_g");
-			HX_STACK_LINE(313)
+			HX_STACK_LINE(317)
 			_g->set_y((_g->y + delta));
 		}
 	}
@@ -840,87 +770,87 @@ HX_DEFINE_DYNAMIC_FUNC0(FlxObject_obj,updateMotion,(void))
 
 Void FlxObject_obj::update( ){
 {
-		HX_STACK_PUSH("FlxObject::update","flixel/FlxObject.hx",270);
+		HX_STACK_PUSH("FlxObject::update","flixel/FlxObject.hx",274);
 		HX_STACK_THIS(this);
-		HX_STACK_LINE(275)
+		HX_STACK_LINE(279)
 		this->last->set_x(this->x);
-		HX_STACK_LINE(276)
+		HX_STACK_LINE(280)
 		this->last->set_y(this->y);
-		HX_STACK_LINE(278)
+		HX_STACK_LINE(282)
 		if ((this->moves)){
-			HX_STACK_LINE(280)
+			HX_STACK_LINE(284)
 			Float delta;		HX_STACK_VAR(delta,"delta");
-			HX_STACK_LINE(280)
+			HX_STACK_LINE(284)
 			Float velocityDelta;		HX_STACK_VAR(velocityDelta,"velocityDelta");
-			HX_STACK_LINE(280)
+			HX_STACK_LINE(284)
 			Float dt = ::flixel::FlxG_obj::elapsed;		HX_STACK_VAR(dt,"dt");
-			HX_STACK_LINE(280)
-			velocityDelta = (0.5 * ((::flixel::util::FlxVelocity_obj::computeVelocity(this->angularVelocity,this->angularAcceleration,this->angularDrag,this->maxAngular) - this->angularVelocity)));
-			HX_STACK_LINE(280)
+			HX_STACK_LINE(284)
+			velocityDelta = (0.5 * ((::flixel::util::FlxMath_obj::computeVelocity(this->angularVelocity,this->angularAcceleration,this->angularDrag,this->maxAngular) - this->angularVelocity)));
+			HX_STACK_LINE(284)
 			hx::AddEq(this->angularVelocity,velocityDelta);
-			HX_STACK_LINE(280)
+			HX_STACK_LINE(284)
 			{
-				HX_STACK_LINE(280)
+				HX_STACK_LINE(284)
 				::flixel::FlxObject _g = hx::ObjectPtr<OBJ_>(this);		HX_STACK_VAR(_g,"_g");
-				HX_STACK_LINE(280)
+				HX_STACK_LINE(284)
 				_g->set_angle((_g->angle + (this->angularVelocity * dt)));
 			}
-			HX_STACK_LINE(280)
+			HX_STACK_LINE(284)
 			hx::AddEq(this->angularVelocity,velocityDelta);
-			HX_STACK_LINE(280)
-			velocityDelta = (0.5 * ((::flixel::util::FlxVelocity_obj::computeVelocity(this->velocity->x,this->acceleration->x,this->drag->x,this->maxVelocity->x) - this->velocity->x)));
-			HX_STACK_LINE(280)
+			HX_STACK_LINE(284)
+			velocityDelta = (0.5 * ((::flixel::util::FlxMath_obj::computeVelocity(this->velocity->x,this->acceleration->x,this->drag->x,this->maxVelocity->x) - this->velocity->x)));
+			HX_STACK_LINE(284)
 			{
-				HX_STACK_LINE(280)
+				HX_STACK_LINE(284)
 				::flixel::util::FlxPoint _g = this->velocity;		HX_STACK_VAR(_g,"_g");
-				HX_STACK_LINE(280)
+				HX_STACK_LINE(284)
 				_g->set_x((_g->x + velocityDelta));
 			}
-			HX_STACK_LINE(280)
+			HX_STACK_LINE(284)
 			delta = (this->velocity->x * dt);
-			HX_STACK_LINE(280)
+			HX_STACK_LINE(284)
 			{
-				HX_STACK_LINE(280)
+				HX_STACK_LINE(284)
 				::flixel::util::FlxPoint _g = this->velocity;		HX_STACK_VAR(_g,"_g");
-				HX_STACK_LINE(280)
+				HX_STACK_LINE(284)
 				_g->set_x((_g->x + velocityDelta));
 			}
-			HX_STACK_LINE(280)
+			HX_STACK_LINE(284)
 			{
-				HX_STACK_LINE(280)
+				HX_STACK_LINE(284)
 				::flixel::FlxObject _g = hx::ObjectPtr<OBJ_>(this);		HX_STACK_VAR(_g,"_g");
-				HX_STACK_LINE(280)
+				HX_STACK_LINE(284)
 				_g->set_x((_g->x + delta));
 			}
-			HX_STACK_LINE(280)
-			velocityDelta = (0.5 * ((::flixel::util::FlxVelocity_obj::computeVelocity(this->velocity->y,this->acceleration->y,this->drag->y,this->maxVelocity->y) - this->velocity->y)));
-			HX_STACK_LINE(280)
+			HX_STACK_LINE(284)
+			velocityDelta = (0.5 * ((::flixel::util::FlxMath_obj::computeVelocity(this->velocity->y,this->acceleration->y,this->drag->y,this->maxVelocity->y) - this->velocity->y)));
+			HX_STACK_LINE(284)
 			{
-				HX_STACK_LINE(280)
+				HX_STACK_LINE(284)
 				::flixel::util::FlxPoint _g = this->velocity;		HX_STACK_VAR(_g,"_g");
-				HX_STACK_LINE(280)
+				HX_STACK_LINE(284)
 				_g->set_y((_g->y + velocityDelta));
 			}
-			HX_STACK_LINE(280)
+			HX_STACK_LINE(284)
 			delta = (this->velocity->y * dt);
-			HX_STACK_LINE(280)
+			HX_STACK_LINE(284)
 			{
-				HX_STACK_LINE(280)
+				HX_STACK_LINE(284)
 				::flixel::util::FlxPoint _g = this->velocity;		HX_STACK_VAR(_g,"_g");
-				HX_STACK_LINE(280)
+				HX_STACK_LINE(284)
 				_g->set_y((_g->y + velocityDelta));
 			}
-			HX_STACK_LINE(280)
+			HX_STACK_LINE(284)
 			{
-				HX_STACK_LINE(280)
+				HX_STACK_LINE(284)
 				::flixel::FlxObject _g = hx::ObjectPtr<OBJ_>(this);		HX_STACK_VAR(_g,"_g");
-				HX_STACK_LINE(280)
+				HX_STACK_LINE(284)
 				_g->set_y((_g->y + delta));
 			}
 		}
-		HX_STACK_LINE(283)
+		HX_STACK_LINE(287)
 		this->wasTouching = this->touching;
-		HX_STACK_LINE(284)
+		HX_STACK_LINE(288)
 		this->touching = (int)0;
 	}
 return null();
@@ -929,33 +859,33 @@ return null();
 
 Void FlxObject_obj::destroy( ){
 {
-		HX_STACK_PUSH("FlxObject::destroy","flixel/FlxObject.hx",247);
+		HX_STACK_PUSH("FlxObject::destroy","flixel/FlxObject.hx",251);
 		HX_STACK_THIS(this);
-		HX_STACK_LINE(248)
-		this->super::destroy();
-		HX_STACK_LINE(250)
-		this->velocity = null();
-		HX_STACK_LINE(251)
-		this->acceleration = null();
 		HX_STACK_LINE(252)
-		this->drag = null();
-		HX_STACK_LINE(253)
-		this->maxVelocity = null();
+		this->super::destroy();
 		HX_STACK_LINE(254)
-		this->scrollFactor = null();
+		this->velocity = null();
 		HX_STACK_LINE(255)
-		this->last = null();
+		this->acceleration = null();
 		HX_STACK_LINE(256)
-		this->cameras = null();
+		this->drag = null();
 		HX_STACK_LINE(257)
-		this->_point = null();
+		this->maxVelocity = null();
 		HX_STACK_LINE(258)
 		this->scrollFactor = null();
+		HX_STACK_LINE(259)
+		this->last = null();
 		HX_STACK_LINE(260)
-		this->framesData = null();
+		this->cameras = null();
 		HX_STACK_LINE(261)
-		this->set_cachedGraphics(null());
+		this->_point = null();
 		HX_STACK_LINE(262)
+		this->scrollFactor = null();
+		HX_STACK_LINE(264)
+		this->framesData = null();
+		HX_STACK_LINE(265)
+		this->set_cachedGraphics(null());
+		HX_STACK_LINE(266)
 		this->region = null();
 	}
 return null();
@@ -964,15 +894,15 @@ return null();
 
 Void FlxObject_obj::initMotionVars( ){
 {
-		HX_STACK_PUSH("FlxObject::initMotionVars","flixel/FlxObject.hx",235);
+		HX_STACK_PUSH("FlxObject::initMotionVars","flixel/FlxObject.hx",239);
 		HX_STACK_THIS(this);
-		HX_STACK_LINE(236)
+		HX_STACK_LINE(240)
 		this->velocity = ::flixel::util::FlxPoint_obj::__new(null(),null());
-		HX_STACK_LINE(237)
+		HX_STACK_LINE(241)
 		this->acceleration = ::flixel::util::FlxPoint_obj::__new(null(),null());
-		HX_STACK_LINE(238)
+		HX_STACK_LINE(242)
 		this->drag = ::flixel::util::FlxPoint_obj::__new(null(),null());
-		HX_STACK_LINE(239)
+		HX_STACK_LINE(243)
 		this->maxVelocity = ::flixel::util::FlxPoint_obj::__new((int)10000,(int)10000);
 	}
 return null();
@@ -983,25 +913,25 @@ HX_DEFINE_DYNAMIC_FUNC0(FlxObject_obj,initMotionVars,(void))
 
 Void FlxObject_obj::initVars( ){
 {
-		HX_STACK_PUSH("FlxObject::initVars","flixel/FlxObject.hx",222);
+		HX_STACK_PUSH("FlxObject::initVars","flixel/FlxObject.hx",226);
 		HX_STACK_THIS(this);
-		HX_STACK_LINE(223)
+		HX_STACK_LINE(227)
 		this->collisionType = ::flixel::system::FlxCollisionType_obj::OBJECT;
-		HX_STACK_LINE(224)
-		this->last = ::flixel::util::FlxPoint_obj::__new(this->x,this->y);
-		HX_STACK_LINE(225)
-		this->scrollFactor = ::flixel::util::FlxPoint_obj::__new((int)1,(int)1);
-		HX_STACK_LINE(226)
-		this->_point = ::flixel::util::FlxPoint_obj::__new(null(),null());
 		HX_STACK_LINE(228)
+		this->last = ::flixel::util::FlxPoint_obj::__new(this->x,this->y);
+		HX_STACK_LINE(229)
+		this->scrollFactor = ::flixel::util::FlxPoint_obj::__new((int)1,(int)1);
+		HX_STACK_LINE(230)
+		this->_point = ::flixel::util::FlxPoint_obj::__new(null(),null());
+		HX_STACK_LINE(232)
 		{
-			HX_STACK_LINE(228)
+			HX_STACK_LINE(232)
 			this->velocity = ::flixel::util::FlxPoint_obj::__new(null(),null());
-			HX_STACK_LINE(228)
+			HX_STACK_LINE(232)
 			this->acceleration = ::flixel::util::FlxPoint_obj::__new(null(),null());
-			HX_STACK_LINE(228)
+			HX_STACK_LINE(232)
 			this->drag = ::flixel::util::FlxPoint_obj::__new(null(),null());
-			HX_STACK_LINE(228)
+			HX_STACK_LINE(232)
 			this->maxVelocity = ::flixel::util::FlxPoint_obj::__new((int)10000,(int)10000);
 		}
 	}
@@ -1038,14 +968,14 @@ int FlxObject_obj::ANY;
 ::flixel::util::FlxRect FlxObject_obj::_secondSeparateFlxRect;
 
 bool FlxObject_obj::separate( ::flixel::FlxObject Object1,::flixel::FlxObject Object2){
-	HX_STACK_PUSH("FlxObject::separate","flixel/FlxObject.hx",669);
+	HX_STACK_PUSH("FlxObject::separate","flixel/FlxObject.hx",673);
 	HX_STACK_ARG(Object1,"Object1");
 	HX_STACK_ARG(Object2,"Object2");
-	HX_STACK_LINE(670)
+	HX_STACK_LINE(674)
 	bool separatedX = ::flixel::FlxObject_obj::separateX(Object1,Object2);		HX_STACK_VAR(separatedX,"separatedX");
-	HX_STACK_LINE(671)
+	HX_STACK_LINE(675)
 	bool separatedY = ::flixel::FlxObject_obj::separateY(Object1,Object2);		HX_STACK_VAR(separatedY,"separatedY");
-	HX_STACK_LINE(672)
+	HX_STACK_LINE(676)
 	return (bool(separatedX) || bool(separatedY));
 }
 
@@ -1053,189 +983,189 @@ bool FlxObject_obj::separate( ::flixel::FlxObject Object1,::flixel::FlxObject Ob
 STATIC_HX_DEFINE_DYNAMIC_FUNC2(FlxObject_obj,separate,return )
 
 bool FlxObject_obj::separateX( ::flixel::FlxObject Object1,::flixel::FlxObject Object2){
-	HX_STACK_PUSH("FlxObject::separateX","flixel/FlxObject.hx",682);
+	HX_STACK_PUSH("FlxObject::separateX","flixel/FlxObject.hx",686);
 	HX_STACK_ARG(Object1,"Object1");
 	HX_STACK_ARG(Object2,"Object2");
-	HX_STACK_LINE(684)
+	HX_STACK_LINE(688)
 	bool obj1immovable = Object1->immovable;		HX_STACK_VAR(obj1immovable,"obj1immovable");
-	HX_STACK_LINE(685)
+	HX_STACK_LINE(689)
 	bool obj2immovable = Object2->immovable;		HX_STACK_VAR(obj2immovable,"obj2immovable");
-	HX_STACK_LINE(686)
+	HX_STACK_LINE(690)
 	if (((bool(obj1immovable) && bool(obj2immovable)))){
-		HX_STACK_LINE(687)
+		HX_STACK_LINE(691)
 		return false;
 	}
-	HX_STACK_LINE(692)
+	HX_STACK_LINE(696)
 	if (((Object1->collisionType == ::flixel::system::FlxCollisionType_obj::TILEMAP))){
-		HX_STACK_LINE(693)
+		HX_STACK_LINE(697)
 		return (hx::TCast< flixel::tile::FlxTilemap >::cast(Object1))->overlapsWithCallback(Object2,::flixel::FlxObject_obj::separateX_dyn(),null(),null());
 	}
-	HX_STACK_LINE(696)
+	HX_STACK_LINE(700)
 	if (((Object2->collisionType == ::flixel::system::FlxCollisionType_obj::TILEMAP))){
-		HX_STACK_LINE(697)
+		HX_STACK_LINE(701)
 		return (hx::TCast< flixel::tile::FlxTilemap >::cast(Object2))->overlapsWithCallback(Object1,::flixel::FlxObject_obj::separateX_dyn(),true,null());
 	}
-	HX_STACK_LINE(702)
-	Float overlap = (int)0;		HX_STACK_VAR(overlap,"overlap");
-	HX_STACK_LINE(703)
-	Float obj1delta = (Object1->x - Object1->last->x);		HX_STACK_VAR(obj1delta,"obj1delta");
-	HX_STACK_LINE(704)
-	Float obj2delta = (Object2->x - Object2->last->x);		HX_STACK_VAR(obj2delta,"obj2delta");
 	HX_STACK_LINE(706)
+	Float overlap = (int)0;		HX_STACK_VAR(overlap,"overlap");
+	HX_STACK_LINE(707)
+	Float obj1delta = (Object1->x - Object1->last->x);		HX_STACK_VAR(obj1delta,"obj1delta");
+	HX_STACK_LINE(708)
+	Float obj2delta = (Object2->x - Object2->last->x);		HX_STACK_VAR(obj2delta,"obj2delta");
+	HX_STACK_LINE(710)
 	if (((obj1delta != obj2delta))){
-		HX_STACK_LINE(709)
+		HX_STACK_LINE(713)
 		Float obj1deltaAbs = (  (((obj1delta > (int)0))) ? Float(obj1delta) : Float(-(obj1delta)) );		HX_STACK_VAR(obj1deltaAbs,"obj1deltaAbs");
-		HX_STACK_LINE(710)
+		HX_STACK_LINE(714)
 		Float obj2deltaAbs = (  (((obj2delta > (int)0))) ? Float(obj2delta) : Float(-(obj2delta)) );		HX_STACK_VAR(obj2deltaAbs,"obj2deltaAbs");
 		struct _Function_2_1{
 			inline static ::flixel::util::FlxRect Block( ::flixel::FlxObject &Object1,Float &obj1delta){
-				HX_STACK_PUSH("*::closure","flixel/FlxObject.hx",712);
+				HX_STACK_PUSH("*::closure","flixel/FlxObject.hx",716);
 				{
-					HX_STACK_LINE(712)
+					HX_STACK_LINE(716)
 					::flixel::util::FlxRect _this = ::flixel::FlxObject_obj::_firstSeparateFlxRect;		HX_STACK_VAR(_this,"_this");
-					HX_STACK_LINE(712)
+					HX_STACK_LINE(716)
 					_this->x = (Object1->x - ((  (((obj1delta > (int)0))) ? Float(obj1delta) : Float((int)0) )));
-					HX_STACK_LINE(712)
+					HX_STACK_LINE(716)
 					_this->y = Object1->last->y;
-					HX_STACK_LINE(712)
+					HX_STACK_LINE(716)
 					_this->width = (Object1->get_width() + ((  (((obj1delta > (int)0))) ? Float(obj1delta) : Float(-(obj1delta)) )));
-					HX_STACK_LINE(712)
+					HX_STACK_LINE(716)
 					_this->height = Object1->get_height();
-					HX_STACK_LINE(712)
+					HX_STACK_LINE(716)
 					return _this;
 				}
 				return null();
 			}
 		};
-		HX_STACK_LINE(712)
+		HX_STACK_LINE(716)
 		::flixel::util::FlxRect obj1rect = _Function_2_1::Block(Object1,obj1delta);		HX_STACK_VAR(obj1rect,"obj1rect");
 		struct _Function_2_2{
 			inline static ::flixel::util::FlxRect Block( Float &obj2delta,::flixel::FlxObject &Object2){
-				HX_STACK_PUSH("*::closure","flixel/FlxObject.hx",713);
+				HX_STACK_PUSH("*::closure","flixel/FlxObject.hx",717);
 				{
-					HX_STACK_LINE(713)
+					HX_STACK_LINE(717)
 					::flixel::util::FlxRect _this = ::flixel::FlxObject_obj::_secondSeparateFlxRect;		HX_STACK_VAR(_this,"_this");
-					HX_STACK_LINE(713)
+					HX_STACK_LINE(717)
 					_this->x = (Object2->x - ((  (((obj2delta > (int)0))) ? Float(obj2delta) : Float((int)0) )));
-					HX_STACK_LINE(713)
+					HX_STACK_LINE(717)
 					_this->y = Object2->last->y;
-					HX_STACK_LINE(713)
+					HX_STACK_LINE(717)
 					_this->width = (Object2->get_width() + ((  (((obj2delta > (int)0))) ? Float(obj2delta) : Float(-(obj2delta)) )));
-					HX_STACK_LINE(713)
+					HX_STACK_LINE(717)
 					_this->height = Object2->get_height();
-					HX_STACK_LINE(713)
+					HX_STACK_LINE(717)
 					return _this;
 				}
 				return null();
 			}
 		};
-		HX_STACK_LINE(713)
+		HX_STACK_LINE(717)
 		::flixel::util::FlxRect obj2rect = _Function_2_2::Block(obj2delta,Object2);		HX_STACK_VAR(obj2rect,"obj2rect");
-		HX_STACK_LINE(715)
+		HX_STACK_LINE(719)
 		if (((bool((bool((bool(((obj1rect->x + obj1rect->width) > obj2rect->x)) && bool((obj1rect->x < (obj2rect->x + obj2rect->width))))) && bool(((obj1rect->y + obj1rect->height) > obj2rect->y)))) && bool((obj1rect->y < (obj2rect->y + obj2rect->height)))))){
-			HX_STACK_LINE(717)
+			HX_STACK_LINE(721)
 			Float maxOverlap = ((obj1deltaAbs + obj2deltaAbs) + ::flixel::FlxObject_obj::SEPARATE_BIAS);		HX_STACK_VAR(maxOverlap,"maxOverlap");
-			HX_STACK_LINE(720)
+			HX_STACK_LINE(724)
 			if (((obj1delta > obj2delta))){
-				HX_STACK_LINE(722)
+				HX_STACK_LINE(726)
 				overlap = ((Object1->x + Object1->get_width()) - Object2->x);
-				HX_STACK_LINE(723)
+				HX_STACK_LINE(727)
 				if (((bool((bool((overlap > maxOverlap)) || bool((((int(Object1->allowCollisions) & int((int)16))) == (int)0)))) || bool((((int(Object2->allowCollisions) & int((int)1))) == (int)0))))){
-					HX_STACK_LINE(724)
+					HX_STACK_LINE(728)
 					overlap = (int)0;
 				}
 				else{
-					HX_STACK_LINE(729)
+					HX_STACK_LINE(733)
 					hx::OrEq(Object1->touching,(int)16);
-					HX_STACK_LINE(730)
+					HX_STACK_LINE(734)
 					hx::OrEq(Object2->touching,(int)1);
 				}
 			}
 			else{
-				HX_STACK_LINE(733)
+				HX_STACK_LINE(737)
 				if (((obj1delta < obj2delta))){
-					HX_STACK_LINE(735)
+					HX_STACK_LINE(739)
 					overlap = ((Object1->x - Object2->get_width()) - Object2->x);
-					HX_STACK_LINE(736)
+					HX_STACK_LINE(740)
 					if (((bool((bool((-(overlap) > maxOverlap)) || bool((((int(Object1->allowCollisions) & int((int)1))) == (int)0)))) || bool((((int(Object2->allowCollisions) & int((int)16))) == (int)0))))){
-						HX_STACK_LINE(737)
+						HX_STACK_LINE(741)
 						overlap = (int)0;
 					}
 					else{
-						HX_STACK_LINE(742)
+						HX_STACK_LINE(746)
 						hx::OrEq(Object1->touching,(int)1);
-						HX_STACK_LINE(743)
+						HX_STACK_LINE(747)
 						hx::OrEq(Object2->touching,(int)16);
 					}
 				}
 			}
 		}
 	}
-	HX_STACK_LINE(750)
+	HX_STACK_LINE(754)
 	if (((overlap != (int)0))){
-		HX_STACK_LINE(752)
+		HX_STACK_LINE(756)
 		Float obj1v = Object1->velocity->x;		HX_STACK_VAR(obj1v,"obj1v");
-		HX_STACK_LINE(753)
+		HX_STACK_LINE(757)
 		Float obj2v = Object2->velocity->x;		HX_STACK_VAR(obj2v,"obj2v");
-		HX_STACK_LINE(755)
+		HX_STACK_LINE(759)
 		if (((bool(!(obj1immovable)) && bool(!(obj2immovable))))){
-			HX_STACK_LINE(757)
+			HX_STACK_LINE(761)
 			hx::MultEq(overlap,0.5);
-			HX_STACK_LINE(758)
+			HX_STACK_LINE(762)
 			Object1->set_x((Object1->x - overlap));
-			HX_STACK_LINE(759)
+			HX_STACK_LINE(763)
 			{
-				HX_STACK_LINE(759)
+				HX_STACK_LINE(763)
 				::flixel::FlxObject _g = Object2;		HX_STACK_VAR(_g,"_g");
-				HX_STACK_LINE(759)
+				HX_STACK_LINE(763)
 				_g->set_x((_g->x + overlap));
 			}
-			HX_STACK_LINE(761)
-			Float obj1velocity = (::Math_obj::sqrt((Float(((obj2v * obj2v) * Object2->mass)) / Float(Object1->mass))) * ((  (((obj2v > (int)0))) ? int((int)1) : int((int)-1) )));		HX_STACK_VAR(obj1velocity,"obj1velocity");
-			HX_STACK_LINE(762)
-			Float obj2velocity = (::Math_obj::sqrt((Float(((obj1v * obj1v) * Object1->mass)) / Float(Object2->mass))) * ((  (((obj1v > (int)0))) ? int((int)1) : int((int)-1) )));		HX_STACK_VAR(obj2velocity,"obj2velocity");
-			HX_STACK_LINE(763)
-			Float average = (((obj1velocity + obj2velocity)) * 0.5);		HX_STACK_VAR(average,"average");
-			HX_STACK_LINE(764)
-			hx::SubEq(obj1velocity,average);
 			HX_STACK_LINE(765)
-			hx::SubEq(obj2velocity,average);
+			Float obj1velocity = (::Math_obj::sqrt((Float(((obj2v * obj2v) * Object2->mass)) / Float(Object1->mass))) * ((  (((obj2v > (int)0))) ? int((int)1) : int((int)-1) )));		HX_STACK_VAR(obj1velocity,"obj1velocity");
 			HX_STACK_LINE(766)
-			Object1->velocity->set_x((average + (obj1velocity * Object1->elasticity)));
+			Float obj2velocity = (::Math_obj::sqrt((Float(((obj1v * obj1v) * Object1->mass)) / Float(Object2->mass))) * ((  (((obj1v > (int)0))) ? int((int)1) : int((int)-1) )));		HX_STACK_VAR(obj2velocity,"obj2velocity");
 			HX_STACK_LINE(767)
+			Float average = (((obj1velocity + obj2velocity)) * 0.5);		HX_STACK_VAR(average,"average");
+			HX_STACK_LINE(768)
+			hx::SubEq(obj1velocity,average);
+			HX_STACK_LINE(769)
+			hx::SubEq(obj2velocity,average);
+			HX_STACK_LINE(770)
+			Object1->velocity->set_x((average + (obj1velocity * Object1->elasticity)));
+			HX_STACK_LINE(771)
 			Object2->velocity->set_x((average + (obj2velocity * Object2->elasticity)));
 		}
 		else{
-			HX_STACK_LINE(769)
+			HX_STACK_LINE(773)
 			if ((!(obj1immovable))){
-				HX_STACK_LINE(771)
+				HX_STACK_LINE(775)
 				Object1->set_x((Object1->x - overlap));
-				HX_STACK_LINE(772)
+				HX_STACK_LINE(776)
 				Object1->velocity->set_x((obj2v - (obj1v * Object1->elasticity)));
 			}
 			else{
-				HX_STACK_LINE(774)
+				HX_STACK_LINE(778)
 				if ((!(obj2immovable))){
-					HX_STACK_LINE(776)
+					HX_STACK_LINE(780)
 					{
-						HX_STACK_LINE(776)
+						HX_STACK_LINE(780)
 						::flixel::FlxObject _g = Object2;		HX_STACK_VAR(_g,"_g");
-						HX_STACK_LINE(776)
+						HX_STACK_LINE(780)
 						_g->set_x((_g->x + overlap));
 					}
-					HX_STACK_LINE(777)
+					HX_STACK_LINE(781)
 					Object2->velocity->set_x((obj1v - (obj2v * Object2->elasticity)));
 				}
 			}
 		}
-		HX_STACK_LINE(779)
+		HX_STACK_LINE(783)
 		return true;
 	}
 	else{
-		HX_STACK_LINE(782)
+		HX_STACK_LINE(786)
 		return false;
 	}
-	HX_STACK_LINE(750)
+	HX_STACK_LINE(754)
 	return false;
 }
 
@@ -1243,203 +1173,203 @@ bool FlxObject_obj::separateX( ::flixel::FlxObject Object1,::flixel::FlxObject O
 STATIC_HX_DEFINE_DYNAMIC_FUNC2(FlxObject_obj,separateX,return )
 
 bool FlxObject_obj::separateY( ::flixel::FlxObject Object1,::flixel::FlxObject Object2){
-	HX_STACK_PUSH("FlxObject::separateY","flixel/FlxObject.hx",794);
+	HX_STACK_PUSH("FlxObject::separateY","flixel/FlxObject.hx",798);
 	HX_STACK_ARG(Object1,"Object1");
 	HX_STACK_ARG(Object2,"Object2");
-	HX_STACK_LINE(796)
+	HX_STACK_LINE(800)
 	bool obj1immovable = Object1->immovable;		HX_STACK_VAR(obj1immovable,"obj1immovable");
-	HX_STACK_LINE(797)
+	HX_STACK_LINE(801)
 	bool obj2immovable = Object2->immovable;		HX_STACK_VAR(obj2immovable,"obj2immovable");
-	HX_STACK_LINE(798)
+	HX_STACK_LINE(802)
 	if (((bool(obj1immovable) && bool(obj2immovable)))){
-		HX_STACK_LINE(799)
+		HX_STACK_LINE(803)
 		return false;
 	}
-	HX_STACK_LINE(804)
+	HX_STACK_LINE(808)
 	if (((Object1->collisionType == ::flixel::system::FlxCollisionType_obj::TILEMAP))){
-		HX_STACK_LINE(805)
+		HX_STACK_LINE(809)
 		return (hx::TCast< flixel::tile::FlxTilemap >::cast(Object1))->overlapsWithCallback(Object2,::flixel::FlxObject_obj::separateY_dyn(),null(),null());
 	}
-	HX_STACK_LINE(808)
+	HX_STACK_LINE(812)
 	if (((Object2->collisionType == ::flixel::system::FlxCollisionType_obj::TILEMAP))){
-		HX_STACK_LINE(809)
+		HX_STACK_LINE(813)
 		return (hx::TCast< flixel::tile::FlxTilemap >::cast(Object2))->overlapsWithCallback(Object1,::flixel::FlxObject_obj::separateY_dyn(),true,null());
 	}
-	HX_STACK_LINE(814)
-	Float overlap = (int)0;		HX_STACK_VAR(overlap,"overlap");
-	HX_STACK_LINE(815)
-	Float obj1delta = (Object1->y - Object1->last->y);		HX_STACK_VAR(obj1delta,"obj1delta");
-	HX_STACK_LINE(816)
-	Float obj2delta = (Object2->y - Object2->last->y);		HX_STACK_VAR(obj2delta,"obj2delta");
 	HX_STACK_LINE(818)
+	Float overlap = (int)0;		HX_STACK_VAR(overlap,"overlap");
+	HX_STACK_LINE(819)
+	Float obj1delta = (Object1->y - Object1->last->y);		HX_STACK_VAR(obj1delta,"obj1delta");
+	HX_STACK_LINE(820)
+	Float obj2delta = (Object2->y - Object2->last->y);		HX_STACK_VAR(obj2delta,"obj2delta");
+	HX_STACK_LINE(822)
 	if (((obj1delta != obj2delta))){
-		HX_STACK_LINE(821)
+		HX_STACK_LINE(825)
 		Float obj1deltaAbs = (  (((obj1delta > (int)0))) ? Float(obj1delta) : Float(-(obj1delta)) );		HX_STACK_VAR(obj1deltaAbs,"obj1deltaAbs");
-		HX_STACK_LINE(822)
+		HX_STACK_LINE(826)
 		Float obj2deltaAbs = (  (((obj2delta > (int)0))) ? Float(obj2delta) : Float(-(obj2delta)) );		HX_STACK_VAR(obj2deltaAbs,"obj2deltaAbs");
 		struct _Function_2_1{
 			inline static ::flixel::util::FlxRect Block( ::flixel::FlxObject &Object1,Float &obj1deltaAbs,Float &obj1delta){
-				HX_STACK_PUSH("*::closure","flixel/FlxObject.hx",824);
+				HX_STACK_PUSH("*::closure","flixel/FlxObject.hx",828);
 				{
-					HX_STACK_LINE(824)
+					HX_STACK_LINE(828)
 					::flixel::util::FlxRect _this = ::flixel::FlxObject_obj::_firstSeparateFlxRect;		HX_STACK_VAR(_this,"_this");
-					HX_STACK_LINE(824)
+					HX_STACK_LINE(828)
 					_this->x = Object1->x;
-					HX_STACK_LINE(824)
+					HX_STACK_LINE(828)
 					_this->y = (Object1->y - ((  (((obj1delta > (int)0))) ? Float(obj1delta) : Float((int)0) )));
-					HX_STACK_LINE(824)
+					HX_STACK_LINE(828)
 					_this->width = Object1->get_width();
-					HX_STACK_LINE(824)
+					HX_STACK_LINE(828)
 					_this->height = (Object1->get_height() + obj1deltaAbs);
-					HX_STACK_LINE(824)
+					HX_STACK_LINE(828)
 					return _this;
 				}
 				return null();
 			}
 		};
-		HX_STACK_LINE(824)
+		HX_STACK_LINE(828)
 		::flixel::util::FlxRect obj1rect = _Function_2_1::Block(Object1,obj1deltaAbs,obj1delta);		HX_STACK_VAR(obj1rect,"obj1rect");
 		struct _Function_2_2{
 			inline static ::flixel::util::FlxRect Block( Float &obj2deltaAbs,Float &obj2delta,::flixel::FlxObject &Object2){
-				HX_STACK_PUSH("*::closure","flixel/FlxObject.hx",825);
+				HX_STACK_PUSH("*::closure","flixel/FlxObject.hx",829);
 				{
-					HX_STACK_LINE(825)
+					HX_STACK_LINE(829)
 					::flixel::util::FlxRect _this = ::flixel::FlxObject_obj::_secondSeparateFlxRect;		HX_STACK_VAR(_this,"_this");
-					HX_STACK_LINE(825)
+					HX_STACK_LINE(829)
 					_this->x = Object2->x;
-					HX_STACK_LINE(825)
+					HX_STACK_LINE(829)
 					_this->y = (Object2->y - ((  (((obj2delta > (int)0))) ? Float(obj2delta) : Float((int)0) )));
-					HX_STACK_LINE(825)
+					HX_STACK_LINE(829)
 					_this->width = Object2->get_width();
-					HX_STACK_LINE(825)
+					HX_STACK_LINE(829)
 					_this->height = (Object2->get_height() + obj2deltaAbs);
-					HX_STACK_LINE(825)
+					HX_STACK_LINE(829)
 					return _this;
 				}
 				return null();
 			}
 		};
-		HX_STACK_LINE(825)
+		HX_STACK_LINE(829)
 		::flixel::util::FlxRect obj2rect = _Function_2_2::Block(obj2deltaAbs,obj2delta,Object2);		HX_STACK_VAR(obj2rect,"obj2rect");
-		HX_STACK_LINE(827)
+		HX_STACK_LINE(831)
 		if (((bool((bool((bool(((obj1rect->x + obj1rect->width) > obj2rect->x)) && bool((obj1rect->x < (obj2rect->x + obj2rect->width))))) && bool(((obj1rect->y + obj1rect->height) > obj2rect->y)))) && bool((obj1rect->y < (obj2rect->y + obj2rect->height)))))){
-			HX_STACK_LINE(829)
+			HX_STACK_LINE(833)
 			Float maxOverlap = ((obj1deltaAbs + obj2deltaAbs) + ::flixel::FlxObject_obj::SEPARATE_BIAS);		HX_STACK_VAR(maxOverlap,"maxOverlap");
-			HX_STACK_LINE(832)
+			HX_STACK_LINE(836)
 			if (((obj1delta > obj2delta))){
-				HX_STACK_LINE(834)
+				HX_STACK_LINE(838)
 				overlap = ((Object1->y + Object1->get_height()) - Object2->y);
-				HX_STACK_LINE(835)
+				HX_STACK_LINE(839)
 				if (((bool((bool((overlap > maxOverlap)) || bool((((int(Object1->allowCollisions) & int((int)4096))) == (int)0)))) || bool((((int(Object2->allowCollisions) & int((int)256))) == (int)0))))){
-					HX_STACK_LINE(836)
+					HX_STACK_LINE(840)
 					overlap = (int)0;
 				}
 				else{
-					HX_STACK_LINE(841)
+					HX_STACK_LINE(845)
 					hx::OrEq(Object1->touching,(int)4096);
-					HX_STACK_LINE(842)
+					HX_STACK_LINE(846)
 					hx::OrEq(Object2->touching,(int)256);
 				}
 			}
 			else{
-				HX_STACK_LINE(845)
+				HX_STACK_LINE(849)
 				if (((obj1delta < obj2delta))){
-					HX_STACK_LINE(847)
+					HX_STACK_LINE(851)
 					overlap = ((Object1->y - Object2->get_height()) - Object2->y);
-					HX_STACK_LINE(848)
+					HX_STACK_LINE(852)
 					if (((bool((bool((-(overlap) > maxOverlap)) || bool((((int(Object1->allowCollisions) & int((int)256))) == (int)0)))) || bool((((int(Object2->allowCollisions) & int((int)4096))) == (int)0))))){
-						HX_STACK_LINE(849)
+						HX_STACK_LINE(853)
 						overlap = (int)0;
 					}
 					else{
-						HX_STACK_LINE(854)
+						HX_STACK_LINE(858)
 						hx::OrEq(Object1->touching,(int)256);
-						HX_STACK_LINE(855)
+						HX_STACK_LINE(859)
 						hx::OrEq(Object2->touching,(int)4096);
 					}
 				}
 			}
 		}
 	}
-	HX_STACK_LINE(862)
+	HX_STACK_LINE(866)
 	if (((overlap != (int)0))){
-		HX_STACK_LINE(864)
+		HX_STACK_LINE(868)
 		Float obj1v = Object1->velocity->y;		HX_STACK_VAR(obj1v,"obj1v");
-		HX_STACK_LINE(865)
+		HX_STACK_LINE(869)
 		Float obj2v = Object2->velocity->y;		HX_STACK_VAR(obj2v,"obj2v");
-		HX_STACK_LINE(867)
+		HX_STACK_LINE(871)
 		if (((bool(!(obj1immovable)) && bool(!(obj2immovable))))){
-			HX_STACK_LINE(869)
+			HX_STACK_LINE(873)
 			hx::MultEq(overlap,0.5);
-			HX_STACK_LINE(870)
+			HX_STACK_LINE(874)
 			Object1->set_y((Object1->y - overlap));
-			HX_STACK_LINE(871)
+			HX_STACK_LINE(875)
 			{
-				HX_STACK_LINE(871)
+				HX_STACK_LINE(875)
 				::flixel::FlxObject _g = Object2;		HX_STACK_VAR(_g,"_g");
-				HX_STACK_LINE(871)
+				HX_STACK_LINE(875)
 				_g->set_y((_g->y + overlap));
 			}
-			HX_STACK_LINE(873)
-			Float obj1velocity = (::Math_obj::sqrt((Float(((obj2v * obj2v) * Object2->mass)) / Float(Object1->mass))) * ((  (((obj2v > (int)0))) ? int((int)1) : int((int)-1) )));		HX_STACK_VAR(obj1velocity,"obj1velocity");
-			HX_STACK_LINE(874)
-			Float obj2velocity = (::Math_obj::sqrt((Float(((obj1v * obj1v) * Object1->mass)) / Float(Object2->mass))) * ((  (((obj1v > (int)0))) ? int((int)1) : int((int)-1) )));		HX_STACK_VAR(obj2velocity,"obj2velocity");
-			HX_STACK_LINE(875)
-			Float average = (((obj1velocity + obj2velocity)) * 0.5);		HX_STACK_VAR(average,"average");
-			HX_STACK_LINE(876)
-			hx::SubEq(obj1velocity,average);
 			HX_STACK_LINE(877)
-			hx::SubEq(obj2velocity,average);
+			Float obj1velocity = (::Math_obj::sqrt((Float(((obj2v * obj2v) * Object2->mass)) / Float(Object1->mass))) * ((  (((obj2v > (int)0))) ? int((int)1) : int((int)-1) )));		HX_STACK_VAR(obj1velocity,"obj1velocity");
 			HX_STACK_LINE(878)
-			Object1->velocity->set_y((average + (obj1velocity * Object1->elasticity)));
+			Float obj2velocity = (::Math_obj::sqrt((Float(((obj1v * obj1v) * Object1->mass)) / Float(Object2->mass))) * ((  (((obj1v > (int)0))) ? int((int)1) : int((int)-1) )));		HX_STACK_VAR(obj2velocity,"obj2velocity");
 			HX_STACK_LINE(879)
+			Float average = (((obj1velocity + obj2velocity)) * 0.5);		HX_STACK_VAR(average,"average");
+			HX_STACK_LINE(880)
+			hx::SubEq(obj1velocity,average);
+			HX_STACK_LINE(881)
+			hx::SubEq(obj2velocity,average);
+			HX_STACK_LINE(882)
+			Object1->velocity->set_y((average + (obj1velocity * Object1->elasticity)));
+			HX_STACK_LINE(883)
 			Object2->velocity->set_y((average + (obj2velocity * Object2->elasticity)));
 		}
 		else{
-			HX_STACK_LINE(881)
+			HX_STACK_LINE(885)
 			if ((!(obj1immovable))){
-				HX_STACK_LINE(883)
+				HX_STACK_LINE(887)
 				Object1->set_y((Object1->y - overlap));
-				HX_STACK_LINE(884)
+				HX_STACK_LINE(888)
 				Object1->velocity->set_y((obj2v - (obj1v * Object1->elasticity)));
-				HX_STACK_LINE(886)
+				HX_STACK_LINE(890)
 				if (((bool((bool((bool(Object1->collisonXDrag) && bool(Object2->active))) && bool(Object2->moves))) && bool((obj1delta > obj2delta))))){
-					HX_STACK_LINE(888)
+					HX_STACK_LINE(892)
 					::flixel::FlxObject _g = Object1;		HX_STACK_VAR(_g,"_g");
-					HX_STACK_LINE(888)
+					HX_STACK_LINE(892)
 					_g->set_x((_g->x + ((Object2->x - Object2->last->x))));
 				}
 			}
 			else{
-				HX_STACK_LINE(891)
+				HX_STACK_LINE(895)
 				if ((!(obj2immovable))){
-					HX_STACK_LINE(893)
+					HX_STACK_LINE(897)
 					{
-						HX_STACK_LINE(893)
+						HX_STACK_LINE(897)
 						::flixel::FlxObject _g = Object2;		HX_STACK_VAR(_g,"_g");
-						HX_STACK_LINE(893)
+						HX_STACK_LINE(897)
 						_g->set_y((_g->y + overlap));
 					}
-					HX_STACK_LINE(894)
+					HX_STACK_LINE(898)
 					Object2->velocity->set_y((obj1v - (obj2v * Object2->elasticity)));
-					HX_STACK_LINE(896)
+					HX_STACK_LINE(900)
 					if (((bool((bool((bool(Object2->collisonXDrag) && bool(Object1->active))) && bool(Object1->moves))) && bool((obj1delta < obj2delta))))){
-						HX_STACK_LINE(898)
+						HX_STACK_LINE(902)
 						::flixel::FlxObject _g = Object2;		HX_STACK_VAR(_g,"_g");
-						HX_STACK_LINE(898)
+						HX_STACK_LINE(902)
 						_g->set_x((_g->x + ((Object1->x - Object1->last->x))));
 					}
 				}
 			}
 		}
-		HX_STACK_LINE(901)
+		HX_STACK_LINE(905)
 		return true;
 	}
 	else{
-		HX_STACK_LINE(904)
+		HX_STACK_LINE(908)
 		return false;
 	}
-	HX_STACK_LINE(862)
+	HX_STACK_LINE(866)
 	return false;
 }
 

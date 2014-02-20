@@ -38,8 +38,6 @@ class HXCPP_CLASS_ATTRIBUTES  FlxMath_obj : public hx::Object{
 		void __Visit(HX_VISIT_PARAMS);
 		::String __ToString() const { return HX_CSTRING("FlxMath"); }
 
-		static Float MIN_VALUE;
-		static Float MAX_VALUE;
 		static Float roundDecimal( Float Value,int Precision);
 		static Dynamic roundDecimal_dyn();
 
@@ -51,6 +49,9 @@ class HXCPP_CLASS_ATTRIBUTES  FlxMath_obj : public hx::Object{
 
 		static bool inBounds( Float Value,Float Min,Float Max);
 		static Dynamic inBounds_dyn();
+
+		static Float computeVelocity( Float Velocity,Float Acceleration,Float Drag,Float Max);
+		static Dynamic computeVelocity_dyn();
 
 		static bool isOdd( Float n);
 		static Dynamic isOdd_dyn();
@@ -118,6 +119,8 @@ class HXCPP_CLASS_ATTRIBUTES  FlxMath_obj : public hx::Object{
 		static bool equal( Float aValueA,Float aValueB,hx::Null< Float >  aDiff);
 		static Dynamic equal_dyn();
 
+		static Float MIN_VALUE;
+		static Float MAX_VALUE;
 };
 
 } // end namespace flixel

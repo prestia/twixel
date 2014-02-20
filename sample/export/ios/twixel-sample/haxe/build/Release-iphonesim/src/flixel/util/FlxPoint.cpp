@@ -3,8 +3,14 @@
 #ifndef INCLUDED_flash_geom_Point
 #include <flash/geom/Point.h>
 #endif
+#ifndef INCLUDED_flixel_FlxG
+#include <flixel/FlxG.h>
+#endif
 #ifndef INCLUDED_flixel_interfaces_IFlxDestroyable
 #include <flixel/interfaces/IFlxDestroyable.h>
+#endif
+#ifndef INCLUDED_flixel_system_frontEnds_DebuggerFrontEnd
+#include <flixel/system/frontEnds/DebuggerFrontEnd.h>
 #endif
 #ifndef INCLUDED_flixel_util_FlxMath
 #include <flixel/util/FlxMath.h>
@@ -14,9 +20,6 @@
 #endif
 #ifndef INCLUDED_flixel_util_FlxRect
 #include <flixel/util/FlxRect.h>
-#endif
-#ifndef INCLUDED_flixel_util_FlxStringUtil
-#include <flixel/util/FlxStringUtil.h>
 #endif
 #ifndef INCLUDED_hxMath
 #include <hxMath.h>
@@ -64,32 +67,10 @@ hx::Object *FlxPoint_obj::__ToInterface(const hx::type_info &inType) {
 ::String FlxPoint_obj::toString( ){
 	HX_STACK_PUSH("FlxPoint::toString","flixel/util/FlxPoint.hx",149);
 	HX_STACK_THIS(this);
-	struct _Function_1_1{
-		inline static Dynamic Block( ::flixel::util::FlxPoint_obj *__this){
-			HX_STACK_PUSH("*::closure","flixel/util/FlxPoint.hx",150);
-			{
-				hx::Anon __result = hx::Anon_obj::Create();
-				__result->Add(HX_CSTRING("label") , HX_CSTRING("x"),false);
-				__result->Add(HX_CSTRING("value") , __this->x,false);
-				return __result;
-			}
-			return null();
-		}
-	};
-	struct _Function_1_2{
-		inline static Dynamic Block( ::flixel::util::FlxPoint_obj *__this){
-			HX_STACK_PUSH("*::closure","flixel/util/FlxPoint.hx",151);
-			{
-				hx::Anon __result = hx::Anon_obj::Create();
-				__result->Add(HX_CSTRING("label") , HX_CSTRING("y"),false);
-				__result->Add(HX_CSTRING("value") , __this->y,false);
-				return __result;
-			}
-			return null();
-		}
-	};
-	HX_STACK_LINE(149)
-	return ::flixel::util::FlxStringUtil_obj::getDebugString(Dynamic( Array_obj<Dynamic>::__new().Add(_Function_1_1::Block(this)).Add(_Function_1_2::Block(this))));
+	HX_STACK_LINE(150)
+	int p = ::flixel::FlxG_obj::debugger->precision;		HX_STACK_VAR(p,"p");
+	HX_STACK_LINE(151)
+	return ((((HX_CSTRING("(x: ") + ::flixel::util::FlxMath_obj::roundDecimal(this->x,p)) + HX_CSTRING(" | y: ")) + ::flixel::util::FlxMath_obj::roundDecimal(this->y,p)) + HX_CSTRING(")"));
 }
 
 

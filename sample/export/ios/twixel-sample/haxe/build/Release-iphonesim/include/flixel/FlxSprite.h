@@ -167,19 +167,22 @@ class HXCPP_CLASS_ATTRIBUTES  FlxSprite_obj : public ::flixel::FlxObject_obj{
 		Float _halfHeight;
 		Float _halfWidth;
 		::flash::geom::Matrix _matrix;
+		bool useColorTransform;
 		::flash::geom::ColorTransform _colorTransform;
 		::flash::geom::Point _flashPointZero;
 		::flash::geom::Rectangle _flashRect2;
 		::flash::geom::Rectangle _flashRect;
 		::flash::geom::Point _flashPoint;
-		int _blendInt;
 		int _facingMult;
 		Float _blue;
 		Float _green;
 		Float _red;
-		bool useColorTransform;
+		bool isColored;
 		int color;
+		int _blendInt;
 		::flash::display::BlendMode blend;
+		bool dirty;
+		bool antialiasing;
 		::flixel::util::FlxPoint scale;
 		::flixel::util::FlxPoint offset;
 		::flixel::util::FlxPoint origin;
@@ -190,11 +193,8 @@ class HXCPP_CLASS_ATTRIBUTES  FlxSprite_obj : public ::flixel::FlxObject_obj{
 		int frames;
 		int frameHeight;
 		int frameWidth;
-		::flixel::system::layer::frames::FlxFrame frame;
-		bool isColored;
-		bool dirty;
-		bool antialiasing;
 		::flash::display::BitmapData framePixels;
+		::flixel::system::layer::frames::FlxFrame frame;
 		::flixel::animation::FlxAnimationController animation;
 };
 

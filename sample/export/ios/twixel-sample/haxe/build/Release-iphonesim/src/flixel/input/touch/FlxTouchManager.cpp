@@ -72,23 +72,23 @@ namespace touch{
 
 Void FlxTouchManager_obj::__construct()
 {
-HX_STACK_PUSH("FlxTouchManager::new","flixel/input/touch/FlxTouchManager.hx",161);
+HX_STACK_PUSH("FlxTouchManager::new","flixel/input/touch/FlxTouchManager.hx",160);
 {
-	HX_STACK_LINE(162)
+	HX_STACK_LINE(161)
 	this->list = Array_obj< ::Dynamic >::__new();
-	HX_STACK_LINE(163)
+	HX_STACK_LINE(162)
 	this->_inactiveTouches = Array_obj< ::Dynamic >::__new();
-	HX_STACK_LINE(164)
+	HX_STACK_LINE(163)
 	this->_touchesCache = ::haxe::ds::IntMap_obj::__new();
-	HX_STACK_LINE(165)
+	HX_STACK_LINE(164)
 	::flixel::input::touch::FlxTouchManager_obj::maxTouchPoints = ::flash::ui::Multitouch_obj::maxTouchPoints;
-	HX_STACK_LINE(166)
+	HX_STACK_LINE(165)
 	::flash::ui::Multitouch_obj::set_inputMode(::flash::ui::MultitouchInputMode_obj::TOUCH_POINT);
-	HX_STACK_LINE(168)
+	HX_STACK_LINE(167)
 	::flash::Lib_obj::get_current()->get_stage()->addEventListener(::flash::events::TouchEvent_obj::TOUCH_BEGIN,this->handleTouchBegin_dyn(),null(),null(),null());
-	HX_STACK_LINE(169)
+	HX_STACK_LINE(168)
 	::flash::Lib_obj::get_current()->get_stage()->addEventListener(::flash::events::TouchEvent_obj::TOUCH_END,this->handleTouchEnd_dyn(),null(),null(),null());
-	HX_STACK_LINE(170)
+	HX_STACK_LINE(169)
 	::flash::Lib_obj::get_current()->get_stage()->addEventListener(::flash::events::TouchEvent_obj::TOUCH_MOVE,this->handleTouchMove_dyn(),null(),null(),null());
 }
 ;
@@ -115,9 +115,9 @@ hx::Object *FlxTouchManager_obj::__ToInterface(const hx::type_info &inType) {
 
 Void FlxTouchManager_obj::onFocusLost( ){
 {
-		HX_STACK_PUSH("FlxTouchManager::onFocusLost","flixel/input/touch/FlxTouchManager.hx",304);
+		HX_STACK_PUSH("FlxTouchManager::onFocusLost","flixel/input/touch/FlxTouchManager.hx",303);
 		HX_STACK_THIS(this);
-		HX_STACK_LINE(304)
+		HX_STACK_LINE(303)
 		this->reset();
 	}
 return null();
@@ -128,7 +128,7 @@ HX_DEFINE_DYNAMIC_FUNC0(FlxTouchManager_obj,onFocusLost,(void))
 
 Void FlxTouchManager_obj::onFocus( ){
 {
-		HX_STACK_PUSH("FlxTouchManager::onFocus","flixel/input/touch/FlxTouchManager.hx",301);
+		HX_STACK_PUSH("FlxTouchManager::onFocus","flixel/input/touch/FlxTouchManager.hx",300);
 		HX_STACK_THIS(this);
 	}
 return null();
@@ -139,32 +139,32 @@ HX_DEFINE_DYNAMIC_FUNC0(FlxTouchManager_obj,onFocus,(void))
 
 Void FlxTouchManager_obj::update( ){
 {
-		HX_STACK_PUSH("FlxTouchManager::update","flixel/input/touch/FlxTouchManager.hx",276);
+		HX_STACK_PUSH("FlxTouchManager::update","flixel/input/touch/FlxTouchManager.hx",275);
 		HX_STACK_THIS(this);
-		HX_STACK_LINE(277)
+		HX_STACK_LINE(276)
 		int i = (this->list->length - (int)1);		HX_STACK_VAR(i,"i");
-		HX_STACK_LINE(278)
+		HX_STACK_LINE(277)
 		::flixel::input::touch::FlxTouch touch;		HX_STACK_VAR(touch,"touch");
-		HX_STACK_LINE(280)
+		HX_STACK_LINE(279)
 		while(((i >= (int)0))){
-			HX_STACK_LINE(282)
+			HX_STACK_LINE(281)
 			touch = this->list->__get(i).StaticCast< ::flixel::input::touch::FlxTouch >();
-			HX_STACK_LINE(285)
+			HX_STACK_LINE(284)
 			if (((touch->_current == (int)0))){
-				HX_STACK_LINE(287)
+				HX_STACK_LINE(286)
 				touch->deactivate();
-				HX_STACK_LINE(288)
+				HX_STACK_LINE(287)
 				this->_touchesCache->remove(touch->touchPointID);
-				HX_STACK_LINE(289)
+				HX_STACK_LINE(288)
 				this->list->splice(i,(int)1);
-				HX_STACK_LINE(290)
+				HX_STACK_LINE(289)
 				this->_inactiveTouches->push(touch);
 			}
 			else{
-				HX_STACK_LINE(293)
+				HX_STACK_LINE(292)
 				touch->update();
 			}
-			HX_STACK_LINE(297)
+			HX_STACK_LINE(296)
 			(i)--;
 		}
 	}
@@ -175,21 +175,21 @@ return null();
 HX_DEFINE_DYNAMIC_FUNC0(FlxTouchManager_obj,update,(void))
 
 ::flixel::input::touch::FlxTouch FlxTouchManager_obj::recycle( Float X,Float Y,int PointID){
-	HX_STACK_PUSH("FlxTouchManager::recycle","flixel/input/touch/FlxTouchManager.hx",260);
+	HX_STACK_PUSH("FlxTouchManager::recycle","flixel/input/touch/FlxTouchManager.hx",259);
 	HX_STACK_THIS(this);
 	HX_STACK_ARG(X,"X");
 	HX_STACK_ARG(Y,"Y");
 	HX_STACK_ARG(PointID,"PointID");
-	HX_STACK_LINE(261)
+	HX_STACK_LINE(260)
 	if (((this->_inactiveTouches->length > (int)0))){
-		HX_STACK_LINE(263)
+		HX_STACK_LINE(262)
 		::flixel::input::touch::FlxTouch touch = this->_inactiveTouches->pop().StaticCast< ::flixel::input::touch::FlxTouch >();		HX_STACK_VAR(touch,"touch");
-		HX_STACK_LINE(264)
+		HX_STACK_LINE(263)
 		touch->reset(X,Y,PointID);
-		HX_STACK_LINE(265)
+		HX_STACK_LINE(264)
 		return this->add(touch);
 	}
-	HX_STACK_LINE(268)
+	HX_STACK_LINE(267)
 	return this->add(::flixel::input::touch::FlxTouch_obj::__new(X,Y,PointID));
 }
 
@@ -197,14 +197,14 @@ HX_DEFINE_DYNAMIC_FUNC0(FlxTouchManager_obj,update,(void))
 HX_DEFINE_DYNAMIC_FUNC3(FlxTouchManager_obj,recycle,return )
 
 ::flixel::input::touch::FlxTouch FlxTouchManager_obj::add( ::flixel::input::touch::FlxTouch Touch){
-	HX_STACK_PUSH("FlxTouchManager::add","flixel/input/touch/FlxTouchManager.hx",245);
+	HX_STACK_PUSH("FlxTouchManager::add","flixel/input/touch/FlxTouchManager.hx",244);
 	HX_STACK_THIS(this);
 	HX_STACK_ARG(Touch,"Touch");
-	HX_STACK_LINE(246)
+	HX_STACK_LINE(245)
 	this->list->push(Touch);
-	HX_STACK_LINE(247)
+	HX_STACK_LINE(246)
 	this->_touchesCache->set(Touch->touchPointID,Touch);
-	HX_STACK_LINE(248)
+	HX_STACK_LINE(247)
 	return Touch;
 }
 
@@ -213,14 +213,14 @@ HX_DEFINE_DYNAMIC_FUNC1(FlxTouchManager_obj,add,return )
 
 Void FlxTouchManager_obj::handleTouchMove( ::flash::events::TouchEvent FlashEvent){
 {
-		HX_STACK_PUSH("FlxTouchManager::handleTouchMove","flixel/input/touch/FlxTouchManager.hx",229);
+		HX_STACK_PUSH("FlxTouchManager::handleTouchMove","flixel/input/touch/FlxTouchManager.hx",228);
 		HX_STACK_THIS(this);
 		HX_STACK_ARG(FlashEvent,"FlashEvent");
-		HX_STACK_LINE(230)
+		HX_STACK_LINE(229)
 		::flixel::input::touch::FlxTouch touch = this->_touchesCache->get(FlashEvent->touchPointID);		HX_STACK_VAR(touch,"touch");
-		HX_STACK_LINE(232)
+		HX_STACK_LINE(231)
 		if (((touch != null()))){
-			HX_STACK_LINE(233)
+			HX_STACK_LINE(232)
 			touch->updatePosition(FlashEvent->stageX,FlashEvent->stageY);
 		}
 	}
@@ -232,20 +232,20 @@ HX_DEFINE_DYNAMIC_FUNC1(FlxTouchManager_obj,handleTouchMove,(void))
 
 Void FlxTouchManager_obj::handleTouchEnd( ::flash::events::TouchEvent FlashEvent){
 {
-		HX_STACK_PUSH("FlxTouchManager::handleTouchEnd","flixel/input/touch/FlxTouchManager.hx",207);
+		HX_STACK_PUSH("FlxTouchManager::handleTouchEnd","flixel/input/touch/FlxTouchManager.hx",206);
 		HX_STACK_THIS(this);
 		HX_STACK_ARG(FlashEvent,"FlashEvent");
-		HX_STACK_LINE(208)
+		HX_STACK_LINE(207)
 		::flixel::input::touch::FlxTouch touch = this->_touchesCache->get(FlashEvent->touchPointID);		HX_STACK_VAR(touch,"touch");
-		HX_STACK_LINE(210)
+		HX_STACK_LINE(209)
 		if (((touch != null()))){
-			HX_STACK_LINE(211)
+			HX_STACK_LINE(210)
 			if (((touch->_current > (int)0))){
-				HX_STACK_LINE(213)
+				HX_STACK_LINE(212)
 				touch->_current = (int)-1;
 			}
 			else{
-				HX_STACK_LINE(217)
+				HX_STACK_LINE(216)
 				touch->_current = (int)0;
 			}
 		}
@@ -258,29 +258,29 @@ HX_DEFINE_DYNAMIC_FUNC1(FlxTouchManager_obj,handleTouchEnd,(void))
 
 Void FlxTouchManager_obj::handleTouchBegin( ::flash::events::TouchEvent FlashEvent){
 {
-		HX_STACK_PUSH("FlxTouchManager::handleTouchBegin","flixel/input/touch/FlxTouchManager.hx",179);
+		HX_STACK_PUSH("FlxTouchManager::handleTouchBegin","flixel/input/touch/FlxTouchManager.hx",178);
 		HX_STACK_THIS(this);
 		HX_STACK_ARG(FlashEvent,"FlashEvent");
-		HX_STACK_LINE(180)
+		HX_STACK_LINE(179)
 		::flixel::input::touch::FlxTouch touch = this->_touchesCache->get(FlashEvent->touchPointID);		HX_STACK_VAR(touch,"touch");
-		HX_STACK_LINE(181)
+		HX_STACK_LINE(180)
 		if (((touch != null()))){
-			HX_STACK_LINE(183)
+			HX_STACK_LINE(182)
 			touch->updatePosition(FlashEvent->stageX,FlashEvent->stageY);
-			HX_STACK_LINE(185)
+			HX_STACK_LINE(184)
 			if (((touch->_current > (int)0))){
-				HX_STACK_LINE(186)
+				HX_STACK_LINE(185)
 				touch->_current = (int)1;
 			}
 			else{
-				HX_STACK_LINE(190)
+				HX_STACK_LINE(189)
 				touch->_current = (int)2;
 			}
 		}
 		else{
-			HX_STACK_LINE(196)
+			HX_STACK_LINE(195)
 			touch = this->recycle(FlashEvent->stageX,FlashEvent->stageY,FlashEvent->touchPointID);
-			HX_STACK_LINE(197)
+			HX_STACK_LINE(196)
 			touch->_current = (int)2;
 		}
 	}
@@ -292,31 +292,31 @@ HX_DEFINE_DYNAMIC_FUNC1(FlxTouchManager_obj,handleTouchBegin,(void))
 
 Void FlxTouchManager_obj::reset( ){
 {
-		HX_STACK_PUSH("FlxTouchManager::reset","flixel/input/touch/FlxTouchManager.hx",144);
+		HX_STACK_PUSH("FlxTouchManager::reset","flixel/input/touch/FlxTouchManager.hx",143);
 		HX_STACK_THIS(this);
-		HX_STACK_LINE(145)
+		HX_STACK_LINE(144)
 		for(::cpp::FastIterator_obj< int > *__it = ::cpp::CreateFastIterator< int >(this->_touchesCache->keys());  __it->hasNext(); ){
 			int key = __it->next();
 			this->_touchesCache->remove(key);
 		}
-		HX_STACK_LINE(150)
+		HX_STACK_LINE(149)
 		{
-			HX_STACK_LINE(150)
+			HX_STACK_LINE(149)
 			int _g = (int)0;		HX_STACK_VAR(_g,"_g");
 			Array< ::Dynamic > _g1 = this->list;		HX_STACK_VAR(_g1,"_g1");
-			HX_STACK_LINE(150)
+			HX_STACK_LINE(149)
 			while(((_g < _g1->length))){
-				HX_STACK_LINE(150)
+				HX_STACK_LINE(149)
 				::flixel::input::touch::FlxTouch touch = _g1->__get(_g).StaticCast< ::flixel::input::touch::FlxTouch >();		HX_STACK_VAR(touch,"touch");
-				HX_STACK_LINE(150)
+				HX_STACK_LINE(149)
 				++(_g);
-				HX_STACK_LINE(152)
+				HX_STACK_LINE(151)
 				touch->deactivate();
-				HX_STACK_LINE(153)
+				HX_STACK_LINE(152)
 				this->_inactiveTouches->push(touch);
 			}
 		}
-		HX_STACK_LINE(156)
+		HX_STACK_LINE(155)
 		this->list->splice((int)0,this->list->length);
 	}
 return null();
@@ -326,40 +326,40 @@ return null();
 HX_DEFINE_DYNAMIC_FUNC0(FlxTouchManager_obj,reset,(void))
 
 Array< ::Dynamic > FlxTouchManager_obj::justReleased( Array< ::Dynamic > TouchArray){
-	HX_STACK_PUSH("FlxTouchManager::justReleased","flixel/input/touch/FlxTouchManager.hx",117);
+	HX_STACK_PUSH("FlxTouchManager::justReleased","flixel/input/touch/FlxTouchManager.hx",116);
 	HX_STACK_THIS(this);
 	HX_STACK_ARG(TouchArray,"TouchArray");
-	HX_STACK_LINE(118)
+	HX_STACK_LINE(117)
 	if (((TouchArray == null()))){
-		HX_STACK_LINE(119)
+		HX_STACK_LINE(118)
 		TouchArray = Array_obj< ::Dynamic >::__new();
 	}
-	HX_STACK_LINE(123)
+	HX_STACK_LINE(122)
 	int touchLen = TouchArray->length;		HX_STACK_VAR(touchLen,"touchLen");
-	HX_STACK_LINE(124)
+	HX_STACK_LINE(123)
 	if (((touchLen > (int)0))){
-		HX_STACK_LINE(125)
+		HX_STACK_LINE(124)
 		TouchArray->splice((int)0,touchLen);
 	}
-	HX_STACK_LINE(129)
+	HX_STACK_LINE(128)
 	{
-		HX_STACK_LINE(129)
+		HX_STACK_LINE(128)
 		int _g = (int)0;		HX_STACK_VAR(_g,"_g");
 		Array< ::Dynamic > _g1 = this->list;		HX_STACK_VAR(_g1,"_g1");
-		HX_STACK_LINE(129)
+		HX_STACK_LINE(128)
 		while(((_g < _g1->length))){
-			HX_STACK_LINE(129)
+			HX_STACK_LINE(128)
 			::flixel::input::touch::FlxTouch touch = _g1->__get(_g).StaticCast< ::flixel::input::touch::FlxTouch >();		HX_STACK_VAR(touch,"touch");
-			HX_STACK_LINE(129)
+			HX_STACK_LINE(128)
 			++(_g);
-			HX_STACK_LINE(131)
+			HX_STACK_LINE(130)
 			if (((touch->_current == (int)-1))){
-				HX_STACK_LINE(132)
+				HX_STACK_LINE(131)
 				TouchArray->push(touch);
 			}
 		}
 	}
-	HX_STACK_LINE(137)
+	HX_STACK_LINE(136)
 	return TouchArray;
 }
 
@@ -367,40 +367,40 @@ Array< ::Dynamic > FlxTouchManager_obj::justReleased( Array< ::Dynamic > TouchAr
 HX_DEFINE_DYNAMIC_FUNC1(FlxTouchManager_obj,justReleased,return )
 
 Array< ::Dynamic > FlxTouchManager_obj::justStarted( Array< ::Dynamic > TouchArray){
-	HX_STACK_PUSH("FlxTouchManager::justStarted","flixel/input/touch/FlxTouchManager.hx",86);
+	HX_STACK_PUSH("FlxTouchManager::justStarted","flixel/input/touch/FlxTouchManager.hx",85);
 	HX_STACK_THIS(this);
 	HX_STACK_ARG(TouchArray,"TouchArray");
-	HX_STACK_LINE(87)
+	HX_STACK_LINE(86)
 	if (((TouchArray == null()))){
-		HX_STACK_LINE(88)
+		HX_STACK_LINE(87)
 		TouchArray = Array_obj< ::Dynamic >::__new();
 	}
-	HX_STACK_LINE(92)
+	HX_STACK_LINE(91)
 	int touchLen = TouchArray->length;		HX_STACK_VAR(touchLen,"touchLen");
-	HX_STACK_LINE(94)
+	HX_STACK_LINE(93)
 	if (((touchLen > (int)0))){
-		HX_STACK_LINE(95)
+		HX_STACK_LINE(94)
 		TouchArray->splice((int)0,touchLen);
 	}
-	HX_STACK_LINE(99)
+	HX_STACK_LINE(98)
 	{
-		HX_STACK_LINE(99)
+		HX_STACK_LINE(98)
 		int _g = (int)0;		HX_STACK_VAR(_g,"_g");
 		Array< ::Dynamic > _g1 = this->list;		HX_STACK_VAR(_g1,"_g1");
-		HX_STACK_LINE(99)
+		HX_STACK_LINE(98)
 		while(((_g < _g1->length))){
-			HX_STACK_LINE(99)
+			HX_STACK_LINE(98)
 			::flixel::input::touch::FlxTouch touch = _g1->__get(_g).StaticCast< ::flixel::input::touch::FlxTouch >();		HX_STACK_VAR(touch,"touch");
-			HX_STACK_LINE(99)
+			HX_STACK_LINE(98)
 			++(_g);
-			HX_STACK_LINE(101)
+			HX_STACK_LINE(100)
 			if (((touch->_current == (int)2))){
-				HX_STACK_LINE(102)
+				HX_STACK_LINE(101)
 				TouchArray->push(touch);
 			}
 		}
 	}
-	HX_STACK_LINE(107)
+	HX_STACK_LINE(106)
 	return TouchArray;
 }
 
@@ -409,43 +409,43 @@ HX_DEFINE_DYNAMIC_FUNC1(FlxTouchManager_obj,justStarted,return )
 
 Void FlxTouchManager_obj::destroy( ){
 {
-		HX_STACK_PUSH("FlxTouchManager::destroy","flixel/input/touch/FlxTouchManager.hx",63);
+		HX_STACK_PUSH("FlxTouchManager::destroy","flixel/input/touch/FlxTouchManager.hx",62);
 		HX_STACK_THIS(this);
-		HX_STACK_LINE(64)
+		HX_STACK_LINE(63)
 		{
-			HX_STACK_LINE(64)
+			HX_STACK_LINE(63)
 			int _g = (int)0;		HX_STACK_VAR(_g,"_g");
 			Array< ::Dynamic > _g1 = this->list;		HX_STACK_VAR(_g1,"_g1");
-			HX_STACK_LINE(64)
+			HX_STACK_LINE(63)
 			while(((_g < _g1->length))){
-				HX_STACK_LINE(64)
+				HX_STACK_LINE(63)
 				::flixel::input::touch::FlxTouch touch = _g1->__get(_g).StaticCast< ::flixel::input::touch::FlxTouch >();		HX_STACK_VAR(touch,"touch");
-				HX_STACK_LINE(64)
+				HX_STACK_LINE(63)
 				++(_g);
-				HX_STACK_LINE(66)
+				HX_STACK_LINE(65)
 				touch->destroy();
 			}
 		}
-		HX_STACK_LINE(68)
+		HX_STACK_LINE(67)
 		this->list = null();
-		HX_STACK_LINE(70)
+		HX_STACK_LINE(69)
 		{
-			HX_STACK_LINE(70)
+			HX_STACK_LINE(69)
 			int _g = (int)0;		HX_STACK_VAR(_g,"_g");
 			Array< ::Dynamic > _g1 = this->_inactiveTouches;		HX_STACK_VAR(_g1,"_g1");
-			HX_STACK_LINE(70)
+			HX_STACK_LINE(69)
 			while(((_g < _g1->length))){
-				HX_STACK_LINE(70)
+				HX_STACK_LINE(69)
 				::flixel::input::touch::FlxTouch touch = _g1->__get(_g).StaticCast< ::flixel::input::touch::FlxTouch >();		HX_STACK_VAR(touch,"touch");
-				HX_STACK_LINE(70)
+				HX_STACK_LINE(69)
 				++(_g);
-				HX_STACK_LINE(72)
+				HX_STACK_LINE(71)
 				touch->destroy();
 			}
 		}
-		HX_STACK_LINE(74)
+		HX_STACK_LINE(73)
 		this->_inactiveTouches = null();
-		HX_STACK_LINE(76)
+		HX_STACK_LINE(75)
 		this->_touchesCache = null();
 	}
 return null();
@@ -455,18 +455,18 @@ return null();
 HX_DEFINE_DYNAMIC_FUNC0(FlxTouchManager_obj,destroy,(void))
 
 ::flixel::input::touch::FlxTouch FlxTouchManager_obj::getFirst( ){
-	HX_STACK_PUSH("FlxTouchManager::getFirst","flixel/input/touch/FlxTouchManager.hx",48);
+	HX_STACK_PUSH("FlxTouchManager::getFirst","flixel/input/touch/FlxTouchManager.hx",47);
 	HX_STACK_THIS(this);
-	HX_STACK_LINE(48)
+	HX_STACK_LINE(47)
 	if (((this->list->__get((int)0).StaticCast< ::flixel::input::touch::FlxTouch >() != null()))){
-		HX_STACK_LINE(50)
+		HX_STACK_LINE(49)
 		return this->list->__get((int)0).StaticCast< ::flixel::input::touch::FlxTouch >();
 	}
 	else{
-		HX_STACK_LINE(54)
+		HX_STACK_LINE(53)
 		return null();
 	}
-	HX_STACK_LINE(48)
+	HX_STACK_LINE(47)
 	return null();
 }
 
@@ -474,10 +474,10 @@ HX_DEFINE_DYNAMIC_FUNC0(FlxTouchManager_obj,destroy,(void))
 HX_DEFINE_DYNAMIC_FUNC0(FlxTouchManager_obj,getFirst,return )
 
 ::flixel::input::touch::FlxTouch FlxTouchManager_obj::getByID( int TouchPointID){
-	HX_STACK_PUSH("FlxTouchManager::getByID","flixel/input/touch/FlxTouchManager.hx",40);
+	HX_STACK_PUSH("FlxTouchManager::getByID","flixel/input/touch/FlxTouchManager.hx",39);
 	HX_STACK_THIS(this);
 	HX_STACK_ARG(TouchPointID,"TouchPointID");
-	HX_STACK_LINE(40)
+	HX_STACK_LINE(39)
 	return this->_touchesCache->get(TouchPointID);
 }
 

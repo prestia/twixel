@@ -68,85 +68,6 @@ bool StringTools_obj::endsWith( ::String s,::String end){
 
 STATIC_HX_DEFINE_DYNAMIC_FUNC2(StringTools_obj,endsWith,return )
 
-bool StringTools_obj::isSpace( ::String s,int pos){
-	HX_STACK_PUSH("StringTools::isSpace","/usr/lib/haxe/std/StringTools.hx",162);
-	HX_STACK_ARG(s,"s");
-	HX_STACK_ARG(pos,"pos");
-	HX_STACK_LINE(163)
-	Dynamic c = s.charCodeAt(pos);		HX_STACK_VAR(c,"c");
-	HX_STACK_LINE(164)
-	return (bool((bool((c > (int)8)) && bool((c < (int)14)))) || bool((c == (int)32)));
-}
-
-
-STATIC_HX_DEFINE_DYNAMIC_FUNC2(StringTools_obj,isSpace,return )
-
-::String StringTools_obj::ltrim( ::String s){
-	HX_STACK_PUSH("StringTools::ltrim","/usr/lib/haxe/std/StringTools.hx",176);
-	HX_STACK_ARG(s,"s");
-	HX_STACK_LINE(180)
-	int l = s.length;		HX_STACK_VAR(l,"l");
-	HX_STACK_LINE(181)
-	int r = (int)0;		HX_STACK_VAR(r,"r");
-	HX_STACK_LINE(182)
-	while(((bool((r < l)) && bool(::StringTools_obj::isSpace(s,r))))){
-		HX_STACK_LINE(182)
-		(r)++;
-	}
-	HX_STACK_LINE(185)
-	if (((r > (int)0))){
-		HX_STACK_LINE(186)
-		return s.substr(r,(l - r));
-	}
-	else{
-		HX_STACK_LINE(188)
-		return s;
-	}
-	HX_STACK_LINE(185)
-	return null();
-}
-
-
-STATIC_HX_DEFINE_DYNAMIC_FUNC1(StringTools_obj,ltrim,return )
-
-::String StringTools_obj::rtrim( ::String s){
-	HX_STACK_PUSH("StringTools::rtrim","/usr/lib/haxe/std/StringTools.hx",201);
-	HX_STACK_ARG(s,"s");
-	HX_STACK_LINE(205)
-	int l = s.length;		HX_STACK_VAR(l,"l");
-	HX_STACK_LINE(206)
-	int r = (int)0;		HX_STACK_VAR(r,"r");
-	HX_STACK_LINE(207)
-	while(((bool((r < l)) && bool(::StringTools_obj::isSpace(s,((l - r) - (int)1)))))){
-		HX_STACK_LINE(207)
-		(r)++;
-	}
-	HX_STACK_LINE(210)
-	if (((r > (int)0))){
-		HX_STACK_LINE(210)
-		return s.substr((int)0,(l - r));
-	}
-	else{
-		HX_STACK_LINE(212)
-		return s;
-	}
-	HX_STACK_LINE(210)
-	return null();
-}
-
-
-STATIC_HX_DEFINE_DYNAMIC_FUNC1(StringTools_obj,rtrim,return )
-
-::String StringTools_obj::trim( ::String s){
-	HX_STACK_PUSH("StringTools::trim","/usr/lib/haxe/std/StringTools.hx",223);
-	HX_STACK_ARG(s,"s");
-	HX_STACK_LINE(223)
-	return ::StringTools_obj::ltrim(::StringTools_obj::rtrim(s));
-}
-
-
-STATIC_HX_DEFINE_DYNAMIC_FUNC1(StringTools_obj,trim,return )
-
 ::String StringTools_obj::replace( ::String s,::String sub,::String by){
 	HX_STACK_PUSH("StringTools::replace","/usr/lib/haxe/std/StringTools.hx",288);
 	HX_STACK_ARG(s,"s");
@@ -177,15 +98,7 @@ void StringTools_obj::__Visit(HX_VISIT_PARAMS)
 Dynamic StringTools_obj::__Field(const ::String &inName,bool inCallProp)
 {
 	switch(inName.length) {
-	case 4:
-		if (HX_FIELD_EQ(inName,"trim") ) { return trim_dyn(); }
-		break;
-	case 5:
-		if (HX_FIELD_EQ(inName,"ltrim") ) { return ltrim_dyn(); }
-		if (HX_FIELD_EQ(inName,"rtrim") ) { return rtrim_dyn(); }
-		break;
 	case 7:
-		if (HX_FIELD_EQ(inName,"isSpace") ) { return isSpace_dyn(); }
 		if (HX_FIELD_EQ(inName,"replace") ) { return replace_dyn(); }
 		break;
 	case 8:
@@ -216,10 +129,6 @@ static ::String sStaticFields[] = {
 	HX_CSTRING("urlDecode"),
 	HX_CSTRING("startsWith"),
 	HX_CSTRING("endsWith"),
-	HX_CSTRING("isSpace"),
-	HX_CSTRING("ltrim"),
-	HX_CSTRING("rtrim"),
-	HX_CSTRING("trim"),
 	HX_CSTRING("replace"),
 	String(null()) };
 

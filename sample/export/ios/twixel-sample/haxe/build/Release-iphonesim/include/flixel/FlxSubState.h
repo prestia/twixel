@@ -38,23 +38,30 @@ class HXCPP_CLASS_ATTRIBUTES  FlxSubState_obj : public ::flixel::FlxState_obj{
 		void __Visit(HX_VISIT_PARAMS);
 		::String __ToString() const { return HX_CSTRING("FlxSubState"); }
 
-		virtual int set_bgColor( int Value);
-
-		virtual int get_bgColor( );
+		virtual Void destroy( );
 
 		virtual Void close( );
 		Dynamic close_dyn();
 
-		virtual Void destroy( );
-
 		virtual Void draw( );
 
-		bool _created;
+		virtual int set_bgColor( int Value);
+
+		virtual int get_bgColor( );
+
+		virtual Void initialize( );
+		Dynamic initialize_dyn();
+
+		virtual bool get_initialized( );
+		Dynamic get_initialized_dyn();
+
+		bool initialized;
 		int _bgColor;
-		::flixel::FlxState _parentState;
+		bool _initialized;
 		::flixel::system::FlxBGSprite _bgSprite;
 		Dynamic closeCallback;
 		Dynamic &closeCallback_dyn() { return closeCallback;}
+		::flixel::FlxState _parentState;
 };
 
 } // end namespace flixel

@@ -5,10 +5,8 @@
 #include <hxcpp.h>
 #endif
 
-#include <flixel/interfaces/IFlxDestroyable.h>
 HX_DECLARE_CLASS2(flixel,animation,FlxAnimationController)
 HX_DECLARE_CLASS2(flixel,animation,FlxBaseAnimation)
-HX_DECLARE_CLASS2(flixel,interfaces,IFlxDestroyable)
 namespace flixel{
 namespace animation{
 
@@ -31,9 +29,6 @@ class HXCPP_CLASS_ATTRIBUTES  FlxBaseAnimation_obj : public hx::Object{
 		static void __register();
 		void __Mark(HX_MARK_PARAMS);
 		void __Visit(HX_VISIT_PARAMS);
-		inline operator ::flixel::interfaces::IFlxDestroyable_obj *()
-			{ return new ::flixel::interfaces::IFlxDestroyable_delegate_< FlxBaseAnimation_obj >(this); }
-		hx::Object *__ToInterface(const hx::type_info &inType);
 		::String __ToString() const { return HX_CSTRING("FlxBaseAnimation"); }
 
 		virtual ::flixel::animation::FlxBaseAnimation clone( ::flixel::animation::FlxAnimationController Parent);

@@ -252,25 +252,25 @@ bool Bottom = __o_Bottom.Default(true);
 	HX_STACK_ARG(Bottom,"Bottom");
 {
 		HX_STACK_LINE(127)
-		if (((bool(Left) && bool(((sprite->x + sprite->frameWidth) <= (int)0))))){
+		if (((bool(Left) && bool(((sprite->x + sprite->frameWidth) < (int)0))))){
 			HX_STACK_LINE(127)
 			sprite->set_x(::flixel::FlxG_obj::width);
 		}
 		else{
 			HX_STACK_LINE(130)
-			if (((bool(Right) && bool((sprite->x >= ::flixel::FlxG_obj::width))))){
+			if (((bool(Right) && bool((sprite->x > ::flixel::FlxG_obj::width))))){
 				HX_STACK_LINE(130)
 				sprite->set_x((int)0);
 			}
 		}
 		HX_STACK_LINE(134)
-		if (((bool(Top) && bool(((sprite->y + sprite->frameHeight) <= (int)0))))){
+		if (((bool(Top) && bool(((sprite->y + sprite->frameHeight) < (int)0))))){
 			HX_STACK_LINE(134)
 			sprite->set_y(::flixel::FlxG_obj::height);
 		}
 		else{
 			HX_STACK_LINE(137)
-			if (((bool(Bottom) && bool((sprite->y >= ::flixel::FlxG_obj::height))))){
+			if (((bool(Bottom) && bool((sprite->y > ::flixel::FlxG_obj::height))))){
 				HX_STACK_LINE(137)
 				sprite->set_y((int)0);
 			}

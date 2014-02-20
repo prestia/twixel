@@ -99,67 +99,67 @@ namespace mouse{
 
 Void FlxMouse_obj::__construct(::flash::display::Sprite CursorContainer)
 {
-HX_STACK_PUSH("FlxMouse::new","flixel/input/mouse/FlxMouse.hx",30);
+HX_STACK_PUSH("FlxMouse::new","flixel/input/mouse/FlxMouse.hx",29);
 {
-	HX_STACK_LINE(129)
-	this->_lastWheel = (int)0;
 	HX_STACK_LINE(128)
-	this->_lastY = (int)0;
+	this->_lastWheel = (int)0;
 	HX_STACK_LINE(127)
+	this->_lastY = (int)0;
+	HX_STACK_LINE(126)
 	this->_lastX = (int)0;
-	HX_STACK_LINE(122)
-	this->_visibleWhenFocusLost = true;
 	HX_STACK_LINE(121)
+	this->_visibleWhenFocusLost = true;
+	HX_STACK_LINE(120)
 	this->_wheelUsed = false;
-	HX_STACK_LINE(119)
+	HX_STACK_LINE(118)
 	this->_cursor = null();
-	HX_STACK_LINE(58)
+	HX_STACK_LINE(57)
 	this->useSystemCursor = false;
-	HX_STACK_LINE(54)
+	HX_STACK_LINE(53)
 	this->visible = false;
-	HX_STACK_LINE(44)
+	HX_STACK_LINE(43)
 	this->screenY = (int)0;
-	HX_STACK_LINE(40)
+	HX_STACK_LINE(39)
 	this->screenX = (int)0;
-	HX_STACK_LINE(36)
+	HX_STACK_LINE(35)
 	this->wheel = (int)0;
-	HX_STACK_LINE(391)
+	HX_STACK_LINE(390)
 	super::__construct(null(),null());
-	HX_STACK_LINE(393)
+	HX_STACK_LINE(392)
 	this->cursorContainer = CursorContainer;
-	HX_STACK_LINE(394)
+	HX_STACK_LINE(393)
 	this->cursorContainer->set_mouseChildren(false);
-	HX_STACK_LINE(395)
+	HX_STACK_LINE(394)
 	this->cursorContainer->set_mouseEnabled(false);
-	HX_STACK_LINE(397)
+	HX_STACK_LINE(396)
 	this->_point = ::flixel::util::FlxPoint_obj::__new(null(),null());
-	HX_STACK_LINE(398)
+	HX_STACK_LINE(397)
 	this->_globalScreenPosition = ::flixel::util::FlxPoint_obj::__new(null(),null());
-	HX_STACK_LINE(400)
+	HX_STACK_LINE(399)
 	this->_leftButton = ::flixel::input::mouse::FlxMouseButton_obj::__new((int)-1);
-	HX_STACK_LINE(402)
+	HX_STACK_LINE(401)
 	::flash::display::Stage stage = ::flash::Lib_obj::get_current()->get_stage();		HX_STACK_VAR(stage,"stage");
-	HX_STACK_LINE(403)
+	HX_STACK_LINE(402)
 	stage->addEventListener(::flash::events::MouseEvent_obj::MOUSE_DOWN,this->_leftButton->onDown_dyn(),null(),null(),null());
-	HX_STACK_LINE(404)
+	HX_STACK_LINE(403)
 	stage->addEventListener(::flash::events::MouseEvent_obj::MOUSE_UP,this->_leftButton->onUp_dyn(),null(),null(),null());
-	HX_STACK_LINE(407)
+	HX_STACK_LINE(406)
 	this->_middleButton = ::flixel::input::mouse::FlxMouseButton_obj::__new((int)-2);
-	HX_STACK_LINE(408)
+	HX_STACK_LINE(407)
 	this->_rightButton = ::flixel::input::mouse::FlxMouseButton_obj::__new((int)-3);
-	HX_STACK_LINE(410)
+	HX_STACK_LINE(409)
 	stage->addEventListener(::flash::events::MouseEvent_obj::MIDDLE_MOUSE_DOWN,this->_middleButton->onDown_dyn(),null(),null(),null());
-	HX_STACK_LINE(411)
+	HX_STACK_LINE(410)
 	stage->addEventListener(::flash::events::MouseEvent_obj::MIDDLE_MOUSE_UP,this->_middleButton->onUp_dyn(),null(),null(),null());
-	HX_STACK_LINE(412)
+	HX_STACK_LINE(411)
 	stage->addEventListener(::flash::events::MouseEvent_obj::RIGHT_MOUSE_DOWN,this->_rightButton->onDown_dyn(),null(),null(),null());
-	HX_STACK_LINE(413)
+	HX_STACK_LINE(412)
 	stage->addEventListener(::flash::events::MouseEvent_obj::RIGHT_MOUSE_UP,this->_rightButton->onUp_dyn(),null(),null(),null());
-	HX_STACK_LINE(415)
+	HX_STACK_LINE(414)
 	stage->addEventListener(::flash::events::Event_obj::MOUSE_LEAVE,this->onMouseLeave_dyn(),null(),null(),null());
-	HX_STACK_LINE(418)
+	HX_STACK_LINE(417)
 	stage->addEventListener(::flash::events::MouseEvent_obj::MOUSE_WHEEL,this->onMouseWheel_dyn(),null(),null(),null());
-	HX_STACK_LINE(420)
+	HX_STACK_LINE(419)
 	::flash::ui::Mouse_obj::hide();
 }
 ;
@@ -186,16 +186,16 @@ hx::Object *FlxMouse_obj::__ToInterface(const hx::type_info &inType) {
 
 Void FlxMouse_obj::playback( ::flixel::system::replay::MouseRecord Record){
 {
-		HX_STACK_PUSH("FlxMouse::playback","flixel/input/mouse/FlxMouse.hx",660);
+		HX_STACK_PUSH("FlxMouse::playback","flixel/input/mouse/FlxMouse.hx",659);
 		HX_STACK_THIS(this);
 		HX_STACK_ARG(Record,"Record");
-		HX_STACK_LINE(661)
+		HX_STACK_LINE(660)
 		this->_leftButton->current = Record->button;
-		HX_STACK_LINE(662)
+		HX_STACK_LINE(661)
 		this->wheel = Record->wheel;
-		HX_STACK_LINE(663)
+		HX_STACK_LINE(662)
 		this->_globalScreenPosition->copyFrom(Record);
-		HX_STACK_LINE(664)
+		HX_STACK_LINE(663)
 		this->updateCursor();
 	}
 return null();
@@ -205,20 +205,20 @@ return null();
 HX_DEFINE_DYNAMIC_FUNC1(FlxMouse_obj,playback,(void))
 
 ::flixel::system::replay::MouseRecord FlxMouse_obj::record( ){
-	HX_STACK_PUSH("FlxMouse::record","flixel/input/mouse/FlxMouse.hx",647);
+	HX_STACK_PUSH("FlxMouse::record","flixel/input/mouse/FlxMouse.hx",646);
 	HX_STACK_THIS(this);
-	HX_STACK_LINE(648)
+	HX_STACK_LINE(647)
 	if (((bool((bool((bool((this->_lastX == this->_globalScreenPosition->x)) && bool((this->_lastY == this->_globalScreenPosition->y)))) && bool((this->_leftButton->current == (int)0)))) && bool((this->_lastWheel == this->wheel))))){
-		HX_STACK_LINE(650)
+		HX_STACK_LINE(649)
 		return null();
 	}
-	HX_STACK_LINE(653)
+	HX_STACK_LINE(652)
 	this->_lastX = ::Math_obj::floor(this->_globalScreenPosition->x);
-	HX_STACK_LINE(654)
+	HX_STACK_LINE(653)
 	this->_lastY = ::Math_obj::floor(this->_globalScreenPosition->y);
-	HX_STACK_LINE(655)
+	HX_STACK_LINE(654)
 	this->_lastWheel = this->wheel;
-	HX_STACK_LINE(656)
+	HX_STACK_LINE(655)
 	return ::flixel::system::replay::MouseRecord_obj::__new(this->_lastX,this->_lastY,this->_leftButton->current,this->_lastWheel);
 }
 
@@ -226,35 +226,35 @@ HX_DEFINE_DYNAMIC_FUNC1(FlxMouse_obj,playback,(void))
 HX_DEFINE_DYNAMIC_FUNC0(FlxMouse_obj,record,return )
 
 bool FlxMouse_obj::set_visible( bool Value){
-	HX_STACK_PUSH("FlxMouse::set_visible","flixel/input/mouse/FlxMouse.hx",602);
+	HX_STACK_PUSH("FlxMouse::set_visible","flixel/input/mouse/FlxMouse.hx",601);
 	HX_STACK_THIS(this);
 	HX_STACK_ARG(Value,"Value");
-	HX_STACK_LINE(603)
+	HX_STACK_LINE(602)
 	if ((Value)){
-		HX_STACK_LINE(604)
+		HX_STACK_LINE(603)
 		if ((this->useSystemCursor)){
-			HX_STACK_LINE(606)
+			HX_STACK_LINE(605)
 			::flash::ui::Mouse_obj::show();
 		}
 		else{
-			HX_STACK_LINE(611)
+			HX_STACK_LINE(610)
 			if (((this->_cursor == null()))){
-				HX_STACK_LINE(612)
+				HX_STACK_LINE(611)
 				this->load(null(),null(),null(),null());
 			}
-			HX_STACK_LINE(616)
+			HX_STACK_LINE(615)
 			this->cursorContainer->set_visible(true);
-			HX_STACK_LINE(617)
+			HX_STACK_LINE(616)
 			::flash::ui::Mouse_obj::hide();
 		}
 	}
 	else{
-		HX_STACK_LINE(630)
+		HX_STACK_LINE(629)
 		this->cursorContainer->set_visible(false);
-		HX_STACK_LINE(631)
+		HX_STACK_LINE(630)
 		::flash::ui::Mouse_obj::hide();
 	}
-	HX_STACK_LINE(641)
+	HX_STACK_LINE(640)
 	return this->visible = Value;
 }
 
@@ -262,19 +262,19 @@ bool FlxMouse_obj::set_visible( bool Value){
 HX_DEFINE_DYNAMIC_FUNC1(FlxMouse_obj,set_visible,return )
 
 bool FlxMouse_obj::set_useSystemCursor( bool Value){
-	HX_STACK_PUSH("FlxMouse::set_useSystemCursor","flixel/input/mouse/FlxMouse.hx",589);
+	HX_STACK_PUSH("FlxMouse::set_useSystemCursor","flixel/input/mouse/FlxMouse.hx",588);
 	HX_STACK_THIS(this);
 	HX_STACK_ARG(Value,"Value");
-	HX_STACK_LINE(590)
+	HX_STACK_LINE(589)
 	if ((Value)){
-		HX_STACK_LINE(591)
+		HX_STACK_LINE(590)
 		this->showSystemCursor();
 	}
 	else{
-		HX_STACK_LINE(595)
+		HX_STACK_LINE(594)
 		this->hideSystemCursor();
 	}
-	HX_STACK_LINE(598)
+	HX_STACK_LINE(597)
 	return this->useSystemCursor = Value;
 }
 
@@ -283,13 +283,13 @@ HX_DEFINE_DYNAMIC_FUNC1(FlxMouse_obj,set_useSystemCursor,return )
 
 Void FlxMouse_obj::hideSystemCursor( ){
 {
-		HX_STACK_PUSH("FlxMouse::hideSystemCursor","flixel/input/mouse/FlxMouse.hx",571);
+		HX_STACK_PUSH("FlxMouse::hideSystemCursor","flixel/input/mouse/FlxMouse.hx",570);
 		HX_STACK_THIS(this);
-		HX_STACK_LINE(579)
+		HX_STACK_LINE(578)
 		::flash::ui::Mouse_obj::hide();
-		HX_STACK_LINE(581)
+		HX_STACK_LINE(580)
 		if ((this->visible)){
-			HX_STACK_LINE(582)
+			HX_STACK_LINE(581)
 			this->cursorContainer->set_visible(true);
 		}
 	}
@@ -301,11 +301,11 @@ HX_DEFINE_DYNAMIC_FUNC0(FlxMouse_obj,hideSystemCursor,(void))
 
 Void FlxMouse_obj::showSystemCursor( ){
 {
-		HX_STACK_PUSH("FlxMouse::showSystemCursor","flixel/input/mouse/FlxMouse.hx",558);
+		HX_STACK_PUSH("FlxMouse::showSystemCursor","flixel/input/mouse/FlxMouse.hx",557);
 		HX_STACK_THIS(this);
-		HX_STACK_LINE(562)
+		HX_STACK_LINE(561)
 		::flash::ui::Mouse_obj::show();
-		HX_STACK_LINE(563)
+		HX_STACK_LINE(562)
 		this->cursorContainer->set_visible(false);
 	}
 return null();
@@ -315,29 +315,7 @@ return null();
 HX_DEFINE_DYNAMIC_FUNC0(FlxMouse_obj,showSystemCursor,(void))
 
 bool FlxMouse_obj::get_justReleasedMiddle( ){
-	HX_STACK_PUSH("FlxMouse::get_justReleasedMiddle","flixel/input/mouse/FlxMouse.hx",551);
-	HX_STACK_THIS(this);
-	struct _Function_1_1{
-		inline static bool Block( ::flixel::input::mouse::FlxMouse_obj *__this){
-			HX_STACK_PUSH("*::closure","flixel/input/mouse/FlxMouse.hx",551);
-			{
-				HX_STACK_LINE(551)
-				::flixel::input::mouse::FlxMouseButton _this = __this->_middleButton;		HX_STACK_VAR(_this,"_this");
-				HX_STACK_LINE(551)
-				return (bool((_this->current == (int)-1)) || bool((_this->current == (int)-2)));
-			}
-			return null();
-		}
-	};
-	HX_STACK_LINE(551)
-	return _Function_1_1::Block(this);
-}
-
-
-HX_DEFINE_DYNAMIC_FUNC0(FlxMouse_obj,get_justReleasedMiddle,return )
-
-bool FlxMouse_obj::get_justPressedMiddle( ){
-	HX_STACK_PUSH("FlxMouse::get_justPressedMiddle","flixel/input/mouse/FlxMouse.hx",550);
+	HX_STACK_PUSH("FlxMouse::get_justReleasedMiddle","flixel/input/mouse/FlxMouse.hx",550);
 	HX_STACK_THIS(this);
 	struct _Function_1_1{
 		inline static bool Block( ::flixel::input::mouse::FlxMouse_obj *__this){
@@ -346,7 +324,7 @@ bool FlxMouse_obj::get_justPressedMiddle( ){
 				HX_STACK_LINE(550)
 				::flixel::input::mouse::FlxMouseButton _this = __this->_middleButton;		HX_STACK_VAR(_this,"_this");
 				HX_STACK_LINE(550)
-				return (bool((_this->current == (int)2)) || bool((_this->current == (int)-2)));
+				return (bool((_this->current == (int)-1)) || bool((_this->current == (int)-2)));
 			}
 			return null();
 		}
@@ -356,12 +334,34 @@ bool FlxMouse_obj::get_justPressedMiddle( ){
 }
 
 
+HX_DEFINE_DYNAMIC_FUNC0(FlxMouse_obj,get_justReleasedMiddle,return )
+
+bool FlxMouse_obj::get_justPressedMiddle( ){
+	HX_STACK_PUSH("FlxMouse::get_justPressedMiddle","flixel/input/mouse/FlxMouse.hx",549);
+	HX_STACK_THIS(this);
+	struct _Function_1_1{
+		inline static bool Block( ::flixel::input::mouse::FlxMouse_obj *__this){
+			HX_STACK_PUSH("*::closure","flixel/input/mouse/FlxMouse.hx",549);
+			{
+				HX_STACK_LINE(549)
+				::flixel::input::mouse::FlxMouseButton _this = __this->_middleButton;		HX_STACK_VAR(_this,"_this");
+				HX_STACK_LINE(549)
+				return (bool((_this->current == (int)2)) || bool((_this->current == (int)-2)));
+			}
+			return null();
+		}
+	};
+	HX_STACK_LINE(549)
+	return _Function_1_1::Block(this);
+}
+
+
 HX_DEFINE_DYNAMIC_FUNC0(FlxMouse_obj,get_justPressedMiddle,return )
 
 bool FlxMouse_obj::get_pressedMiddle( ){
-	HX_STACK_PUSH("FlxMouse::get_pressedMiddle","flixel/input/mouse/FlxMouse.hx",549);
+	HX_STACK_PUSH("FlxMouse::get_pressedMiddle","flixel/input/mouse/FlxMouse.hx",548);
 	HX_STACK_THIS(this);
-	HX_STACK_LINE(549)
+	HX_STACK_LINE(548)
 	return (this->_middleButton->current > (int)0);
 }
 
@@ -369,29 +369,7 @@ bool FlxMouse_obj::get_pressedMiddle( ){
 HX_DEFINE_DYNAMIC_FUNC0(FlxMouse_obj,get_pressedMiddle,return )
 
 bool FlxMouse_obj::get_justReleasedRight( ){
-	HX_STACK_PUSH("FlxMouse::get_justReleasedRight","flixel/input/mouse/FlxMouse.hx",547);
-	HX_STACK_THIS(this);
-	struct _Function_1_1{
-		inline static bool Block( ::flixel::input::mouse::FlxMouse_obj *__this){
-			HX_STACK_PUSH("*::closure","flixel/input/mouse/FlxMouse.hx",547);
-			{
-				HX_STACK_LINE(547)
-				::flixel::input::mouse::FlxMouseButton _this = __this->_rightButton;		HX_STACK_VAR(_this,"_this");
-				HX_STACK_LINE(547)
-				return (bool((_this->current == (int)-1)) || bool((_this->current == (int)-2)));
-			}
-			return null();
-		}
-	};
-	HX_STACK_LINE(547)
-	return _Function_1_1::Block(this);
-}
-
-
-HX_DEFINE_DYNAMIC_FUNC0(FlxMouse_obj,get_justReleasedRight,return )
-
-bool FlxMouse_obj::get_justPressedRight( ){
-	HX_STACK_PUSH("FlxMouse::get_justPressedRight","flixel/input/mouse/FlxMouse.hx",546);
+	HX_STACK_PUSH("FlxMouse::get_justReleasedRight","flixel/input/mouse/FlxMouse.hx",546);
 	HX_STACK_THIS(this);
 	struct _Function_1_1{
 		inline static bool Block( ::flixel::input::mouse::FlxMouse_obj *__this){
@@ -400,7 +378,7 @@ bool FlxMouse_obj::get_justPressedRight( ){
 				HX_STACK_LINE(546)
 				::flixel::input::mouse::FlxMouseButton _this = __this->_rightButton;		HX_STACK_VAR(_this,"_this");
 				HX_STACK_LINE(546)
-				return (bool((_this->current == (int)2)) || bool((_this->current == (int)-2)));
+				return (bool((_this->current == (int)-1)) || bool((_this->current == (int)-2)));
 			}
 			return null();
 		}
@@ -410,12 +388,34 @@ bool FlxMouse_obj::get_justPressedRight( ){
 }
 
 
+HX_DEFINE_DYNAMIC_FUNC0(FlxMouse_obj,get_justReleasedRight,return )
+
+bool FlxMouse_obj::get_justPressedRight( ){
+	HX_STACK_PUSH("FlxMouse::get_justPressedRight","flixel/input/mouse/FlxMouse.hx",545);
+	HX_STACK_THIS(this);
+	struct _Function_1_1{
+		inline static bool Block( ::flixel::input::mouse::FlxMouse_obj *__this){
+			HX_STACK_PUSH("*::closure","flixel/input/mouse/FlxMouse.hx",545);
+			{
+				HX_STACK_LINE(545)
+				::flixel::input::mouse::FlxMouseButton _this = __this->_rightButton;		HX_STACK_VAR(_this,"_this");
+				HX_STACK_LINE(545)
+				return (bool((_this->current == (int)2)) || bool((_this->current == (int)-2)));
+			}
+			return null();
+		}
+	};
+	HX_STACK_LINE(545)
+	return _Function_1_1::Block(this);
+}
+
+
 HX_DEFINE_DYNAMIC_FUNC0(FlxMouse_obj,get_justPressedRight,return )
 
 bool FlxMouse_obj::get_pressedRight( ){
-	HX_STACK_PUSH("FlxMouse::get_pressedRight","flixel/input/mouse/FlxMouse.hx",545);
+	HX_STACK_PUSH("FlxMouse::get_pressedRight","flixel/input/mouse/FlxMouse.hx",544);
 	HX_STACK_THIS(this);
-	HX_STACK_LINE(545)
+	HX_STACK_LINE(544)
 	return (this->_rightButton->current > (int)0);
 }
 
@@ -423,29 +423,7 @@ bool FlxMouse_obj::get_pressedRight( ){
 HX_DEFINE_DYNAMIC_FUNC0(FlxMouse_obj,get_pressedRight,return )
 
 bool FlxMouse_obj::get_justReleased( ){
-	HX_STACK_PUSH("FlxMouse::get_justReleased","flixel/input/mouse/FlxMouse.hx",542);
-	HX_STACK_THIS(this);
-	struct _Function_1_1{
-		inline static bool Block( ::flixel::input::mouse::FlxMouse_obj *__this){
-			HX_STACK_PUSH("*::closure","flixel/input/mouse/FlxMouse.hx",542);
-			{
-				HX_STACK_LINE(542)
-				::flixel::input::mouse::FlxMouseButton _this = __this->_leftButton;		HX_STACK_VAR(_this,"_this");
-				HX_STACK_LINE(542)
-				return (bool((_this->current == (int)-1)) || bool((_this->current == (int)-2)));
-			}
-			return null();
-		}
-	};
-	HX_STACK_LINE(542)
-	return _Function_1_1::Block(this);
-}
-
-
-HX_DEFINE_DYNAMIC_FUNC0(FlxMouse_obj,get_justReleased,return )
-
-bool FlxMouse_obj::get_justPressed( ){
-	HX_STACK_PUSH("FlxMouse::get_justPressed","flixel/input/mouse/FlxMouse.hx",541);
+	HX_STACK_PUSH("FlxMouse::get_justReleased","flixel/input/mouse/FlxMouse.hx",541);
 	HX_STACK_THIS(this);
 	struct _Function_1_1{
 		inline static bool Block( ::flixel::input::mouse::FlxMouse_obj *__this){
@@ -454,7 +432,7 @@ bool FlxMouse_obj::get_justPressed( ){
 				HX_STACK_LINE(541)
 				::flixel::input::mouse::FlxMouseButton _this = __this->_leftButton;		HX_STACK_VAR(_this,"_this");
 				HX_STACK_LINE(541)
-				return (bool((_this->current == (int)2)) || bool((_this->current == (int)-2)));
+				return (bool((_this->current == (int)-1)) || bool((_this->current == (int)-2)));
 			}
 			return null();
 		}
@@ -464,12 +442,34 @@ bool FlxMouse_obj::get_justPressed( ){
 }
 
 
+HX_DEFINE_DYNAMIC_FUNC0(FlxMouse_obj,get_justReleased,return )
+
+bool FlxMouse_obj::get_justPressed( ){
+	HX_STACK_PUSH("FlxMouse::get_justPressed","flixel/input/mouse/FlxMouse.hx",540);
+	HX_STACK_THIS(this);
+	struct _Function_1_1{
+		inline static bool Block( ::flixel::input::mouse::FlxMouse_obj *__this){
+			HX_STACK_PUSH("*::closure","flixel/input/mouse/FlxMouse.hx",540);
+			{
+				HX_STACK_LINE(540)
+				::flixel::input::mouse::FlxMouseButton _this = __this->_leftButton;		HX_STACK_VAR(_this,"_this");
+				HX_STACK_LINE(540)
+				return (bool((_this->current == (int)2)) || bool((_this->current == (int)-2)));
+			}
+			return null();
+		}
+	};
+	HX_STACK_LINE(540)
+	return _Function_1_1::Block(this);
+}
+
+
 HX_DEFINE_DYNAMIC_FUNC0(FlxMouse_obj,get_justPressed,return )
 
 bool FlxMouse_obj::get_pressed( ){
-	HX_STACK_PUSH("FlxMouse::get_pressed","flixel/input/mouse/FlxMouse.hx",540);
+	HX_STACK_PUSH("FlxMouse::get_pressed","flixel/input/mouse/FlxMouse.hx",539);
 	HX_STACK_THIS(this);
-	HX_STACK_LINE(540)
+	HX_STACK_LINE(539)
 	return (this->_leftButton->current > (int)0);
 }
 
@@ -478,12 +478,12 @@ HX_DEFINE_DYNAMIC_FUNC0(FlxMouse_obj,get_pressed,return )
 
 Void FlxMouse_obj::onMouseLeave( ::flash::events::Event E){
 {
-		HX_STACK_PUSH("FlxMouse::onMouseLeave","flixel/input/mouse/FlxMouse.hx",534);
+		HX_STACK_PUSH("FlxMouse::onMouseLeave","flixel/input/mouse/FlxMouse.hx",533);
 		HX_STACK_THIS(this);
 		HX_STACK_ARG(E,"E");
-		HX_STACK_LINE(535)
+		HX_STACK_LINE(534)
 		this->_rightButton->onUp(null());
-		HX_STACK_LINE(536)
+		HX_STACK_LINE(535)
 		this->_middleButton->onUp(null());
 	}
 return null();
@@ -494,12 +494,12 @@ HX_DEFINE_DYNAMIC_FUNC1(FlxMouse_obj,onMouseLeave,(void))
 
 Void FlxMouse_obj::onMouseWheel( ::flash::events::MouseEvent FlashEvent){
 {
-		HX_STACK_PUSH("FlxMouse::onMouseWheel","flixel/input/mouse/FlxMouse.hx",513);
+		HX_STACK_PUSH("FlxMouse::onMouseWheel","flixel/input/mouse/FlxMouse.hx",512);
 		HX_STACK_THIS(this);
 		HX_STACK_ARG(FlashEvent,"FlashEvent");
-		HX_STACK_LINE(522)
+		HX_STACK_LINE(521)
 		this->_wheelUsed = true;
-		HX_STACK_LINE(523)
+		HX_STACK_LINE(522)
 		this->wheel = FlashEvent->delta;
 	}
 return null();
@@ -510,15 +510,15 @@ HX_DEFINE_DYNAMIC_FUNC1(FlxMouse_obj,onMouseWheel,(void))
 
 Void FlxMouse_obj::updateCursor( ){
 {
-		HX_STACK_PUSH("FlxMouse::updateCursor","flixel/input/mouse/FlxMouse.hx",499);
+		HX_STACK_PUSH("FlxMouse::updateCursor","flixel/input/mouse/FlxMouse.hx",498);
 		HX_STACK_THIS(this);
-		HX_STACK_LINE(500)
+		HX_STACK_LINE(499)
 		this->getScreenPosition(null(),this->_point);
-		HX_STACK_LINE(501)
+		HX_STACK_LINE(500)
 		this->screenX = ::Std_obj::_int(this->_point->x);
-		HX_STACK_LINE(502)
+		HX_STACK_LINE(501)
 		this->screenY = ::Std_obj::_int(this->_point->y);
-		HX_STACK_LINE(504)
+		HX_STACK_LINE(503)
 		this->getWorldPosition(null(),hx::ObjectPtr<OBJ_>(this));
 	}
 return null();
@@ -529,9 +529,9 @@ HX_DEFINE_DYNAMIC_FUNC0(FlxMouse_obj,updateCursor,(void))
 
 Void FlxMouse_obj::onGameStart( ){
 {
-		HX_STACK_PUSH("FlxMouse::onGameStart","flixel/input/mouse/FlxMouse.hx",488);
+		HX_STACK_PUSH("FlxMouse::onGameStart","flixel/input/mouse/FlxMouse.hx",487);
 		HX_STACK_THIS(this);
-		HX_STACK_LINE(488)
+		HX_STACK_LINE(487)
 		this->set_visible(this->visible);
 	}
 return null();
@@ -542,16 +542,16 @@ HX_DEFINE_DYNAMIC_FUNC0(FlxMouse_obj,onGameStart,(void))
 
 Void FlxMouse_obj::onFocusLost( ){
 {
-		HX_STACK_PUSH("FlxMouse::onFocusLost","flixel/input/mouse/FlxMouse.hx",473);
+		HX_STACK_PUSH("FlxMouse::onFocusLost","flixel/input/mouse/FlxMouse.hx",472);
 		HX_STACK_THIS(this);
-		HX_STACK_LINE(475)
+		HX_STACK_LINE(474)
 		this->_visibleWhenFocusLost = this->visible;
-		HX_STACK_LINE(477)
+		HX_STACK_LINE(476)
 		if ((this->visible)){
-			HX_STACK_LINE(478)
+			HX_STACK_LINE(477)
 			this->set_visible(false);
 		}
-		HX_STACK_LINE(482)
+		HX_STACK_LINE(481)
 		::flash::ui::Mouse_obj::show();
 	}
 return null();
@@ -562,13 +562,13 @@ HX_DEFINE_DYNAMIC_FUNC0(FlxMouse_obj,onFocusLost,(void))
 
 Void FlxMouse_obj::onFocus( ){
 {
-		HX_STACK_PUSH("FlxMouse::onFocus","flixel/input/mouse/FlxMouse.hx",459);
+		HX_STACK_PUSH("FlxMouse::onFocus","flixel/input/mouse/FlxMouse.hx",458);
 		HX_STACK_THIS(this);
-		HX_STACK_LINE(460)
+		HX_STACK_LINE(459)
 		this->reset();
-		HX_STACK_LINE(463)
+		HX_STACK_LINE(462)
 		this->set_useSystemCursor(this->useSystemCursor);
-		HX_STACK_LINE(465)
+		HX_STACK_LINE(464)
 		this->set_visible(this->_visibleWhenFocusLost);
 	}
 return null();
@@ -579,33 +579,33 @@ HX_DEFINE_DYNAMIC_FUNC0(FlxMouse_obj,onFocus,(void))
 
 Void FlxMouse_obj::update( ){
 {
-		HX_STACK_PUSH("FlxMouse::update","flixel/input/mouse/FlxMouse.hx",428);
+		HX_STACK_PUSH("FlxMouse::update","flixel/input/mouse/FlxMouse.hx",427);
 		HX_STACK_THIS(this);
-		HX_STACK_LINE(429)
+		HX_STACK_LINE(428)
 		this->_globalScreenPosition->set_x(::Math_obj::floor(::flixel::FlxG_obj::game->get_mouseX()));
-		HX_STACK_LINE(430)
+		HX_STACK_LINE(429)
 		this->_globalScreenPosition->set_y(::Math_obj::floor(::flixel::FlxG_obj::game->get_mouseY()));
-		HX_STACK_LINE(433)
+		HX_STACK_LINE(432)
 		if ((this->visible)){
-			HX_STACK_LINE(435)
+			HX_STACK_LINE(434)
 			this->cursorContainer->set_x(this->_globalScreenPosition->x);
-			HX_STACK_LINE(436)
+			HX_STACK_LINE(435)
 			this->cursorContainer->set_y(this->_globalScreenPosition->y);
 		}
-		HX_STACK_LINE(438)
+		HX_STACK_LINE(437)
 		this->updateCursor();
-		HX_STACK_LINE(441)
+		HX_STACK_LINE(440)
 		this->_leftButton->update();
-		HX_STACK_LINE(443)
+		HX_STACK_LINE(442)
 		this->_middleButton->update();
-		HX_STACK_LINE(444)
+		HX_STACK_LINE(443)
 		this->_rightButton->update();
-		HX_STACK_LINE(448)
+		HX_STACK_LINE(447)
 		if ((!(this->_wheelUsed))){
-			HX_STACK_LINE(449)
+			HX_STACK_LINE(448)
 			this->wheel = (int)0;
 		}
-		HX_STACK_LINE(452)
+		HX_STACK_LINE(451)
 		this->_wheelUsed = false;
 	}
 return null();
@@ -616,33 +616,33 @@ HX_DEFINE_DYNAMIC_FUNC0(FlxMouse_obj,update,(void))
 
 Void FlxMouse_obj::reset( ){
 {
-		HX_STACK_PUSH("FlxMouse::reset","flixel/input/mouse/FlxMouse.hx",376);
+		HX_STACK_PUSH("FlxMouse::reset","flixel/input/mouse/FlxMouse.hx",375);
 		HX_STACK_THIS(this);
-		HX_STACK_LINE(377)
+		HX_STACK_LINE(376)
 		{
-			HX_STACK_LINE(377)
+			HX_STACK_LINE(376)
 			::flixel::input::mouse::FlxMouseButton _this = this->_leftButton;		HX_STACK_VAR(_this,"_this");
-			HX_STACK_LINE(377)
+			HX_STACK_LINE(376)
 			_this->current = (int)0;
-			HX_STACK_LINE(377)
+			HX_STACK_LINE(376)
+			_this->last = (int)0;
+		}
+		HX_STACK_LINE(379)
+		{
+			HX_STACK_LINE(379)
+			::flixel::input::mouse::FlxMouseButton _this = this->_middleButton;		HX_STACK_VAR(_this,"_this");
+			HX_STACK_LINE(379)
+			_this->current = (int)0;
+			HX_STACK_LINE(379)
 			_this->last = (int)0;
 		}
 		HX_STACK_LINE(380)
 		{
 			HX_STACK_LINE(380)
-			::flixel::input::mouse::FlxMouseButton _this = this->_middleButton;		HX_STACK_VAR(_this,"_this");
-			HX_STACK_LINE(380)
-			_this->current = (int)0;
-			HX_STACK_LINE(380)
-			_this->last = (int)0;
-		}
-		HX_STACK_LINE(381)
-		{
-			HX_STACK_LINE(381)
 			::flixel::input::mouse::FlxMouseButton _this = this->_rightButton;		HX_STACK_VAR(_this,"_this");
-			HX_STACK_LINE(381)
+			HX_STACK_LINE(380)
 			_this->current = (int)0;
-			HX_STACK_LINE(381)
+			HX_STACK_LINE(380)
 			_this->last = (int)0;
 		}
 	}
@@ -654,27 +654,27 @@ HX_DEFINE_DYNAMIC_FUNC0(FlxMouse_obj,reset,(void))
 
 Void FlxMouse_obj::destroy( ){
 {
-		HX_STACK_PUSH("FlxMouse::destroy","flixel/input/mouse/FlxMouse.hx",349);
+		HX_STACK_PUSH("FlxMouse::destroy","flixel/input/mouse/FlxMouse.hx",348);
 		HX_STACK_THIS(this);
-		HX_STACK_LINE(350)
+		HX_STACK_LINE(349)
 		this->cursorContainer = null();
-		HX_STACK_LINE(351)
+		HX_STACK_LINE(350)
 		this->_cursor = null();
-		HX_STACK_LINE(352)
+		HX_STACK_LINE(351)
 		this->_point = null();
-		HX_STACK_LINE(353)
+		HX_STACK_LINE(352)
 		this->_globalScreenPosition = null();
-		HX_STACK_LINE(359)
+		HX_STACK_LINE(358)
 		this->_leftButton = ::flixel::FlxG_obj::safeDestroy(this->_leftButton);
-		HX_STACK_LINE(361)
+		HX_STACK_LINE(360)
 		this->_middleButton = ::flixel::FlxG_obj::safeDestroy(this->_middleButton);
-		HX_STACK_LINE(362)
+		HX_STACK_LINE(361)
 		this->_rightButton = ::flixel::FlxG_obj::safeDestroy(this->_rightButton);
-		HX_STACK_LINE(365)
+		HX_STACK_LINE(364)
 		if (((this->_cursorBitmapData != null()))){
-			HX_STACK_LINE(367)
+			HX_STACK_LINE(366)
 			this->_cursorBitmapData->dispose();
-			HX_STACK_LINE(368)
+			HX_STACK_LINE(367)
 			this->_cursorBitmapData = null();
 		}
 	}
@@ -683,25 +683,25 @@ return null();
 
 
 ::flixel::util::FlxPoint FlxMouse_obj::getScreenPosition( ::flixel::FlxCamera Camera,::flixel::util::FlxPoint point){
-	HX_STACK_PUSH("FlxMouse::getScreenPosition","flixel/input/mouse/FlxMouse.hx",331);
+	HX_STACK_PUSH("FlxMouse::getScreenPosition","flixel/input/mouse/FlxMouse.hx",330);
 	HX_STACK_THIS(this);
 	HX_STACK_ARG(Camera,"Camera");
 	HX_STACK_ARG(point,"point");
-	HX_STACK_LINE(332)
+	HX_STACK_LINE(331)
 	if (((Camera == null()))){
-		HX_STACK_LINE(333)
+		HX_STACK_LINE(332)
 		Camera = ::flixel::FlxG_obj::camera;
 	}
-	HX_STACK_LINE(336)
+	HX_STACK_LINE(335)
 	if (((point == null()))){
-		HX_STACK_LINE(337)
+		HX_STACK_LINE(336)
 		point = ::flixel::util::FlxPoint_obj::__new(null(),null());
 	}
-	HX_STACK_LINE(340)
+	HX_STACK_LINE(339)
 	point->set_x((Float(((this->_globalScreenPosition->x - Camera->x))) / Float(Camera->zoom)));
-	HX_STACK_LINE(341)
+	HX_STACK_LINE(340)
 	point->set_y((Float(((this->_globalScreenPosition->y - Camera->y))) / Float(Camera->zoom)));
-	HX_STACK_LINE(342)
+	HX_STACK_LINE(341)
 	return point;
 }
 
@@ -709,25 +709,25 @@ return null();
 HX_DEFINE_DYNAMIC_FUNC2(FlxMouse_obj,getScreenPosition,return )
 
 ::flixel::util::FlxPoint FlxMouse_obj::getWorldPosition( ::flixel::FlxCamera Camera,::flixel::util::FlxPoint point){
-	HX_STACK_PUSH("FlxMouse::getWorldPosition","flixel/input/mouse/FlxMouse.hx",308);
+	HX_STACK_PUSH("FlxMouse::getWorldPosition","flixel/input/mouse/FlxMouse.hx",307);
 	HX_STACK_THIS(this);
 	HX_STACK_ARG(Camera,"Camera");
 	HX_STACK_ARG(point,"point");
-	HX_STACK_LINE(309)
+	HX_STACK_LINE(308)
 	if (((Camera == null()))){
-		HX_STACK_LINE(310)
+		HX_STACK_LINE(309)
 		Camera = ::flixel::FlxG_obj::camera;
 	}
-	HX_STACK_LINE(313)
+	HX_STACK_LINE(312)
 	if (((point == null()))){
-		HX_STACK_LINE(314)
+		HX_STACK_LINE(313)
 		point = ::flixel::util::FlxPoint_obj::__new(null(),null());
 	}
-	HX_STACK_LINE(317)
+	HX_STACK_LINE(316)
 	this->getScreenPosition(Camera,this->_point);
-	HX_STACK_LINE(318)
+	HX_STACK_LINE(317)
 	point->set((this->_point->x + Camera->scroll->x),(this->_point->y + Camera->scroll->y));
-	HX_STACK_LINE(319)
+	HX_STACK_LINE(318)
 	return point;
 }
 
@@ -736,19 +736,19 @@ HX_DEFINE_DYNAMIC_FUNC2(FlxMouse_obj,getWorldPosition,return )
 
 Void FlxMouse_obj::unload( ){
 {
-		HX_STACK_PUSH("FlxMouse::unload","flixel/input/mouse/FlxMouse.hx",224);
+		HX_STACK_PUSH("FlxMouse::unload","flixel/input/mouse/FlxMouse.hx",223);
 		HX_STACK_THIS(this);
-		HX_STACK_LINE(224)
+		HX_STACK_LINE(223)
 		if (((this->_cursor != null()))){
-			HX_STACK_LINE(226)
+			HX_STACK_LINE(225)
 			if ((this->cursorContainer->get_visible())){
-				HX_STACK_LINE(228)
+				HX_STACK_LINE(227)
 				this->load(null(),null(),null(),null());
 			}
 			else{
-				HX_STACK_LINE(233)
+				HX_STACK_LINE(232)
 				this->cursorContainer->removeChild(this->_cursor);
-				HX_STACK_LINE(234)
+				HX_STACK_LINE(233)
 				this->_cursor = null();
 			}
 		}
@@ -763,67 +763,67 @@ Void FlxMouse_obj::load( Dynamic Graphic,hx::Null< Float >  __o_Scale,hx::Null< 
 Float Scale = __o_Scale.Default(1);
 int XOffset = __o_XOffset.Default(0);
 int YOffset = __o_YOffset.Default(0);
-	HX_STACK_PUSH("FlxMouse::load","flixel/input/mouse/FlxMouse.hx",153);
+	HX_STACK_PUSH("FlxMouse::load","flixel/input/mouse/FlxMouse.hx",152);
 	HX_STACK_THIS(this);
 	HX_STACK_ARG(Graphic,"Graphic");
 	HX_STACK_ARG(Scale,"Scale");
 	HX_STACK_ARG(XOffset,"XOffset");
 	HX_STACK_ARG(YOffset,"YOffset");
 {
-		HX_STACK_LINE(155)
+		HX_STACK_LINE(154)
 		if (((this->_cursor != null()))){
-			HX_STACK_LINE(156)
+			HX_STACK_LINE(155)
 			this->cursorContainer->removeChild(this->_cursor);
 		}
-		HX_STACK_LINE(161)
+		HX_STACK_LINE(160)
 		if (((Graphic == null()))){
-			HX_STACK_LINE(162)
+			HX_STACK_LINE(161)
 			Graphic = ::flixel::input::mouse::_FlxMouse::GraphicCursor_obj::__new((int)0,(int)0,null(),null());
 		}
-		HX_STACK_LINE(166)
+		HX_STACK_LINE(165)
 		if ((::Std_obj::is(Graphic,hx::ClassOf< ::Class >()))){
-			HX_STACK_LINE(167)
+			HX_STACK_LINE(166)
 			this->_cursor = ::Type_obj::createInstance(Graphic,Dynamic( Array_obj<Dynamic>::__new()));
 		}
 		else{
-			HX_STACK_LINE(170)
+			HX_STACK_LINE(169)
 			if ((::Std_obj::is(Graphic,hx::ClassOf< ::flash::display::BitmapData >()))){
-				HX_STACK_LINE(171)
+				HX_STACK_LINE(170)
 				this->_cursor = ::flash::display::Bitmap_obj::__new(hx::TCast< flash::display::BitmapData >::cast(Graphic),null(),null());
 			}
 			else{
-				HX_STACK_LINE(174)
+				HX_STACK_LINE(173)
 				if ((::Std_obj::is(Graphic,hx::ClassOf< ::String >()))){
 					struct _Function_4_1{
 						inline static ::flash::display::BitmapData Block( Dynamic &Graphic){
-							HX_STACK_PUSH("*::closure","flixel/input/mouse/FlxMouse.hx",176);
+							HX_STACK_PUSH("*::closure","flixel/input/mouse/FlxMouse.hx",175);
 							{
-								HX_STACK_LINE(176)
+								HX_STACK_LINE(175)
 								::String id = Graphic;		HX_STACK_VAR(id,"id");
-								HX_STACK_LINE(176)
+								HX_STACK_LINE(175)
 								return ::openfl::Assets_obj::getBitmapData(id,false);
 							}
 							return null();
 						}
 					};
-					HX_STACK_LINE(175)
+					HX_STACK_LINE(174)
 					this->_cursor = ::flash::display::Bitmap_obj::__new(_Function_4_1::Block(Graphic),null(),null());
 				}
 				else{
-					HX_STACK_LINE(179)
+					HX_STACK_LINE(178)
 					this->_cursor = ::flash::display::Bitmap_obj::__new(::flixel::input::mouse::_FlxMouse::GraphicCursor_obj::__new((int)0,(int)0,null(),null()),null(),null());
 				}
 			}
 		}
-		HX_STACK_LINE(183)
+		HX_STACK_LINE(182)
 		this->_cursor->set_x(XOffset);
-		HX_STACK_LINE(184)
+		HX_STACK_LINE(183)
 		this->_cursor->set_y(YOffset);
-		HX_STACK_LINE(185)
+		HX_STACK_LINE(184)
 		this->_cursor->set_scaleX(Scale);
-		HX_STACK_LINE(186)
+		HX_STACK_LINE(185)
 		this->_cursor->set_scaleY(Scale);
-		HX_STACK_LINE(215)
+		HX_STACK_LINE(214)
 		this->cursorContainer->addChild(this->_cursor);
 	}
 return null();

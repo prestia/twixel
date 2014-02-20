@@ -189,10 +189,10 @@ Dynamic FlxText_obj::__Create(hx::DynamicArray inArgs)
 
 Void FlxText_obj::updateFormat( ::flash::text::TextFormat Format){
 {
-		HX_STACK_PUSH("FlxText::updateFormat","flixel/text/FlxText.hx",874);
+		HX_STACK_PUSH("FlxText::updateFormat","flixel/text/FlxText.hx",867);
 		HX_STACK_THIS(this);
 		HX_STACK_ARG(Format,"Format");
-		HX_STACK_LINE(874)
+		HX_STACK_LINE(867)
 		this->_textField->setTextFormat(Format,(int)0,this->_textField->get_text().length);
 	}
 return null();
@@ -202,10 +202,10 @@ return null();
 HX_DEFINE_DYNAMIC_FUNC1(FlxText_obj,updateFormat,(void))
 
 ::String FlxText_obj::convertTextAlignmentFromString( ::String StrAlign){
-	HX_STACK_PUSH("FlxText::convertTextAlignmentFromString","flixel/text/FlxText.hx",868);
+	HX_STACK_PUSH("FlxText::convertTextAlignmentFromString","flixel/text/FlxText.hx",861);
 	HX_STACK_THIS(this);
 	HX_STACK_ARG(StrAlign,"StrAlign");
-	HX_STACK_LINE(868)
+	HX_STACK_LINE(861)
 	return StrAlign;
 }
 
@@ -213,11 +213,11 @@ HX_DEFINE_DYNAMIC_FUNC1(FlxText_obj,updateFormat,(void))
 HX_DEFINE_DYNAMIC_FUNC1(FlxText_obj,convertTextAlignmentFromString,return )
 
 ::flash::text::TextFormat FlxText_obj::dtfCopy( ){
-	HX_STACK_PUSH("FlxText::dtfCopy","flixel/text/FlxText.hx",837);
+	HX_STACK_PUSH("FlxText::dtfCopy","flixel/text/FlxText.hx",830);
 	HX_STACK_THIS(this);
-	HX_STACK_LINE(838)
+	HX_STACK_LINE(831)
 	::flash::text::TextFormat defaultTextFormat = this->_textField->get_defaultTextFormat();		HX_STACK_VAR(defaultTextFormat,"defaultTextFormat");
-	HX_STACK_LINE(840)
+	HX_STACK_LINE(833)
 	return ::flash::text::TextFormat_obj::__new(defaultTextFormat->font,defaultTextFormat->size,defaultTextFormat->color,defaultTextFormat->bold,defaultTextFormat->italic,defaultTextFormat->underline,defaultTextFormat->url,defaultTextFormat->target,defaultTextFormat->align,null(),null(),null(),null());
 }
 
@@ -226,408 +226,408 @@ HX_DEFINE_DYNAMIC_FUNC0(FlxText_obj,dtfCopy,return )
 
 Void FlxText_obj::calcFrame( hx::Null< bool >  __o_RunOnCpp){
 bool RunOnCpp = __o_RunOnCpp.Default(false);
-	HX_STACK_PUSH("FlxText::calcFrame","flixel/text/FlxText.hx",673);
+	HX_STACK_PUSH("FlxText::calcFrame","flixel/text/FlxText.hx",666);
 	HX_STACK_THIS(this);
 	HX_STACK_ARG(RunOnCpp,"RunOnCpp");
 {
-		HX_STACK_LINE(674)
+		HX_STACK_LINE(667)
 		if (((this->_textField == null()))){
-			HX_STACK_LINE(675)
+			HX_STACK_LINE(668)
 			return null();
 		}
-		HX_STACK_LINE(679)
+		HX_STACK_LINE(672)
 		if (((this->_filters != null()))){
-			HX_STACK_LINE(680)
+			HX_STACK_LINE(673)
 			this->_textField->set_filters(this->_filters);
 		}
-		HX_STACK_LINE(684)
+		HX_STACK_LINE(677)
 		this->regenGraphics();
-		HX_STACK_LINE(686)
+		HX_STACK_LINE(679)
 		if (((bool((bool((this->_textField != null())) && bool((this->_textField->get_text() != null())))) && bool((this->_textField->get_text().length > (int)0))))){
-			HX_STACK_LINE(689)
+			HX_STACK_LINE(682)
 			this->_formatAdjusted->font = this->_defaultFormat->font;
-			HX_STACK_LINE(690)
+			HX_STACK_LINE(683)
 			this->_formatAdjusted->size = this->_defaultFormat->size;
-			HX_STACK_LINE(691)
+			HX_STACK_LINE(684)
 			this->_formatAdjusted->bold = this->_defaultFormat->bold;
-			HX_STACK_LINE(692)
+			HX_STACK_LINE(685)
 			this->_formatAdjusted->italic = this->_defaultFormat->italic;
-			HX_STACK_LINE(693)
+			HX_STACK_LINE(686)
 			this->_formatAdjusted->color = this->_defaultFormat->color;
-			HX_STACK_LINE(694)
+			HX_STACK_LINE(687)
 			this->_formatAdjusted->align = this->_defaultFormat->align;
-			HX_STACK_LINE(695)
+			HX_STACK_LINE(688)
 			this->_matrix->identity();
-			HX_STACK_LINE(697)
+			HX_STACK_LINE(690)
 			this->_matrix->translate(::Std_obj::_int((0.5 * this->_widthInc)),::Std_obj::_int((0.5 * this->_heightInc)));
-			HX_STACK_LINE(703)
+			HX_STACK_LINE(696)
 			if (((bool((this->_defaultFormat->align == ::flash::text::TextFormatAlign_obj::CENTER)) && bool((this->_textField->get_numLines() == (int)1))))){
-				HX_STACK_LINE(706)
+				HX_STACK_LINE(699)
 				this->_formatAdjusted->align = ::flash::text::TextFormatAlign_obj::LEFT;
-				HX_STACK_LINE(707)
+				HX_STACK_LINE(700)
 				this->_textField->setTextFormat(this->_formatAdjusted,(int)0,this->_textField->get_text().length);
-				HX_STACK_LINE(712)
+				HX_STACK_LINE(705)
 				this->_matrix->translate(::Math_obj::floor((Float(((this->get_width() - this->_textField->get_textWidth()))) / Float((int)2))),(int)0);
 			}
-			HX_STACK_LINE(716)
+			HX_STACK_LINE(709)
 			if (((this->borderStyle != (int)0))){
-				HX_STACK_LINE(718)
+				HX_STACK_LINE(711)
 				int iterations = ::Std_obj::_int((this->borderSize * this->borderQuality));		HX_STACK_VAR(iterations,"iterations");
-				HX_STACK_LINE(719)
+				HX_STACK_LINE(712)
 				if (((iterations <= (int)0))){
-					HX_STACK_LINE(720)
+					HX_STACK_LINE(713)
 					iterations = (int)1;
 				}
-				HX_STACK_LINE(723)
+				HX_STACK_LINE(716)
 				Float delta = (Float(this->borderSize) / Float(iterations));		HX_STACK_VAR(delta,"delta");
-				HX_STACK_LINE(725)
+				HX_STACK_LINE(718)
 				if (((this->borderStyle == (int)1))){
-					HX_STACK_LINE(729)
+					HX_STACK_LINE(722)
 					{
-						HX_STACK_LINE(729)
+						HX_STACK_LINE(722)
 						::flash::text::TextFormat FormatAdjusted = this->_formatAdjusted;		HX_STACK_VAR(FormatAdjusted,"FormatAdjusted");
-						HX_STACK_LINE(729)
+						HX_STACK_LINE(722)
 						FormatAdjusted->color = this->borderColor;
-						HX_STACK_LINE(729)
+						HX_STACK_LINE(722)
 						this->_textField->setTextFormat(FormatAdjusted,(int)0,this->_textField->get_text().length);
-						HX_STACK_LINE(729)
+						HX_STACK_LINE(722)
 						{
-							HX_STACK_LINE(729)
+							HX_STACK_LINE(722)
 							int _g = (int)0;		HX_STACK_VAR(_g,"_g");
 							Array< ::Dynamic > _g1 = this->_formats;		HX_STACK_VAR(_g1,"_g1");
-							HX_STACK_LINE(729)
+							HX_STACK_LINE(722)
 							while(((_g < _g1->length))){
-								HX_STACK_LINE(729)
+								HX_STACK_LINE(722)
 								::flixel::text::FlxTextFormat format = _g1->__get(_g).StaticCast< ::flixel::text::FlxTextFormat >();		HX_STACK_VAR(format,"format");
-								HX_STACK_LINE(729)
+								HX_STACK_LINE(722)
 								++(_g);
-								HX_STACK_LINE(729)
+								HX_STACK_LINE(722)
 								if ((((this->_textField->get_text().length - (int)1) < format->start))){
-									HX_STACK_LINE(729)
+									HX_STACK_LINE(722)
 									break;
 								}
 								else{
-									HX_STACK_LINE(729)
+									HX_STACK_LINE(722)
 									FormatAdjusted->font = format->format->font;
-									HX_STACK_LINE(729)
+									HX_STACK_LINE(722)
 									FormatAdjusted->bold = format->format->bold;
-									HX_STACK_LINE(729)
+									HX_STACK_LINE(722)
 									FormatAdjusted->italic = format->format->italic;
-									HX_STACK_LINE(729)
+									HX_STACK_LINE(722)
 									FormatAdjusted->size = format->format->size;
-									HX_STACK_LINE(729)
+									HX_STACK_LINE(722)
 									FormatAdjusted->color = format->borderColor;
 								}
-								HX_STACK_LINE(729)
+								HX_STACK_LINE(722)
 								this->_textField->setTextFormat(FormatAdjusted,format->start,::Std_obj::_int(::Math_obj::min(format->end,this->_textField->get_text().length)));
 							}
 						}
 					}
-					HX_STACK_LINE(731)
+					HX_STACK_LINE(724)
 					{
-						HX_STACK_LINE(731)
+						HX_STACK_LINE(724)
 						int _g = (int)0;		HX_STACK_VAR(_g,"_g");
-						HX_STACK_LINE(731)
+						HX_STACK_LINE(724)
 						while(((_g < iterations))){
-							HX_STACK_LINE(731)
+							HX_STACK_LINE(724)
 							int iter = (_g)++;		HX_STACK_VAR(iter,"iter");
-							HX_STACK_LINE(733)
+							HX_STACK_LINE(726)
 							this->_matrix->translate(delta,delta);
-							HX_STACK_LINE(734)
+							HX_STACK_LINE(727)
 							this->cachedGraphics->bitmap->draw(this->_textField,this->_matrix,null(),null(),null(),null());
 						}
 					}
-					HX_STACK_LINE(737)
+					HX_STACK_LINE(730)
 					this->_matrix->translate(-(this->borderSize),-(this->borderSize));
-					HX_STACK_LINE(738)
+					HX_STACK_LINE(731)
 					{
-						HX_STACK_LINE(738)
+						HX_STACK_LINE(731)
 						::flash::text::TextFormat FormatAdjusted = this->_formatAdjusted;		HX_STACK_VAR(FormatAdjusted,"FormatAdjusted");
-						HX_STACK_LINE(738)
+						HX_STACK_LINE(731)
 						FormatAdjusted->color = this->_defaultFormat->color;
-						HX_STACK_LINE(738)
+						HX_STACK_LINE(731)
 						this->_textField->setTextFormat(FormatAdjusted,(int)0,this->_textField->get_text().length);
-						HX_STACK_LINE(738)
+						HX_STACK_LINE(731)
 						{
-							HX_STACK_LINE(738)
+							HX_STACK_LINE(731)
 							int _g = (int)0;		HX_STACK_VAR(_g,"_g");
 							Array< ::Dynamic > _g1 = this->_formats;		HX_STACK_VAR(_g1,"_g1");
-							HX_STACK_LINE(738)
+							HX_STACK_LINE(731)
 							while(((_g < _g1->length))){
-								HX_STACK_LINE(738)
+								HX_STACK_LINE(731)
 								::flixel::text::FlxTextFormat format = _g1->__get(_g).StaticCast< ::flixel::text::FlxTextFormat >();		HX_STACK_VAR(format,"format");
-								HX_STACK_LINE(738)
+								HX_STACK_LINE(731)
 								++(_g);
-								HX_STACK_LINE(738)
+								HX_STACK_LINE(731)
 								if ((((this->_textField->get_text().length - (int)1) < format->start))){
-									HX_STACK_LINE(738)
+									HX_STACK_LINE(731)
 									break;
 								}
 								else{
-									HX_STACK_LINE(738)
+									HX_STACK_LINE(731)
 									FormatAdjusted->font = format->format->font;
-									HX_STACK_LINE(738)
+									HX_STACK_LINE(731)
 									FormatAdjusted->bold = format->format->bold;
-									HX_STACK_LINE(738)
+									HX_STACK_LINE(731)
 									FormatAdjusted->italic = format->format->italic;
-									HX_STACK_LINE(738)
+									HX_STACK_LINE(731)
 									FormatAdjusted->size = format->format->size;
-									HX_STACK_LINE(738)
+									HX_STACK_LINE(731)
 									FormatAdjusted->color = format->format->color;
 								}
-								HX_STACK_LINE(738)
+								HX_STACK_LINE(731)
 								this->_textField->setTextFormat(FormatAdjusted,format->start,::Std_obj::_int(::Math_obj::min(format->end,this->_textField->get_text().length)));
 							}
 						}
 					}
 				}
 				else{
-					HX_STACK_LINE(740)
+					HX_STACK_LINE(733)
 					if (((this->borderStyle == (int)2))){
-						HX_STACK_LINE(744)
+						HX_STACK_LINE(737)
 						{
-							HX_STACK_LINE(744)
+							HX_STACK_LINE(737)
 							::flash::text::TextFormat FormatAdjusted = this->_formatAdjusted;		HX_STACK_VAR(FormatAdjusted,"FormatAdjusted");
-							HX_STACK_LINE(744)
+							HX_STACK_LINE(737)
 							FormatAdjusted->color = this->borderColor;
-							HX_STACK_LINE(744)
+							HX_STACK_LINE(737)
 							this->_textField->setTextFormat(FormatAdjusted,(int)0,this->_textField->get_text().length);
-							HX_STACK_LINE(744)
+							HX_STACK_LINE(737)
 							{
-								HX_STACK_LINE(744)
+								HX_STACK_LINE(737)
 								int _g = (int)0;		HX_STACK_VAR(_g,"_g");
 								Array< ::Dynamic > _g1 = this->_formats;		HX_STACK_VAR(_g1,"_g1");
-								HX_STACK_LINE(744)
+								HX_STACK_LINE(737)
 								while(((_g < _g1->length))){
-									HX_STACK_LINE(744)
+									HX_STACK_LINE(737)
 									::flixel::text::FlxTextFormat format = _g1->__get(_g).StaticCast< ::flixel::text::FlxTextFormat >();		HX_STACK_VAR(format,"format");
-									HX_STACK_LINE(744)
+									HX_STACK_LINE(737)
 									++(_g);
-									HX_STACK_LINE(744)
+									HX_STACK_LINE(737)
 									if ((((this->_textField->get_text().length - (int)1) < format->start))){
-										HX_STACK_LINE(744)
+										HX_STACK_LINE(737)
 										break;
 									}
 									else{
-										HX_STACK_LINE(744)
+										HX_STACK_LINE(737)
 										FormatAdjusted->font = format->format->font;
-										HX_STACK_LINE(744)
+										HX_STACK_LINE(737)
 										FormatAdjusted->bold = format->format->bold;
-										HX_STACK_LINE(744)
+										HX_STACK_LINE(737)
 										FormatAdjusted->italic = format->format->italic;
-										HX_STACK_LINE(744)
+										HX_STACK_LINE(737)
 										FormatAdjusted->size = format->format->size;
-										HX_STACK_LINE(744)
+										HX_STACK_LINE(737)
 										FormatAdjusted->color = format->borderColor;
 									}
-									HX_STACK_LINE(744)
+									HX_STACK_LINE(737)
 									this->_textField->setTextFormat(FormatAdjusted,format->start,::Std_obj::_int(::Math_obj::min(format->end,this->_textField->get_text().length)));
 								}
 							}
 						}
-						HX_STACK_LINE(746)
+						HX_STACK_LINE(739)
 						Float itd = delta;		HX_STACK_VAR(itd,"itd");
-						HX_STACK_LINE(747)
+						HX_STACK_LINE(740)
 						{
-							HX_STACK_LINE(747)
+							HX_STACK_LINE(740)
 							int _g = (int)0;		HX_STACK_VAR(_g,"_g");
-							HX_STACK_LINE(747)
+							HX_STACK_LINE(740)
 							while(((_g < iterations))){
-								HX_STACK_LINE(747)
+								HX_STACK_LINE(740)
 								int iter = (_g)++;		HX_STACK_VAR(iter,"iter");
-								HX_STACK_LINE(749)
+								HX_STACK_LINE(742)
 								this->_matrix->translate(-(itd),-(itd));
+								HX_STACK_LINE(743)
+								this->cachedGraphics->bitmap->draw(this->_textField,this->_matrix,null(),null(),null(),null());
+								HX_STACK_LINE(744)
+								this->_matrix->translate(itd,(int)0);
+								HX_STACK_LINE(745)
+								this->cachedGraphics->bitmap->draw(this->_textField,this->_matrix,null(),null(),null(),null());
+								HX_STACK_LINE(746)
+								this->_matrix->translate(itd,(int)0);
+								HX_STACK_LINE(747)
+								this->cachedGraphics->bitmap->draw(this->_textField,this->_matrix,null(),null(),null(),null());
+								HX_STACK_LINE(748)
+								this->_matrix->translate((int)0,itd);
+								HX_STACK_LINE(749)
+								this->cachedGraphics->bitmap->draw(this->_textField,this->_matrix,null(),null(),null(),null());
 								HX_STACK_LINE(750)
-								this->cachedGraphics->bitmap->draw(this->_textField,this->_matrix,null(),null(),null(),null());
+								this->_matrix->translate((int)0,itd);
 								HX_STACK_LINE(751)
-								this->_matrix->translate(itd,(int)0);
+								this->cachedGraphics->bitmap->draw(this->_textField,this->_matrix,null(),null(),null(),null());
 								HX_STACK_LINE(752)
-								this->cachedGraphics->bitmap->draw(this->_textField,this->_matrix,null(),null(),null(),null());
+								this->_matrix->translate(-(itd),(int)0);
 								HX_STACK_LINE(753)
-								this->_matrix->translate(itd,(int)0);
+								this->cachedGraphics->bitmap->draw(this->_textField,this->_matrix,null(),null(),null(),null());
 								HX_STACK_LINE(754)
-								this->cachedGraphics->bitmap->draw(this->_textField,this->_matrix,null(),null(),null(),null());
+								this->_matrix->translate(-(itd),(int)0);
 								HX_STACK_LINE(755)
-								this->_matrix->translate((int)0,itd);
+								this->cachedGraphics->bitmap->draw(this->_textField,this->_matrix,null(),null(),null(),null());
 								HX_STACK_LINE(756)
-								this->cachedGraphics->bitmap->draw(this->_textField,this->_matrix,null(),null(),null(),null());
-								HX_STACK_LINE(757)
-								this->_matrix->translate((int)0,itd);
-								HX_STACK_LINE(758)
-								this->cachedGraphics->bitmap->draw(this->_textField,this->_matrix,null(),null(),null(),null());
-								HX_STACK_LINE(759)
-								this->_matrix->translate(-(itd),(int)0);
-								HX_STACK_LINE(760)
-								this->cachedGraphics->bitmap->draw(this->_textField,this->_matrix,null(),null(),null(),null());
-								HX_STACK_LINE(761)
-								this->_matrix->translate(-(itd),(int)0);
-								HX_STACK_LINE(762)
-								this->cachedGraphics->bitmap->draw(this->_textField,this->_matrix,null(),null(),null(),null());
-								HX_STACK_LINE(763)
 								this->_matrix->translate((int)0,-(itd));
-								HX_STACK_LINE(764)
+								HX_STACK_LINE(757)
 								this->cachedGraphics->bitmap->draw(this->_textField,this->_matrix,null(),null(),null(),null());
-								HX_STACK_LINE(765)
+								HX_STACK_LINE(758)
 								this->_matrix->translate(itd,(int)0);
-								HX_STACK_LINE(766)
+								HX_STACK_LINE(759)
 								hx::AddEq(itd,delta);
 							}
 						}
-						HX_STACK_LINE(769)
+						HX_STACK_LINE(762)
 						{
-							HX_STACK_LINE(769)
+							HX_STACK_LINE(762)
 							::flash::text::TextFormat FormatAdjusted = this->_formatAdjusted;		HX_STACK_VAR(FormatAdjusted,"FormatAdjusted");
-							HX_STACK_LINE(769)
+							HX_STACK_LINE(762)
 							FormatAdjusted->color = this->_defaultFormat->color;
-							HX_STACK_LINE(769)
+							HX_STACK_LINE(762)
 							this->_textField->setTextFormat(FormatAdjusted,(int)0,this->_textField->get_text().length);
-							HX_STACK_LINE(769)
+							HX_STACK_LINE(762)
 							{
-								HX_STACK_LINE(769)
+								HX_STACK_LINE(762)
 								int _g = (int)0;		HX_STACK_VAR(_g,"_g");
 								Array< ::Dynamic > _g1 = this->_formats;		HX_STACK_VAR(_g1,"_g1");
-								HX_STACK_LINE(769)
+								HX_STACK_LINE(762)
 								while(((_g < _g1->length))){
-									HX_STACK_LINE(769)
+									HX_STACK_LINE(762)
 									::flixel::text::FlxTextFormat format = _g1->__get(_g).StaticCast< ::flixel::text::FlxTextFormat >();		HX_STACK_VAR(format,"format");
-									HX_STACK_LINE(769)
+									HX_STACK_LINE(762)
 									++(_g);
-									HX_STACK_LINE(769)
+									HX_STACK_LINE(762)
 									if ((((this->_textField->get_text().length - (int)1) < format->start))){
-										HX_STACK_LINE(769)
+										HX_STACK_LINE(762)
 										break;
 									}
 									else{
-										HX_STACK_LINE(769)
+										HX_STACK_LINE(762)
 										FormatAdjusted->font = format->format->font;
-										HX_STACK_LINE(769)
+										HX_STACK_LINE(762)
 										FormatAdjusted->bold = format->format->bold;
-										HX_STACK_LINE(769)
+										HX_STACK_LINE(762)
 										FormatAdjusted->italic = format->format->italic;
-										HX_STACK_LINE(769)
+										HX_STACK_LINE(762)
 										FormatAdjusted->size = format->format->size;
-										HX_STACK_LINE(769)
+										HX_STACK_LINE(762)
 										FormatAdjusted->color = format->format->color;
 									}
-									HX_STACK_LINE(769)
+									HX_STACK_LINE(762)
 									this->_textField->setTextFormat(FormatAdjusted,format->start,::Std_obj::_int(::Math_obj::min(format->end,this->_textField->get_text().length)));
 								}
 							}
 						}
 					}
 					else{
-						HX_STACK_LINE(771)
+						HX_STACK_LINE(764)
 						if (((this->borderStyle == (int)3))){
-							HX_STACK_LINE(776)
+							HX_STACK_LINE(769)
 							{
-								HX_STACK_LINE(776)
+								HX_STACK_LINE(769)
 								::flash::text::TextFormat FormatAdjusted = this->_formatAdjusted;		HX_STACK_VAR(FormatAdjusted,"FormatAdjusted");
-								HX_STACK_LINE(776)
+								HX_STACK_LINE(769)
 								FormatAdjusted->color = this->borderColor;
-								HX_STACK_LINE(776)
+								HX_STACK_LINE(769)
 								this->_textField->setTextFormat(FormatAdjusted,(int)0,this->_textField->get_text().length);
-								HX_STACK_LINE(776)
+								HX_STACK_LINE(769)
 								{
-									HX_STACK_LINE(776)
+									HX_STACK_LINE(769)
 									int _g = (int)0;		HX_STACK_VAR(_g,"_g");
 									Array< ::Dynamic > _g1 = this->_formats;		HX_STACK_VAR(_g1,"_g1");
-									HX_STACK_LINE(776)
+									HX_STACK_LINE(769)
 									while(((_g < _g1->length))){
-										HX_STACK_LINE(776)
+										HX_STACK_LINE(769)
 										::flixel::text::FlxTextFormat format = _g1->__get(_g).StaticCast< ::flixel::text::FlxTextFormat >();		HX_STACK_VAR(format,"format");
-										HX_STACK_LINE(776)
+										HX_STACK_LINE(769)
 										++(_g);
-										HX_STACK_LINE(776)
+										HX_STACK_LINE(769)
 										if ((((this->_textField->get_text().length - (int)1) < format->start))){
-											HX_STACK_LINE(776)
+											HX_STACK_LINE(769)
 											break;
 										}
 										else{
-											HX_STACK_LINE(776)
+											HX_STACK_LINE(769)
 											FormatAdjusted->font = format->format->font;
-											HX_STACK_LINE(776)
+											HX_STACK_LINE(769)
 											FormatAdjusted->bold = format->format->bold;
-											HX_STACK_LINE(776)
+											HX_STACK_LINE(769)
 											FormatAdjusted->italic = format->format->italic;
-											HX_STACK_LINE(776)
+											HX_STACK_LINE(769)
 											FormatAdjusted->size = format->format->size;
-											HX_STACK_LINE(776)
+											HX_STACK_LINE(769)
 											FormatAdjusted->color = format->borderColor;
 										}
-										HX_STACK_LINE(776)
+										HX_STACK_LINE(769)
 										this->_textField->setTextFormat(FormatAdjusted,format->start,::Std_obj::_int(::Math_obj::min(format->end,this->_textField->get_text().length)));
 									}
 								}
 							}
-							HX_STACK_LINE(778)
+							HX_STACK_LINE(771)
 							Float itd = delta;		HX_STACK_VAR(itd,"itd");
-							HX_STACK_LINE(779)
+							HX_STACK_LINE(772)
 							{
-								HX_STACK_LINE(779)
+								HX_STACK_LINE(772)
 								int _g = (int)0;		HX_STACK_VAR(_g,"_g");
-								HX_STACK_LINE(779)
+								HX_STACK_LINE(772)
 								while(((_g < iterations))){
-									HX_STACK_LINE(779)
+									HX_STACK_LINE(772)
 									int iter = (_g)++;		HX_STACK_VAR(iter,"iter");
-									HX_STACK_LINE(781)
+									HX_STACK_LINE(774)
 									this->_matrix->translate(-(itd),-(itd));
-									HX_STACK_LINE(782)
+									HX_STACK_LINE(775)
 									this->cachedGraphics->bitmap->draw(this->_textField,this->_matrix,null(),null(),null(),null());
-									HX_STACK_LINE(783)
+									HX_STACK_LINE(776)
 									this->_matrix->translate((itd * (int)2),(int)0);
-									HX_STACK_LINE(784)
+									HX_STACK_LINE(777)
 									this->cachedGraphics->bitmap->draw(this->_textField,this->_matrix,null(),null(),null(),null());
-									HX_STACK_LINE(785)
+									HX_STACK_LINE(778)
 									this->_matrix->translate((int)0,(itd * (int)2));
-									HX_STACK_LINE(786)
+									HX_STACK_LINE(779)
 									this->cachedGraphics->bitmap->draw(this->_textField,this->_matrix,null(),null(),null(),null());
-									HX_STACK_LINE(787)
+									HX_STACK_LINE(780)
 									this->_matrix->translate((-(itd) * (int)2),(int)0);
-									HX_STACK_LINE(788)
+									HX_STACK_LINE(781)
 									this->cachedGraphics->bitmap->draw(this->_textField,this->_matrix,null(),null(),null(),null());
-									HX_STACK_LINE(789)
+									HX_STACK_LINE(782)
 									this->_matrix->translate(itd,-(itd));
-									HX_STACK_LINE(790)
+									HX_STACK_LINE(783)
 									hx::AddEq(itd,delta);
 								}
 							}
-							HX_STACK_LINE(793)
+							HX_STACK_LINE(786)
 							{
-								HX_STACK_LINE(793)
+								HX_STACK_LINE(786)
 								::flash::text::TextFormat FormatAdjusted = this->_formatAdjusted;		HX_STACK_VAR(FormatAdjusted,"FormatAdjusted");
-								HX_STACK_LINE(793)
+								HX_STACK_LINE(786)
 								FormatAdjusted->color = this->_defaultFormat->color;
-								HX_STACK_LINE(793)
+								HX_STACK_LINE(786)
 								this->_textField->setTextFormat(FormatAdjusted,(int)0,this->_textField->get_text().length);
-								HX_STACK_LINE(793)
+								HX_STACK_LINE(786)
 								{
-									HX_STACK_LINE(793)
+									HX_STACK_LINE(786)
 									int _g = (int)0;		HX_STACK_VAR(_g,"_g");
 									Array< ::Dynamic > _g1 = this->_formats;		HX_STACK_VAR(_g1,"_g1");
-									HX_STACK_LINE(793)
+									HX_STACK_LINE(786)
 									while(((_g < _g1->length))){
-										HX_STACK_LINE(793)
+										HX_STACK_LINE(786)
 										::flixel::text::FlxTextFormat format = _g1->__get(_g).StaticCast< ::flixel::text::FlxTextFormat >();		HX_STACK_VAR(format,"format");
-										HX_STACK_LINE(793)
+										HX_STACK_LINE(786)
 										++(_g);
-										HX_STACK_LINE(793)
+										HX_STACK_LINE(786)
 										if ((((this->_textField->get_text().length - (int)1) < format->start))){
-											HX_STACK_LINE(793)
+											HX_STACK_LINE(786)
 											break;
 										}
 										else{
-											HX_STACK_LINE(793)
+											HX_STACK_LINE(786)
 											FormatAdjusted->font = format->format->font;
-											HX_STACK_LINE(793)
+											HX_STACK_LINE(786)
 											FormatAdjusted->bold = format->format->bold;
-											HX_STACK_LINE(793)
+											HX_STACK_LINE(786)
 											FormatAdjusted->italic = format->format->italic;
-											HX_STACK_LINE(793)
+											HX_STACK_LINE(786)
 											FormatAdjusted->size = format->format->size;
-											HX_STACK_LINE(793)
+											HX_STACK_LINE(786)
 											FormatAdjusted->color = format->format->color;
 										}
-										HX_STACK_LINE(793)
+										HX_STACK_LINE(786)
 										this->_textField->setTextFormat(FormatAdjusted,format->start,::Std_obj::_int(::Math_obj::min(format->end,this->_textField->get_text().length)));
 									}
 								}
@@ -637,70 +637,70 @@ bool RunOnCpp = __o_RunOnCpp.Default(false);
 				}
 			}
 			else{
-				HX_STACK_LINE(798)
+				HX_STACK_LINE(791)
 				::flash::text::TextFormat FormatAdjusted = this->_formatAdjusted;		HX_STACK_VAR(FormatAdjusted,"FormatAdjusted");
-				HX_STACK_LINE(798)
+				HX_STACK_LINE(791)
 				FormatAdjusted->color = this->_defaultFormat->color;
-				HX_STACK_LINE(798)
+				HX_STACK_LINE(791)
 				this->_textField->setTextFormat(FormatAdjusted,(int)0,this->_textField->get_text().length);
-				HX_STACK_LINE(798)
+				HX_STACK_LINE(791)
 				{
-					HX_STACK_LINE(798)
+					HX_STACK_LINE(791)
 					int _g = (int)0;		HX_STACK_VAR(_g,"_g");
 					Array< ::Dynamic > _g1 = this->_formats;		HX_STACK_VAR(_g1,"_g1");
-					HX_STACK_LINE(798)
+					HX_STACK_LINE(791)
 					while(((_g < _g1->length))){
-						HX_STACK_LINE(798)
+						HX_STACK_LINE(791)
 						::flixel::text::FlxTextFormat format = _g1->__get(_g).StaticCast< ::flixel::text::FlxTextFormat >();		HX_STACK_VAR(format,"format");
-						HX_STACK_LINE(798)
+						HX_STACK_LINE(791)
 						++(_g);
-						HX_STACK_LINE(798)
+						HX_STACK_LINE(791)
 						if ((((this->_textField->get_text().length - (int)1) < format->start))){
-							HX_STACK_LINE(798)
+							HX_STACK_LINE(791)
 							break;
 						}
 						else{
-							HX_STACK_LINE(798)
+							HX_STACK_LINE(791)
 							FormatAdjusted->font = format->format->font;
-							HX_STACK_LINE(798)
+							HX_STACK_LINE(791)
 							FormatAdjusted->bold = format->format->bold;
-							HX_STACK_LINE(798)
+							HX_STACK_LINE(791)
 							FormatAdjusted->italic = format->format->italic;
-							HX_STACK_LINE(798)
+							HX_STACK_LINE(791)
 							FormatAdjusted->size = format->format->size;
-							HX_STACK_LINE(798)
+							HX_STACK_LINE(791)
 							FormatAdjusted->color = format->format->color;
 						}
-						HX_STACK_LINE(798)
+						HX_STACK_LINE(791)
 						this->_textField->setTextFormat(FormatAdjusted,format->start,::Std_obj::_int(::Math_obj::min(format->end,this->_textField->get_text().length)));
 					}
 				}
 			}
-			HX_STACK_LINE(802)
+			HX_STACK_LINE(795)
 			this->cachedGraphics->bitmap->draw(this->_textField,this->_matrix,null(),null(),null(),null());
 		}
-		HX_STACK_LINE(805)
+		HX_STACK_LINE(798)
 		this->dirty = false;
-		HX_STACK_LINE(808)
+		HX_STACK_LINE(801)
 		if ((!(RunOnCpp))){
-			HX_STACK_LINE(809)
+			HX_STACK_LINE(802)
 			return null();
 		}
-		HX_STACK_LINE(815)
+		HX_STACK_LINE(808)
 		if (((bool((bool((this->framePixels == null())) || bool((this->framePixels->get_width() != this->cachedGraphics->bitmap->get_width())))) || bool((this->framePixels->get_height() != this->cachedGraphics->bitmap->get_height()))))){
-			HX_STACK_LINE(817)
+			HX_STACK_LINE(810)
 			if (((this->framePixels != null()))){
-				HX_STACK_LINE(818)
+				HX_STACK_LINE(811)
 				this->framePixels->dispose();
 			}
-			HX_STACK_LINE(820)
+			HX_STACK_LINE(813)
 			this->framePixels = ::flash::display::BitmapData_obj::__new(this->cachedGraphics->bitmap->get_width(),this->cachedGraphics->bitmap->get_height(),true,(int)0,null());
 		}
-		HX_STACK_LINE(823)
+		HX_STACK_LINE(816)
 		this->framePixels->copyPixels(this->cachedGraphics->bitmap,this->_flashRect,this->_flashPointZero,null(),null(),null());
-		HX_STACK_LINE(825)
+		HX_STACK_LINE(818)
 		if ((this->useColorTransform)){
-			HX_STACK_LINE(826)
+			HX_STACK_LINE(819)
 			this->framePixels->colorTransform(this->_flashRect,this->_colorTransform);
 		}
 	}
@@ -710,41 +710,41 @@ return null();
 
 Void FlxText_obj::regenGraphics( ){
 {
-		HX_STACK_PUSH("FlxText::regenGraphics","flixel/text/FlxText.hx",637);
+		HX_STACK_PUSH("FlxText::regenGraphics","flixel/text/FlxText.hx",630);
 		HX_STACK_THIS(this);
-		HX_STACK_LINE(638)
+		HX_STACK_LINE(631)
 		Float oldWidth = this->cachedGraphics->bitmap->get_width();		HX_STACK_VAR(oldWidth,"oldWidth");
-		HX_STACK_LINE(639)
+		HX_STACK_LINE(632)
 		Float oldHeight = this->cachedGraphics->bitmap->get_height();		HX_STACK_VAR(oldHeight,"oldHeight");
-		HX_STACK_LINE(641)
+		HX_STACK_LINE(634)
 		Float newWidth = (this->_textField->get_width() + this->_widthInc);		HX_STACK_VAR(newWidth,"newWidth");
-		HX_STACK_LINE(643)
+		HX_STACK_LINE(636)
 		Float newHeight = ((this->_textField->get_textHeight() + this->_heightInc) + (int)4);		HX_STACK_VAR(newHeight,"newHeight");
-		HX_STACK_LINE(645)
+		HX_STACK_LINE(638)
 		if (((bool((oldWidth != newWidth)) || bool((oldHeight != newHeight))))){
-			HX_STACK_LINE(648)
+			HX_STACK_LINE(641)
 			this->set_height((newHeight - this->_heightInc));
-			HX_STACK_LINE(649)
+			HX_STACK_LINE(642)
 			::String key = this->cachedGraphics->key;		HX_STACK_VAR(key,"key");
-			HX_STACK_LINE(650)
+			HX_STACK_LINE(643)
 			::flixel::FlxG_obj::bitmap->remove(key);
-			HX_STACK_LINE(652)
+			HX_STACK_LINE(645)
 			this->makeGraphic(::Std_obj::_int(newWidth),::Std_obj::_int(newHeight),(int)0,false,key);
-			HX_STACK_LINE(653)
+			HX_STACK_LINE(646)
 			this->frameHeight = ::Std_obj::_int(this->get_height());
-			HX_STACK_LINE(654)
+			HX_STACK_LINE(647)
 			this->_textField->set_height((this->get_height() * 1.2));
-			HX_STACK_LINE(655)
+			HX_STACK_LINE(648)
 			this->_flashRect->x = (int)0;
-			HX_STACK_LINE(656)
+			HX_STACK_LINE(649)
 			this->_flashRect->y = (int)0;
-			HX_STACK_LINE(657)
+			HX_STACK_LINE(650)
 			this->_flashRect->width = newWidth;
-			HX_STACK_LINE(658)
+			HX_STACK_LINE(651)
 			this->_flashRect->height = newHeight;
 		}
 		else{
-			HX_STACK_LINE(662)
+			HX_STACK_LINE(655)
 			this->cachedGraphics->bitmap->fillRect(this->_flashRect,(int)0);
 		}
 	}
@@ -756,32 +756,32 @@ HX_DEFINE_DYNAMIC_FUNC0(FlxText_obj,regenGraphics,(void))
 
 Void FlxText_obj::updateColorTransform( ){
 {
-		HX_STACK_PUSH("FlxText::updateColorTransform","flixel/text/FlxText.hx",610);
+		HX_STACK_PUSH("FlxText::updateColorTransform","flixel/text/FlxText.hx",603);
 		HX_STACK_THIS(this);
-		HX_STACK_LINE(611)
+		HX_STACK_LINE(604)
 		if (((this->alpha != (int)1))){
-			HX_STACK_LINE(613)
+			HX_STACK_LINE(606)
 			if (((this->_colorTransform == null()))){
-				HX_STACK_LINE(614)
+				HX_STACK_LINE(607)
 				this->_colorTransform = ::flash::geom::ColorTransform_obj::__new((int)1,(int)1,(int)1,this->alpha,null(),null(),null(),null());
 			}
 			else{
-				HX_STACK_LINE(618)
+				HX_STACK_LINE(611)
 				this->_colorTransform->alphaMultiplier = this->alpha;
 			}
-			HX_STACK_LINE(621)
+			HX_STACK_LINE(614)
 			this->useColorTransform = true;
 		}
 		else{
-			HX_STACK_LINE(625)
+			HX_STACK_LINE(618)
 			if (((this->_colorTransform != null()))){
-				HX_STACK_LINE(626)
+				HX_STACK_LINE(619)
 				this->_colorTransform->alphaMultiplier = (int)1;
 			}
-			HX_STACK_LINE(630)
+			HX_STACK_LINE(623)
 			this->useColorTransform = false;
 		}
-		HX_STACK_LINE(633)
+		HX_STACK_LINE(626)
 		this->dirty = true;
 	}
 return null();
@@ -789,25 +789,25 @@ return null();
 
 
 ::flixel::util::loaders::CachedGraphics FlxText_obj::set_cachedGraphics( ::flixel::util::loaders::CachedGraphics Value){
-	HX_STACK_PUSH("FlxText::set_cachedGraphics","flixel/text/FlxText.hx",600);
+	HX_STACK_PUSH("FlxText::set_cachedGraphics","flixel/text/FlxText.hx",593);
 	HX_STACK_THIS(this);
 	HX_STACK_ARG(Value,"Value");
-	HX_STACK_LINE(601)
+	HX_STACK_LINE(594)
 	::flixel::util::loaders::CachedGraphics cached = this->super::set_cachedGraphics(Value);		HX_STACK_VAR(cached,"cached");
-	HX_STACK_LINE(603)
+	HX_STACK_LINE(596)
 	if (((Value != null()))){
-		HX_STACK_LINE(604)
+		HX_STACK_LINE(597)
 		Value->set_destroyOnNoUse(true);
 	}
-	HX_STACK_LINE(606)
+	HX_STACK_LINE(599)
 	return cached;
 }
 
 
 ::flash::text::TextField FlxText_obj::get_textField( ){
-	HX_STACK_PUSH("FlxText::get_textField","flixel/text/FlxText.hx",595);
+	HX_STACK_PUSH("FlxText::get_textField","flixel/text/FlxText.hx",588);
 	HX_STACK_THIS(this);
-	HX_STACK_LINE(595)
+	HX_STACK_LINE(588)
 	return this->_textField;
 }
 
@@ -815,29 +815,29 @@ return null();
 HX_DEFINE_DYNAMIC_FUNC0(FlxText_obj,get_textField,return )
 
 Float FlxText_obj::set_borderQuality( Float Value){
-	HX_STACK_PUSH("FlxText::set_borderQuality","flixel/text/FlxText.hx",579);
+	HX_STACK_PUSH("FlxText::set_borderQuality","flixel/text/FlxText.hx",572);
 	HX_STACK_THIS(this);
 	HX_STACK_ARG(Value,"Value");
-	HX_STACK_LINE(580)
+	HX_STACK_LINE(573)
 	if (((Value < (int)0))){
-		HX_STACK_LINE(581)
+		HX_STACK_LINE(574)
 		Value = (int)0;
 	}
 	else{
-		HX_STACK_LINE(582)
+		HX_STACK_LINE(575)
 		if (((Value > (int)1))){
-			HX_STACK_LINE(583)
+			HX_STACK_LINE(576)
 			Value = (int)1;
 		}
 	}
-	HX_STACK_LINE(585)
+	HX_STACK_LINE(578)
 	if (((bool((Value != this->borderQuality)) && bool((this->borderStyle != (int)0))))){
-		HX_STACK_LINE(586)
+		HX_STACK_LINE(579)
 		this->dirty = true;
 	}
-	HX_STACK_LINE(589)
+	HX_STACK_LINE(582)
 	this->borderQuality = Value;
-	HX_STACK_LINE(591)
+	HX_STACK_LINE(584)
 	return Value;
 }
 
@@ -845,17 +845,17 @@ Float FlxText_obj::set_borderQuality( Float Value){
 HX_DEFINE_DYNAMIC_FUNC1(FlxText_obj,set_borderQuality,return )
 
 Float FlxText_obj::set_borderSize( Float Value){
-	HX_STACK_PUSH("FlxText::set_borderSize","flixel/text/FlxText.hx",568);
+	HX_STACK_PUSH("FlxText::set_borderSize","flixel/text/FlxText.hx",561);
 	HX_STACK_THIS(this);
 	HX_STACK_ARG(Value,"Value");
-	HX_STACK_LINE(569)
+	HX_STACK_LINE(562)
 	if (((bool((Value != this->borderSize)) && bool((this->borderStyle != (int)0))))){
-		HX_STACK_LINE(570)
+		HX_STACK_LINE(563)
 		this->dirty = true;
 	}
-	HX_STACK_LINE(573)
+	HX_STACK_LINE(566)
 	this->borderSize = Value;
-	HX_STACK_LINE(575)
+	HX_STACK_LINE(568)
 	return Value;
 }
 
@@ -863,19 +863,19 @@ Float FlxText_obj::set_borderSize( Float Value){
 HX_DEFINE_DYNAMIC_FUNC1(FlxText_obj,set_borderSize,return )
 
 int FlxText_obj::set_borderColor( int Color){
-	HX_STACK_PUSH("FlxText::set_borderColor","flixel/text/FlxText.hx",555);
+	HX_STACK_PUSH("FlxText::set_borderColor","flixel/text/FlxText.hx",548);
 	HX_STACK_THIS(this);
 	HX_STACK_ARG(Color,"Color");
-	HX_STACK_LINE(556)
+	HX_STACK_LINE(549)
 	hx::AndEq(Color,(int)16777215);
-	HX_STACK_LINE(558)
+	HX_STACK_LINE(551)
 	if (((bool((this->borderColor != Color)) && bool((this->borderStyle != (int)0))))){
-		HX_STACK_LINE(559)
+		HX_STACK_LINE(552)
 		this->dirty = true;
 	}
-	HX_STACK_LINE(562)
+	HX_STACK_LINE(555)
 	this->borderColor = Color;
-	HX_STACK_LINE(564)
+	HX_STACK_LINE(557)
 	return Color;
 }
 
@@ -883,17 +883,17 @@ int FlxText_obj::set_borderColor( int Color){
 HX_DEFINE_DYNAMIC_FUNC1(FlxText_obj,set_borderColor,return )
 
 int FlxText_obj::set_borderStyle( int style){
-	HX_STACK_PUSH("FlxText::set_borderStyle","flixel/text/FlxText.hx",544);
+	HX_STACK_PUSH("FlxText::set_borderStyle","flixel/text/FlxText.hx",537);
 	HX_STACK_THIS(this);
 	HX_STACK_ARG(style,"style");
-	HX_STACK_LINE(545)
+	HX_STACK_LINE(538)
 	if (((style != this->borderStyle))){
-		HX_STACK_LINE(547)
+		HX_STACK_LINE(540)
 		this->borderStyle = style;
-		HX_STACK_LINE(548)
+		HX_STACK_LINE(541)
 		this->dirty = true;
 	}
-	HX_STACK_LINE(551)
+	HX_STACK_LINE(544)
 	return this->borderStyle;
 }
 
@@ -901,18 +901,18 @@ int FlxText_obj::set_borderStyle( int style){
 HX_DEFINE_DYNAMIC_FUNC1(FlxText_obj,set_borderStyle,return )
 
 ::String FlxText_obj::set_alignment( ::String Alignment){
-	HX_STACK_PUSH("FlxText::set_alignment","flixel/text/FlxText.hx",535);
+	HX_STACK_PUSH("FlxText::set_alignment","flixel/text/FlxText.hx",528);
 	HX_STACK_THIS(this);
 	HX_STACK_ARG(Alignment,"Alignment");
-	HX_STACK_LINE(536)
+	HX_STACK_LINE(529)
 	this->_defaultFormat->align = this->convertTextAlignmentFromString(Alignment);
-	HX_STACK_LINE(537)
+	HX_STACK_LINE(530)
 	this->_textField->set_defaultTextFormat(this->_defaultFormat);
-	HX_STACK_LINE(538)
+	HX_STACK_LINE(531)
 	this->_textField->setTextFormat(this->_defaultFormat,(int)0,this->_textField->get_text().length);
-	HX_STACK_LINE(539)
+	HX_STACK_LINE(532)
 	this->dirty = true;
-	HX_STACK_LINE(540)
+	HX_STACK_LINE(533)
 	return Alignment;
 }
 
@@ -920,9 +920,9 @@ HX_DEFINE_DYNAMIC_FUNC1(FlxText_obj,set_borderStyle,return )
 HX_DEFINE_DYNAMIC_FUNC1(FlxText_obj,set_alignment,return )
 
 ::String FlxText_obj::get_alignment( ){
-	HX_STACK_PUSH("FlxText::get_alignment","flixel/text/FlxText.hx",530);
+	HX_STACK_PUSH("FlxText::get_alignment","flixel/text/FlxText.hx",523);
 	HX_STACK_THIS(this);
-	HX_STACK_LINE(530)
+	HX_STACK_LINE(523)
 	return hx::TCast< String >::cast(this->_defaultFormat->align);
 }
 
@@ -930,19 +930,19 @@ HX_DEFINE_DYNAMIC_FUNC1(FlxText_obj,set_alignment,return )
 HX_DEFINE_DYNAMIC_FUNC0(FlxText_obj,get_alignment,return )
 
 bool FlxText_obj::set_wordWrap( bool value){
-	HX_STACK_PUSH("FlxText::set_wordWrap","flixel/text/FlxText.hx",519);
+	HX_STACK_PUSH("FlxText::set_wordWrap","flixel/text/FlxText.hx",512);
 	HX_STACK_THIS(this);
 	HX_STACK_ARG(value,"value");
-	HX_STACK_LINE(520)
+	HX_STACK_LINE(513)
 	if (((this->_textField->get_wordWrap() != value))){
-		HX_STACK_LINE(522)
+		HX_STACK_LINE(515)
 		this->_textField->set_wordWrap(value);
-		HX_STACK_LINE(523)
+		HX_STACK_LINE(516)
 		this->_textField->set_multiline(value);
-		HX_STACK_LINE(524)
+		HX_STACK_LINE(517)
 		this->dirty = true;
 	}
-	HX_STACK_LINE(526)
+	HX_STACK_LINE(519)
 	return value;
 }
 
@@ -950,9 +950,9 @@ bool FlxText_obj::set_wordWrap( bool value){
 HX_DEFINE_DYNAMIC_FUNC1(FlxText_obj,set_wordWrap,return )
 
 bool FlxText_obj::get_wordWrap( ){
-	HX_STACK_PUSH("FlxText::get_wordWrap","flixel/text/FlxText.hx",514);
+	HX_STACK_PUSH("FlxText::get_wordWrap","flixel/text/FlxText.hx",507);
 	HX_STACK_THIS(this);
-	HX_STACK_LINE(514)
+	HX_STACK_LINE(507)
 	return this->_textField->get_wordWrap();
 }
 
@@ -960,21 +960,21 @@ bool FlxText_obj::get_wordWrap( ){
 HX_DEFINE_DYNAMIC_FUNC0(FlxText_obj,get_wordWrap,return )
 
 bool FlxText_obj::set_italic( bool value){
-	HX_STACK_PUSH("FlxText::set_italic","flixel/text/FlxText.hx",502);
+	HX_STACK_PUSH("FlxText::set_italic","flixel/text/FlxText.hx",495);
 	HX_STACK_THIS(this);
 	HX_STACK_ARG(value,"value");
-	HX_STACK_LINE(503)
+	HX_STACK_LINE(496)
 	if (((this->_defaultFormat->italic != value))){
-		HX_STACK_LINE(505)
+		HX_STACK_LINE(498)
 		this->_defaultFormat->italic = value;
-		HX_STACK_LINE(506)
+		HX_STACK_LINE(499)
 		this->_textField->set_defaultTextFormat(this->_defaultFormat);
-		HX_STACK_LINE(507)
+		HX_STACK_LINE(500)
 		this->_textField->setTextFormat(this->_defaultFormat,(int)0,this->_textField->get_text().length);
-		HX_STACK_LINE(508)
+		HX_STACK_LINE(501)
 		this->dirty = true;
 	}
-	HX_STACK_LINE(510)
+	HX_STACK_LINE(503)
 	return value;
 }
 
@@ -982,9 +982,9 @@ bool FlxText_obj::set_italic( bool value){
 HX_DEFINE_DYNAMIC_FUNC1(FlxText_obj,set_italic,return )
 
 bool FlxText_obj::get_italic( ){
-	HX_STACK_PUSH("FlxText::get_italic","flixel/text/FlxText.hx",497);
+	HX_STACK_PUSH("FlxText::get_italic","flixel/text/FlxText.hx",490);
 	HX_STACK_THIS(this);
-	HX_STACK_LINE(497)
+	HX_STACK_LINE(490)
 	return this->_defaultFormat->italic;
 }
 
@@ -992,21 +992,21 @@ bool FlxText_obj::get_italic( ){
 HX_DEFINE_DYNAMIC_FUNC0(FlxText_obj,get_italic,return )
 
 bool FlxText_obj::set_bold( bool value){
-	HX_STACK_PUSH("FlxText::set_bold","flixel/text/FlxText.hx",485);
+	HX_STACK_PUSH("FlxText::set_bold","flixel/text/FlxText.hx",478);
 	HX_STACK_THIS(this);
 	HX_STACK_ARG(value,"value");
-	HX_STACK_LINE(486)
+	HX_STACK_LINE(479)
 	if (((this->_defaultFormat->bold != value))){
-		HX_STACK_LINE(488)
+		HX_STACK_LINE(481)
 		this->_defaultFormat->bold = value;
-		HX_STACK_LINE(489)
+		HX_STACK_LINE(482)
 		this->_textField->set_defaultTextFormat(this->_defaultFormat);
-		HX_STACK_LINE(490)
+		HX_STACK_LINE(483)
 		this->_textField->setTextFormat(this->_defaultFormat,(int)0,this->_textField->get_text().length);
-		HX_STACK_LINE(491)
+		HX_STACK_LINE(484)
 		this->dirty = true;
 	}
-	HX_STACK_LINE(493)
+	HX_STACK_LINE(486)
 	return value;
 }
 
@@ -1014,9 +1014,9 @@ bool FlxText_obj::set_bold( bool value){
 HX_DEFINE_DYNAMIC_FUNC1(FlxText_obj,set_bold,return )
 
 bool FlxText_obj::get_bold( ){
-	HX_STACK_PUSH("FlxText::get_bold","flixel/text/FlxText.hx",480);
+	HX_STACK_PUSH("FlxText::get_bold","flixel/text/FlxText.hx",473);
 	HX_STACK_THIS(this);
-	HX_STACK_LINE(480)
+	HX_STACK_LINE(473)
 	return this->_defaultFormat->bold;
 }
 
@@ -1024,20 +1024,20 @@ bool FlxText_obj::get_bold( ){
 HX_DEFINE_DYNAMIC_FUNC0(FlxText_obj,get_bold,return )
 
 ::String FlxText_obj::set_systemFont( ::String Font){
-	HX_STACK_PUSH("FlxText::set_systemFont","flixel/text/FlxText.hx",470);
+	HX_STACK_PUSH("FlxText::set_systemFont","flixel/text/FlxText.hx",463);
 	HX_STACK_THIS(this);
 	HX_STACK_ARG(Font,"Font");
-	HX_STACK_LINE(471)
+	HX_STACK_LINE(464)
 	this->_textField->set_embedFonts(false);
-	HX_STACK_LINE(472)
+	HX_STACK_LINE(465)
 	this->_defaultFormat->font = Font;
-	HX_STACK_LINE(473)
+	HX_STACK_LINE(466)
 	this->_textField->set_defaultTextFormat(this->_defaultFormat);
-	HX_STACK_LINE(474)
+	HX_STACK_LINE(467)
 	this->_textField->setTextFormat(this->_defaultFormat,(int)0,this->_textField->get_text().length);
-	HX_STACK_LINE(475)
+	HX_STACK_LINE(468)
 	this->dirty = true;
-	HX_STACK_LINE(476)
+	HX_STACK_LINE(469)
 	return Font;
 }
 
@@ -1045,9 +1045,9 @@ HX_DEFINE_DYNAMIC_FUNC0(FlxText_obj,get_bold,return )
 HX_DEFINE_DYNAMIC_FUNC1(FlxText_obj,set_systemFont,return )
 
 ::String FlxText_obj::get_systemFont( ){
-	HX_STACK_PUSH("FlxText::get_systemFont","flixel/text/FlxText.hx",465);
+	HX_STACK_PUSH("FlxText::get_systemFont","flixel/text/FlxText.hx",458);
 	HX_STACK_THIS(this);
-	HX_STACK_LINE(465)
+	HX_STACK_LINE(458)
 	return this->_defaultFormat->font;
 }
 
@@ -1055,9 +1055,9 @@ HX_DEFINE_DYNAMIC_FUNC1(FlxText_obj,set_systemFont,return )
 HX_DEFINE_DYNAMIC_FUNC0(FlxText_obj,get_systemFont,return )
 
 bool FlxText_obj::get_embedded( ){
-	HX_STACK_PUSH("FlxText::get_embedded","flixel/text/FlxText.hx",460);
+	HX_STACK_PUSH("FlxText::get_embedded","flixel/text/FlxText.hx",453);
 	HX_STACK_THIS(this);
-	HX_STACK_LINE(460)
+	HX_STACK_LINE(453)
 	return this->_textField->set_embedFonts(true);
 }
 
@@ -1065,20 +1065,20 @@ bool FlxText_obj::get_embedded( ){
 HX_DEFINE_DYNAMIC_FUNC0(FlxText_obj,get_embedded,return )
 
 ::String FlxText_obj::set_font( ::String Font){
-	HX_STACK_PUSH("FlxText::set_font","flixel/text/FlxText.hx",450);
+	HX_STACK_PUSH("FlxText::set_font","flixel/text/FlxText.hx",443);
 	HX_STACK_THIS(this);
 	HX_STACK_ARG(Font,"Font");
-	HX_STACK_LINE(451)
+	HX_STACK_LINE(444)
 	this->_textField->set_embedFonts(true);
-	HX_STACK_LINE(452)
+	HX_STACK_LINE(445)
 	this->_defaultFormat->font = ::openfl::Assets_obj::getFont(Font,null())->fontName;
-	HX_STACK_LINE(453)
+	HX_STACK_LINE(446)
 	this->_textField->set_defaultTextFormat(this->_defaultFormat);
-	HX_STACK_LINE(454)
+	HX_STACK_LINE(447)
 	this->_textField->setTextFormat(this->_defaultFormat,(int)0,this->_textField->get_text().length);
-	HX_STACK_LINE(455)
+	HX_STACK_LINE(448)
 	this->dirty = true;
-	HX_STACK_LINE(456)
+	HX_STACK_LINE(449)
 	return Font;
 }
 
@@ -1086,9 +1086,9 @@ HX_DEFINE_DYNAMIC_FUNC0(FlxText_obj,get_embedded,return )
 HX_DEFINE_DYNAMIC_FUNC1(FlxText_obj,set_font,return )
 
 ::String FlxText_obj::get_font( ){
-	HX_STACK_PUSH("FlxText::get_font","flixel/text/FlxText.hx",445);
+	HX_STACK_PUSH("FlxText::get_font","flixel/text/FlxText.hx",438);
 	HX_STACK_THIS(this);
-	HX_STACK_LINE(445)
+	HX_STACK_LINE(438)
 	return this->_defaultFormat->font;
 }
 
@@ -1096,44 +1096,44 @@ HX_DEFINE_DYNAMIC_FUNC1(FlxText_obj,set_font,return )
 HX_DEFINE_DYNAMIC_FUNC0(FlxText_obj,get_font,return )
 
 int FlxText_obj::set_color( int Color){
-	HX_STACK_PUSH("FlxText::set_color","flixel/text/FlxText.hx",430);
+	HX_STACK_PUSH("FlxText::set_color","flixel/text/FlxText.hx",423);
 	HX_STACK_THIS(this);
 	HX_STACK_ARG(Color,"Color");
-	HX_STACK_LINE(431)
+	HX_STACK_LINE(424)
 	hx::AndEq(Color,(int)16777215);
-	HX_STACK_LINE(432)
+	HX_STACK_LINE(425)
 	if (((this->_defaultFormat->color == Color))){
-		HX_STACK_LINE(433)
+		HX_STACK_LINE(426)
 		return Color;
 	}
-	HX_STACK_LINE(436)
+	HX_STACK_LINE(429)
 	this->_defaultFormat->color = Color;
-	HX_STACK_LINE(437)
+	HX_STACK_LINE(430)
 	this->color = Color;
-	HX_STACK_LINE(438)
+	HX_STACK_LINE(431)
 	this->_textField->set_defaultTextFormat(this->_defaultFormat);
-	HX_STACK_LINE(439)
+	HX_STACK_LINE(432)
 	this->_textField->setTextFormat(this->_defaultFormat,(int)0,this->_textField->get_text().length);
-	HX_STACK_LINE(440)
+	HX_STACK_LINE(433)
 	this->dirty = true;
-	HX_STACK_LINE(441)
+	HX_STACK_LINE(434)
 	return Color;
 }
 
 
 Float FlxText_obj::set_size( Float Size){
-	HX_STACK_PUSH("FlxText::set_size","flixel/text/FlxText.hx",417);
+	HX_STACK_PUSH("FlxText::set_size","flixel/text/FlxText.hx",410);
 	HX_STACK_THIS(this);
 	HX_STACK_ARG(Size,"Size");
-	HX_STACK_LINE(418)
+	HX_STACK_LINE(411)
 	this->_defaultFormat->size = Size;
-	HX_STACK_LINE(419)
+	HX_STACK_LINE(412)
 	this->_textField->set_defaultTextFormat(this->_defaultFormat);
-	HX_STACK_LINE(420)
+	HX_STACK_LINE(413)
 	this->_textField->setTextFormat(this->_defaultFormat,(int)0,this->_textField->get_text().length);
-	HX_STACK_LINE(421)
+	HX_STACK_LINE(414)
 	this->dirty = true;
-	HX_STACK_LINE(423)
+	HX_STACK_LINE(416)
 	return Size;
 }
 
@@ -1141,9 +1141,9 @@ Float FlxText_obj::set_size( Float Size){
 HX_DEFINE_DYNAMIC_FUNC1(FlxText_obj,set_size,return )
 
 Float FlxText_obj::get_size( ){
-	HX_STACK_PUSH("FlxText::get_size","flixel/text/FlxText.hx",412);
+	HX_STACK_PUSH("FlxText::get_size","flixel/text/FlxText.hx",405);
 	HX_STACK_THIS(this);
-	HX_STACK_LINE(412)
+	HX_STACK_LINE(405)
 	return this->_defaultFormat->size;
 }
 
@@ -1151,19 +1151,19 @@ Float FlxText_obj::get_size( ){
 HX_DEFINE_DYNAMIC_FUNC0(FlxText_obj,get_size,return )
 
 ::String FlxText_obj::set_text( ::String Text){
-	HX_STACK_PUSH("FlxText::set_text","flixel/text/FlxText.hx",399);
+	HX_STACK_PUSH("FlxText::set_text","flixel/text/FlxText.hx",392);
 	HX_STACK_THIS(this);
 	HX_STACK_ARG(Text,"Text");
-	HX_STACK_LINE(400)
+	HX_STACK_LINE(393)
 	::String ot = this->_textField->get_text();		HX_STACK_VAR(ot,"ot");
-	HX_STACK_LINE(401)
+	HX_STACK_LINE(394)
 	this->_textField->set_text(Text);
-	HX_STACK_LINE(403)
+	HX_STACK_LINE(396)
 	if (((this->_textField->get_text() != ot))){
-		HX_STACK_LINE(404)
+		HX_STACK_LINE(397)
 		this->dirty = true;
 	}
-	HX_STACK_LINE(408)
+	HX_STACK_LINE(401)
 	return this->_textField->get_text();
 }
 
@@ -1171,9 +1171,9 @@ HX_DEFINE_DYNAMIC_FUNC0(FlxText_obj,get_size,return )
 HX_DEFINE_DYNAMIC_FUNC1(FlxText_obj,set_text,return )
 
 ::String FlxText_obj::get_text( ){
-	HX_STACK_PUSH("FlxText::get_text","flixel/text/FlxText.hx",394);
+	HX_STACK_PUSH("FlxText::get_text","flixel/text/FlxText.hx",387);
 	HX_STACK_THIS(this);
-	HX_STACK_LINE(394)
+	HX_STACK_LINE(387)
 	return this->_textField->get_text();
 }
 
@@ -1181,66 +1181,66 @@ HX_DEFINE_DYNAMIC_FUNC1(FlxText_obj,set_text,return )
 HX_DEFINE_DYNAMIC_FUNC0(FlxText_obj,get_text,return )
 
 Float FlxText_obj::set_width( Float Width){
-	HX_STACK_PUSH("FlxText::set_width","flixel/text/FlxText.hx",379);
+	HX_STACK_PUSH("FlxText::set_width","flixel/text/FlxText.hx",372);
 	HX_STACK_THIS(this);
 	HX_STACK_ARG(Width,"Width");
-	HX_STACK_LINE(380)
+	HX_STACK_LINE(373)
 	if (((Width != this->get_width()))){
-		HX_STACK_LINE(382)
+		HX_STACK_LINE(375)
 		Float newWidth = this->super::set_width(Width);		HX_STACK_VAR(newWidth,"newWidth");
-		HX_STACK_LINE(383)
+		HX_STACK_LINE(376)
 		if (((this->_textField != null()))){
-			HX_STACK_LINE(384)
+			HX_STACK_LINE(377)
 			this->_textField->set_width(newWidth);
 		}
-		HX_STACK_LINE(387)
+		HX_STACK_LINE(380)
 		this->dirty = true;
 	}
-	HX_STACK_LINE(390)
+	HX_STACK_LINE(383)
 	return Width;
 }
 
 
 Void FlxText_obj::applyFormats( ::flash::text::TextFormat FormatAdjusted,hx::Null< bool >  __o_UseBorderColor){
 bool UseBorderColor = __o_UseBorderColor.Default(false);
-	HX_STACK_PUSH("FlxText::applyFormats","flixel/text/FlxText.hx",352);
+	HX_STACK_PUSH("FlxText::applyFormats","flixel/text/FlxText.hx",345);
 	HX_STACK_THIS(this);
 	HX_STACK_ARG(FormatAdjusted,"FormatAdjusted");
 	HX_STACK_ARG(UseBorderColor,"UseBorderColor");
 {
-		HX_STACK_LINE(354)
+		HX_STACK_LINE(347)
 		FormatAdjusted->color = (  ((UseBorderColor)) ? Dynamic(this->borderColor) : Dynamic(this->_defaultFormat->color) );
-		HX_STACK_LINE(355)
+		HX_STACK_LINE(348)
 		this->_textField->setTextFormat(FormatAdjusted,(int)0,this->_textField->get_text().length);
-		HX_STACK_LINE(358)
+		HX_STACK_LINE(351)
 		{
-			HX_STACK_LINE(358)
+			HX_STACK_LINE(351)
 			int _g = (int)0;		HX_STACK_VAR(_g,"_g");
 			Array< ::Dynamic > _g1 = this->_formats;		HX_STACK_VAR(_g1,"_g1");
-			HX_STACK_LINE(358)
+			HX_STACK_LINE(351)
 			while(((_g < _g1->length))){
-				HX_STACK_LINE(358)
+				HX_STACK_LINE(351)
 				::flixel::text::FlxTextFormat format = _g1->__get(_g).StaticCast< ::flixel::text::FlxTextFormat >();		HX_STACK_VAR(format,"format");
-				HX_STACK_LINE(358)
+				HX_STACK_LINE(351)
 				++(_g);
-				HX_STACK_LINE(360)
+				HX_STACK_LINE(353)
 				if ((((this->_textField->get_text().length - (int)1) < format->start))){
-					HX_STACK_LINE(361)
+					HX_STACK_LINE(354)
 					break;
 				}
 				else{
-					HX_STACK_LINE(367)
+					HX_STACK_LINE(360)
 					FormatAdjusted->font = format->format->font;
-					HX_STACK_LINE(368)
+					HX_STACK_LINE(361)
 					FormatAdjusted->bold = format->format->bold;
-					HX_STACK_LINE(369)
+					HX_STACK_LINE(362)
 					FormatAdjusted->italic = format->format->italic;
-					HX_STACK_LINE(370)
+					HX_STACK_LINE(363)
 					FormatAdjusted->size = format->format->size;
-					HX_STACK_LINE(371)
+					HX_STACK_LINE(364)
 					FormatAdjusted->color = (  ((UseBorderColor)) ? Dynamic(format->borderColor) : Dynamic(format->format->color) );
 				}
-				HX_STACK_LINE(374)
+				HX_STACK_LINE(367)
 				this->_textField->setTextFormat(FormatAdjusted,format->start,::Std_obj::_int(::Math_obj::min(format->end,this->_textField->get_text().length)));
 			}
 		}
@@ -1253,15 +1253,15 @@ HX_DEFINE_DYNAMIC_FUNC2(FlxText_obj,applyFormats,(void))
 
 Void FlxText_obj::updateFrameData( ){
 {
-		HX_STACK_PUSH("FlxText::updateFrameData","flixel/text/FlxText.hx",342);
+		HX_STACK_PUSH("FlxText::updateFrameData","flixel/text/FlxText.hx",335);
 		HX_STACK_THIS(this);
-		HX_STACK_LINE(342)
+		HX_STACK_LINE(335)
 		if (((this->cachedGraphics != null()))){
-			HX_STACK_LINE(345)
+			HX_STACK_LINE(338)
 			this->framesData = this->cachedGraphics->get_tilesheet()->getSpriteSheetFrames(this->region,null());
-			HX_STACK_LINE(346)
+			HX_STACK_LINE(339)
 			this->set_frame(this->framesData->frames->__get((int)0).StaticCast< ::flixel::system::layer::frames::FlxFrame >());
-			HX_STACK_LINE(347)
+			HX_STACK_LINE(340)
 			this->frames = (int)1;
 		}
 	}
@@ -1271,14 +1271,14 @@ return null();
 
 Void FlxText_obj::clearFilters( ){
 {
-		HX_STACK_PUSH("FlxText::clearFilters","flixel/text/FlxText.hx",333);
+		HX_STACK_PUSH("FlxText::clearFilters","flixel/text/FlxText.hx",326);
 		HX_STACK_THIS(this);
-		HX_STACK_LINE(334)
+		HX_STACK_LINE(327)
 		if (((this->_filters->length > (int)0))){
-			HX_STACK_LINE(335)
+			HX_STACK_LINE(328)
 			this->dirty = true;
 		}
-		HX_STACK_LINE(338)
+		HX_STACK_LINE(331)
 		this->_filters = Array_obj< ::Dynamic >::__new();
 	}
 return null();
@@ -1289,14 +1289,14 @@ HX_DEFINE_DYNAMIC_FUNC0(FlxText_obj,clearFilters,(void))
 
 Void FlxText_obj::removeFilter( ::flash::filters::BitmapFilter filter){
 {
-		HX_STACK_PUSH("FlxText::removeFilter","flixel/text/FlxText.hx",324);
+		HX_STACK_PUSH("FlxText::removeFilter","flixel/text/FlxText.hx",317);
 		HX_STACK_THIS(this);
 		HX_STACK_ARG(filter,"filter");
-		HX_STACK_LINE(325)
+		HX_STACK_LINE(318)
 		bool removed = this->_filters->remove(filter);		HX_STACK_VAR(removed,"removed");
-		HX_STACK_LINE(326)
+		HX_STACK_LINE(319)
 		if ((removed)){
-			HX_STACK_LINE(327)
+			HX_STACK_LINE(320)
 			this->dirty = true;
 		}
 	}
@@ -1309,15 +1309,15 @@ HX_DEFINE_DYNAMIC_FUNC1(FlxText_obj,removeFilter,(void))
 Void FlxText_obj::addFilter( ::flash::filters::BitmapFilter filter,hx::Null< int >  __o_widthInc,hx::Null< int >  __o_heightInc){
 int widthInc = __o_widthInc.Default(0);
 int heightInc = __o_heightInc.Default(0);
-	HX_STACK_PUSH("FlxText::addFilter","flixel/text/FlxText.hx",318);
+	HX_STACK_PUSH("FlxText::addFilter","flixel/text/FlxText.hx",311);
 	HX_STACK_THIS(this);
 	HX_STACK_ARG(filter,"filter");
 	HX_STACK_ARG(widthInc,"widthInc");
 	HX_STACK_ARG(heightInc,"heightInc");
 {
-		HX_STACK_LINE(319)
+		HX_STACK_LINE(312)
 		this->_filters->push(filter);
-		HX_STACK_LINE(320)
+		HX_STACK_LINE(313)
 		this->dirty = true;
 	}
 return null();
@@ -1330,20 +1330,20 @@ Void FlxText_obj::setBorderStyle( int Style,hx::Null< int >  __o_Color,hx::Null<
 int Color = __o_Color.Default(0);
 Float Size = __o_Size.Default(1);
 Float Quality = __o_Quality.Default(1);
-	HX_STACK_PUSH("FlxText::setBorderStyle","flixel/text/FlxText.hx",310);
+	HX_STACK_PUSH("FlxText::setBorderStyle","flixel/text/FlxText.hx",303);
 	HX_STACK_THIS(this);
 	HX_STACK_ARG(Style,"Style");
 	HX_STACK_ARG(Color,"Color");
 	HX_STACK_ARG(Size,"Size");
 	HX_STACK_ARG(Quality,"Quality");
 {
-		HX_STACK_LINE(311)
+		HX_STACK_LINE(304)
 		this->set_borderStyle(Style);
-		HX_STACK_LINE(312)
+		HX_STACK_LINE(305)
 		this->set_borderColor(Color);
-		HX_STACK_LINE(313)
+		HX_STACK_LINE(306)
 		this->set_borderSize(Size);
-		HX_STACK_LINE(314)
+		HX_STACK_LINE(307)
 		this->set_borderQuality(Quality);
 	}
 return null();
@@ -1358,7 +1358,7 @@ int Color = __o_Color.Default(16777215);
 int BorderStyle = __o_BorderStyle.Default(0);
 int BorderColor = __o_BorderColor.Default(0);
 bool Embedded = __o_Embedded.Default(true);
-	HX_STACK_PUSH("FlxText::setFormat","flixel/text/FlxText.hx",269);
+	HX_STACK_PUSH("FlxText::setFormat","flixel/text/FlxText.hx",262);
 	HX_STACK_THIS(this);
 	HX_STACK_ARG(Font,"Font");
 	HX_STACK_ARG(Size,"Size");
@@ -1368,46 +1368,46 @@ bool Embedded = __o_Embedded.Default(true);
 	HX_STACK_ARG(BorderColor,"BorderColor");
 	HX_STACK_ARG(Embedded,"Embedded");
 {
-		HX_STACK_LINE(270)
+		HX_STACK_LINE(263)
 		if ((Embedded)){
-			HX_STACK_LINE(271)
+			HX_STACK_LINE(264)
 			if (((Font == null()))){
-				HX_STACK_LINE(273)
+				HX_STACK_LINE(266)
 				this->_defaultFormat->font = ::flixel::system::FlxAssets_obj::FONT_DEFAULT;
 			}
 			else{
-				HX_STACK_LINE(277)
+				HX_STACK_LINE(270)
 				this->_defaultFormat->font = ::openfl::Assets_obj::getFont(Font,null())->fontName;
 			}
 		}
 		else{
-			HX_STACK_LINE(281)
+			HX_STACK_LINE(274)
 			if (((Font != null()))){
-				HX_STACK_LINE(282)
+				HX_STACK_LINE(275)
 				this->_defaultFormat->font = Font;
 			}
 		}
-		HX_STACK_LINE(286)
+		HX_STACK_LINE(279)
 		this->_textField->set_embedFonts(Embedded);
-		HX_STACK_LINE(288)
+		HX_STACK_LINE(281)
 		this->_defaultFormat->size = Size;
-		HX_STACK_LINE(289)
+		HX_STACK_LINE(282)
 		hx::AndEq(Color,(int)16777215);
-		HX_STACK_LINE(290)
+		HX_STACK_LINE(283)
 		this->_defaultFormat->color = Color;
-		HX_STACK_LINE(291)
+		HX_STACK_LINE(284)
 		this->_defaultFormat->align = this->convertTextAlignmentFromString(Alignment);
-		HX_STACK_LINE(292)
+		HX_STACK_LINE(285)
 		this->_textField->set_defaultTextFormat(this->_defaultFormat);
-		HX_STACK_LINE(293)
+		HX_STACK_LINE(286)
 		this->set_borderStyle(BorderStyle);
-		HX_STACK_LINE(294)
+		HX_STACK_LINE(287)
 		this->set_borderColor(BorderColor);
-		HX_STACK_LINE(295)
+		HX_STACK_LINE(288)
 		this->_textField->setTextFormat(this->_defaultFormat,(int)0,this->_textField->get_text().length);
-		HX_STACK_LINE(296)
+		HX_STACK_LINE(289)
 		this->dirty = true;
-		HX_STACK_LINE(298)
+		HX_STACK_LINE(291)
 		return hx::ObjectPtr<OBJ_>(this);
 	}
 }
@@ -1417,30 +1417,30 @@ HX_DEFINE_DYNAMIC_FUNC7(FlxText_obj,setFormat,return )
 
 Void FlxText_obj::clearFormats( ){
 {
-		HX_STACK_PUSH("FlxText::clearFormats","flixel/text/FlxText.hx",242);
+		HX_STACK_PUSH("FlxText::clearFormats","flixel/text/FlxText.hx",235);
 		HX_STACK_THIS(this);
-		HX_STACK_LINE(243)
+		HX_STACK_LINE(236)
 		{
-			HX_STACK_LINE(243)
+			HX_STACK_LINE(236)
 			int _g = (int)0;		HX_STACK_VAR(_g,"_g");
 			Array< ::Dynamic > _g1 = this->_formats;		HX_STACK_VAR(_g1,"_g1");
-			HX_STACK_LINE(243)
+			HX_STACK_LINE(236)
 			while(((_g < _g1->length))){
-				HX_STACK_LINE(243)
+				HX_STACK_LINE(236)
 				::flixel::text::FlxTextFormat format = _g1->__get(_g).StaticCast< ::flixel::text::FlxTextFormat >();		HX_STACK_VAR(format,"format");
-				HX_STACK_LINE(243)
+				HX_STACK_LINE(236)
 				++(_g);
-				HX_STACK_LINE(245)
+				HX_STACK_LINE(238)
 				format->destroy();
-				HX_STACK_LINE(246)
+				HX_STACK_LINE(239)
 				format = null();
 			}
 		}
-		HX_STACK_LINE(249)
+		HX_STACK_LINE(242)
 		this->_formats = Array_obj< ::Dynamic >::__new();
-		HX_STACK_LINE(251)
+		HX_STACK_LINE(244)
 		this->_textField->setTextFormat(this->_defaultFormat,(int)0,this->_textField->get_text().length);
-		HX_STACK_LINE(252)
+		HX_STACK_LINE(245)
 		this->dirty = true;
 	}
 return null();
@@ -1451,12 +1451,12 @@ HX_DEFINE_DYNAMIC_FUNC0(FlxText_obj,clearFormats,(void))
 
 Void FlxText_obj::removeFormat( ::flixel::text::FlxTextFormat Format){
 {
-		HX_STACK_PUSH("FlxText::removeFormat","flixel/text/FlxText.hx",233);
+		HX_STACK_PUSH("FlxText::removeFormat","flixel/text/FlxText.hx",226);
 		HX_STACK_THIS(this);
 		HX_STACK_ARG(Format,"Format");
-		HX_STACK_LINE(234)
+		HX_STACK_LINE(227)
 		::flixel::util::FlxArrayUtil_obj::fastSplice_flixel_text_FlxTextFormat(this->_formats,Format);
-		HX_STACK_LINE(235)
+		HX_STACK_LINE(228)
 		this->dirty = true;
 	}
 return null();
@@ -1468,35 +1468,35 @@ HX_DEFINE_DYNAMIC_FUNC1(FlxText_obj,removeFormat,(void))
 Void FlxText_obj::addFormat( ::flixel::text::FlxTextFormat Format,hx::Null< int >  __o_Start,hx::Null< int >  __o_End){
 int Start = __o_Start.Default(-1);
 int End = __o_End.Default(-1);
-	HX_STACK_PUSH("FlxText::addFormat","flixel/text/FlxText.hx",220);
+	HX_STACK_PUSH("FlxText::addFormat","flixel/text/FlxText.hx",213);
 	HX_STACK_THIS(this);
 	HX_STACK_ARG(Format,"Format");
 	HX_STACK_ARG(Start,"Start");
 	HX_STACK_ARG(End,"End");
 {
-		HX_STACK_LINE(221)
+		HX_STACK_LINE(214)
 		Format->start = (  (((Start > (int)-1))) ? int(Start) : int(Format->start) );
-		HX_STACK_LINE(222)
+		HX_STACK_LINE(215)
 		Format->end = (  (((End > (int)-1))) ? int(End) : int(Format->end) );
-		HX_STACK_LINE(223)
+		HX_STACK_LINE(216)
 		this->_formats->push(Format);
 
 		HX_BEGIN_LOCAL_FUNC_S0(hx::LocalFunc,_Function_1_1)
 		int run(::flixel::text::FlxTextFormat left,::flixel::text::FlxTextFormat right){
-			HX_STACK_PUSH("*::_Function_1_1","flixel/text/FlxText.hx",225);
+			HX_STACK_PUSH("*::_Function_1_1","flixel/text/FlxText.hx",218);
 			HX_STACK_ARG(left,"left");
 			HX_STACK_ARG(right,"right");
 			{
-				HX_STACK_LINE(225)
+				HX_STACK_LINE(218)
 				return (  (((left->start < right->start))) ? int((int)-1) : int((int)1) );
 			}
 			return null();
 		}
 		HX_END_LOCAL_FUNC2(return)
 
-		HX_STACK_LINE(225)
+		HX_STACK_LINE(218)
 		this->_formats->sort( Dynamic(new _Function_1_1()));
-		HX_STACK_LINE(226)
+		HX_STACK_LINE(219)
 		this->dirty = true;
 	}
 return null();
@@ -1518,28 +1518,23 @@ Void FlxText_obj::destroy( ){
 		HX_STACK_LINE(196)
 		this->_filters = null();
 		HX_STACK_LINE(197)
-		if (((this->_formats != null()))){
-			HX_STACK_LINE(199)
+		{
+			HX_STACK_LINE(197)
 			int _g = (int)0;		HX_STACK_VAR(_g,"_g");
 			Array< ::Dynamic > _g1 = this->_formats;		HX_STACK_VAR(_g1,"_g1");
-			HX_STACK_LINE(199)
+			HX_STACK_LINE(197)
 			while(((_g < _g1->length))){
-				HX_STACK_LINE(199)
+				HX_STACK_LINE(197)
 				::flixel::text::FlxTextFormat format = _g1->__get(_g).StaticCast< ::flixel::text::FlxTextFormat >();		HX_STACK_VAR(format,"format");
-				HX_STACK_LINE(199)
+				HX_STACK_LINE(197)
 				++(_g);
-				HX_STACK_LINE(201)
-				if (((format != null()))){
-					HX_STACK_LINE(203)
-					format->destroy();
-					HX_STACK_LINE(204)
-					format = null();
-				}
+				HX_STACK_LINE(199)
+				format->destroy();
 			}
 		}
-		HX_STACK_LINE(208)
+		HX_STACK_LINE(201)
 		this->_formats = null();
-		HX_STACK_LINE(209)
+		HX_STACK_LINE(202)
 		this->super::destroy();
 	}
 return null();

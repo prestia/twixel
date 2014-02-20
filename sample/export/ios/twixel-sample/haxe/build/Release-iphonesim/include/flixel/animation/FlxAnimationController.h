@@ -5,7 +5,6 @@
 #include <hxcpp.h>
 #endif
 
-#include <flixel/interfaces/IFlxDestroyable.h>
 HX_DECLARE_CLASS0(IMap)
 HX_DECLARE_CLASS1(flixel,FlxBasic)
 HX_DECLARE_CLASS1(flixel,FlxObject)
@@ -39,9 +38,6 @@ class HXCPP_CLASS_ATTRIBUTES  FlxAnimationController_obj : public hx::Object{
 		static void __register();
 		void __Mark(HX_MARK_PARAMS);
 		void __Visit(HX_VISIT_PARAMS);
-		inline operator ::flixel::interfaces::IFlxDestroyable_obj *()
-			{ return new ::flixel::interfaces::IFlxDestroyable_delegate_< FlxAnimationController_obj >(this); }
-		hx::Object *__ToInterface(const hx::type_info &inType);
 		::String __ToString() const { return HX_CSTRING("FlxAnimationController"); }
 
 		virtual int getFrameIndex( ::flixel::system::layer::frames::FlxFrame Frame);
@@ -119,11 +115,11 @@ class HXCPP_CLASS_ATTRIBUTES  FlxAnimationController_obj : public hx::Object{
 		virtual ::flixel::animation::FlxAnimation get( ::String Name);
 		Dynamic get_dyn();
 
-		virtual Void clearAnimations( );
-		Dynamic clearAnimations_dyn();
+		virtual Void clear_animations( );
+		Dynamic clear_animations_dyn();
 
-		virtual Void clearPrerotated( );
-		Dynamic clearPrerotated_dyn();
+		virtual Void clear_prerotated( );
+		Dynamic clear_prerotated_dyn();
 
 		virtual Void destroy( );
 		Dynamic destroy_dyn();

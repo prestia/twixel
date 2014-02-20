@@ -1,8 +1,5 @@
 #include <hxcpp.h>
 
-#ifndef INCLUDED_Std
-#include <Std.h>
-#endif
 #ifndef INCLUDED_StringTools
 #include <StringTools.h>
 #endif
@@ -204,18 +201,7 @@ HX_DEFINE_DYNAMIC_FUNC0(InputFrontEnd_obj,reset,(void))
 								HX_STACK_PUSH("*::closure","flixel/system/frontEnds/InputFrontEnd.hx",29);
 								{
 									HX_STACK_LINE(29)
-									::Class cl;		HX_STACK_VAR(cl,"cl");
-									HX_STACK_LINE(29)
-									if ((::Std_obj::is(Input,hx::ClassOf< ::Class >()))){
-										HX_STACK_LINE(29)
-										cl = Input;
-									}
-									else{
-										HX_STACK_LINE(29)
-										cl = ::Type_obj::getClass(Input);
-									}
-									HX_STACK_LINE(29)
-									::String s = ::Type_obj::getClassName(cl);		HX_STACK_VAR(s,"s");
+									::String s = ::Type_obj::getClassName(::Type_obj::getClass(Input));		HX_STACK_VAR(s,"s");
 									HX_STACK_LINE(29)
 									if (((s != null()))){
 										HX_STACK_LINE(29)
@@ -237,18 +223,7 @@ HX_DEFINE_DYNAMIC_FUNC0(InputFrontEnd_obj,reset,(void))
 								HX_STACK_PUSH("*::closure","flixel/system/frontEnds/InputFrontEnd.hx",29);
 								{
 									HX_STACK_LINE(29)
-									::Class cl;		HX_STACK_VAR(cl,"cl");
-									HX_STACK_LINE(29)
-									if ((::Std_obj::is(input,hx::ClassOf< ::Class >()))){
-										HX_STACK_LINE(29)
-										cl = input;
-									}
-									else{
-										HX_STACK_LINE(29)
-										cl = ::Type_obj::getClass(input);
-									}
-									HX_STACK_LINE(29)
-									::String s = ::Type_obj::getClassName(cl);		HX_STACK_VAR(s,"s");
+									::String s = ::Type_obj::getClassName(::Type_obj::getClass(input));		HX_STACK_VAR(s,"s");
 									HX_STACK_LINE(29)
 									if (((s != null()))){
 										HX_STACK_LINE(29)
@@ -313,18 +288,7 @@ HX_DEFINE_DYNAMIC_FUNC1(InputFrontEnd_obj,add_flixel_input_keyboard_FlxKeyboard,
 								HX_STACK_PUSH("*::closure","flixel/system/frontEnds/InputFrontEnd.hx",29);
 								{
 									HX_STACK_LINE(29)
-									::Class cl;		HX_STACK_VAR(cl,"cl");
-									HX_STACK_LINE(29)
-									if ((::Std_obj::is(Input,hx::ClassOf< ::Class >()))){
-										HX_STACK_LINE(29)
-										cl = Input;
-									}
-									else{
-										HX_STACK_LINE(29)
-										cl = ::Type_obj::getClass(Input);
-									}
-									HX_STACK_LINE(29)
-									::String s = ::Type_obj::getClassName(cl);		HX_STACK_VAR(s,"s");
+									::String s = ::Type_obj::getClassName(::Type_obj::getClass(Input));		HX_STACK_VAR(s,"s");
 									HX_STACK_LINE(29)
 									if (((s != null()))){
 										HX_STACK_LINE(29)
@@ -346,18 +310,7 @@ HX_DEFINE_DYNAMIC_FUNC1(InputFrontEnd_obj,add_flixel_input_keyboard_FlxKeyboard,
 								HX_STACK_PUSH("*::closure","flixel/system/frontEnds/InputFrontEnd.hx",29);
 								{
 									HX_STACK_LINE(29)
-									::Class cl;		HX_STACK_VAR(cl,"cl");
-									HX_STACK_LINE(29)
-									if ((::Std_obj::is(input,hx::ClassOf< ::Class >()))){
-										HX_STACK_LINE(29)
-										cl = input;
-									}
-									else{
-										HX_STACK_LINE(29)
-										cl = ::Type_obj::getClass(input);
-									}
-									HX_STACK_LINE(29)
-									::String s = ::Type_obj::getClassName(cl);		HX_STACK_VAR(s,"s");
+									::String s = ::Type_obj::getClassName(::Type_obj::getClass(input));		HX_STACK_VAR(s,"s");
 									HX_STACK_LINE(29)
 									if (((s != null()))){
 										HX_STACK_LINE(29)
@@ -422,18 +375,7 @@ HX_DEFINE_DYNAMIC_FUNC1(InputFrontEnd_obj,add_flixel_input_mouse_FlxMouse,return
 								HX_STACK_PUSH("*::closure","flixel/system/frontEnds/InputFrontEnd.hx",29);
 								{
 									HX_STACK_LINE(29)
-									::Class cl;		HX_STACK_VAR(cl,"cl");
-									HX_STACK_LINE(29)
-									if ((::Std_obj::is(Input,hx::ClassOf< ::Class >()))){
-										HX_STACK_LINE(29)
-										cl = Input;
-									}
-									else{
-										HX_STACK_LINE(29)
-										cl = ::Type_obj::getClass(Input);
-									}
-									HX_STACK_LINE(29)
-									::String s = ::Type_obj::getClassName(cl);		HX_STACK_VAR(s,"s");
+									::String s = ::Type_obj::getClassName(::Type_obj::getClass(Input));		HX_STACK_VAR(s,"s");
 									HX_STACK_LINE(29)
 									if (((s != null()))){
 										HX_STACK_LINE(29)
@@ -455,18 +397,7 @@ HX_DEFINE_DYNAMIC_FUNC1(InputFrontEnd_obj,add_flixel_input_mouse_FlxMouse,return
 								HX_STACK_PUSH("*::closure","flixel/system/frontEnds/InputFrontEnd.hx",29);
 								{
 									HX_STACK_LINE(29)
-									::Class cl;		HX_STACK_VAR(cl,"cl");
-									HX_STACK_LINE(29)
-									if ((::Std_obj::is(input,hx::ClassOf< ::Class >()))){
-										HX_STACK_LINE(29)
-										cl = input;
-									}
-									else{
-										HX_STACK_LINE(29)
-										cl = ::Type_obj::getClass(input);
-									}
-									HX_STACK_LINE(29)
-									::String s = ::Type_obj::getClassName(cl);		HX_STACK_VAR(s,"s");
+									::String s = ::Type_obj::getClassName(::Type_obj::getClass(input));		HX_STACK_VAR(s,"s");
 									HX_STACK_LINE(29)
 									if (((s != null()))){
 										HX_STACK_LINE(29)
@@ -531,18 +462,7 @@ HX_DEFINE_DYNAMIC_FUNC1(InputFrontEnd_obj,add_flixel_input_touch_FlxTouchManager
 								HX_STACK_PUSH("*::closure","flixel/system/frontEnds/InputFrontEnd.hx",29);
 								{
 									HX_STACK_LINE(29)
-									::Class cl;		HX_STACK_VAR(cl,"cl");
-									HX_STACK_LINE(29)
-									if ((::Std_obj::is(Input,hx::ClassOf< ::Class >()))){
-										HX_STACK_LINE(29)
-										cl = Input;
-									}
-									else{
-										HX_STACK_LINE(29)
-										cl = ::Type_obj::getClass(Input);
-									}
-									HX_STACK_LINE(29)
-									::String s = ::Type_obj::getClassName(cl);		HX_STACK_VAR(s,"s");
+									::String s = ::Type_obj::getClassName(::Type_obj::getClass(Input));		HX_STACK_VAR(s,"s");
 									HX_STACK_LINE(29)
 									if (((s != null()))){
 										HX_STACK_LINE(29)
@@ -564,18 +484,7 @@ HX_DEFINE_DYNAMIC_FUNC1(InputFrontEnd_obj,add_flixel_input_touch_FlxTouchManager
 								HX_STACK_PUSH("*::closure","flixel/system/frontEnds/InputFrontEnd.hx",29);
 								{
 									HX_STACK_LINE(29)
-									::Class cl;		HX_STACK_VAR(cl,"cl");
-									HX_STACK_LINE(29)
-									if ((::Std_obj::is(input,hx::ClassOf< ::Class >()))){
-										HX_STACK_LINE(29)
-										cl = input;
-									}
-									else{
-										HX_STACK_LINE(29)
-										cl = ::Type_obj::getClass(input);
-									}
-									HX_STACK_LINE(29)
-									::String s = ::Type_obj::getClassName(cl);		HX_STACK_VAR(s,"s");
+									::String s = ::Type_obj::getClassName(::Type_obj::getClass(input));		HX_STACK_VAR(s,"s");
 									HX_STACK_LINE(29)
 									if (((s != null()))){
 										HX_STACK_LINE(29)

@@ -14,37 +14,37 @@ namespace text{
 
 Void FlxTextFormat_obj::__construct(Dynamic FontColor,Dynamic Bold,Dynamic Italic,Dynamic BorderColor,Dynamic __o_Start,Dynamic __o_End)
 {
-HX_STACK_PUSH("FlxTextFormat::new","flixel/text/FlxText.hx",883);
+HX_STACK_PUSH("FlxTextFormat::new","flixel/text/FlxText.hx",876);
 Dynamic Start = __o_Start.Default(-1);
 Dynamic End = __o_End.Default(-1);
 {
-	HX_STACK_LINE(897)
+	HX_STACK_LINE(890)
 	this->end = (int)-1;
-	HX_STACK_LINE(893)
+	HX_STACK_LINE(886)
 	this->start = (int)-1;
-	HX_STACK_LINE(914)
+	HX_STACK_LINE(907)
 	if (((FontColor != null()))){
-		HX_STACK_LINE(915)
+		HX_STACK_LINE(908)
 		hx::AndEq(FontColor,(int)16777215);
 	}
-	HX_STACK_LINE(918)
+	HX_STACK_LINE(911)
 	if (((BorderColor != null()))){
-		HX_STACK_LINE(919)
+		HX_STACK_LINE(912)
 		hx::AndEq(BorderColor,(int)16777215);
 	}
-	HX_STACK_LINE(922)
+	HX_STACK_LINE(915)
 	this->format = ::flash::text::TextFormat_obj::__new(null(),null(),FontColor,Bold,Italic,null(),null(),null(),null(),null(),null(),null(),null());
-	HX_STACK_LINE(924)
+	HX_STACK_LINE(917)
 	if (((Start > (int)-1))){
-		HX_STACK_LINE(925)
+		HX_STACK_LINE(918)
 		this->start = Start;
 	}
-	HX_STACK_LINE(928)
+	HX_STACK_LINE(921)
 	if (((End > (int)-1))){
-		HX_STACK_LINE(929)
+		HX_STACK_LINE(922)
 		this->end = End;
 	}
-	HX_STACK_LINE(933)
+	HX_STACK_LINE(926)
 	this->borderColor = (  (((BorderColor == null()))) ? int((int)0) : int(BorderColor) );
 }
 ;
@@ -71,9 +71,9 @@ hx::Object *FlxTextFormat_obj::__ToInterface(const hx::type_info &inType) {
 
 Void FlxTextFormat_obj::destroy( ){
 {
-		HX_STACK_PUSH("FlxTextFormat::destroy","flixel/text/FlxText.hx",937);
+		HX_STACK_PUSH("FlxTextFormat::destroy","flixel/text/FlxText.hx",930);
 		HX_STACK_THIS(this);
-		HX_STACK_LINE(937)
+		HX_STACK_LINE(930)
 		this->format = null();
 	}
 return null();

@@ -59,23 +59,23 @@ Dynamic LinearPath_obj::__Create(hx::DynamicArray inArgs)
 
 Void LinearPath_obj::updatePath( ){
 {
-		HX_STACK_PUSH("LinearPath::updatePath","flixel/tweens/motion/LinearPath.hx",174);
+		HX_STACK_PUSH("LinearPath::updatePath","flixel/tweens/motion/LinearPath.hx",169);
 		HX_STACK_THIS(this);
-		HX_STACK_LINE(175)
+		HX_STACK_LINE(170)
 		if (((this->points->length < (int)2))){
-			HX_STACK_LINE(175)
+			HX_STACK_LINE(170)
 			hx::Throw (HX_CSTRING("A LinearPath must have at least 2 points to operate."));
 		}
-		HX_STACK_LINE(176)
+		HX_STACK_LINE(171)
 		if (((this->_pointD->length == this->_pointT->length))){
-			HX_STACK_LINE(176)
+			HX_STACK_LINE(171)
 			return null();
 		}
-		HX_STACK_LINE(178)
+		HX_STACK_LINE(173)
 		int i = (int)0;		HX_STACK_VAR(i,"i");
-		HX_STACK_LINE(179)
+		HX_STACK_LINE(174)
 		while(((i < this->points->length))){
-			HX_STACK_LINE(180)
+			HX_STACK_LINE(175)
 			this->_pointT[i] = (Float(this->_pointD->__get((i)++)) / Float(this->distance));
 		}
 	}
@@ -96,74 +96,72 @@ Void LinearPath_obj::update( ){
 		HX_STACK_LINE(115)
 		Float tt;		HX_STACK_VAR(tt,"tt");
 		HX_STACK_LINE(117)
-		if (((this->points == null()))){
-			HX_STACK_LINE(118)
-			return null();
-		}
-		HX_STACK_LINE(120)
-		if ((!(this->backward))){
-			HX_STACK_LINE(122)
+		if (((bool(!(this->_backward)) && bool((this->points != null()))))){
+			HX_STACK_LINE(119)
 			if (((this->_index < (this->points->length - (int)1)))){
-				HX_STACK_LINE(123)
+				HX_STACK_LINE(120)
 				while(((this->scale > this->_pointT->__get((this->_index + (int)1))))){
-					HX_STACK_LINE(126)
+					HX_STACK_LINE(123)
 					(this->_index)++;
-					HX_STACK_LINE(127)
+					HX_STACK_LINE(124)
 					if (((this->_index == (this->points->length - (int)1)))){
-						HX_STACK_LINE(129)
+						HX_STACK_LINE(126)
 						hx::SubEq(this->_index,(int)1);
-						HX_STACK_LINE(130)
+						HX_STACK_LINE(127)
 						break;
 					}
 				}
 			}
-			HX_STACK_LINE(135)
+			HX_STACK_LINE(131)
 			td = this->_pointT->__get(this->_index);
-			HX_STACK_LINE(136)
+			HX_STACK_LINE(132)
 			tt = (this->_pointT->__get((this->_index + (int)1)) - td);
-			HX_STACK_LINE(137)
+			HX_STACK_LINE(133)
 			td = (Float(((this->scale - td))) / Float(tt));
-			HX_STACK_LINE(138)
+			HX_STACK_LINE(134)
 			this->_prevPoint = this->points->__get(this->_index).StaticCast< ::flixel::util::FlxPoint >();
-			HX_STACK_LINE(139)
+			HX_STACK_LINE(135)
 			this->_nextPoint = this->points->__get((this->_index + (int)1)).StaticCast< ::flixel::util::FlxPoint >();
-			HX_STACK_LINE(140)
+			HX_STACK_LINE(136)
 			this->x = (this->_prevPoint->x + (((this->_nextPoint->x - this->_prevPoint->x)) * td));
-			HX_STACK_LINE(141)
+			HX_STACK_LINE(137)
 			this->y = (this->_prevPoint->y + (((this->_nextPoint->y - this->_prevPoint->y)) * td));
 		}
 		else{
-			HX_STACK_LINE(145)
-			if (((this->_index > (int)0))){
-				HX_STACK_LINE(146)
-				while(((this->scale < this->_pointT->__get((this->_index - (int)1))))){
-					HX_STACK_LINE(149)
-					hx::SubEq(this->_index,(int)1);
-					HX_STACK_LINE(150)
-					if (((this->_index == (int)0))){
-						HX_STACK_LINE(152)
-						hx::AddEq(this->_index,(int)1);
-						HX_STACK_LINE(153)
-						break;
+			HX_STACK_LINE(139)
+			if (((this->points != null()))){
+				HX_STACK_LINE(141)
+				if (((this->_index > (int)0))){
+					HX_STACK_LINE(142)
+					while(((this->scale < this->_pointT->__get((this->_index - (int)1))))){
+						HX_STACK_LINE(145)
+						hx::SubEq(this->_index,(int)1);
+						HX_STACK_LINE(146)
+						if (((this->_index == (int)0))){
+							HX_STACK_LINE(148)
+							hx::AddEq(this->_index,(int)1);
+							HX_STACK_LINE(149)
+							break;
+						}
 					}
 				}
+				HX_STACK_LINE(153)
+				td = this->_pointT->__get(this->_index);
+				HX_STACK_LINE(154)
+				tt = (this->_pointT->__get((this->_index - (int)1)) - td);
+				HX_STACK_LINE(155)
+				td = (Float(((this->scale - td))) / Float(tt));
+				HX_STACK_LINE(156)
+				this->_prevPoint = this->points->__get(this->_index).StaticCast< ::flixel::util::FlxPoint >();
+				HX_STACK_LINE(157)
+				this->_nextPoint = this->points->__get((this->_index - (int)1)).StaticCast< ::flixel::util::FlxPoint >();
+				HX_STACK_LINE(158)
+				this->x = (this->_prevPoint->x + (((this->_nextPoint->x - this->_prevPoint->x)) * td));
+				HX_STACK_LINE(159)
+				this->y = (this->_prevPoint->y + (((this->_nextPoint->y - this->_prevPoint->y)) * td));
 			}
-			HX_STACK_LINE(158)
-			td = this->_pointT->__get(this->_index);
-			HX_STACK_LINE(159)
-			tt = (this->_pointT->__get((this->_index - (int)1)) - td);
-			HX_STACK_LINE(160)
-			td = (Float(((this->scale - td))) / Float(tt));
-			HX_STACK_LINE(161)
-			this->_prevPoint = this->points->__get(this->_index).StaticCast< ::flixel::util::FlxPoint >();
-			HX_STACK_LINE(162)
-			this->_nextPoint = this->points->__get((this->_index - (int)1)).StaticCast< ::flixel::util::FlxPoint >();
-			HX_STACK_LINE(163)
-			this->x = (this->_prevPoint->x + (((this->_nextPoint->x - this->_prevPoint->x)) * td));
-			HX_STACK_LINE(164)
-			this->y = (this->_prevPoint->y + (((this->_nextPoint->y - this->_prevPoint->y)) * td));
 		}
-		HX_STACK_LINE(167)
+		HX_STACK_LINE(162)
 		this->super::postUpdate();
 	}
 return null();
@@ -174,7 +172,7 @@ return null();
 	HX_STACK_PUSH("LinearPath::start","flixel/tweens/motion/LinearPath.hx",105);
 	HX_STACK_THIS(this);
 	HX_STACK_LINE(106)
-	this->_index = (  ((this->backward)) ? int((this->points->length - (int)1)) : int((int)0) );
+	this->_index = (  ((this->_backward)) ? int((this->points->length - (int)1)) : int((int)0) );
 	HX_STACK_LINE(107)
 	this->super::start();
 	HX_STACK_LINE(108)

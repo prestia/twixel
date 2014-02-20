@@ -74,25 +74,27 @@ Float Y = __o_Y.Default(0);
 {
 	HX_STACK_LINE(59)
 	this->_pressedMouse = false;
-	HX_STACK_LINE(71)
+	HX_STACK_LINE(55)
+	this->_pressedTouch = null();
+	HX_STACK_LINE(72)
 	super::__construct(X,Y,null());
-	HX_STACK_LINE(73)
+	HX_STACK_LINE(74)
 	this->loadGraphic(hx::ClassOf< ::flixel::ui::_FlxTypedButton::GraphicButton >(),true,false,(int)80,(int)20,null(),null());
-	HX_STACK_LINE(75)
-	this->onUp = ::flixel::ui::_FlxTypedButton::FlxButtonEvent_obj::__new(OnClick,null());
 	HX_STACK_LINE(76)
-	this->onDown = ::flixel::ui::_FlxTypedButton::FlxButtonEvent_obj::__new(null(),null());
+	this->onUp = ::flixel::ui::_FlxTypedButton::FlxButtonEvent_obj::__new(OnClick,null());
 	HX_STACK_LINE(77)
-	this->onOver = ::flixel::ui::_FlxTypedButton::FlxButtonEvent_obj::__new(null(),null());
+	this->onDown = ::flixel::ui::_FlxTypedButton::FlxButtonEvent_obj::__new(null(),null());
 	HX_STACK_LINE(78)
+	this->onOver = ::flixel::ui::_FlxTypedButton::FlxButtonEvent_obj::__new(null(),null());
+	HX_STACK_LINE(79)
 	this->onOut = ::flixel::ui::_FlxTypedButton::FlxButtonEvent_obj::__new(null(),null());
-	HX_STACK_LINE(80)
-	this->labelAlphas = Array_obj< Float >::__new().Add(0.8).Add(1.0).Add(0.5);
 	HX_STACK_LINE(81)
+	this->labelAlphas = Array_obj< Float >::__new().Add(0.8).Add(1.0).Add(0.5);
+	HX_STACK_LINE(82)
 	this->labelOffsets = Array_obj< ::Dynamic >::__new().Add(::flixel::util::FlxPoint_obj::__new(null(),null())).Add(::flixel::util::FlxPoint_obj::__new(null(),null())).Add(::flixel::util::FlxPoint_obj::__new((int)0,(int)1));
-	HX_STACK_LINE(83)
+	HX_STACK_LINE(84)
 	this->set_status((int)0);
-	HX_STACK_LINE(86)
+	HX_STACK_LINE(87)
 	this->scrollFactor->set(null(),null());
 }
 ;
@@ -114,22 +116,22 @@ Dynamic FlxTypedButton_obj::__Create(hx::DynamicArray inArgs)
 
 Void FlxTypedButton_obj::onOutHandler( ){
 {
-		HX_STACK_PUSH("FlxTypedButton::onOutHandler","flixel/ui/FlxTypedButton.hx",326);
+		HX_STACK_PUSH("FlxTypedButton::onOutHandler","flixel/ui/FlxTypedButton.hx",321);
 		HX_STACK_THIS(this);
-		HX_STACK_LINE(327)
+		HX_STACK_LINE(322)
 		this->set_status((int)0);
-		HX_STACK_LINE(329)
+		HX_STACK_LINE(323)
 		{
-			HX_STACK_LINE(329)
+			HX_STACK_LINE(323)
 			::flixel::ui::_FlxTypedButton::FlxButtonEvent _this = this->onOut;		HX_STACK_VAR(_this,"_this");
-			HX_STACK_LINE(329)
+			HX_STACK_LINE(323)
 			if (((_this->callback != null()))){
-				HX_STACK_LINE(329)
+				HX_STACK_LINE(323)
 				_this->callback();
 			}
-			HX_STACK_LINE(329)
+			HX_STACK_LINE(323)
 			if (((_this->sound != null()))){
-				HX_STACK_LINE(329)
+				HX_STACK_LINE(323)
 				_this->sound->play(true);
 			}
 		}
@@ -142,22 +144,22 @@ HX_DEFINE_DYNAMIC_FUNC0(FlxTypedButton_obj,onOutHandler,(void))
 
 Void FlxTypedButton_obj::onOverHandler( ){
 {
-		HX_STACK_PUSH("FlxTypedButton::onOverHandler","flixel/ui/FlxTypedButton.hx",316);
+		HX_STACK_PUSH("FlxTypedButton::onOverHandler","flixel/ui/FlxTypedButton.hx",311);
 		HX_STACK_THIS(this);
-		HX_STACK_LINE(317)
+		HX_STACK_LINE(312)
 		this->set_status((int)1);
-		HX_STACK_LINE(319)
+		HX_STACK_LINE(313)
 		{
-			HX_STACK_LINE(319)
+			HX_STACK_LINE(313)
 			::flixel::ui::_FlxTypedButton::FlxButtonEvent _this = this->onOver;		HX_STACK_VAR(_this,"_this");
-			HX_STACK_LINE(319)
+			HX_STACK_LINE(313)
 			if (((_this->callback != null()))){
-				HX_STACK_LINE(319)
+				HX_STACK_LINE(313)
 				_this->callback();
 			}
-			HX_STACK_LINE(319)
+			HX_STACK_LINE(313)
 			if (((_this->sound != null()))){
-				HX_STACK_LINE(319)
+				HX_STACK_LINE(313)
 				_this->sound->play(true);
 			}
 		}
@@ -170,22 +172,22 @@ HX_DEFINE_DYNAMIC_FUNC0(FlxTypedButton_obj,onOverHandler,(void))
 
 Void FlxTypedButton_obj::onDownHandler( ){
 {
-		HX_STACK_PUSH("FlxTypedButton::onDownHandler","flixel/ui/FlxTypedButton.hx",306);
+		HX_STACK_PUSH("FlxTypedButton::onDownHandler","flixel/ui/FlxTypedButton.hx",301);
 		HX_STACK_THIS(this);
-		HX_STACK_LINE(307)
+		HX_STACK_LINE(302)
 		this->set_status((int)2);
-		HX_STACK_LINE(309)
+		HX_STACK_LINE(303)
 		{
-			HX_STACK_LINE(309)
+			HX_STACK_LINE(303)
 			::flixel::ui::_FlxTypedButton::FlxButtonEvent _this = this->onDown;		HX_STACK_VAR(_this,"_this");
-			HX_STACK_LINE(309)
+			HX_STACK_LINE(303)
 			if (((_this->callback != null()))){
-				HX_STACK_LINE(309)
+				HX_STACK_LINE(303)
 				_this->callback();
 			}
-			HX_STACK_LINE(309)
+			HX_STACK_LINE(303)
 			if (((_this->sound != null()))){
-				HX_STACK_LINE(309)
+				HX_STACK_LINE(303)
 				_this->sound->play(true);
 			}
 		}
@@ -198,26 +200,26 @@ HX_DEFINE_DYNAMIC_FUNC0(FlxTypedButton_obj,onDownHandler,(void))
 
 Void FlxTypedButton_obj::onUpHandler( ){
 {
-		HX_STACK_PUSH("FlxTypedButton::onUpHandler","flixel/ui/FlxTypedButton.hx",294);
+		HX_STACK_PUSH("FlxTypedButton::onUpHandler","flixel/ui/FlxTypedButton.hx",289);
 		HX_STACK_THIS(this);
-		HX_STACK_LINE(295)
+		HX_STACK_LINE(290)
 		this->set_status((int)0);
-		HX_STACK_LINE(296)
+		HX_STACK_LINE(291)
 		this->_pressedMouse = false;
-		HX_STACK_LINE(297)
+		HX_STACK_LINE(292)
 		this->_pressedTouch = null();
-		HX_STACK_LINE(299)
+		HX_STACK_LINE(293)
 		{
-			HX_STACK_LINE(299)
+			HX_STACK_LINE(293)
 			::flixel::ui::_FlxTypedButton::FlxButtonEvent _this = this->onUp;		HX_STACK_VAR(_this,"_this");
-			HX_STACK_LINE(299)
+			HX_STACK_LINE(293)
 			if (((_this->callback != null()))){
-				HX_STACK_LINE(299)
+				HX_STACK_LINE(293)
 				_this->callback();
 			}
-			HX_STACK_LINE(299)
+			HX_STACK_LINE(293)
 			if (((_this->sound != null()))){
-				HX_STACK_LINE(299)
+				HX_STACK_LINE(293)
 				_this->sound->play(true);
 			}
 		}
@@ -229,15 +231,15 @@ return null();
 HX_DEFINE_DYNAMIC_FUNC0(FlxTypedButton_obj,onUpHandler,(void))
 
 int FlxTypedButton_obj::set_status( int Value){
-	HX_STACK_PUSH("FlxTypedButton::set_status","flixel/ui/FlxTypedButton.hx",282);
+	HX_STACK_PUSH("FlxTypedButton::set_status","flixel/ui/FlxTypedButton.hx",277);
 	HX_STACK_THIS(this);
 	HX_STACK_ARG(Value,"Value");
-	HX_STACK_LINE(283)
-	if (((bool((this->labelAlphas->length > Value)) && bool((this->label != null()))))){
-		HX_STACK_LINE(284)
-		this->label->__Field(HX_CSTRING("set_alpha"),true)((this->alpha * this->labelAlphas->__get(Value)));
+	HX_STACK_LINE(278)
+	if (((bool(((this->labelAlphas->length - (int)1) >= Value)) && bool((this->label != null()))))){
+		HX_STACK_LINE(278)
+		this->label->__Field(HX_CSTRING("set_alpha"),true)(this->labelAlphas->__get(Value));
 	}
-	HX_STACK_LINE(287)
+	HX_STACK_LINE(281)
 	return this->status = Value;
 }
 
@@ -246,69 +248,69 @@ HX_DEFINE_DYNAMIC_FUNC1(FlxTypedButton_obj,set_status,return )
 
 Void FlxTypedButton_obj::updateStatus( bool Overlap,bool JustPressed,bool Pressed,::flixel::input::touch::FlxTouch Touch){
 {
-		HX_STACK_PUSH("FlxTypedButton::updateStatus","flixel/ui/FlxTypedButton.hx",238);
+		HX_STACK_PUSH("FlxTypedButton::updateStatus","flixel/ui/FlxTypedButton.hx",236);
 		HX_STACK_THIS(this);
 		HX_STACK_ARG(Overlap,"Overlap");
 		HX_STACK_ARG(JustPressed,"JustPressed");
 		HX_STACK_ARG(Pressed,"Pressed");
 		HX_STACK_ARG(Touch,"Touch");
-		HX_STACK_LINE(239)
+		HX_STACK_LINE(237)
 		if ((Overlap)){
-			HX_STACK_LINE(240)
+			HX_STACK_LINE(238)
 			if ((JustPressed)){
-				HX_STACK_LINE(243)
+				HX_STACK_LINE(241)
 				this->_pressedTouch = Touch;
-				HX_STACK_LINE(244)
+				HX_STACK_LINE(242)
 				if (((Touch == null()))){
-					HX_STACK_LINE(245)
+					HX_STACK_LINE(242)
 					this->_pressedMouse = true;
 				}
-				HX_STACK_LINE(248)
+				HX_STACK_LINE(245)
 				this->onDownHandler();
 			}
 			else{
-				HX_STACK_LINE(250)
+				HX_STACK_LINE(247)
 				if (((this->status == (int)0))){
-					HX_STACK_LINE(251)
+					HX_STACK_LINE(248)
 					if ((Pressed)){
-						HX_STACK_LINE(253)
+						HX_STACK_LINE(250)
 						this->onDownHandler();
 					}
 					else{
-						HX_STACK_LINE(256)
+						HX_STACK_LINE(253)
 						this->onOverHandler();
 					}
 				}
 			}
 		}
 		else{
-			HX_STACK_LINE(261)
+			HX_STACK_LINE(258)
 			if (((this->status != (int)0))){
-				HX_STACK_LINE(262)
+				HX_STACK_LINE(259)
 				this->onOutHandler();
 			}
 		}
-		HX_STACK_LINE(268)
+		HX_STACK_LINE(264)
 		if (((bool((this->_pressedTouch != null())) && bool((this->_pressedTouch->_current == (int)-1))))){
-			HX_STACK_LINE(269)
+			HX_STACK_LINE(265)
 			this->onUpHandler();
 		}
 		else{
 			struct _Function_2_1{
 				inline static bool Block( ){
-					HX_STACK_PUSH("*::closure","flixel/ui/FlxTypedButton.hx",274);
+					HX_STACK_PUSH("*::closure","flixel/ui/FlxTypedButton.hx",269);
 					{
-						HX_STACK_LINE(274)
+						HX_STACK_LINE(269)
 						::flixel::input::mouse::FlxMouseButton _this = ::flixel::FlxG_obj::mouse->_leftButton;		HX_STACK_VAR(_this,"_this");
-						HX_STACK_LINE(274)
+						HX_STACK_LINE(269)
 						return (bool((_this->current == (int)-1)) || bool((_this->current == (int)-2)));
 					}
 					return null();
 				}
 			};
-			HX_STACK_LINE(274)
+			HX_STACK_LINE(269)
 			if (((bool(this->_pressedMouse) && bool(_Function_2_1::Block())))){
-				HX_STACK_LINE(275)
+				HX_STACK_LINE(270)
 				this->onUpHandler();
 			}
 		}
@@ -321,78 +323,78 @@ HX_DEFINE_DYNAMIC_FUNC4(FlxTypedButton_obj,updateStatus,(void))
 
 Void FlxTypedButton_obj::updateButton( ){
 {
-		HX_STACK_PUSH("FlxTypedButton::updateButton","flixel/ui/FlxTypedButton.hx",185);
+		HX_STACK_PUSH("FlxTypedButton::updateButton","flixel/ui/FlxTypedButton.hx",184);
 		HX_STACK_THIS(this);
-		HX_STACK_LINE(186)
+		HX_STACK_LINE(185)
 		if (((this->cameras == null()))){
-			HX_STACK_LINE(187)
+			HX_STACK_LINE(185)
 			this->cameras = ::flixel::FlxG_obj::cameras->list;
 		}
-		HX_STACK_LINE(192)
+		HX_STACK_LINE(190)
 		bool overlapFound = false;		HX_STACK_VAR(overlapFound,"overlapFound");
-		HX_STACK_LINE(195)
+		HX_STACK_LINE(193)
 		{
-			HX_STACK_LINE(195)
+			HX_STACK_LINE(193)
 			int _g = (int)0;		HX_STACK_VAR(_g,"_g");
 			Array< ::Dynamic > _g1 = this->cameras;		HX_STACK_VAR(_g1,"_g1");
-			HX_STACK_LINE(195)
+			HX_STACK_LINE(193)
 			while(((_g < _g1->length))){
-				HX_STACK_LINE(195)
+				HX_STACK_LINE(193)
 				::flixel::FlxCamera camera = _g1->__get(_g).StaticCast< ::flixel::FlxCamera >();		HX_STACK_VAR(camera,"camera");
-				HX_STACK_LINE(195)
+				HX_STACK_LINE(193)
 				++(_g);
-				HX_STACK_LINE(198)
+				HX_STACK_LINE(196)
 				::flixel::FlxG_obj::mouse->getWorldPosition(camera,this->_point);
-				HX_STACK_LINE(200)
+				HX_STACK_LINE(198)
 				if ((this->overlapsPoint(this->_point,true,camera))){
-					HX_STACK_LINE(202)
+					HX_STACK_LINE(200)
 					overlapFound = true;
 					struct _Function_4_1{
 						inline static bool Block( ){
-							HX_STACK_PUSH("*::closure","flixel/ui/FlxTypedButton.hx",203);
+							HX_STACK_PUSH("*::closure","flixel/ui/FlxTypedButton.hx",201);
 							{
-								HX_STACK_LINE(203)
+								HX_STACK_LINE(201)
 								::flixel::input::mouse::FlxMouseButton _this = ::flixel::FlxG_obj::mouse->_leftButton;		HX_STACK_VAR(_this,"_this");
-								HX_STACK_LINE(203)
+								HX_STACK_LINE(201)
 								return (bool((_this->current == (int)2)) || bool((_this->current == (int)-2)));
 							}
 							return null();
 						}
 					};
-					HX_STACK_LINE(203)
+					HX_STACK_LINE(201)
 					this->updateStatus(true,_Function_4_1::Block(),(::flixel::FlxG_obj::mouse->_leftButton->current > (int)0),null());
-					HX_STACK_LINE(204)
+					HX_STACK_LINE(202)
 					break;
 				}
-				HX_STACK_LINE(209)
+				HX_STACK_LINE(207)
 				{
-					HX_STACK_LINE(209)
+					HX_STACK_LINE(207)
 					int _g2 = (int)0;		HX_STACK_VAR(_g2,"_g2");
 					Array< ::Dynamic > _g3 = ::flixel::FlxG_obj::touches->list;		HX_STACK_VAR(_g3,"_g3");
-					HX_STACK_LINE(209)
+					HX_STACK_LINE(207)
 					while(((_g2 < _g3->length))){
-						HX_STACK_LINE(209)
+						HX_STACK_LINE(207)
 						::flixel::input::touch::FlxTouch touch = _g3->__get(_g2).StaticCast< ::flixel::input::touch::FlxTouch >();		HX_STACK_VAR(touch,"touch");
-						HX_STACK_LINE(209)
+						HX_STACK_LINE(207)
 						++(_g2);
-						HX_STACK_LINE(211)
+						HX_STACK_LINE(209)
 						touch->getWorldPosition(camera,this->_point);
-						HX_STACK_LINE(213)
+						HX_STACK_LINE(211)
 						if ((this->overlapsPoint(this->_point,true,camera))){
-							HX_STACK_LINE(215)
+							HX_STACK_LINE(213)
 							overlapFound = true;
-							HX_STACK_LINE(216)
+							HX_STACK_LINE(214)
 							this->updateStatus(true,(touch->_current == (int)2),(touch->_current > (int)0),touch);
-							HX_STACK_LINE(217)
+							HX_STACK_LINE(215)
 							break;
 						}
 					}
 				}
 			}
 		}
-		HX_STACK_LINE(223)
+		HX_STACK_LINE(221)
 		if ((!(overlapFound))){
-			HX_STACK_LINE(224)
+			HX_STACK_LINE(222)
 			this->updateStatus(false,false,false,null());
 		}
 	}
@@ -404,15 +406,15 @@ HX_DEFINE_DYNAMIC_FUNC0(FlxTypedButton_obj,updateButton,(void))
 
 Void FlxTypedButton_obj::draw( ){
 {
-		HX_STACK_PUSH("FlxTypedButton::draw","flixel/ui/FlxTypedButton.hx",156);
+		HX_STACK_PUSH("FlxTypedButton::draw","flixel/ui/FlxTypedButton.hx",155);
 		HX_STACK_THIS(this);
-		HX_STACK_LINE(157)
+		HX_STACK_LINE(156)
 		this->super::draw();
-		HX_STACK_LINE(159)
+		HX_STACK_LINE(158)
 		if (((this->label != null()))){
-			HX_STACK_LINE(161)
+			HX_STACK_LINE(160)
 			this->label->__FieldRef(HX_CSTRING("cameras")) = this->cameras;
-			HX_STACK_LINE(162)
+			HX_STACK_LINE(161)
 			this->label->__Field(HX_CSTRING("draw"),true)();
 		}
 	}
@@ -422,11 +424,11 @@ return null();
 
 Void FlxTypedButton_obj::update( ){
 {
-		HX_STACK_PUSH("FlxTypedButton::update","flixel/ui/FlxTypedButton.hx",112);
+		HX_STACK_PUSH("FlxTypedButton::update","flixel/ui/FlxTypedButton.hx",113);
 		HX_STACK_THIS(this);
-		HX_STACK_LINE(113)
+		HX_STACK_LINE(114)
 		this->super::update();
-		HX_STACK_LINE(115)
+		HX_STACK_LINE(116)
 		if ((!(this->visible))){
 			HX_STACK_LINE(116)
 			return null();
@@ -460,10 +462,10 @@ Void FlxTypedButton_obj::update( ){
 		int nextFrame = this->status;		HX_STACK_VAR(nextFrame,"nextFrame");
 		HX_STACK_LINE(143)
 		if (((nextFrame == (int)1))){
-			HX_STACK_LINE(144)
+			HX_STACK_LINE(143)
 			nextFrame = (int)0;
 		}
-		HX_STACK_LINE(149)
+		HX_STACK_LINE(148)
 		this->set_frame(this->framesData->frames->__get(nextFrame).StaticCast< ::flixel::system::layer::frames::FlxFrame >());
 	}
 return null();
@@ -472,25 +474,25 @@ return null();
 
 Void FlxTypedButton_obj::destroy( ){
 {
-		HX_STACK_PUSH("FlxTypedButton::destroy","flixel/ui/FlxTypedButton.hx",93);
+		HX_STACK_PUSH("FlxTypedButton::destroy","flixel/ui/FlxTypedButton.hx",94);
 		HX_STACK_THIS(this);
-		HX_STACK_LINE(94)
+		HX_STACK_LINE(95)
 		this->label = ::flixel::FlxG_obj::safeDestroy(this->label);
-		HX_STACK_LINE(96)
-		this->onUp = ::flixel::FlxG_obj::safeDestroy(this->onUp);
 		HX_STACK_LINE(97)
-		this->onDown = ::flixel::FlxG_obj::safeDestroy(this->onDown);
+		this->onUp = ::flixel::FlxG_obj::safeDestroy(this->onUp);
 		HX_STACK_LINE(98)
-		this->onOver = ::flixel::FlxG_obj::safeDestroy(this->onOver);
+		this->onDown = ::flixel::FlxG_obj::safeDestroy(this->onDown);
 		HX_STACK_LINE(99)
+		this->onOver = ::flixel::FlxG_obj::safeDestroy(this->onOver);
+		HX_STACK_LINE(100)
 		this->onOut = ::flixel::FlxG_obj::safeDestroy(this->onOut);
-		HX_STACK_LINE(101)
-		this->labelOffsets = null();
 		HX_STACK_LINE(102)
-		this->labelAlphas = null();
+		this->labelOffsets = null();
 		HX_STACK_LINE(103)
+		this->labelAlphas = null();
+		HX_STACK_LINE(104)
 		this->_pressedTouch = null();
-		HX_STACK_LINE(105)
+		HX_STACK_LINE(106)
 		this->super::destroy();
 	}
 return null();

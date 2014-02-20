@@ -67,8 +67,8 @@ class HXCPP_CLASS_ATTRIBUTES  FlxTimer_obj : public hx::Object{
 
 		int _loopsCounter;
 		Float _timeCounter;
-		Dynamic complete;
-		Dynamic &complete_dyn() { return complete;}
+		Dynamic _callback;
+		Dynamic &_callback_dyn() { return _callback;}
 		bool usePooling;
 		Dynamic userData;
 		bool finished;

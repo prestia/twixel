@@ -24,9 +24,6 @@
 #ifndef INCLUDED_flash_events_IEventDispatcher
 #include <flash/events/IEventDispatcher.h>
 #endif
-#ifndef INCLUDED_flixel_interfaces_IFlxDestroyable
-#include <flixel/interfaces/IFlxDestroyable.h>
-#endif
 #ifndef INCLUDED_flixel_system_debug_ButtonAlignment
 #include <flixel/system/debug/ButtonAlignment.h>
 #endif
@@ -47,13 +44,13 @@ Void DebuggerFrontEnd_obj::__construct()
 {
 HX_STACK_PUSH("DebuggerFrontEnd::new","flixel/system/frontEnds/DebuggerFrontEnd.hx",9);
 {
-	HX_STACK_LINE(30)
+	HX_STACK_LINE(67)
 	this->visible = false;
-	HX_STACK_LINE(19)
+	HX_STACK_LINE(21)
 	this->precision = (int)3;
-	HX_STACK_LINE(14)
+	HX_STACK_LINE(15)
 	this->drawDebug = false;
-	HX_STACK_LINE(88)
+	HX_STACK_LINE(36)
 	this->toggleKeys = Array_obj< ::String >::__new().Add(HX_CSTRING("GRAVEACCENT")).Add(HX_CSTRING("BACKSLASH"));
 }
 ;
@@ -73,20 +70,9 @@ Dynamic DebuggerFrontEnd_obj::__Create(hx::DynamicArray inArgs)
 	result->__construct();
 	return result;}
 
-bool DebuggerFrontEnd_obj::set_visible( bool Visible){
-	HX_STACK_PUSH("DebuggerFrontEnd::set_visible","flixel/system/frontEnds/DebuggerFrontEnd.hx",95);
-	HX_STACK_THIS(this);
-	HX_STACK_ARG(Visible,"Visible");
-	HX_STACK_LINE(95)
-	return this->visible = Visible;
-}
-
-
-HX_DEFINE_DYNAMIC_FUNC1(DebuggerFrontEnd_obj,set_visible,return )
-
 Void DebuggerFrontEnd_obj::removeButton( ::flixel::system::ui::FlxSystemButton Button,hx::Null< bool >  __o_UpdateLayout){
 bool UpdateLayout = __o_UpdateLayout.Default(true);
-	HX_STACK_PUSH("DebuggerFrontEnd::removeButton","flixel/system/frontEnds/DebuggerFrontEnd.hx",80);
+	HX_STACK_PUSH("DebuggerFrontEnd::removeButton","flixel/system/frontEnds/DebuggerFrontEnd.hx",103);
 	HX_STACK_THIS(this);
 	HX_STACK_ARG(Button,"Button");
 	HX_STACK_ARG(UpdateLayout,"UpdateLayout");
@@ -98,18 +84,18 @@ return null();
 
 HX_DEFINE_DYNAMIC_FUNC2(DebuggerFrontEnd_obj,removeButton,(void))
 
-::flixel::system::ui::FlxSystemButton DebuggerFrontEnd_obj::addButton( ::flixel::system::debug::ButtonAlignment Alignment,::flash::display::BitmapData Icon,Dynamic UpHandler,hx::Null< bool >  __o_ToggleMode,hx::Null< bool >  __o_UpdateLayout){
+::flixel::system::ui::FlxSystemButton DebuggerFrontEnd_obj::addButton( ::flixel::system::debug::ButtonAlignment Alignment,::flash::display::BitmapData Icon,Dynamic DownHandler,hx::Null< bool >  __o_ToggleMode,hx::Null< bool >  __o_UpdateLayout){
 bool ToggleMode = __o_ToggleMode.Default(false);
 bool UpdateLayout = __o_UpdateLayout.Default(true);
-	HX_STACK_PUSH("DebuggerFrontEnd::addButton","flixel/system/frontEnds/DebuggerFrontEnd.hx",65);
+	HX_STACK_PUSH("DebuggerFrontEnd::addButton","flixel/system/frontEnds/DebuggerFrontEnd.hx",89);
 	HX_STACK_THIS(this);
 	HX_STACK_ARG(Alignment,"Alignment");
 	HX_STACK_ARG(Icon,"Icon");
-	HX_STACK_ARG(UpHandler,"UpHandler");
+	HX_STACK_ARG(DownHandler,"DownHandler");
 	HX_STACK_ARG(ToggleMode,"ToggleMode");
 	HX_STACK_ARG(UpdateLayout,"UpdateLayout");
 {
-		HX_STACK_LINE(65)
+		HX_STACK_LINE(89)
 		return null();
 	}
 }
@@ -117,9 +103,20 @@ bool UpdateLayout = __o_UpdateLayout.Default(true);
 
 HX_DEFINE_DYNAMIC_FUNC5(DebuggerFrontEnd_obj,addButton,return )
 
+bool DebuggerFrontEnd_obj::set_visible( bool Visible){
+	HX_STACK_PUSH("DebuggerFrontEnd::set_visible","flixel/system/frontEnds/DebuggerFrontEnd.hx",70);
+	HX_STACK_THIS(this);
+	HX_STACK_ARG(Visible,"Visible");
+	HX_STACK_LINE(70)
+	return this->visible = Visible;
+}
+
+
+HX_DEFINE_DYNAMIC_FUNC1(DebuggerFrontEnd_obj,set_visible,return )
+
 Void DebuggerFrontEnd_obj::resetLayout( ){
 {
-		HX_STACK_PUSH("DebuggerFrontEnd::resetLayout","flixel/system/frontEnds/DebuggerFrontEnd.hx",48);
+		HX_STACK_PUSH("DebuggerFrontEnd::resetLayout","flixel/system/frontEnds/DebuggerFrontEnd.hx",57);
 		HX_STACK_THIS(this);
 	}
 return null();
@@ -130,7 +127,7 @@ HX_DEFINE_DYNAMIC_FUNC0(DebuggerFrontEnd_obj,resetLayout,(void))
 
 Void DebuggerFrontEnd_obj::setLayout( ::flixel::system::debug::DebuggerLayout Layout){
 {
-		HX_STACK_PUSH("DebuggerFrontEnd::setLayout","flixel/system/frontEnds/DebuggerFrontEnd.hx",38);
+		HX_STACK_PUSH("DebuggerFrontEnd::setLayout","flixel/system/frontEnds/DebuggerFrontEnd.hx",47);
 		HX_STACK_THIS(this);
 		HX_STACK_ARG(Layout,"Layout");
 	}
@@ -217,12 +214,12 @@ static ::String sStaticFields[] = {
 	String(null()) };
 
 static ::String sMemberFields[] = {
-	HX_CSTRING("set_visible"),
 	HX_CSTRING("removeButton"),
 	HX_CSTRING("addButton"),
+	HX_CSTRING("set_visible"),
+	HX_CSTRING("visible"),
 	HX_CSTRING("resetLayout"),
 	HX_CSTRING("setLayout"),
-	HX_CSTRING("visible"),
 	HX_CSTRING("toggleKeys"),
 	HX_CSTRING("precision"),
 	HX_CSTRING("drawDebug"),

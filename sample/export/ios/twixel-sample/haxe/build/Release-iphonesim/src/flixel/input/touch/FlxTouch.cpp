@@ -71,27 +71,27 @@ Float X = __o_X.Default(0);
 Float Y = __o_Y.Default(0);
 int PointID = __o_PointID.Default(0);
 {
-	HX_STACK_LINE(36)
-	this->_last = (int)0;
 	HX_STACK_LINE(35)
+	this->_last = (int)0;
+	HX_STACK_LINE(34)
 	this->_current = (int)0;
-	HX_STACK_LINE(22)
-	this->screenY = (int)0;
 	HX_STACK_LINE(21)
+	this->screenY = (int)0;
+	HX_STACK_LINE(20)
 	this->screenX = (int)0;
-	HX_STACK_LINE(158)
+	HX_STACK_LINE(157)
 	super::__construct(null(),null());
-	HX_STACK_LINE(159)
+	HX_STACK_LINE(158)
 	this->_point = ::flixel::util::FlxPoint_obj::__new(null(),null());
-	HX_STACK_LINE(160)
+	HX_STACK_LINE(159)
 	this->_globalScreenPosition = ::flixel::util::FlxPoint_obj::__new(null(),null());
-	HX_STACK_LINE(161)
+	HX_STACK_LINE(160)
 	this->_justPressedPosition = ::flixel::util::FlxPoint_obj::__new(null(),null());
-	HX_STACK_LINE(163)
+	HX_STACK_LINE(162)
 	this->_flashPoint = ::flash::geom::Point_obj::__new(null(),null());
-	HX_STACK_LINE(164)
+	HX_STACK_LINE(163)
 	this->updatePosition(X,Y);
-	HX_STACK_LINE(165)
+	HX_STACK_LINE(164)
 	this->touchPointID = PointID;
 }
 ;
@@ -117,9 +117,9 @@ hx::Object *FlxTouch_obj::__ToInterface(const hx::type_info &inType) {
 }
 
 bool FlxTouch_obj::get_isActive( ){
-	HX_STACK_PUSH("FlxTouch::get_isActive","flixel/input/touch/FlxTouch.hx",228);
+	HX_STACK_PUSH("FlxTouch::get_isActive","flixel/input/touch/FlxTouch.hx",227);
 	HX_STACK_THIS(this);
-	HX_STACK_LINE(228)
+	HX_STACK_LINE(227)
 	return (this->_current != (int)0);
 }
 
@@ -127,9 +127,9 @@ bool FlxTouch_obj::get_isActive( ){
 HX_DEFINE_DYNAMIC_FUNC0(FlxTouch_obj,get_isActive,return )
 
 bool FlxTouch_obj::get_justReleased( ){
-	HX_STACK_PUSH("FlxTouch::get_justReleased","flixel/input/touch/FlxTouch.hx",227);
+	HX_STACK_PUSH("FlxTouch::get_justReleased","flixel/input/touch/FlxTouch.hx",226);
 	HX_STACK_THIS(this);
-	HX_STACK_LINE(227)
+	HX_STACK_LINE(226)
 	return (this->_current == (int)-1);
 }
 
@@ -137,9 +137,9 @@ bool FlxTouch_obj::get_justReleased( ){
 HX_DEFINE_DYNAMIC_FUNC0(FlxTouch_obj,get_justReleased,return )
 
 bool FlxTouch_obj::get_justPressed( ){
-	HX_STACK_PUSH("FlxTouch::get_justPressed","flixel/input/touch/FlxTouch.hx",226);
+	HX_STACK_PUSH("FlxTouch::get_justPressed","flixel/input/touch/FlxTouch.hx",225);
 	HX_STACK_THIS(this);
-	HX_STACK_LINE(226)
+	HX_STACK_LINE(225)
 	return (this->_current == (int)2);
 }
 
@@ -147,9 +147,9 @@ bool FlxTouch_obj::get_justPressed( ){
 HX_DEFINE_DYNAMIC_FUNC0(FlxTouch_obj,get_justPressed,return )
 
 bool FlxTouch_obj::get_pressed( ){
-	HX_STACK_PUSH("FlxTouch::get_pressed","flixel/input/touch/FlxTouch.hx",225);
+	HX_STACK_PUSH("FlxTouch::get_pressed","flixel/input/touch/FlxTouch.hx",224);
 	HX_STACK_THIS(this);
-	HX_STACK_LINE(225)
+	HX_STACK_LINE(224)
 	return (this->_current > (int)0);
 }
 
@@ -158,21 +158,21 @@ HX_DEFINE_DYNAMIC_FUNC0(FlxTouch_obj,get_pressed,return )
 
 Void FlxTouch_obj::updatePosition( Float X,Float Y){
 {
-		HX_STACK_PUSH("FlxTouch::updatePosition","flixel/input/touch/FlxTouch.hx",215);
+		HX_STACK_PUSH("FlxTouch::updatePosition","flixel/input/touch/FlxTouch.hx",214);
 		HX_STACK_THIS(this);
 		HX_STACK_ARG(X,"X");
 		HX_STACK_ARG(Y,"Y");
-		HX_STACK_LINE(216)
+		HX_STACK_LINE(215)
 		this->_flashPoint->x = X;
-		HX_STACK_LINE(217)
+		HX_STACK_LINE(216)
 		this->_flashPoint->y = Y;
-		HX_STACK_LINE(218)
+		HX_STACK_LINE(217)
 		this->_flashPoint = ::flixel::FlxG_obj::game->globalToLocal(this->_flashPoint);
-		HX_STACK_LINE(220)
+		HX_STACK_LINE(219)
 		this->_globalScreenPosition->set_x(this->_flashPoint->x);
-		HX_STACK_LINE(221)
+		HX_STACK_LINE(220)
 		this->_globalScreenPosition->set_y(this->_flashPoint->y);
-		HX_STACK_LINE(222)
+		HX_STACK_LINE(221)
 		this->updateCursor();
 	}
 return null();
@@ -183,17 +183,17 @@ HX_DEFINE_DYNAMIC_FUNC2(FlxTouch_obj,updatePosition,(void))
 
 Void FlxTouch_obj::updateCursor( ){
 {
-		HX_STACK_PUSH("FlxTouch::updateCursor","flixel/input/touch/FlxTouch.hx",198);
+		HX_STACK_PUSH("FlxTouch::updateCursor","flixel/input/touch/FlxTouch.hx",197);
 		HX_STACK_THIS(this);
-		HX_STACK_LINE(201)
+		HX_STACK_LINE(200)
 		::flixel::FlxCamera camera = ::flixel::FlxG_obj::camera;		HX_STACK_VAR(camera,"camera");
-		HX_STACK_LINE(202)
+		HX_STACK_LINE(201)
 		this->screenX = ::Math_obj::floor((Float(((this->_globalScreenPosition->x - camera->x))) / Float(camera->zoom)));
-		HX_STACK_LINE(203)
+		HX_STACK_LINE(202)
 		this->screenY = ::Math_obj::floor((Float(((this->_globalScreenPosition->y - camera->y))) / Float(camera->zoom)));
-		HX_STACK_LINE(204)
+		HX_STACK_LINE(203)
 		this->set_x((this->screenX + camera->scroll->x));
-		HX_STACK_LINE(205)
+		HX_STACK_LINE(204)
 		this->set_y((this->screenY + camera->scroll->y));
 	}
 return null();
@@ -204,33 +204,33 @@ HX_DEFINE_DYNAMIC_FUNC0(FlxTouch_obj,updateCursor,(void))
 
 Void FlxTouch_obj::update( ){
 {
-		HX_STACK_PUSH("FlxTouch::update","flixel/input/touch/FlxTouch.hx",172);
+		HX_STACK_PUSH("FlxTouch::update","flixel/input/touch/FlxTouch.hx",171);
 		HX_STACK_THIS(this);
-		HX_STACK_LINE(173)
+		HX_STACK_LINE(172)
 		if (((bool((this->_last == (int)-1)) && bool((this->_current == (int)-1))))){
-			HX_STACK_LINE(174)
+			HX_STACK_LINE(173)
 			this->_current = (int)0;
 		}
 		else{
-			HX_STACK_LINE(177)
+			HX_STACK_LINE(176)
 			if (((bool((this->_last == (int)2)) && bool((this->_current == (int)2))))){
-				HX_STACK_LINE(178)
+				HX_STACK_LINE(177)
 				this->_current = (int)1;
 			}
 		}
-		HX_STACK_LINE(181)
+		HX_STACK_LINE(180)
 		this->_last = this->_current;
-		HX_STACK_LINE(183)
+		HX_STACK_LINE(182)
 		if (((this->_current == (int)2))){
-			HX_STACK_LINE(185)
+			HX_STACK_LINE(184)
 			this->_justPressedPosition->set(this->screenX,this->screenY);
-			HX_STACK_LINE(186)
+			HX_STACK_LINE(185)
 			this->_justPressedTimeInTicks = ::flixel::FlxG_obj::game->ticks;
 		}
 		else{
-			HX_STACK_LINE(188)
+			HX_STACK_LINE(187)
 			if (((this->_current == (int)-1))){
-				HX_STACK_LINE(189)
+				HX_STACK_LINE(188)
 				::flixel::FlxG_obj::swipes->push(::flixel::input::FlxSwipe_obj::__new(this->touchPointID,this->_justPressedPosition,this->getScreenPosition(null(),null()),this->_justPressedTimeInTicks));
 			}
 		}
@@ -243,11 +243,11 @@ HX_DEFINE_DYNAMIC_FUNC0(FlxTouch_obj,update,(void))
 
 Void FlxTouch_obj::deactivate( ){
 {
-		HX_STACK_PUSH("FlxTouch::deactivate","flixel/input/touch/FlxTouch.hx",146);
+		HX_STACK_PUSH("FlxTouch::deactivate","flixel/input/touch/FlxTouch.hx",145);
 		HX_STACK_THIS(this);
-		HX_STACK_LINE(147)
+		HX_STACK_LINE(146)
 		this->_current = (int)0;
-		HX_STACK_LINE(148)
+		HX_STACK_LINE(147)
 		this->_last = (int)0;
 	}
 return null();
@@ -258,18 +258,18 @@ HX_DEFINE_DYNAMIC_FUNC0(FlxTouch_obj,deactivate,(void))
 
 Void FlxTouch_obj::reset( Float X,Float Y,int PointID){
 {
-		HX_STACK_PUSH("FlxTouch::reset","flixel/input/touch/FlxTouch.hx",138);
+		HX_STACK_PUSH("FlxTouch::reset","flixel/input/touch/FlxTouch.hx",137);
 		HX_STACK_THIS(this);
 		HX_STACK_ARG(X,"X");
 		HX_STACK_ARG(Y,"Y");
 		HX_STACK_ARG(PointID,"PointID");
-		HX_STACK_LINE(139)
+		HX_STACK_LINE(138)
 		this->updatePosition(X,Y);
-		HX_STACK_LINE(140)
+		HX_STACK_LINE(139)
 		this->touchPointID = PointID;
-		HX_STACK_LINE(141)
+		HX_STACK_LINE(140)
 		this->_current = (int)0;
-		HX_STACK_LINE(142)
+		HX_STACK_LINE(141)
 		this->_last = (int)0;
 	}
 return null();
@@ -279,38 +279,38 @@ return null();
 HX_DEFINE_DYNAMIC_FUNC3(FlxTouch_obj,reset,(void))
 
 bool FlxTouch_obj::overlaps( ::flixel::FlxBasic ObjectOrGroup,::flixel::FlxCamera Camera){
-	HX_STACK_PUSH("FlxTouch::overlaps","flixel/input/touch/FlxTouch.hx",112);
+	HX_STACK_PUSH("FlxTouch::overlaps","flixel/input/touch/FlxTouch.hx",111);
 	HX_STACK_THIS(this);
 	HX_STACK_ARG(ObjectOrGroup,"ObjectOrGroup");
 	HX_STACK_ARG(Camera,"Camera");
-	HX_STACK_LINE(113)
+	HX_STACK_LINE(112)
 	if ((::Std_obj::is(ObjectOrGroup,hx::ClassOf< ::flixel::group::FlxTypedGroup >()))){
-		HX_STACK_LINE(115)
+		HX_STACK_LINE(114)
 		int i = (int)0;		HX_STACK_VAR(i,"i");
-		HX_STACK_LINE(116)
+		HX_STACK_LINE(115)
 		bool results = false;		HX_STACK_VAR(results,"results");
-		HX_STACK_LINE(117)
+		HX_STACK_LINE(116)
 		::flixel::FlxBasic basic;		HX_STACK_VAR(basic,"basic");
-		HX_STACK_LINE(118)
+		HX_STACK_LINE(117)
 		::flixel::group::FlxTypedGroup grp = ObjectOrGroup;		HX_STACK_VAR(grp,"grp");
-		HX_STACK_LINE(119)
+		HX_STACK_LINE(118)
 		Array< ::Dynamic > members = grp->get_members();		HX_STACK_VAR(members,"members");
-		HX_STACK_LINE(120)
+		HX_STACK_LINE(119)
 		while(((i < grp->length))){
-			HX_STACK_LINE(122)
+			HX_STACK_LINE(121)
 			basic = members->__get((i)++).StaticCast< ::flixel::FlxBasic >();
-			HX_STACK_LINE(123)
+			HX_STACK_LINE(122)
 			if (((bool((bool((basic != null())) && bool(basic->exists))) && bool(this->overlaps(basic,Camera))))){
-				HX_STACK_LINE(125)
+				HX_STACK_LINE(124)
 				results = true;
-				HX_STACK_LINE(126)
+				HX_STACK_LINE(125)
 				break;
 			}
 		}
-		HX_STACK_LINE(129)
+		HX_STACK_LINE(128)
 		return results;
 	}
-	HX_STACK_LINE(131)
+	HX_STACK_LINE(130)
 	return (hx::TCast< flixel::FlxObject >::cast(ObjectOrGroup))->overlapsPoint(hx::ObjectPtr<OBJ_>(this),true,Camera);
 }
 
@@ -318,25 +318,25 @@ bool FlxTouch_obj::overlaps( ::flixel::FlxBasic ObjectOrGroup,::flixel::FlxCamer
 HX_DEFINE_DYNAMIC_FUNC2(FlxTouch_obj,overlaps,return )
 
 ::flixel::util::FlxPoint FlxTouch_obj::getScreenPosition( ::flixel::FlxCamera Camera,::flixel::util::FlxPoint point){
-	HX_STACK_PUSH("FlxTouch::getScreenPosition","flixel/input/touch/FlxTouch.hx",88);
+	HX_STACK_PUSH("FlxTouch::getScreenPosition","flixel/input/touch/FlxTouch.hx",87);
 	HX_STACK_THIS(this);
 	HX_STACK_ARG(Camera,"Camera");
 	HX_STACK_ARG(point,"point");
-	HX_STACK_LINE(89)
+	HX_STACK_LINE(88)
 	if (((Camera == null()))){
-		HX_STACK_LINE(90)
+		HX_STACK_LINE(89)
 		Camera = ::flixel::FlxG_obj::camera;
 	}
-	HX_STACK_LINE(93)
+	HX_STACK_LINE(92)
 	if (((point == null()))){
-		HX_STACK_LINE(94)
+		HX_STACK_LINE(93)
 		point = ::flixel::util::FlxPoint_obj::__new(null(),null());
 	}
-	HX_STACK_LINE(97)
+	HX_STACK_LINE(96)
 	point->set_x((Float(((this->_globalScreenPosition->x - Camera->x))) / Float(Camera->zoom)));
-	HX_STACK_LINE(98)
+	HX_STACK_LINE(97)
 	point->set_y((Float(((this->_globalScreenPosition->y - Camera->y))) / Float(Camera->zoom)));
-	HX_STACK_LINE(99)
+	HX_STACK_LINE(98)
 	return point;
 }
 
@@ -344,27 +344,27 @@ HX_DEFINE_DYNAMIC_FUNC2(FlxTouch_obj,overlaps,return )
 HX_DEFINE_DYNAMIC_FUNC2(FlxTouch_obj,getScreenPosition,return )
 
 ::flixel::util::FlxPoint FlxTouch_obj::getWorldPosition( ::flixel::FlxCamera Camera,::flixel::util::FlxPoint point){
-	HX_STACK_PUSH("FlxTouch::getWorldPosition","flixel/input/touch/FlxTouch.hx",64);
+	HX_STACK_PUSH("FlxTouch::getWorldPosition","flixel/input/touch/FlxTouch.hx",63);
 	HX_STACK_THIS(this);
 	HX_STACK_ARG(Camera,"Camera");
 	HX_STACK_ARG(point,"point");
-	HX_STACK_LINE(65)
+	HX_STACK_LINE(64)
 	if (((Camera == null()))){
-		HX_STACK_LINE(66)
+		HX_STACK_LINE(65)
 		Camera = ::flixel::FlxG_obj::camera;
 	}
-	HX_STACK_LINE(69)
+	HX_STACK_LINE(68)
 	if (((point == null()))){
-		HX_STACK_LINE(70)
+		HX_STACK_LINE(69)
 		point = ::flixel::util::FlxPoint_obj::__new(null(),null());
 	}
-	HX_STACK_LINE(73)
+	HX_STACK_LINE(72)
 	this->getScreenPosition(Camera,this->_point);
-	HX_STACK_LINE(74)
+	HX_STACK_LINE(73)
 	point->set_x((this->_point->x + Camera->scroll->x));
-	HX_STACK_LINE(75)
+	HX_STACK_LINE(74)
 	point->set_y((this->_point->y + Camera->scroll->y));
-	HX_STACK_LINE(76)
+	HX_STACK_LINE(75)
 	return point;
 }
 
@@ -373,15 +373,15 @@ HX_DEFINE_DYNAMIC_FUNC2(FlxTouch_obj,getWorldPosition,return )
 
 Void FlxTouch_obj::destroy( ){
 {
-		HX_STACK_PUSH("FlxTouch::destroy","flixel/input/touch/FlxTouch.hx",48);
+		HX_STACK_PUSH("FlxTouch::destroy","flixel/input/touch/FlxTouch.hx",47);
 		HX_STACK_THIS(this);
-		HX_STACK_LINE(49)
+		HX_STACK_LINE(48)
 		this->_point = null();
-		HX_STACK_LINE(50)
+		HX_STACK_LINE(49)
 		this->_globalScreenPosition = null();
-		HX_STACK_LINE(51)
+		HX_STACK_LINE(50)
 		this->_flashPoint = null();
-		HX_STACK_LINE(52)
+		HX_STACK_LINE(51)
 		this->_justPressedPosition = null();
 	}
 return null();

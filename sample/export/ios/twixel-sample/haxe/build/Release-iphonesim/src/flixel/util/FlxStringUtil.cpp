@@ -15,36 +15,6 @@
 #ifndef INCLUDED_Type
 #include <Type.h>
 #endif
-#ifndef INCLUDED_flash_display_BitmapData
-#include <flash/display/BitmapData.h>
-#endif
-#ifndef INCLUDED_flash_display_BlendMode
-#include <flash/display/BlendMode.h>
-#endif
-#ifndef INCLUDED_flash_display_IBitmapDrawable
-#include <flash/display/IBitmapDrawable.h>
-#endif
-#ifndef INCLUDED_flash_geom_ColorTransform
-#include <flash/geom/ColorTransform.h>
-#endif
-#ifndef INCLUDED_flash_geom_Matrix
-#include <flash/geom/Matrix.h>
-#endif
-#ifndef INCLUDED_flash_geom_Rectangle
-#include <flash/geom/Rectangle.h>
-#endif
-#ifndef INCLUDED_flixel_FlxG
-#include <flixel/FlxG.h>
-#endif
-#ifndef INCLUDED_flixel_system_frontEnds_DebuggerFrontEnd
-#include <flixel/system/frontEnds/DebuggerFrontEnd.h>
-#endif
-#ifndef INCLUDED_flixel_util_FlxArrayUtil
-#include <flixel/util/FlxArrayUtil.h>
-#endif
-#ifndef INCLUDED_flixel_util_FlxMath
-#include <flixel/util/FlxMath.h>
-#endif
 #ifndef INCLUDED_flixel_util_FlxStringUtil
 #include <flixel/util/FlxStringUtil.h>
 #endif
@@ -53,9 +23,6 @@
 #endif
 #ifndef INCLUDED_hxMath
 #include <hxMath.h>
-#endif
-#ifndef INCLUDED_openfl_Assets
-#include <openfl/Assets.h>
 #endif
 namespace flixel{
 namespace util{
@@ -79,10 +46,10 @@ Dynamic FlxStringUtil_obj::__Create(hx::DynamicArray inArgs)
 	return result;}
 
 ::String FlxStringUtil_obj::formatTicks( int StartTicks,int EndTicks){
-	HX_STACK_PUSH("FlxStringUtil::formatTicks","flixel/util/FlxStringUtil.hx",26);
+	HX_STACK_PUSH("FlxStringUtil::formatTicks","flixel/util/FlxStringUtil.hx",21);
 	HX_STACK_ARG(StartTicks,"StartTicks");
 	HX_STACK_ARG(EndTicks,"EndTicks");
-	HX_STACK_LINE(26)
+	HX_STACK_LINE(21)
 	return ((Float(::Math_obj::abs((EndTicks - StartTicks))) / Float((int)1000)) + HX_CSTRING("s"));
 }
 
@@ -91,36 +58,36 @@ STATIC_HX_DEFINE_DYNAMIC_FUNC2(FlxStringUtil_obj,formatTicks,return )
 
 ::String FlxStringUtil_obj::formatTime( Float Seconds,hx::Null< bool >  __o_ShowMS){
 bool ShowMS = __o_ShowMS.Default(false);
-	HX_STACK_PUSH("FlxStringUtil::formatTime","flixel/util/FlxStringUtil.hx",38);
+	HX_STACK_PUSH("FlxStringUtil::formatTime","flixel/util/FlxStringUtil.hx",33);
 	HX_STACK_ARG(Seconds,"Seconds");
 	HX_STACK_ARG(ShowMS,"ShowMS");
 {
-		HX_STACK_LINE(39)
+		HX_STACK_LINE(34)
 		::String timeString = (::Std_obj::_int((Float(Seconds) / Float((int)60))) + HX_CSTRING(":"));		HX_STACK_VAR(timeString,"timeString");
-		HX_STACK_LINE(40)
+		HX_STACK_LINE(35)
 		int timeStringHelper = hx::Mod(::Std_obj::_int(Seconds),(int)60);		HX_STACK_VAR(timeStringHelper,"timeStringHelper");
-		HX_STACK_LINE(41)
+		HX_STACK_LINE(36)
 		if (((timeStringHelper < (int)10))){
-			HX_STACK_LINE(42)
+			HX_STACK_LINE(37)
 			hx::AddEq(timeString,HX_CSTRING("0"));
 		}
-		HX_STACK_LINE(45)
+		HX_STACK_LINE(40)
 		hx::AddEq(timeString,timeStringHelper);
-		HX_STACK_LINE(46)
+		HX_STACK_LINE(41)
 		if ((ShowMS)){
-			HX_STACK_LINE(48)
+			HX_STACK_LINE(43)
 			hx::AddEq(timeString,HX_CSTRING("."));
-			HX_STACK_LINE(49)
+			HX_STACK_LINE(44)
 			timeStringHelper = ::Std_obj::_int((((Seconds - ::Std_obj::_int(Seconds))) * (int)100));
-			HX_STACK_LINE(50)
+			HX_STACK_LINE(45)
 			if (((timeStringHelper < (int)10))){
-				HX_STACK_LINE(51)
+				HX_STACK_LINE(46)
 				hx::AddEq(timeString,HX_CSTRING("0"));
 			}
-			HX_STACK_LINE(54)
+			HX_STACK_LINE(49)
 			hx::AddEq(timeString,timeStringHelper);
 		}
-		HX_STACK_LINE(57)
+		HX_STACK_LINE(52)
 		return timeString;
 	}
 }
@@ -129,25 +96,25 @@ bool ShowMS = __o_ShowMS.Default(false);
 STATIC_HX_DEFINE_DYNAMIC_FUNC2(FlxStringUtil_obj,formatTime,return )
 
 ::String FlxStringUtil_obj::formatArray( Dynamic AnyArray){
-	HX_STACK_PUSH("FlxStringUtil::formatArray","flixel/util/FlxStringUtil.hx",68);
+	HX_STACK_PUSH("FlxStringUtil::formatArray","flixel/util/FlxStringUtil.hx",63);
 	HX_STACK_ARG(AnyArray,"AnyArray");
-	HX_STACK_LINE(69)
+	HX_STACK_LINE(64)
 	::String string = HX_CSTRING("");		HX_STACK_VAR(string,"string");
-	HX_STACK_LINE(70)
+	HX_STACK_LINE(65)
 	if (((bool((AnyArray != null())) && bool((AnyArray->__Field(HX_CSTRING("length"),true) > (int)0))))){
-		HX_STACK_LINE(72)
+		HX_STACK_LINE(67)
 		string = ::Std_obj::string(AnyArray->__GetItem((int)0));
-		HX_STACK_LINE(73)
+		HX_STACK_LINE(68)
 		int i = (int)1;		HX_STACK_VAR(i,"i");
-		HX_STACK_LINE(74)
+		HX_STACK_LINE(69)
 		int l = AnyArray->__Field(HX_CSTRING("length"),true);		HX_STACK_VAR(l,"l");
-		HX_STACK_LINE(75)
+		HX_STACK_LINE(70)
 		while(((i < l))){
-			HX_STACK_LINE(76)
+			HX_STACK_LINE(71)
 			hx::AddEq(string,(HX_CSTRING(", ") + ::Std_obj::string(AnyArray->__GetItem((i)++))));
 		}
 	}
-	HX_STACK_LINE(80)
+	HX_STACK_LINE(75)
 	return string;
 }
 
@@ -155,22 +122,22 @@ STATIC_HX_DEFINE_DYNAMIC_FUNC2(FlxStringUtil_obj,formatTime,return )
 STATIC_HX_DEFINE_DYNAMIC_FUNC1(FlxStringUtil_obj,formatArray,return )
 
 ::String FlxStringUtil_obj::formatStringMap( ::haxe::ds::StringMap AnyMap){
-	HX_STACK_PUSH("FlxStringUtil::formatStringMap","flixel/util/FlxStringUtil.hx",90);
+	HX_STACK_PUSH("FlxStringUtil::formatStringMap","flixel/util/FlxStringUtil.hx",85);
 	HX_STACK_ARG(AnyMap,"AnyMap");
-	HX_STACK_LINE(91)
+	HX_STACK_LINE(86)
 	::String string = HX_CSTRING("");		HX_STACK_VAR(string,"string");
-	HX_STACK_LINE(92)
+	HX_STACK_LINE(87)
 	for(::cpp::FastIterator_obj< ::String > *__it = ::cpp::CreateFastIterator< ::String >(AnyMap->keys());  __it->hasNext(); ){
 		::String key = __it->next();
 		{
-			HX_STACK_LINE(93)
+			HX_STACK_LINE(88)
 			hx::AddEq(string,::Std_obj::string(key));
-			HX_STACK_LINE(94)
+			HX_STACK_LINE(89)
 			hx::AddEq(string,HX_CSTRING(", "));
 		}
 ;
 	}
-	HX_STACK_LINE(97)
+	HX_STACK_LINE(92)
 	return string.substring((int)0,(string.length - (int)2));
 }
 
@@ -180,70 +147,70 @@ STATIC_HX_DEFINE_DYNAMIC_FUNC1(FlxStringUtil_obj,formatStringMap,return )
 ::String FlxStringUtil_obj::formatMoney( Float Amount,hx::Null< bool >  __o_ShowDecimal,hx::Null< bool >  __o_EnglishStyle){
 bool ShowDecimal = __o_ShowDecimal.Default(true);
 bool EnglishStyle = __o_EnglishStyle.Default(true);
-	HX_STACK_PUSH("FlxStringUtil::formatMoney","flixel/util/FlxStringUtil.hx",112);
+	HX_STACK_PUSH("FlxStringUtil::formatMoney","flixel/util/FlxStringUtil.hx",107);
 	HX_STACK_ARG(Amount,"Amount");
 	HX_STACK_ARG(ShowDecimal,"ShowDecimal");
 	HX_STACK_ARG(EnglishStyle,"EnglishStyle");
 {
-		HX_STACK_LINE(113)
+		HX_STACK_LINE(108)
 		int helper;		HX_STACK_VAR(helper,"helper");
-		HX_STACK_LINE(114)
+		HX_STACK_LINE(109)
 		int amount = ::Math_obj::floor(Amount);		HX_STACK_VAR(amount,"amount");
-		HX_STACK_LINE(115)
+		HX_STACK_LINE(110)
 		::String string = HX_CSTRING("");		HX_STACK_VAR(string,"string");
-		HX_STACK_LINE(116)
+		HX_STACK_LINE(111)
 		::String comma = HX_CSTRING("");		HX_STACK_VAR(comma,"comma");
-		HX_STACK_LINE(117)
+		HX_STACK_LINE(112)
 		::String zeroes = HX_CSTRING("");		HX_STACK_VAR(zeroes,"zeroes");
-		HX_STACK_LINE(118)
+		HX_STACK_LINE(113)
 		while(((amount > (int)0))){
-			HX_STACK_LINE(120)
+			HX_STACK_LINE(115)
 			if (((bool((string.length > (int)0)) && bool((comma.length <= (int)0))))){
-				HX_STACK_LINE(121)
+				HX_STACK_LINE(116)
 				if ((EnglishStyle)){
-					HX_STACK_LINE(123)
+					HX_STACK_LINE(118)
 					comma = HX_CSTRING(",");
 				}
 				else{
-					HX_STACK_LINE(127)
+					HX_STACK_LINE(122)
 					comma = HX_CSTRING(".");
 				}
 			}
-			HX_STACK_LINE(131)
+			HX_STACK_LINE(126)
 			zeroes = HX_CSTRING("");
-			HX_STACK_LINE(132)
+			HX_STACK_LINE(127)
 			helper = (amount - (::Math_obj::floor((Float(amount) / Float((int)1000))) * (int)1000));
-			HX_STACK_LINE(133)
+			HX_STACK_LINE(128)
 			amount = ::Math_obj::floor((Float(amount) / Float((int)1000)));
-			HX_STACK_LINE(134)
+			HX_STACK_LINE(129)
 			if (((amount > (int)0))){
-				HX_STACK_LINE(136)
+				HX_STACK_LINE(131)
 				if (((helper < (int)100))){
-					HX_STACK_LINE(137)
+					HX_STACK_LINE(132)
 					hx::AddEq(zeroes,HX_CSTRING("0"));
 				}
-				HX_STACK_LINE(140)
+				HX_STACK_LINE(135)
 				if (((helper < (int)10))){
-					HX_STACK_LINE(141)
+					HX_STACK_LINE(136)
 					hx::AddEq(zeroes,HX_CSTRING("0"));
 				}
 			}
-			HX_STACK_LINE(145)
+			HX_STACK_LINE(140)
 			string = (((zeroes + helper) + comma) + string);
 		}
-		HX_STACK_LINE(147)
+		HX_STACK_LINE(142)
 		if ((ShowDecimal)){
-			HX_STACK_LINE(149)
+			HX_STACK_LINE(144)
 			amount = (::Std_obj::_int((Amount * (int)100)) - (::Std_obj::_int(Amount) * (int)100));
-			HX_STACK_LINE(150)
+			HX_STACK_LINE(145)
 			hx::AddEq(string,(((  ((EnglishStyle)) ? ::String(HX_CSTRING(".")) : ::String(HX_CSTRING(",")) )) + amount));
-			HX_STACK_LINE(151)
+			HX_STACK_LINE(146)
 			if (((amount < (int)10))){
-				HX_STACK_LINE(152)
+				HX_STACK_LINE(147)
 				hx::AddEq(string,HX_CSTRING("0"));
 			}
 		}
-		HX_STACK_LINE(156)
+		HX_STACK_LINE(151)
 		return string;
 	}
 }
@@ -252,31 +219,31 @@ bool EnglishStyle = __o_EnglishStyle.Default(true);
 STATIC_HX_DEFINE_DYNAMIC_FUNC3(FlxStringUtil_obj,formatMoney,return )
 
 ::String FlxStringUtil_obj::filterDigits( ::String Input){
-	HX_STACK_PUSH("FlxStringUtil::filterDigits","flixel/util/FlxStringUtil.hx",166);
+	HX_STACK_PUSH("FlxStringUtil::filterDigits","flixel/util/FlxStringUtil.hx",161);
 	HX_STACK_ARG(Input,"Input");
-	HX_STACK_LINE(167)
+	HX_STACK_LINE(162)
 	::StringBuf output = ::StringBuf_obj::__new();		HX_STACK_VAR(output,"output");
-	HX_STACK_LINE(168)
+	HX_STACK_LINE(163)
 	{
-		HX_STACK_LINE(168)
+		HX_STACK_LINE(163)
 		int _g1 = (int)0;		HX_STACK_VAR(_g1,"_g1");
 		int _g = Input.length;		HX_STACK_VAR(_g,"_g");
-		HX_STACK_LINE(168)
+		HX_STACK_LINE(163)
 		while(((_g1 < _g))){
-			HX_STACK_LINE(168)
+			HX_STACK_LINE(163)
 			int i = (_g1)++;		HX_STACK_VAR(i,"i");
-			HX_STACK_LINE(169)
+			HX_STACK_LINE(164)
 			Dynamic c = Input.charCodeAt(i);		HX_STACK_VAR(c,"c");
-			HX_STACK_LINE(170)
+			HX_STACK_LINE(165)
 			if (((bool((c >= (int)48)) && bool((c <= (int)57))))){
-				HX_STACK_LINE(171)
+				HX_STACK_LINE(166)
 				int c1 = c;		HX_STACK_VAR(c1,"c1");
-				HX_STACK_LINE(171)
+				HX_STACK_LINE(166)
 				output->b->push(::String::fromCharCode(c1));
 			}
 		}
 	}
-	HX_STACK_LINE(174)
+	HX_STACK_LINE(169)
 	return output->b->join(HX_CSTRING(""));
 }
 
@@ -289,7 +256,7 @@ int Size = __o_Size.Default(12);
 bool Bold = __o_Bold.Default(false);
 bool Italic = __o_Italic.Default(false);
 bool Underlined = __o_Underlined.Default(false);
-	HX_STACK_PUSH("FlxStringUtil::htmlFormat","flixel/util/FlxStringUtil.hx",190);
+	HX_STACK_PUSH("FlxStringUtil::htmlFormat","flixel/util/FlxStringUtil.hx",185);
 	HX_STACK_ARG(Text,"Text");
 	HX_STACK_ARG(Size,"Size");
 	HX_STACK_ARG(Color,"Color");
@@ -297,32 +264,32 @@ bool Underlined = __o_Underlined.Default(false);
 	HX_STACK_ARG(Italic,"Italic");
 	HX_STACK_ARG(Underlined,"Underlined");
 {
-		HX_STACK_LINE(191)
+		HX_STACK_LINE(186)
 		::String prefix = ((((HX_CSTRING("<font size='") + Size) + HX_CSTRING("' color='#")) + Color) + HX_CSTRING("'>"));		HX_STACK_VAR(prefix,"prefix");
-		HX_STACK_LINE(192)
+		HX_STACK_LINE(187)
 		::String suffix = HX_CSTRING("</font>");		HX_STACK_VAR(suffix,"suffix");
-		HX_STACK_LINE(194)
+		HX_STACK_LINE(189)
 		if ((Bold)){
-			HX_STACK_LINE(196)
+			HX_STACK_LINE(191)
 			prefix = (HX_CSTRING("<b>") + prefix);
-			HX_STACK_LINE(197)
+			HX_STACK_LINE(192)
 			suffix = (suffix + HX_CSTRING("</b>"));
 		}
-		HX_STACK_LINE(199)
+		HX_STACK_LINE(194)
 		if ((Italic)){
-			HX_STACK_LINE(201)
+			HX_STACK_LINE(196)
 			prefix = (HX_CSTRING("<i>") + prefix);
-			HX_STACK_LINE(202)
+			HX_STACK_LINE(197)
 			suffix = (suffix + HX_CSTRING("</i>"));
 		}
-		HX_STACK_LINE(204)
+		HX_STACK_LINE(199)
 		if ((Underlined)){
-			HX_STACK_LINE(206)
+			HX_STACK_LINE(201)
 			prefix = (HX_CSTRING("<u>") + prefix);
-			HX_STACK_LINE(207)
+			HX_STACK_LINE(202)
 			suffix = (suffix + HX_CSTRING("</u>"));
 		}
-		HX_STACK_LINE(210)
+		HX_STACK_LINE(205)
 		return ((prefix + Text) + suffix);
 	}
 }
@@ -331,23 +298,23 @@ bool Underlined = __o_Underlined.Default(false);
 STATIC_HX_DEFINE_DYNAMIC_FUNC6(FlxStringUtil_obj,htmlFormat,return )
 
 ::String FlxStringUtil_obj::getDomain( ::String url){
-	HX_STACK_PUSH("FlxStringUtil::getDomain","flixel/util/FlxStringUtil.hx",248);
+	HX_STACK_PUSH("FlxStringUtil::getDomain","flixel/util/FlxStringUtil.hx",233);
 	HX_STACK_ARG(url,"url");
-	HX_STACK_LINE(249)
+	HX_STACK_LINE(234)
 	int urlStart = (url.indexOf(HX_CSTRING("://"),null()) + (int)3);		HX_STACK_VAR(urlStart,"urlStart");
-	HX_STACK_LINE(250)
+	HX_STACK_LINE(235)
 	int urlEnd = url.indexOf(HX_CSTRING("/"),urlStart);		HX_STACK_VAR(urlEnd,"urlEnd");
-	HX_STACK_LINE(251)
+	HX_STACK_LINE(236)
 	::String home = url.substring(urlStart,urlEnd);		HX_STACK_VAR(home,"home");
-	HX_STACK_LINE(252)
+	HX_STACK_LINE(237)
 	int LastDot = (home.lastIndexOf(HX_CSTRING("."),null()) - (int)1);		HX_STACK_VAR(LastDot,"LastDot");
-	HX_STACK_LINE(253)
+	HX_STACK_LINE(238)
 	int domEnd = (home.lastIndexOf(HX_CSTRING("."),LastDot) + (int)1);		HX_STACK_VAR(domEnd,"domEnd");
-	HX_STACK_LINE(254)
+	HX_STACK_LINE(239)
 	home = home.substring(domEnd,home.length);
-	HX_STACK_LINE(255)
+	HX_STACK_LINE(240)
 	home = home.split(HX_CSTRING(":"))->__get((int)0);
-	HX_STACK_LINE(256)
+	HX_STACK_LINE(241)
 	return (  (((home == HX_CSTRING("")))) ? ::String(HX_CSTRING("local")) : ::String(home) );
 }
 
@@ -356,39 +323,28 @@ STATIC_HX_DEFINE_DYNAMIC_FUNC1(FlxStringUtil_obj,getDomain,return )
 
 bool FlxStringUtil_obj::sameClassName( Dynamic Obj1,Dynamic Obj2,hx::Null< bool >  __o_Simple){
 bool Simple = __o_Simple.Default(true);
-	HX_STACK_PUSH("FlxStringUtil::sameClassName","flixel/util/FlxStringUtil.hx",268);
+	HX_STACK_PUSH("FlxStringUtil::sameClassName","flixel/util/FlxStringUtil.hx",253);
 	HX_STACK_ARG(Obj1,"Obj1");
 	HX_STACK_ARG(Obj2,"Obj2");
 	HX_STACK_ARG(Simple,"Simple");
 {
 		struct _Function_1_1{
 			inline static ::String Block( Dynamic &Obj1,bool &Simple){
-				HX_STACK_PUSH("*::closure","flixel/util/FlxStringUtil.hx",269);
+				HX_STACK_PUSH("*::closure","flixel/util/FlxStringUtil.hx",254);
 				{
-					HX_STACK_LINE(269)
-					::Class cl;		HX_STACK_VAR(cl,"cl");
-					HX_STACK_LINE(269)
-					if ((::Std_obj::is(Obj1,hx::ClassOf< ::Class >()))){
-						HX_STACK_LINE(269)
-						cl = Obj1;
-					}
-					else{
-						HX_STACK_LINE(269)
-						cl = ::Type_obj::getClass(Obj1);
-					}
-					HX_STACK_LINE(269)
-					::String s = ::Type_obj::getClassName(cl);		HX_STACK_VAR(s,"s");
-					HX_STACK_LINE(269)
+					HX_STACK_LINE(254)
+					::String s = ::Type_obj::getClassName(::Type_obj::getClass(Obj1));		HX_STACK_VAR(s,"s");
+					HX_STACK_LINE(254)
 					if (((s != null()))){
-						HX_STACK_LINE(269)
+						HX_STACK_LINE(254)
 						s = ::StringTools_obj::replace(s,HX_CSTRING("::"),HX_CSTRING("."));
-						HX_STACK_LINE(269)
+						HX_STACK_LINE(254)
 						if ((Simple)){
-							HX_STACK_LINE(269)
+							HX_STACK_LINE(254)
 							s = s.substr((s.lastIndexOf(HX_CSTRING("."),null()) + (int)1),null());
 						}
 					}
-					HX_STACK_LINE(269)
+					HX_STACK_LINE(254)
 					return s;
 				}
 				return null();
@@ -396,38 +352,27 @@ bool Simple = __o_Simple.Default(true);
 		};
 		struct _Function_1_2{
 			inline static ::String Block( Dynamic &Obj2,bool &Simple){
-				HX_STACK_PUSH("*::closure","flixel/util/FlxStringUtil.hx",269);
+				HX_STACK_PUSH("*::closure","flixel/util/FlxStringUtil.hx",254);
 				{
-					HX_STACK_LINE(269)
-					::Class cl;		HX_STACK_VAR(cl,"cl");
-					HX_STACK_LINE(269)
-					if ((::Std_obj::is(Obj2,hx::ClassOf< ::Class >()))){
-						HX_STACK_LINE(269)
-						cl = Obj2;
-					}
-					else{
-						HX_STACK_LINE(269)
-						cl = ::Type_obj::getClass(Obj2);
-					}
-					HX_STACK_LINE(269)
-					::String s = ::Type_obj::getClassName(cl);		HX_STACK_VAR(s,"s");
-					HX_STACK_LINE(269)
+					HX_STACK_LINE(254)
+					::String s = ::Type_obj::getClassName(::Type_obj::getClass(Obj2));		HX_STACK_VAR(s,"s");
+					HX_STACK_LINE(254)
 					if (((s != null()))){
-						HX_STACK_LINE(269)
+						HX_STACK_LINE(254)
 						s = ::StringTools_obj::replace(s,HX_CSTRING("::"),HX_CSTRING("."));
-						HX_STACK_LINE(269)
+						HX_STACK_LINE(254)
 						if ((Simple)){
-							HX_STACK_LINE(269)
+							HX_STACK_LINE(254)
 							s = s.substr((s.lastIndexOf(HX_CSTRING("."),null()) + (int)1),null());
 						}
 					}
-					HX_STACK_LINE(269)
+					HX_STACK_LINE(254)
 					return s;
 				}
 				return null();
 			}
 		};
-		HX_STACK_LINE(268)
+		HX_STACK_LINE(253)
 		return (_Function_1_1::Block(Obj1,Simple) == _Function_1_2::Block(Obj2,Simple));
 	}
 }
@@ -436,32 +381,32 @@ bool Simple = __o_Simple.Default(true);
 STATIC_HX_DEFINE_DYNAMIC_FUNC3(FlxStringUtil_obj,sameClassName,return )
 
 Array< int > FlxStringUtil_obj::toIntArray( ::String Data){
-	HX_STACK_PUSH("FlxStringUtil::toIntArray","flixel/util/FlxStringUtil.hx",280);
+	HX_STACK_PUSH("FlxStringUtil::toIntArray","flixel/util/FlxStringUtil.hx",265);
 	HX_STACK_ARG(Data,"Data");
-	HX_STACK_LINE(281)
+	HX_STACK_LINE(266)
 	if (((bool((Data != null())) && bool((Data != HX_CSTRING("")))))){
-		HX_STACK_LINE(283)
+		HX_STACK_LINE(268)
 		Array< ::String > strArray = Data.split(HX_CSTRING(","));		HX_STACK_VAR(strArray,"strArray");
-		HX_STACK_LINE(284)
+		HX_STACK_LINE(269)
 		Array< int > iArray = Array_obj< int >::__new();		HX_STACK_VAR(iArray,"iArray");
-		HX_STACK_LINE(285)
+		HX_STACK_LINE(270)
 		{
-			HX_STACK_LINE(285)
+			HX_STACK_LINE(270)
 			int _g = (int)0;		HX_STACK_VAR(_g,"_g");
-			HX_STACK_LINE(285)
+			HX_STACK_LINE(270)
 			while(((_g < strArray->length))){
-				HX_STACK_LINE(285)
+				HX_STACK_LINE(270)
 				::String str = strArray->__get(_g);		HX_STACK_VAR(str,"str");
-				HX_STACK_LINE(285)
+				HX_STACK_LINE(270)
 				++(_g);
-				HX_STACK_LINE(287)
+				HX_STACK_LINE(272)
 				iArray->push(::Std_obj::parseInt(str));
 			}
 		}
-		HX_STACK_LINE(289)
+		HX_STACK_LINE(274)
 		return iArray;
 	}
-	HX_STACK_LINE(291)
+	HX_STACK_LINE(276)
 	return null();
 }
 
@@ -469,280 +414,37 @@ Array< int > FlxStringUtil_obj::toIntArray( ::String Data){
 STATIC_HX_DEFINE_DYNAMIC_FUNC1(FlxStringUtil_obj,toIntArray,return )
 
 Array< Float > FlxStringUtil_obj::toFloatArray( ::String Data){
-	HX_STACK_PUSH("FlxStringUtil::toFloatArray","flixel/util/FlxStringUtil.hx",301);
+	HX_STACK_PUSH("FlxStringUtil::toFloatArray","flixel/util/FlxStringUtil.hx",286);
 	HX_STACK_ARG(Data,"Data");
-	HX_STACK_LINE(302)
+	HX_STACK_LINE(287)
 	if (((bool((Data != null())) && bool((Data != HX_CSTRING("")))))){
-		HX_STACK_LINE(304)
+		HX_STACK_LINE(289)
 		Array< ::String > strArray = Data.split(HX_CSTRING(","));		HX_STACK_VAR(strArray,"strArray");
-		HX_STACK_LINE(305)
+		HX_STACK_LINE(290)
 		Array< Float > fArray = Array_obj< Float >::__new();		HX_STACK_VAR(fArray,"fArray");
-		HX_STACK_LINE(306)
+		HX_STACK_LINE(291)
 		{
-			HX_STACK_LINE(306)
+			HX_STACK_LINE(291)
 			int _g = (int)0;		HX_STACK_VAR(_g,"_g");
-			HX_STACK_LINE(306)
+			HX_STACK_LINE(291)
 			while(((_g < strArray->length))){
-				HX_STACK_LINE(306)
+				HX_STACK_LINE(291)
 				::String str = strArray->__get(_g);		HX_STACK_VAR(str,"str");
-				HX_STACK_LINE(306)
+				HX_STACK_LINE(291)
 				++(_g);
-				HX_STACK_LINE(308)
+				HX_STACK_LINE(293)
 				fArray->push(::Std_obj::parseFloat(str));
 			}
 		}
-		HX_STACK_LINE(310)
+		HX_STACK_LINE(295)
 		return fArray;
 	}
-	HX_STACK_LINE(312)
+	HX_STACK_LINE(297)
 	return null();
 }
 
 
 STATIC_HX_DEFINE_DYNAMIC_FUNC1(FlxStringUtil_obj,toFloatArray,return )
-
-::String FlxStringUtil_obj::arrayToCSV( Array< int > Data,int Width,hx::Null< bool >  __o_Invert){
-bool Invert = __o_Invert.Default(false);
-	HX_STACK_PUSH("FlxStringUtil::arrayToCSV","flixel/util/FlxStringUtil.hx",324);
-	HX_STACK_ARG(Data,"Data");
-	HX_STACK_ARG(Width,"Width");
-	HX_STACK_ARG(Invert,"Invert");
-{
-		HX_STACK_LINE(325)
-		int row = (int)0;		HX_STACK_VAR(row,"row");
-		HX_STACK_LINE(326)
-		int column;		HX_STACK_VAR(column,"column");
-		HX_STACK_LINE(327)
-		::String csv = HX_CSTRING("");		HX_STACK_VAR(csv,"csv");
-		HX_STACK_LINE(328)
-		int Height = ::Std_obj::_int((Float(Data->length) / Float(Width)));		HX_STACK_VAR(Height,"Height");
-		HX_STACK_LINE(329)
-		int index;		HX_STACK_VAR(index,"index");
-		HX_STACK_LINE(330)
-		int offset = (int)0;		HX_STACK_VAR(offset,"offset");
-		HX_STACK_LINE(332)
-		while(((row < Height))){
-			HX_STACK_LINE(334)
-			column = (int)0;
-			HX_STACK_LINE(336)
-			while(((column < Width))){
-				HX_STACK_LINE(338)
-				index = Data->__get(offset);
-				HX_STACK_LINE(340)
-				if ((Invert)){
-					HX_STACK_LINE(341)
-					if (((index == (int)0))){
-						HX_STACK_LINE(343)
-						index = (int)1;
-					}
-					else{
-						HX_STACK_LINE(346)
-						if (((index == (int)1))){
-							HX_STACK_LINE(347)
-							index = (int)0;
-						}
-					}
-				}
-				HX_STACK_LINE(352)
-				if (((column == (int)0))){
-					HX_STACK_LINE(353)
-					if (((row == (int)0))){
-						HX_STACK_LINE(355)
-						hx::AddEq(csv,index);
-					}
-					else{
-						HX_STACK_LINE(359)
-						hx::AddEq(csv,(HX_CSTRING("\n") + index));
-					}
-				}
-				else{
-					HX_STACK_LINE(364)
-					hx::AddEq(csv,(HX_CSTRING(", ") + index));
-				}
-				HX_STACK_LINE(368)
-				(column)++;
-				HX_STACK_LINE(369)
-				(offset)++;
-			}
-			HX_STACK_LINE(372)
-			(row)++;
-		}
-		HX_STACK_LINE(375)
-		return csv;
-	}
-}
-
-
-STATIC_HX_DEFINE_DYNAMIC_FUNC3(FlxStringUtil_obj,arrayToCSV,return )
-
-::String FlxStringUtil_obj::bitmapToCSV( ::flash::display::BitmapData Bitmap,hx::Null< bool >  __o_Invert,hx::Null< int >  __o_Scale,Array< int > ColorMap){
-bool Invert = __o_Invert.Default(false);
-int Scale = __o_Scale.Default(1);
-	HX_STACK_PUSH("FlxStringUtil::bitmapToCSV","flixel/util/FlxStringUtil.hx",389);
-	HX_STACK_ARG(Bitmap,"Bitmap");
-	HX_STACK_ARG(Invert,"Invert");
-	HX_STACK_ARG(Scale,"Scale");
-	HX_STACK_ARG(ColorMap,"ColorMap");
-{
-		HX_STACK_LINE(390)
-		if (((Scale < (int)1))){
-			HX_STACK_LINE(391)
-			Scale = (int)1;
-		}
-		HX_STACK_LINE(396)
-		if (((Scale > (int)1))){
-			HX_STACK_LINE(398)
-			::flash::display::BitmapData bd = Bitmap;		HX_STACK_VAR(bd,"bd");
-			HX_STACK_LINE(399)
-			Bitmap = ::flash::display::BitmapData_obj::__new((Bitmap->get_width() * Scale),(Bitmap->get_height() * Scale),null(),null(),null());
-			HX_STACK_LINE(422)
-			::flash::geom::Matrix mtx = ::flash::geom::Matrix_obj::__new(null(),null(),null(),null(),null(),null());		HX_STACK_VAR(mtx,"mtx");
-			HX_STACK_LINE(423)
-			mtx->scale(Scale,Scale);
-			HX_STACK_LINE(424)
-			Bitmap->draw(bd,mtx,null(),null(),null(),null());
-		}
-		HX_STACK_LINE(429)
-		int row = (int)0;		HX_STACK_VAR(row,"row");
-		HX_STACK_LINE(430)
-		int column;		HX_STACK_VAR(column,"column");
-		HX_STACK_LINE(431)
-		int pixel;		HX_STACK_VAR(pixel,"pixel");
-		HX_STACK_LINE(432)
-		::String csv = HX_CSTRING("");		HX_STACK_VAR(csv,"csv");
-		HX_STACK_LINE(433)
-		int bitmapWidth = Bitmap->get_width();		HX_STACK_VAR(bitmapWidth,"bitmapWidth");
-		HX_STACK_LINE(434)
-		int bitmapHeight = Bitmap->get_height();		HX_STACK_VAR(bitmapHeight,"bitmapHeight");
-		HX_STACK_LINE(436)
-		while(((row < bitmapHeight))){
-			HX_STACK_LINE(438)
-			column = (int)0;
-			HX_STACK_LINE(440)
-			while(((column < bitmapWidth))){
-				HX_STACK_LINE(443)
-				pixel = Bitmap->getPixel(column,row);
-				HX_STACK_LINE(445)
-				if (((ColorMap != null()))){
-					HX_STACK_LINE(446)
-					pixel = ::flixel::util::FlxArrayUtil_obj::indexOf_Int(ColorMap,pixel,null());
-				}
-				else{
-					HX_STACK_LINE(449)
-					if (((bool((bool(Invert) && bool((pixel > (int)0)))) || bool((bool(!(Invert)) && bool((pixel == (int)0))))))){
-						HX_STACK_LINE(450)
-						pixel = (int)1;
-					}
-					else{
-						HX_STACK_LINE(454)
-						pixel = (int)0;
-					}
-				}
-				HX_STACK_LINE(459)
-				if (((column == (int)0))){
-					HX_STACK_LINE(460)
-					if (((row == (int)0))){
-						HX_STACK_LINE(462)
-						hx::AddEq(csv,pixel);
-					}
-					else{
-						HX_STACK_LINE(466)
-						hx::AddEq(csv,(HX_CSTRING("\n") + pixel));
-					}
-				}
-				else{
-					HX_STACK_LINE(471)
-					hx::AddEq(csv,(HX_CSTRING(", ") + pixel));
-				}
-				HX_STACK_LINE(475)
-				(column)++;
-			}
-			HX_STACK_LINE(478)
-			(row)++;
-		}
-		HX_STACK_LINE(481)
-		return csv;
-	}
-}
-
-
-STATIC_HX_DEFINE_DYNAMIC_FUNC4(FlxStringUtil_obj,bitmapToCSV,return )
-
-::String FlxStringUtil_obj::imageToCSV( Dynamic ImageFile,hx::Null< bool >  __o_Invert,hx::Null< int >  __o_Scale){
-bool Invert = __o_Invert.Default(false);
-int Scale = __o_Scale.Default(1);
-	HX_STACK_PUSH("FlxStringUtil::imageToCSV","flixel/util/FlxStringUtil.hx",494);
-	HX_STACK_ARG(ImageFile,"ImageFile");
-	HX_STACK_ARG(Invert,"Invert");
-	HX_STACK_ARG(Scale,"Scale");
-{
-		HX_STACK_LINE(495)
-		::flash::display::BitmapData tempBitmapData;		HX_STACK_VAR(tempBitmapData,"tempBitmapData");
-		HX_STACK_LINE(497)
-		if ((::Std_obj::is(ImageFile,hx::ClassOf< ::String >()))){
-			struct _Function_2_1{
-				inline static ::flash::display::BitmapData Block( Dynamic &ImageFile){
-					HX_STACK_PUSH("*::closure","flixel/util/FlxStringUtil.hx",499);
-					{
-						HX_STACK_LINE(499)
-						::String id = ImageFile;		HX_STACK_VAR(id,"id");
-						HX_STACK_LINE(499)
-						return ::openfl::Assets_obj::getBitmapData(id,false);
-					}
-					return null();
-				}
-			};
-			HX_STACK_LINE(498)
-			tempBitmapData = _Function_2_1::Block(ImageFile);
-		}
-		else{
-			HX_STACK_LINE(502)
-			tempBitmapData = ::Type_obj::createInstance(ImageFile,Dynamic( Array_obj<Dynamic>::__new()))->__Field(HX_CSTRING("bitmapData"),true);
-		}
-		HX_STACK_LINE(506)
-		return ::flixel::util::FlxStringUtil_obj::bitmapToCSV(tempBitmapData,Invert,Scale,null());
-	}
-}
-
-
-STATIC_HX_DEFINE_DYNAMIC_FUNC3(FlxStringUtil_obj,imageToCSV,return )
-
-::String FlxStringUtil_obj::getDebugString( Dynamic LabelValuePairs){
-	HX_STACK_PUSH("FlxStringUtil::getDebugString","flixel/util/FlxStringUtil.hx",516);
-	HX_STACK_ARG(LabelValuePairs,"LabelValuePairs");
-	HX_STACK_LINE(517)
-	::String output = HX_CSTRING("(");		HX_STACK_VAR(output,"output");
-	HX_STACK_LINE(518)
-	{
-		HX_STACK_LINE(518)
-		int _g = (int)0;		HX_STACK_VAR(_g,"_g");
-		HX_STACK_LINE(518)
-		while(((_g < LabelValuePairs->__Field(HX_CSTRING("length"),true)))){
-			HX_STACK_LINE(518)
-			Dynamic pair = LabelValuePairs->__GetItem(_g);		HX_STACK_VAR(pair,"pair");
-			HX_STACK_LINE(518)
-			++(_g);
-			HX_STACK_LINE(520)
-			hx::AddEq(output,(pair->__Field(HX_CSTRING("label"),true) + HX_CSTRING(": ")));
-			HX_STACK_LINE(521)
-			Dynamic value = pair->__Field(HX_CSTRING("value"),true);		HX_STACK_VAR(value,"value");
-			HX_STACK_LINE(522)
-			if ((::Std_obj::is(value,hx::ClassOf< ::Float >()))){
-				HX_STACK_LINE(523)
-				value = ::flixel::util::FlxMath_obj::roundDecimal(value,::flixel::FlxG_obj::debugger->precision);
-			}
-			HX_STACK_LINE(526)
-			hx::AddEq(output,(::Std_obj::string(value) + HX_CSTRING(" | ")));
-		}
-	}
-	HX_STACK_LINE(529)
-	output = ::StringTools_obj::trim(output.substr((int)0,(output.length - (int)2)));
-	HX_STACK_LINE(530)
-	return (output + HX_CSTRING(")"));
-}
-
-
-STATIC_HX_DEFINE_DYNAMIC_FUNC1(FlxStringUtil_obj,getDebugString,return )
 
 
 FlxStringUtil_obj::FlxStringUtil_obj()
@@ -769,14 +471,11 @@ Dynamic FlxStringUtil_obj::__Field(const ::String &inName,bool inCallProp)
 		if (HX_FIELD_EQ(inName,"formatTime") ) { return formatTime_dyn(); }
 		if (HX_FIELD_EQ(inName,"htmlFormat") ) { return htmlFormat_dyn(); }
 		if (HX_FIELD_EQ(inName,"toIntArray") ) { return toIntArray_dyn(); }
-		if (HX_FIELD_EQ(inName,"arrayToCSV") ) { return arrayToCSV_dyn(); }
-		if (HX_FIELD_EQ(inName,"imageToCSV") ) { return imageToCSV_dyn(); }
 		break;
 	case 11:
 		if (HX_FIELD_EQ(inName,"formatTicks") ) { return formatTicks_dyn(); }
 		if (HX_FIELD_EQ(inName,"formatArray") ) { return formatArray_dyn(); }
 		if (HX_FIELD_EQ(inName,"formatMoney") ) { return formatMoney_dyn(); }
-		if (HX_FIELD_EQ(inName,"bitmapToCSV") ) { return bitmapToCSV_dyn(); }
 		break;
 	case 12:
 		if (HX_FIELD_EQ(inName,"filterDigits") ) { return filterDigits_dyn(); }
@@ -784,9 +483,6 @@ Dynamic FlxStringUtil_obj::__Field(const ::String &inName,bool inCallProp)
 		break;
 	case 13:
 		if (HX_FIELD_EQ(inName,"sameClassName") ) { return sameClassName_dyn(); }
-		break;
-	case 14:
-		if (HX_FIELD_EQ(inName,"getDebugString") ) { return getDebugString_dyn(); }
 		break;
 	case 15:
 		if (HX_FIELD_EQ(inName,"formatStringMap") ) { return formatStringMap_dyn(); }
@@ -816,10 +512,6 @@ static ::String sStaticFields[] = {
 	HX_CSTRING("sameClassName"),
 	HX_CSTRING("toIntArray"),
 	HX_CSTRING("toFloatArray"),
-	HX_CSTRING("arrayToCSV"),
-	HX_CSTRING("bitmapToCSV"),
-	HX_CSTRING("imageToCSV"),
-	HX_CSTRING("getDebugString"),
 	String(null()) };
 
 static ::String sMemberFields[] = {

@@ -107,20 +107,11 @@ class HXCPP_CLASS_ATTRIBUTES  FlxCamera_obj : public ::flixel::FlxBasic_obj{
 		virtual Void focusOn( ::flixel::util::FlxPoint point);
 		Dynamic focusOn_dyn();
 
+		virtual Void followAdjust( hx::Null< Float >  LeadX,hx::Null< Float >  LeadY);
+		Dynamic followAdjust_dyn();
+
 		virtual Void follow( ::flixel::FlxObject Target,hx::Null< int >  Style,::flixel::util::FlxPoint Offset,hx::Null< Float >  Lerp);
 		Dynamic follow_dyn();
-
-		virtual Void updateShake( );
-		Dynamic updateShake_dyn();
-
-		virtual Void updateFade( );
-		Dynamic updateFade_dyn();
-
-		virtual Void updateFlash( );
-		Dynamic updateFlash_dyn();
-
-		virtual Void updateFollow( );
-		Dynamic updateFollow_dyn();
 
 		virtual Void update( );
 
@@ -158,10 +149,8 @@ class HXCPP_CLASS_ATTRIBUTES  FlxCamera_obj : public ::flixel::FlxBasic_obj{
 		Dynamic &_fxFlashComplete_dyn() { return _fxFlashComplete;}
 		Float _fxFlashDuration;
 		int _fxFlashColor;
-		::flixel::util::FlxPoint _flashOffset;
 		::flash::geom::Point _flashPoint;
 		::flash::geom::Rectangle _flashRect;
-		::flixel::util::FlxPoint followLead;
 		bool antialiasing;
 		int color;
 		Float angle;
@@ -169,6 +158,8 @@ class HXCPP_CLASS_ATTRIBUTES  FlxCamera_obj : public ::flixel::FlxBasic_obj{
 		Float zoom;
 		int height;
 		int width;
+		Float flashOffsetY;
+		Float flashOffsetX;
 		::flash::display::Sprite flashSprite;
 		bool useBgAlphaBlending;
 		int bgColor;
@@ -176,6 +167,7 @@ class HXCPP_CLASS_ATTRIBUTES  FlxCamera_obj : public ::flixel::FlxBasic_obj{
 		::flixel::util::FlxRect bounds;
 		::flixel::util::FlxRect deadzone;
 		Float followLerp;
+		::flash::geom::Point followLead;
 		::flixel::FlxObject target;
 		int style;
 		Float y;

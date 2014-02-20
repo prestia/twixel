@@ -51,9 +51,6 @@
 #ifndef INCLUDED_flixel_util_FlxArrayUtil
 #include <flixel/util/FlxArrayUtil.h>
 #endif
-#ifndef INCLUDED_flixel_util_FlxPoint
-#include <flixel/util/FlxPoint.h>
-#endif
 namespace flixel{
 namespace system{
 namespace frontEnds{
@@ -145,9 +142,9 @@ Void CameraFrontEnd_obj::update( ){
 				HX_STACK_LINE(258)
 				if (((camera->target == null()))){
 					HX_STACK_LINE(260)
-					camera->flashSprite->set_x((camera->x + camera->_flashOffset->x));
+					camera->flashSprite->set_x((camera->x + camera->flashOffsetX));
 					HX_STACK_LINE(261)
-					camera->flashSprite->set_y((camera->y + camera->_flashOffset->y));
+					camera->flashSprite->set_y((camera->y + camera->flashOffsetY));
 				}
 				HX_STACK_LINE(264)
 				camera->flashSprite->set_visible(camera->visible);
@@ -374,7 +371,7 @@ Void CameraFrontEnd_obj::reset( ::flixel::FlxCamera NewCamera){
 				HX_STACK_PUSH("*::closure","flixel/system/frontEnds/CameraFrontEnd.hx",106);
 				{
 					HX_STACK_LINE(106)
-					::flixel::FlxG_obj::game->addChildAt(NewCamera->flashSprite,::flixel::FlxG_obj::game->getChildIndex(::flixel::FlxG_obj::game->_inputContainer));
+					::flixel::FlxG_obj::game->addChildAt(NewCamera->flashSprite,::flixel::FlxG_obj::game->getChildIndex(::flixel::FlxG_obj::game->inputContainer));
 					HX_STACK_LINE(106)
 					::flixel::FlxG_obj::cameras->list->push(NewCamera);
 					HX_STACK_LINE(106)
